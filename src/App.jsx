@@ -15,7 +15,13 @@ function App() {
       <AlertStripe type="info">Søknaden din er klar for innsending.</AlertStripe>
       <AlertStripe type="suksess">Søknaden ble sendt!</AlertStripe>
       <AlertStripe type="advarsel">Vi opplever stor pågang! Innsendingen kan ta noe lengre tid.</AlertStripe>
-      <AlertStripe type="feil">Innsending av søknad er nede, vennligst prøv igjen senere. Se <a>driftsmeldinger</a> for mer informasjon.</AlertStripe>
+      <AlertStripe type="feil">
+        Innsending av søknad er nede, vennligst prøv igjen senere. Se
+        {' '}
+        <p>driftsmeldinger</p>
+        {' '}
+        for mer informasjon.
+      </AlertStripe>
     </div>
   );
 }
