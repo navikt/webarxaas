@@ -33,5 +33,5 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
+      # run tests! using yarn as it was CircleCI default
       - run: yarn test
