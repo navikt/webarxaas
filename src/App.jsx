@@ -1,14 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { ToggleKnapp } from 'nav-frontend-toggle';
 import AlertStripe from 'nav-frontend-alertstriper';
+import FileUpload from './components/fileUpload/fileUpload';
+
+
 
 
 function App() {
+  const [currentData, setData] = useState("");
+  const [attributes, setAttributes] = useState([]);
+
   return (
     <div className="App">
       <p>test</p>
+      <FileUpload 
+        setAttributes={setAttributes} 
+        setData= {setData}
+        attributeTypeModel = {'QUASIIDENTIFYING'}
+      />
       <NavFrontendSpinner />
       <NavFrontendSpinner negativ />
       <ToggleKnapp>Toggle</ToggleKnapp>
