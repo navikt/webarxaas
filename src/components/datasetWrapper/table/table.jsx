@@ -3,15 +3,19 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
 const Table = (props) => {
-  const columns = Object.keys(props.currentData[0]).map((key) => {
+  const columns = Object.keys(props.dataset[0]).map((key) => {
     return {
-      Header: props.currentData[0][key],
+      Header:
+  <div>
+    <p>sfdf</p>
+    {props.dataset[0][key]}
+  </div>,
       accessor: key,
     };
   });
 
 
-  const data = props.currentData.slice(1);
+  const data = props.dataset.slice(1);
 
   const content = (
     <div align="center">
