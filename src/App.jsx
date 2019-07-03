@@ -3,7 +3,7 @@ import './App.css';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { ToggleKnapp } from 'nav-frontend-toggle';
 import AlertStripe from 'nav-frontend-alertstriper';
-import FileUpload from './components/fileUpload/fileUpload';
+import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 
 function App() {
   const [currentData, setData] = useState('');
@@ -11,11 +11,9 @@ function App() {
 
   return (
     <div className="App">
-      <p>test</p>
-      <FileUpload
+      <DatasetWrapper
         setAttributes={setAttributes}
         setData={setData}
-        attributeTypeModel="QUASIIDENTIFYING"
       />
       <NavFrontendSpinner />
       <NavFrontendSpinner negativ />
