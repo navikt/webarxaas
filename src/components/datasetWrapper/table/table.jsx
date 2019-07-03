@@ -14,7 +14,6 @@ const Table = (props) => {
     };
   });
 
-
   const data = props.dataset.slice(1);
 
   const content = (
