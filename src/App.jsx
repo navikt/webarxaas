@@ -3,7 +3,7 @@ import './App.css';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { ToggleKnapp } from 'nav-frontend-toggle';
 import AlertStripe from 'nav-frontend-alertstriper';
-import RiskBullet from './components/RiskBullet';
+import RiskBullet from './components/RiskBullet/RiskBullet';
 import FileUpload from './components/fileUpload/fileUpload';
 
 
