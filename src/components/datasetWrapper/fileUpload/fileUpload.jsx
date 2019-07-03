@@ -9,6 +9,7 @@ const FileUpload = (props) => {
           const headers = results.data[0];
           setAttributes(headers.map(field => ({ field, attributeTypeModel })));
           setData(results.data);
+          console.log(results.data);
         }
       },
     });
