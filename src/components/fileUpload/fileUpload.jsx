@@ -16,7 +16,19 @@ const FileUpload = (props) => {
 
   const content = (
     <div align="center">
-      <input onChange={e => onFilesChange(e.target.files[0], props.setAttributes, props.setData, props.attributeTypeModel)} />
+      <input
+        type="file"
+        id="file"
+        className="input-file"
+        onChange={
+          e => onFilesChange(
+            e.target.files[0],
+            props.setAttributes,
+            props.setData,
+            props.attributeTypeModel,
+          )
+        }
+      />
     </div>
   );
   return content;

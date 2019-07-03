@@ -5,24 +5,23 @@ import { ToggleKnapp } from 'nav-frontend-toggle';
 import AlertStripe from 'nav-frontend-alertstriper';
 import FileUpload from './components/fileUpload/fileUpload';
 
-
-
-
 function App() {
-  const [currentData, setData] = useState("");
-  const [attributes, setAttributes] = useState([]);
+  const [currentData, setData] = useState('');
+  const [, setAttributes] = useState([]);
 
   return (
     <div className="App">
       <p>test</p>
-      <FileUpload 
-        setAttributes={setAttributes} 
-        setData= {setData}
-        attributeTypeModel = {'QUASIIDENTIFYING'}
+      <FileUpload
+        setAttributes={setAttributes}
+        setData={setData}
+        attributeTypeModel="QUASIIDENTIFYING"
       />
       <NavFrontendSpinner />
       <NavFrontendSpinner negativ />
-      <ToggleKnapp>Toggle</ToggleKnapp>
+      <ToggleKnapp onClick={() => console.log(currentData)}>
+        Toggle
+      </ToggleKnapp>
       <AlertStripe type="info">Søknaden din er klar for innsending.</AlertStripe>
       <AlertStripe type="suksess">Søknaden ble sendt!</AlertStripe>
       <AlertStripe type="advarsel">Vi opplever stor pågang! Innsendingen kan ta noe lengre tid.</AlertStripe>
