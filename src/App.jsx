@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import FileUpload from './components/fileUpload/fileUpload';
+import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 
 function App() {
   const [currentData, setData] = useState('');
@@ -8,10 +8,9 @@ function App() {
 
   return (
     <div className="App">
-      <FileUpload
+      <DatasetWrapper
         setAttributes={setAttributes}
         setData={setData}
-        attributeTypeModel="QUASIIDENTIFYING"
       />
     </div>
   );
