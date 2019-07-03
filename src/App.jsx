@@ -3,7 +3,9 @@ import './App.css';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { ToggleKnapp } from 'nav-frontend-toggle';
 import AlertStripe from 'nav-frontend-alertstriper';
+import RiskBullet from './components/RiskBullet';
 import FileUpload from './components/fileUpload/fileUpload';
+
 
 function App() {
   const [currentData, setData] = useState('');
@@ -32,6 +34,7 @@ function App() {
         {' '}
         for mer informasjon.
       </AlertStripe>
+      <RiskBullet risk="25" />
     </div>
   );
 }
