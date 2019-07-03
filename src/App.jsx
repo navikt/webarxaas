@@ -3,16 +3,16 @@ import './App.css';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 
 function App() {
-  const [currentData, setData] = useState('');
-  const [currentAttributes, setAttributes] = useState([]);
+  const [dataset, setDataset] = useState('');
+  const [attributes, setAttributes] = useState([]);
 
   return (
     <div className="App">
       <DatasetWrapper
         setAttributes={setAttributes}
-        currentAttributes={currentAttributes}
-        setData={setData}
-        currentData={currentData}
+        attributes={attributes}
+        setDataset={setDataset}
+        dataset={dataset}
       />
     </div>
   );
