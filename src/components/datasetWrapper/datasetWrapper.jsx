@@ -5,8 +5,8 @@ import Table from './table/table';
 const datasetWrapper = (props) => {
   let table;
 
-  if (props.currentData) {
-    table = <Table currentData={props.currentData} />;
+  if (props.dataset) {
+    table = <Table dataset={props.dataset} />;
   } else {
     table = <p>no table</p>;
   }
@@ -15,11 +15,9 @@ const datasetWrapper = (props) => {
     <div>
       <FileUpload
         setAttributes={props.setAttributes}
-        setData={props.setData}
+        setDataset={props.setDataset}
       />
-
-      {table}
-
+      { table }
     </div>
   );
   return content;
