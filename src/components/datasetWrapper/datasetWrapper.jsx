@@ -6,7 +6,13 @@ const datasetWrapper = (props) => {
   let table;
 
   if (props.dataset) {
-    table = <Table dataset={props.dataset} />;
+    table = (
+      <Table
+        dataset={props.dataset}
+        setAttributes={props.setAttributes}
+        attributes={props.attributes}
+      />
+    );
   } else {
     table = <p>no table</p>;
   }
@@ -16,8 +22,9 @@ const datasetWrapper = (props) => {
       <FileUpload
         setAttributes={props.setAttributes}
         setDataset={props.setDataset}
+        attributeTypeModel={'QUASIIDENTIFYING'}
       />
-      { table }
+      {table}
     </div>
   );
   return content;
