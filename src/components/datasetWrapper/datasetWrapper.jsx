@@ -2,16 +2,13 @@ import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 
-
-
 const datasetWrapper = (props) => {
-
   let table;
 
-  if (props.currentData){
-   table = <Table currentData={props.currentData} />
-  }else {
-    table = <p>no table</p>
+  if (props.currentData) {
+    table = <Table currentData={props.currentData} />;
+  } else {
+    table = <p>no table</p>;
   }
 
   const content = (
@@ -21,8 +18,8 @@ const datasetWrapper = (props) => {
         setData={props.setData}
       />
 
-        {table}
-      
+      {table}
+
     </div>
   );
   return content;
