@@ -26,7 +26,7 @@ export default class BulletRisk extends PureComponent {
         layout="vertical"
         data={riskData}
         margin={{
-          top: 20, right: 30, left: 20, bottom: 5,
+          top: 20, right: 40, left: 50, bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" horizontalPoints={[20]} />
