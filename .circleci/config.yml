@@ -35,3 +35,37 @@ jobs:
 
       # run tests! using yarn as it was CircleCI default
       - run: yarn test
+  deploy:
+    docker:
+      - image: "navikt/deployment-cli:v0.1.7"
+      - image: circleci/node:8.10
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - yarn build
+      - run:
+          name: Checkout NAIS config repository
+          command: git clone https://github.com/navikt/arxaas-nais-config.git
+      # Publish to Dockerhub
+      - nais/docker-deploy:
+          image: navikt/webarx-poc
+      - run:
+          name: Create github deployment for dev-fss
+          command: deployment-cli deploy create
+                     --cluster=dev-fss
+                     --repository=navikt/webarx-poc
+                     --team=$TEAMNAME
+                     --resource=arxaas-nais-config/webarx-poc-nais.yaml
+                     --version=$CIRCLE_SHA1
+                     --vars=arxaas-nais-config/webarx-poc-dev-placeholders.json
+workflows:
+  version: 2
+  build_and_release:
+    jobs:
+      - build:
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
