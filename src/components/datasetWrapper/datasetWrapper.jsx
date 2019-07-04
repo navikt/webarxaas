@@ -27,7 +27,7 @@ const datasetWrapper = (props) => {
       />
     );
   } else {
-    table = <p>no table</p>;
+    table = '';
   }
 
   const content = (
