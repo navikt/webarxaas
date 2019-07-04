@@ -5,7 +5,7 @@ import {
 import PropTypes from 'prop-types';
 
 
-export default class BulletRisk extends PureComponent {
+export default class RiskChart extends PureComponent {
   constructor(props) {
     super(props);
     let riskValue = 0;
@@ -26,7 +26,7 @@ export default class BulletRisk extends PureComponent {
         layout="vertical"
         data={riskData}
         margin={{
-          top: 20, right: 30, left: 20, bottom: 5,
+          top: 20, right: 40, left: 50, bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" horizontalPoints={[20]} />
@@ -39,5 +39,5 @@ export default class BulletRisk extends PureComponent {
     );
   }
 }
-BulletRisk.propTypes = { risk: PropTypes.number };
-BulletRisk.defaultProps = { risk: 100 };
+RiskChart.propTypes = { risk: PropTypes.number };
+RiskChart.defaultProps = { risk: 100 };

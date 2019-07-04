@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
-import RiskBullet from './components/RiskBullet/RiskBullet';
+import RiskChart from './components/ReIdentificationChart/RiskChart';
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         setResponse={setResponse}
       />
       <div className="ReIdentificationRisk">
-        <RiskBullet risk="25" />
+        <RiskChart risk="25" />
         <div>
           <Ekspanderbartpanel tittel="More Information" border>
              TEST TEST TEST TEST
