@@ -8,7 +8,7 @@ const datasetWrapper = (props) => {
   let table;
 
   const {
-    endpoint, dataset, attributes, setAttributes, setResponse 
+    endpoint, dataset, attributes, setAttributes, setResponse,
   } = props;
 
   const request = (payload, service) => {
