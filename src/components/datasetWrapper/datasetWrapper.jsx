@@ -3,6 +3,7 @@ import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton/analyzeButton';
 import FetchRequest from '../../util/fetchRequest';
+import BuildPayload from '../../util/buildPayload';
 
 
 const datasetWrapper = (props) => {
@@ -12,18 +13,8 @@ const datasetWrapper = (props) => {
     endpoint, dataset, attributes, setAttributes, setResponse,
   } = props;
 
-  const buildPayload = () => {
-    const jsonModel = {};
-    jsonModel.data = dataset;
-    jsonModel.attributes = attributes;
-    jsonModel.privacyModels = [];
-    jsonModel.suppressionLimit = null;
-    return jsonModel;
-  };
-
   const handleRequest = (e, service) => {
-    const payload = buildPayload();
-    // request(payload, service);
+    const payload = BuildPayload(dataset, attributes);
     FetchRequest(endpoint, payload, service, setResponse);
   };
 
