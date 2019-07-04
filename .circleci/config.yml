@@ -37,14 +37,35 @@ jobs:
 
       # run tests! using yarn as it was CircleCI default
       - run: yarn test
-  deploy:
+  package:
     docker:
-      - image: "navikt/deployment-cli:v0.1.7"
       - image: circleci/node:8.10
     working_directory: ~/repo
     steps:
       - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            # fallback to using the latest cache if no exact match is found
+            - v1-dependencies-
+      - run: yarn install
       - run: yarn build
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - persist_to_workspace:
+          root: build
+          paths: ./*
+  deploy:
+    docker:
+      - image: "navikt/deployment-cli:v0.1.7"
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - attach_workspace:
+          at: build
       - run:
           name: Checkout NAIS config repository
           command: git clone https://github.com/navikt/arxaas-nais-config.git
@@ -65,9 +86,14 @@ workflows:
   build_and_release:
     jobs:
       - build
+      - package:
+          filters:
+            branches:
+              only: master
       - deploy:
           requires:
             - build
+            - package
           filters:
             branches:
               only: master
