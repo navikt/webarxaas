@@ -11,7 +11,7 @@ const Table = (props) => {
     attributes[index] = {
       ...attributes[index],
       field,
-      defaultAttributeType: selectedType,
+      attributeTypeModel: selectedType,
     };
     setAttributes(attributes);
     console.log(attributes);
@@ -46,6 +46,7 @@ const Table = (props) => {
         data={data}
         columns={columns}
         sortable={false}
+        defaultPageSize={5}
       />
     </div>
   );
