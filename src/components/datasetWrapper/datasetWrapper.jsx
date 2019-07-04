@@ -2,6 +2,7 @@ import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton/analyzeButton';
+import FetchRequest from '../../util/fetchRequest';
 
 
 const datasetWrapper = (props) => {
@@ -10,19 +11,6 @@ const datasetWrapper = (props) => {
   const {
     endpoint, dataset, attributes, setAttributes, setResponse,
   } = props;
-
-  const request = (payload, service) => {
-    fetch(`${endpoint}/api/${service}`, {
-      crossDomain: true,
-      method: 'post',
-      body: JSON.stringify(payload),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then(response => (response.json())).then((data) => {
-      setResponse(data);
-    });
-  };
 
   const buildPayload = () => {
     const jsonModel = {};
@@ -35,7 +23,8 @@ const datasetWrapper = (props) => {
 
   const handleRequest = (e, service) => {
     const payload = buildPayload();
-    request(payload, service);
+    // request(payload, service);
+    FetchRequest(endpoint, payload, service, setResponse);
   };
 
   if (props.dataset) {
