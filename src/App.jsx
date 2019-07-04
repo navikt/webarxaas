@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
-import RiskChart from './components/ReIdentificationChart/RiskChart';
+import AnalysisResult from './components/AnalysisResult/AnalysisResult';
 
 
 function App() {
@@ -10,6 +9,15 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   console.log(response);
+
+  let result = '';
+  if (response) {
+    result = (
+      <AnalysisResult
+        response={response}
+      />
+    );
+  }
 
   return (
     <div className="App">
@@ -21,14 +29,7 @@ function App() {
         dataset={dataset}
         setResponse={setResponse}
       />
-      <div className="ReIdentificationRisk">
-        <RiskChart risk="25" />
-        <div>
-          <Ekspanderbartpanel tittel="More Information" border>
-             TEST TEST TEST TEST
-          </Ekspanderbartpanel>
-        </div>
-      </div>
+      {result}
     </div>
   );
 }
