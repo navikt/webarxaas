@@ -22,6 +22,7 @@ const Table = (props) => {
       Header:
         <div>
           <Select
+            label=""
             onChange={(e) => {
               handleTypeSelect(e, key, index);
             }
@@ -47,6 +48,7 @@ const Table = (props) => {
         columns={columns}
         sortable={false}
         defaultPageSize={5}
+        resizable="true"
       />
     </div>
   );
