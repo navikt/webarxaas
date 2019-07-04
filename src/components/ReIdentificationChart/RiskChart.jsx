@@ -5,7 +5,7 @@ import {
 import PropTypes from 'prop-types';
 
 
-export default class BulletRisk extends PureComponent {
+export default class RiskChart extends PureComponent {
   constructor(props) {
     super(props);
     let riskValue = 0;
@@ -39,5 +39,5 @@ export default class BulletRisk extends PureComponent {
     );
   }
 }
-BulletRisk.propTypes = { risk: PropTypes.number };
-BulletRisk.defaultProps = { risk: 100 };
+RiskChart.propTypes = { risk: PropTypes.number };
+RiskChart.defaultProps = { risk: 100 };

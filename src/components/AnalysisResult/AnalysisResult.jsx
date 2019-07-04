@@ -3,7 +3,7 @@ import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import { Row, Col, Container } from 'reactstrap';
 import DistributionOfRisk from '../DistributionOfRiskTable/DistributionOfRisk';
 import ReIdentificationRisk from '../ReIdentificationRiskTable/ReIdentificationRisk';
-import RiskBullet from '../RiskBullet/RiskBullet';
+import RiskChart from '../ReIdentificationChart/RiskChart';
 
 const AnalysisResult = (props) => {
   const { arxResp } = props;
@@ -13,7 +13,7 @@ const AnalysisResult = (props) => {
       <Container>
         <Row>
           <Col sm={5}>
-            <RiskBullet risk={arxResp.reIdentificationRisk.measures.estimated_prosecutor_risk} />
+            <RiskChart risk={arxResp.reIdentificationRisk.measures.estimated_prosecutor_risk} />
           </Col>
           <Col sm={1} />
           <Col sm={5}>
