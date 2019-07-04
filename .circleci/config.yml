@@ -42,7 +42,7 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
-      - yarn build
+      - run: yarn build
       - run:
           name: Checkout NAIS config repository
           command: git clone https://github.com/navikt/arxaas-nais-config.git
