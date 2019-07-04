@@ -8,14 +8,17 @@ import RiskChart from './components/ReIdentificationChart/RiskChart';
 function App() {
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
+  const [response, setResponse] = useState('');
 
   return (
     <div className="App">
       <DatasetWrapper
+        endpoint="http://localhost:8080"
         setAttributes={setAttributes}
         attributes={attributes}
         setDataset={setDataset}
         dataset={dataset}
+        setResponse={setResponse}
       />
       <div className="ReIdentificationRisk">
         <RiskChart risk="25" />

@@ -7,12 +7,45 @@ import AnalyzeButton from './analyzeButton/analyzeButton';
 const datasetWrapper = (props) => {
   let table;
 
+  const { endpoint, dataset, attributes, setAttributes, setResponse } = props;
+
+  const request = (payload, service) => {
+    fetch(endpoint + '/api/' + service, {
+      crossDomain: true,
+      method: 'post',
+      body: JSON.stringify(payload),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    }).then(function (response) {
+      console.log(endpoint + '/api/' + service)
+      return response.json();
+    }).then(function (data) {
+      setResponse(data)
+      console.log(data)
+    });
+  };
+
+  const handleRequest = (e, service) => {
+    const payload = buildPayload();
+    request(payload, service);
+  };
+
+  const buildPayload = () => {
+    let jsonModel = {};
+    jsonModel['data'] = dataset;
+    jsonModel['attributes'] = attributes;
+    jsonModel['privacyModels'] = [];
+    jsonModel["suppressionLimit"] = null;
+    return jsonModel
+  };
+
   if (props.dataset) {
     table = (
       <Table
-        dataset={props.dataset}
-        setAttributes={props.setAttributes}
-        attributes={props.attributes}
+        dataset={dataset}
+        setAttributes={setAttributes}
+        attributes={attributes}
       />
     );
   } else {
@@ -27,7 +60,7 @@ const datasetWrapper = (props) => {
         defaultAttributeType="QUASIIDENTIFYING"
       />
       {table}
-      <AnalyzeButton />
+      <AnalyzeButton onClick={e => handleRequest(e, 'analyze')} />
     </div>
   );
   return content;
