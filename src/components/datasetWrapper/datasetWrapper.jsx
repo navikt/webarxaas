@@ -1,6 +1,8 @@
 import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
+import AnalyzeButton from './analyseButton/analyseButton';
+
 
 const datasetWrapper = (props) => {
   let table;
@@ -25,6 +27,7 @@ const datasetWrapper = (props) => {
         defaultAttributeType={'QUASIIDENTIFYING'}
       />
       {table}
+      <AnalyzeButton />
     </div>
   );
   return content;
