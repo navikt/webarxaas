@@ -3,7 +3,6 @@ import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import { Select } from 'nav-frontend-skjema';
 
-
 const Table = (props) => {
   const { attributes, setAttributes } = props;
   const handleTypeSelect = ({ target }, field, index) => {
@@ -25,8 +24,7 @@ const Table = (props) => {
           label=""
           onChange={(e) => {
             handleTypeSelect(e, key, index);
-          }
-          }
+          }}
         >
           <option value="QUASIIDENTIFYING">Quasi-identifying</option>
           <option value="INSENSITIVE">Insensitive</option>
