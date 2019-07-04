@@ -1,7 +1,7 @@
 import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
-import AnalyzeButton from './analyseButton/analyseButton';
+import AnalyzeButton from './analyzeButton/analyzeButton';
 
 
 const datasetWrapper = (props) => {
@@ -24,7 +24,7 @@ const datasetWrapper = (props) => {
       <FileUpload
         setAttributes={props.setAttributes}
         setDataset={props.setDataset}
-        defaultAttributeType={'QUASIIDENTIFYING'}
+        defaultAttributeType="QUASIIDENTIFYING"
       />
       {table}
       <AnalyzeButton />
