@@ -3,7 +3,6 @@ import papaparse from 'papaparse';
 
 const FileUpload = (props) => {
   function onFilesChange(file, setAttributes, setDataset, defaultAttributeType) {
-
     papaparse.parse(file, {
       complete(results) {
         if (results.data.length > 0) {
