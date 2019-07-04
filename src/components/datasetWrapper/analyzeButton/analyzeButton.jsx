@@ -8,7 +8,7 @@ const AnalyzeButton = (props) => {
       <Knapp
         onClick={e => handleRequest(e, 'analyze')}
       >
-        Analyze Datasett
+        Analyze Dataset
       </Knapp>
     </div>
   );
