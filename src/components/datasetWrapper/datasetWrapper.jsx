@@ -5,7 +5,6 @@ import AnalyzeButton from './analyzeButton/analyzeButton';
 import FetchRequest from '../../util/fetchRequest';
 import BuildPayload from '../../util/buildPayload';
 
-
 const datasetWrapper = (props) => {
   let table;
 

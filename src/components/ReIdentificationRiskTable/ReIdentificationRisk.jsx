@@ -4,7 +4,6 @@ import 'react-table/react-table.css';
 const ReIdentificationRisk = (props) => {
   const { reIdentificationRisk } = props;
 
-
   const content = (
     <div>
       <h3>Reidentification Risk</h3>
@@ -101,4 +100,5 @@ const ReIdentificationRisk = (props) => {
   );
   return content;
 };
+
 export default ReIdentificationRisk;

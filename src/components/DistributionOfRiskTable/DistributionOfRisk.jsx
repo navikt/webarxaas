@@ -30,4 +30,5 @@ const DistributionOfRisk = (props) => {
   );
   return content;
 };
+
 export default DistributionOfRisk;
