@@ -54,6 +54,8 @@ html {
  */
 body {
   margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 /**
  * Add the correct display in IE 9-.
@@ -931,9 +933,4 @@ body .blokk-xl {
   to {
     transform: rotate(360deg);
   }
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
 }
