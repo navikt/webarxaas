@@ -8,7 +8,6 @@ function App() {
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
-  console.log(response);
 
   let result = '';
   if (response) {

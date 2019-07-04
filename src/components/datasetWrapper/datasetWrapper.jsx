@@ -19,12 +19,8 @@ const datasetWrapper = (props) => {
       headers: {
         'Content-Type': 'application/json',
       },
-    }).then((response) => {
-      console.log(`${endpoint}/api/${service}`);
-      return response.json();
-    }).then((data) => {
+    }).then(response => (response.json())).then((data) => {
       setResponse(data);
-      console.log(data);
     });
   };
 
@@ -62,8 +58,8 @@ const datasetWrapper = (props) => {
         defaultAttributeType="QUASIIDENTIFYING"
       />
       {table}
-      <AnalyzeButton 
-        handleRequest = {handleRequest}
+      <AnalyzeButton
+        handleRequest={handleRequest}
       />
     </div>
   );

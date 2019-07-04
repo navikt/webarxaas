@@ -13,7 +13,6 @@ const Table = (props) => {
       attributeTypeModel: selectedType,
     };
     setAttributes(attributes);
-    console.log(attributes);
   };
 
   const columns = Object.keys(props.dataset[0]).map((key, index) => ({
