@@ -60,7 +60,9 @@ const datasetWrapper = (props) => {
         defaultAttributeType="QUASIIDENTIFYING"
       />
       {table}
-      <AnalyzeButton onClick={e => handleRequest(e, 'analyze')} />
+      <AnalyzeButton 
+        handleRequest = {handleRequest}
+      />
     </div>
   );
   return content;

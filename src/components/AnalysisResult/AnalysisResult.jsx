@@ -6,29 +6,31 @@ import ReIdentificationRisk from '../ReIdentificationRiskTable/ReIdentificationR
 import RiskChart from '../ReIdentificationChart/RiskChart';
 
 const AnalysisResult = (props) => {
-  const { arxResp } = props;
+  const { response } = props;
   const content = (
     <div>
       <h4>Analyze</h4>
       <Container>
         <Row>
           <Col sm={5}>
-            <RiskChart risk={arxResp.reIdentificationRisk.measures.estimated_prosecutor_risk} />
+            <RiskChart risk={
+              parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
+            />
           </Col>
           <Col sm={1} />
           <Col sm={5}>
             <Ekspanderbartpanel tittel="More Information" border>
-              <ReIdentificationRisk reIdentificationRisk={arxResp.reIdentificationRisk} />
+              <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
             </Ekspanderbartpanel>
           </Col>
           <Col sm={1} />
           <Col sm={6}>
-            <DistributionOfRisk riskIntervalList={arxResp.distributionOfRisk.riskIntervalList} />
+            <h3>Distribution of risk graph</h3>
           </Col>
           <Col sm={1} />
           <Col sm={6}>
             <Ekspanderbartpanel tittel="More Information" border>
-              <DistributionOfRisk riskIntervalList={arxResp.distributionOfRisk.riskIntervalList} />
+              <DistributionOfRisk riskIntervalList={response.distributionOfRisk.riskIntervalList} />
             </Ekspanderbartpanel>
           </Col>
         </Row>
