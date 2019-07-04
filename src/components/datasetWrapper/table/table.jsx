@@ -22,6 +22,7 @@ const Table = (props) => {
       Header:
         <div>
           <Select
+            label=""
             onChange={(e) => {
               handleTypeSelect(e, key, index);
             }
