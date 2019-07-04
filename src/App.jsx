@@ -9,6 +9,7 @@ function App() {
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
+  console.log(response);
 
   return (
     <div className="App">
