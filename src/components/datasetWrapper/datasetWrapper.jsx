@@ -22,7 +22,7 @@ const datasetWrapper = (props) => {
       <FileUpload
         setAttributes={props.setAttributes}
         setDataset={props.setDataset}
-        attributeTypeModel={'QUASIIDENTIFYING'}
+        defaultAttributeType={'QUASIIDENTIFYING'}
       />
       {table}
     </div>

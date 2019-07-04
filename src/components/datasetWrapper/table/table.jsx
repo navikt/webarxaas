@@ -11,7 +11,7 @@ const Table = (props) => {
     attributes[index] = {
       ...attributes[index],
       field,
-      attributeTypeModel: selectedType,
+      defaultAttributeType: selectedType,
     };
     setAttributes(attributes);
     console.log(attributes);
