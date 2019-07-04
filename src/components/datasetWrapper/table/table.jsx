@@ -46,6 +46,7 @@ const Table = (props) => {
         data={data}
         columns={columns}
         sortable={false}
+        defaultPageSize={5}
       />
     </div>
   );
