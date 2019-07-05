@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './App.css';
+import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 import AnalysisResult from './components/AnalysisResult/AnalysisResult';
-
 
 function App() {
   const [dataset, setDataset] = useState('');
@@ -20,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavbarMain />
       <DatasetWrapper
         endpoint="http://localhost:8080"
         setAttributes={setAttributes}
