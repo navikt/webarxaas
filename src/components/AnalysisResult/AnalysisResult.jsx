@@ -9,7 +9,7 @@ const AnalysisResult = (props) => {
   const { response } = props;
   const content = (
     <div>
-      <h4>Analyze</h4>
+      <h4>Result</h4>
       <Container>
         <Row>
           <Col sm={5}>
