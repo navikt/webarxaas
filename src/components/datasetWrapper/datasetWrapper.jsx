@@ -1,23 +1,13 @@
 import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
-import AnalyzeButton from './analyzeButton/analyzeButton';
-import ArxRequest from '../../util/arxRequest';
-import BuildPayload from '../../util/buildPayload';
 
 const datasetWrapper = (props) => {
   let table;
 
   const {
-    endpoint, dataset, attributes, setAttributes, setResponse,
+    dataset, attributes, setAttributes,
   } = props;
-
-  const handleRequest = (e, service) => {
-    if (dataset && attributes) {
-      const payload = BuildPayload(dataset, attributes);
-      ArxRequest(endpoint, payload, service, setResponse);
-    }
-  };
 
   if (props.dataset) {
     table = (
@@ -39,9 +29,6 @@ const datasetWrapper = (props) => {
         defaultAttributeType="QUASIIDENTIFYING"
       />
       {table}
-      <AnalyzeButton
-        handleRequest={handleRequest}
-      />
     </div>
   );
   return content;
