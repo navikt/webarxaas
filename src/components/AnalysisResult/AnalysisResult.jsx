@@ -10,7 +10,7 @@ const AnalysisResult = (props) => {
   const { response } = props;
   const content = (
     <div>
-      <h4>Analyze</h4>
+      <h4>Result</h4>
       <Container>
         <Row>
           <Col sm={5}>
@@ -20,7 +20,7 @@ const AnalysisResult = (props) => {
           </Col>
           <Col sm={1} />
           <Col sm={5}>
-            <Ekspanderbartpanel tittel="More Information" border>
+            <Ekspanderbartpanel tittel="Risk Metrics" border>
               <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
             </Ekspanderbartpanel>
           </Col>

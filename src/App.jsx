@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import './App.css';
+import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 import AnalysisResult from './components/AnalysisResult/AnalysisResult';
-
 
 function App() {
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
-  console.log(response);
 
   let result = '';
   if (response) {
@@ -19,10 +18,16 @@ function App() {
     );
   }
 
+  let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
+  if (process.env.NODE_ENV === 'production') {
+    arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
+  }
+
   return (
     <div className="App">
+      <NavbarMain />
       <DatasetWrapper
-        endpoint="http://localhost:8080"
+        endpoint={arxaasEndpoint}
         setAttributes={setAttributes}
         attributes={attributes}
         setDataset={setDataset}

@@ -2,7 +2,8 @@ import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton/analyzeButton';
-
+import ArxRequest from '../../util/arxRequest';
+import BuildPayload from '../../util/buildPayload';
 
 const datasetWrapper = (props) => {
   let table;
@@ -11,35 +12,9 @@ const datasetWrapper = (props) => {
     endpoint, dataset, attributes, setAttributes, setResponse,
   } = props;
 
-  const request = (payload, service) => {
-    fetch(`${endpoint}/api/${service}`, {
-      crossDomain: true,
-      method: 'post',
-      body: JSON.stringify(payload),
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    }).then((response) => {
-      console.log(`${endpoint}/api/${service}`);
-      return response.json();
-    }).then((data) => {
-      setResponse(data);
-      console.log(data);
-    });
-  };
-
-  const buildPayload = () => {
-    const jsonModel = {};
-    jsonModel.data = dataset;
-    jsonModel.attributes = attributes;
-    jsonModel.privacyModels = [];
-    jsonModel.suppressionLimit = null;
-    return jsonModel;
-  };
-
   const handleRequest = (e, service) => {
-    const payload = buildPayload();
-    request(payload, service);
+    const payload = BuildPayload(dataset, attributes);
+    ArxRequest(endpoint, payload, service, setResponse);
   };
 
   if (props.dataset) {
@@ -51,7 +26,7 @@ const datasetWrapper = (props) => {
       />
     );
   } else {
-    table = <p>no table</p>;
+    table = '';
   }
 
   const content = (
@@ -62,8 +37,8 @@ const datasetWrapper = (props) => {
         defaultAttributeType="QUASIIDENTIFYING"
       />
       {table}
-      <AnalyzeButton 
-        handleRequest = {handleRequest}
+      <AnalyzeButton
+        handleRequest={handleRequest}
       />
     </div>
   );
