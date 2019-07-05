@@ -2,19 +2,10 @@ import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import { Select } from 'nav-frontend-skjema';
+import HandleTypeSelect from '../../../util/handleTypeSelect';
 
 const Table = (props) => {
   const { attributes, setAttributes } = props;
-  const handleTypeSelect = ({ target }, field, index) => {
-    const { value: selectedType } = target;
-    attributes[index] = {
-      ...attributes[index],
-      field,
-      attributeTypeModel: selectedType,
-    };
-    setAttributes(attributes);
-    console.log(attributes);
-  };
 
   const columns = Object.keys(props.dataset[0]).map((key, index) => ({
     Header:
@@ -23,7 +14,7 @@ const Table = (props) => {
         <Select
           label=""
           onChange={(e) => {
-            handleTypeSelect(e, key, index);
+            HandleTypeSelect(e.target, key, index, attributes, setAttributes);
           }}
         >
           <option value="QUASIIDENTIFYING">Quasi-identifying</option>
