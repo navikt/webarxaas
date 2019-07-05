@@ -25,12 +25,13 @@ function App() {
 
   return (
     <div className="App">
-      <NavbarMain />
+      <NavbarMain
+        setAttributes={setAttributes}
+        setDataset={setDataset}
+      />
       <DatasetWrapper
         endpoint={arxaasEndpoint}
-        setAttributes={setAttributes}
         attributes={attributes}
-        setDataset={setDataset}
         dataset={dataset}
         setResponse={setResponse}
       />

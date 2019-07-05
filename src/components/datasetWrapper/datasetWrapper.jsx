@@ -1,5 +1,4 @@
 import React from 'react';
-import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton/analyzeButton';
 import ArxRequest from '../../util/arxRequest';
@@ -30,12 +29,7 @@ const datasetWrapper = (props) => {
   }
 
   const content = (
-    <div>
-      <FileUpload
-        setAttributes={props.setAttributes}
-        setDataset={props.setDataset}
-        defaultAttributeType="QUASIIDENTIFYING"
-      />
+    <div className="dataset-container">
       {table}
       <AnalyzeButton
         handleRequest={handleRequest}
