@@ -18,10 +18,15 @@ function App() {
     );
   }
 
+  let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
+  if (process.env.NODE_ENV === 'production') {
+    arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
+  }
+
   return (
     <div className="App">
       <DatasetWrapper
-        endpoint="http://localhost:8080"
+        endpoint={arxaasEndpoint}
         setAttributes={setAttributes}
         attributes={attributes}
         setDataset={setDataset}
