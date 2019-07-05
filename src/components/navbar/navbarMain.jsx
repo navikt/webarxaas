@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
+import { Navbar } from 'react-bootstrap';
 import FileUpload from './fileUpload';
 import ArxRequest from '../../util/arxRequest';
 import BuildPayload from '../../util/buildPayload';
@@ -28,6 +28,7 @@ const NavbarMain = (props) => {
       <AnalyzeButton
         handleRequest={handleRequest}
       />
+    </Navbar>
   );
   return content;
 };
