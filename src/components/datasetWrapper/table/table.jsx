@@ -15,7 +15,6 @@ const Table = (props) => {
           label=""
           onChange={(e) => {
             HandleTypeSelect(e.target, attributes[key].field, index, attributes, setAttributes);
-            console.log(attributes);
           }}
         >
           <option value="QUASIIDENTIFYING">Quasi-identifying</option>
