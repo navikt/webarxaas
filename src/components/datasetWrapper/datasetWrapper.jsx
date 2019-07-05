@@ -2,7 +2,7 @@ import React from 'react';
 import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton/analyzeButton';
-import FetchRequest from '../../util/fetchRequest';
+import ArxRequest from '../../util/arxRequest';
 import BuildPayload from '../../util/buildPayload';
 
 const datasetWrapper = (props) => {
@@ -14,7 +14,7 @@ const datasetWrapper = (props) => {
 
   const handleRequest = (e, service) => {
     const payload = BuildPayload(dataset, attributes);
-    FetchRequest(endpoint, payload, service, setResponse);
+    ArxRequest(endpoint, payload, service, setResponse);
   };
 
   if (props.dataset) {

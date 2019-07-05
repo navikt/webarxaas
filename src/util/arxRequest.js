@@ -1,4 +1,4 @@
-export default function FetchRequest(endpoint, payload, service, setResponse) {
+export default function ArxRequest(endpoint, payload, service, setResponse) {
   fetch(`${endpoint}/api/${service}`, {
     crossDomain: true,
     method: 'post',
