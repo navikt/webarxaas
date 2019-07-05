@@ -13,19 +13,20 @@ const AnalysisResult = (props) => {
       <h4>Result</h4>
       <Container>
         <Row>
-          <Col sm={5}>
+          <Col sm={12}>
             <RiskChart risk={
               parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
             />
           </Col>
-          <Col sm={1} />
-          <Col sm={5}>
+          <Col sm={12}>
             <Ekspanderbartpanel tittel="Risk Metrics" border>
               <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
             </Ekspanderbartpanel>
           </Col>
-          <Col sm={1} />
-          <Col sm={6}>
+          <Col sm={12}>
+            <h3>Distribution of risk graph</h3>
+          </Col>
+          <Col sm={12}>
             <Ekspanderbartpanel tittel="Distribution Of Risk" border>
               <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
                 .riskIntervalList}
