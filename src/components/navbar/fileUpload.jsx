@@ -1,5 +1,5 @@
 import React from 'react';
-import ParseFile from '../../../util/parseFile';
+import ParseFile from '../../util/parseFile';
 
 const FileUpload = (props) => {
   const content = (
@@ -7,7 +7,7 @@ const FileUpload = (props) => {
       <input
         type="file"
         id="file"
-        className="input-file"
+        className="input-file knapp knapp--standard"
         onChange={
           e => ParseFile(
             e.target.files[0],

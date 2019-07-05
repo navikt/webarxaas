@@ -1,5 +1,4 @@
 import React from 'react';
-import FileUpload from './fileUpload/fileUpload';
 import Table from './table/table';
 
 const datasetWrapper = (props) => {
@@ -22,12 +21,7 @@ const datasetWrapper = (props) => {
   }
 
   const content = (
-    <div>
-      <FileUpload
-        setAttributes={props.setAttributes}
-        setDataset={props.setDataset}
-        defaultAttributeType="QUASIIDENTIFYING"
-      />
+    <div className="dataset-container">
       {table}
     </div>
   );
