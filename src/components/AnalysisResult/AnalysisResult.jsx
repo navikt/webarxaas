@@ -19,7 +19,7 @@ const AnalysisResult = (props) => {
           </Col>
           <Col sm={1} />
           <Col sm={5}>
-            <Ekspanderbartpanel tittel="More Information" border>
+            <Ekspanderbartpanel tittel="Risk Metrics" border>
               <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
             </Ekspanderbartpanel>
           </Col>
@@ -29,7 +29,7 @@ const AnalysisResult = (props) => {
           </Col>
           <Col sm={1} />
           <Col sm={6}>
-            <Ekspanderbartpanel tittel="More Information" border>
+            <Ekspanderbartpanel tittel="Distribution of Risk" border>
               <DistributionOfRisk riskIntervalList={response.distributionOfRisk.riskIntervalList} />
             </Ekspanderbartpanel>
           </Col>
