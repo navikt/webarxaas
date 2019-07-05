@@ -4,6 +4,7 @@ import { Row, Col, Container } from 'reactstrap';
 import DistributionOfRisk from '../DistributionOfRiskTable/DistributionOfRisk';
 import ReIdentificationRisk from '../ReIdentificationRiskTable/ReIdentificationRisk';
 import RiskChart from '../ReIdentificationChart/RiskChart';
+import RiskDistributionGraph from '../DistributionOfRiskGraph/RiskDistributionGraph';
 
 const AnalysisResult = (props) => {
   const { response } = props;
@@ -25,12 +26,15 @@ const AnalysisResult = (props) => {
           </Col>
           <Col sm={1} />
           <Col sm={6}>
-            <h3>Distribution of risk graph</h3>
-          </Col>
-          <Col sm={1} />
-          <Col sm={6}>
-            <Ekspanderbartpanel tittel="Distribution of Risk" border>
-              <DistributionOfRisk riskIntervalList={response.distributionOfRisk.riskIntervalList} />
+            <Ekspanderbartpanel tittel="Distribution Of Risk" border>
+              <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
+                .riskIntervalList}
+              />
+              <Ekspanderbartpanel tittel="More Information" border>
+                <DistributionOfRisk riskIntervalList={response.distributionOfRisk
+                  .riskIntervalList}
+                />
+              </Ekspanderbartpanel>
             </Ekspanderbartpanel>
           </Col>
         </Row>
