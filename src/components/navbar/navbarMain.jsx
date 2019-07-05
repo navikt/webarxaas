@@ -1,35 +1,33 @@
 import React from 'react';
 import { Navbar, NavDropdown, Nav } from 'react-bootstrap';
 import FileUpload from './fileUpload';
+import ArxRequest from '../../util/arxRequest';
+import BuildPayload from '../../util/buildPayload';
+import AnalyzeButton from './analyzeButton';
 
 const NavbarMain = (props) => {
   const {
-    setAttributes, setDataset,
+    setAttributes, setDataset, endpoint, dataset, attributes, setResponse,
   } = props;
 
+  const handleRequest = (e, service) => {
+    if (dataset && attributes) {
+      const payload = BuildPayload(dataset, attributes);
+      ArxRequest(endpoint, payload, service, setResponse);
+    }
+  };
+
   const content = (
-    <Navbar bg="light" expand="lg" fixed="top">
+    <Navbar bg="light" expand="lg">
       <Navbar.Brand href="#home">Anonymization as a Service</Navbar.Brand>
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
-      <Navbar.Collapse id="basic-navbar-nav">
-        <Nav className="mr-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
-          </NavDropdown>
-          <FileUpload
-            setAttributes={setAttributes}
-            setDataset={setDataset}
-            defaultAttributeType="QUASIIDENTIFYING"
-          />
-        </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+      <FileUpload
+        setAttributes={setAttributes}
+        setDataset={setDataset}
+        defaultAttributeType="QUASIIDENTIFYING"
+      />
+      <AnalyzeButton
+        handleRequest={handleRequest}
+      />
   );
   return content;
 };
