@@ -4,17 +4,25 @@ import 'react-table/react-table.css';
 
 const DistributionOfRisk = (props) => {
   const { riskIntervalList } = props;
+  const riskData = [];
+  riskIntervalList.forEach((obj) => {
+    riskData.push({
+      interval: obj.interval,
+      recordsWithRiskWithinInteval: `${(obj.recordsWithRiskWithinInteval * 100).toFixed(2)} %`,
+      recordsWithMaxmalRiskWithinInterval: `${(obj.recordsWithMaxmalRiskWithinInterval * 100).toFixed(2)} %`,
+    });
+  });
 
   const columns = [{
     Header: 'Interval',
     accessor: 'interval',
   },
   {
-    Header: 'RecordsWithRisk',
+    Header: 'Records With Risk',
     accessor: 'recordsWithRiskWithinInteval',
   },
   {
-    Header: 'RecordsWithMaxmalRisk',
+    Header: 'Records With Maximal Risk',
     accessor: 'recordsWithMaxmalRiskWithinInterval',
   }];
 
@@ -22,7 +30,7 @@ const DistributionOfRisk = (props) => {
     <div>
       <h3>Risk Interval</h3>
       <ReactTable
-        data={riskIntervalList}
+        data={riskData}
         columns={columns}
         defaultPageSize={24}
       />
