@@ -1410,7 +1410,7 @@ body .blokk-xl {
 }
 .chevron--venstre.chevron--stor:after {
   transform: translateX(-3px) rotate(45deg);
-
+}
 body {
   margin: 0;
   padding: 0;
