@@ -5,14 +5,13 @@ const datasetWrapper = (props) => {
   let table;
 
   const {
-    dataset, attributes, setAttributes,
+    dataset, attributes,
   } = props;
 
   if (props.dataset) {
     table = (
       <Table
         dataset={dataset}
-        setAttributes={setAttributes}
         attributes={attributes}
       />
     );
