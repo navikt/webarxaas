@@ -28,12 +28,14 @@ function App() {
       <NavbarMain
         setAttributes={setAttributes}
         setDataset={setDataset}
-      />
-      <DatasetWrapper
-        endpoint={arxaasEndpoint}
+        setResponse={setResponse}
         attributes={attributes}
         dataset={dataset}
-        setResponse={setResponse}
+        endpoint={arxaasEndpoint}
+      />
+      <DatasetWrapper
+        attributes={attributes}
+        dataset={dataset}
       />
       {result}
     </div>
