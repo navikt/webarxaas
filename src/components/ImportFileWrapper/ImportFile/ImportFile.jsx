@@ -1,7 +1,7 @@
 import React from 'react';
-import ParseFile from '../../util/parseFile';
+import ParseFile from '../../../util/parseFile';
 
-const FileUpload = (props) => {
+const ImportFile = (props) => {
   const content = (
     <div align="center">
       <input
@@ -22,4 +22,4 @@ const FileUpload = (props) => {
   return content;
 };
 
-export default FileUpload;
+export default ImportFile;

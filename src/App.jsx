@@ -3,6 +3,7 @@ import './App.css';
 import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 import AnalysisResult from './components/AnalysisResult/AnalysisResult';
+import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
 
 function App() {
   const [dataset, setDataset] = useState('');
@@ -26,6 +27,10 @@ function App() {
   return (
     <div className="App">
       <NavbarMain
+        setAttributes={setAttributes}
+        setDataset={setDataset}
+      />
+      <ImportFileWrapper
         setAttributes={setAttributes}
         setDataset={setDataset}
       />
