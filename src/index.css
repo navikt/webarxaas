@@ -1422,3 +1422,11 @@ body {
 .risk-distribution-metrics {
   margin-top: 2em;
 }
+.dataset-container {
+  margin-top: 5em;
+}
+@media only screen and (max-width: 342px) {
+  .dataset-container {
+    margin-top: 8em;
+  }
+}
