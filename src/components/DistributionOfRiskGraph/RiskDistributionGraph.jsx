@@ -29,7 +29,7 @@ const RiskDistributionGraph = (props) => {
       <YAxis type="number" ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} datakey="risk" />
       <Tooltip />
       <Legend />
-      <Bar dataKey="risk" fill="#f54542" />
+      <Bar dataKey="risk" name="Percentage of Records" fill="#f54542" />
     </BarChart>
   );
   return content;
