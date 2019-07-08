@@ -9,6 +9,11 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
 
+  let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
+  if (process.env.NODE_ENV === 'production') {
+    arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
+  }
+
   let result = '';
   if (response) {
     result = (
@@ -16,11 +21,6 @@ function App() {
         response={response}
       />
     );
-  }
-
-  let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
-  if (process.env.NODE_ENV === 'production') {
-    arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
   }
 
   return (
