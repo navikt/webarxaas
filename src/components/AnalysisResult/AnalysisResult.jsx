@@ -31,11 +31,13 @@ const AnalysisResult = (props) => {
               <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
                 .riskIntervalList}
               />
-              <Ekspanderbartpanel tittel="More Information" border>
-                <DistributionOfRisk riskIntervalList={response.distributionOfRisk
-                  .riskIntervalList}
-                />
-              </Ekspanderbartpanel>
+              <div className="risk-distribution-metrics">
+                <Ekspanderbartpanel tittel="More Information" border>
+                  <DistributionOfRisk riskIntervalList={response.distributionOfRisk
+                    .riskIntervalList}
+                  />
+                </Ekspanderbartpanel>
+              </div>
             </Ekspanderbartpanel>
           </Col>
         </Row>
