@@ -1419,3 +1419,6 @@ body {
 .recharts-wrapper {
   margin: auto;
 }
+.risk-distribution-metrics {
+  margin-top: 2em;
+}
