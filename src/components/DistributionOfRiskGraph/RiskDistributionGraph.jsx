@@ -32,6 +32,7 @@ const RiskDistributionGraph = (props) => {
       <Bar dataKey="risk" name="Percentage of Records" fill="#f54542" />
     </BarChart>
   );
+  
   return content;
 };
 export default RiskDistributionGraph;
