@@ -3,6 +3,8 @@ import 'react-table/react-table.css';
 
 const ReIdentificationRisk = (props) => {
   const { reIdentificationRisk } = props;
+  const percent = 100;
+  const percentString = ' %';
 
   const content = (
     <div>
@@ -12,47 +14,81 @@ const ReIdentificationRisk = (props) => {
           <tbody>
             <tr>
               <td><b>Lowest risk: </b></td>
-              <td>{reIdentificationRisk.measures.lowest_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures.lowest_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Records affected by lowest risk: </b></td>
-              <td>{reIdentificationRisk.measures.records_affected_by_lowest_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .records_affected_by_lowest_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Average prosecutor risk: </b></td>
-              <td>{reIdentificationRisk.measures.average_prosecutor_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .average_prosecutor_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Highest prosecutor risk: </b></td>
-              <td>{reIdentificationRisk.measures.highest_prosecutor_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .highest_prosecutor_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Records affected by highest prosecutor risk: </b></td>
-              <td>{reIdentificationRisk.measures.records_affected_by_highest_prosecutor_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures.records_affected_by_highest_prosecutor_risk
+                    * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Prosecutor attacker success rate: </b></td>
               <td>
                 {
-                  reIdentificationRisk.attackerSuccessRate.successRates
-                    .Prosecutor_attacker_success_rate
+                  (reIdentificationRisk.attackerSuccessRate.successRates
+                    .Prosecutor_attacker_success_rate * percent).toFixed(2) + percentString
                 }
               </td>
             </tr>
             <tr>
               <td><b>Highest journalist risk: </b></td>
-              <td>{reIdentificationRisk.measures.highest_journalist_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .highest_journalist_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Records affected by highest journalist risk: </b></td>
-              <td>{reIdentificationRisk.measures.records_affected_by_highest_journalist_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures.records_affected_by_highest_journalist_risk
+                    * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Journalist attacker success rate: </b></td>
               <td>
                 {
-                  reIdentificationRisk.attackerSuccessRate.successRates
-                    .Journalist_attacker_success_rate
+                  (reIdentificationRisk.attackerSuccessRate.successRates
+                    .Journalist_attacker_success_rate * percent).toFixed(2)
                 }
               </td>
             </tr>
@@ -60,30 +96,55 @@ const ReIdentificationRisk = (props) => {
               <td><b>Marketer attacker success rate: </b></td>
               <td>
                 {
-                  reIdentificationRisk.attackerSuccessRate.successRates
-                    .Marketer_attacker_success_rate
+                  (reIdentificationRisk.attackerSuccessRate.successRates
+                    .Marketer_attacker_success_rate * percent).toFixed(2) + percentString
                 }
               </td>
             </tr>
             <tr>
               <td><b>Estimated prosecutor risk: </b></td>
-              <td>{reIdentificationRisk.measures.estimated_prosecutor_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .estimated_prosecutor_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Estimated journalist risk: </b></td>
-              <td>{reIdentificationRisk.measures.estimated_journalist_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .estimated_journalist_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Estimated marketer risk: </b></td>
-              <td>{reIdentificationRisk.measures.estimated_marketer_risk}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .estimated_marketer_risk * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Sample uniques: </b></td>
-              <td>{reIdentificationRisk.measures.sample_uniques}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .sample_uniques * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>population uniques: </b></td>
-              <td>{reIdentificationRisk.measures.population_uniques}</td>
+              <td>
+                {
+                  (reIdentificationRisk.measures
+                    .population_uniques * percent).toFixed(2) + percentString
+                }
+              </td>
             </tr>
             <tr>
               <td><b>Population model: </b></td>
