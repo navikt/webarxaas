@@ -10,8 +10,6 @@ const ReIdentificationRisk = (props) => {
     return (ratio * percent).toFixed(2) + percentString;
   };
 
-  const attackerSuccessRate = reIdentificationRisk.attackerSuccessRate.successRates;
-
   const content = (
     <div>
       <h3>Reidentification Risk</h3>
@@ -63,7 +61,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Prosecutor attacker success rate: </b></td>
               <td>
                 {
-                  toPercent(attackerSuccessRate.Prosecutor_attacker_success_rate)
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Prosecutor_attacker_success_rate)
                 }
               </td>
             </tr>
@@ -89,7 +88,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Journalist attacker success rate: </b></td>
               <td>
                 {
-                  toPercent(attackerSuccessRate.Journalist_attacker_success_rate)
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Journalist_attacker_success_rate)
                 }
               </td>
             </tr>
@@ -97,7 +97,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Marketer attacker success rate: </b></td>
               <td>
                 {
-                  toPercent(attackerSuccessRate.Marketer_attacker_success_rate)
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Marketer_attacker_success_rate)
                 }
               </td>
             </tr>
@@ -137,7 +138,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>population uniques: </b></td>
               <td>
                 {
-                  toPercent(reIdentificationRisk.measures.population_uniques)
+                  toPercent(reIdentificationRisk.measures
+                    .population_uniques)
                 }
               </td>
             </tr>
