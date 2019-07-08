@@ -18,7 +18,7 @@ const NavbarMain = (props) => {
   };
 
   const content = (
-    <Navbar bg="light" expand="lg">
+    <Navbar bg="light" expand="lg" fixed="top">
       <Navbar.Brand href="#home">Anonymization as a Service</Navbar.Brand>
       <FileUpload
         setAttributes={setAttributes}
