@@ -91,7 +91,9 @@ const ReIdentificationRisk = (props) => {
             </tr>
             <tr>
               <td><b>Quasi-identifiers</b></td>
-              <td>{reIdentificationRisk.quasiIdentifiers.toString()}</td>
+              <td>
+                {reIdentificationRisk.quasiIdentifiers.map(attribute => attribute.concat(', '))}
+              </td>
             </tr>
           </tbody>
         </table>
