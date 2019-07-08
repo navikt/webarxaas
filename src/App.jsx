@@ -34,6 +34,7 @@ function App() {
         endpoint={arxaasEndpoint}
       />
       <DatasetWrapper
+        setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
       />
