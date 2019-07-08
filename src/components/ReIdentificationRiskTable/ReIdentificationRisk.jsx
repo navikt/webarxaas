@@ -3,8 +3,12 @@ import 'react-table/react-table.css';
 
 const ReIdentificationRisk = (props) => {
   const { reIdentificationRisk } = props;
-  const percent = 100;
-  const percentString = ' %';
+
+  const toPercent = (ratio) => {
+    const percent = 100;
+    const percentString = ' %';
+    return (ratio * percent).toFixed(2) + percentString;
+  };
 
   const content = (
     <div>
@@ -16,7 +20,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Lowest risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures.lowest_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.lowest_risk)
                 }
               </td>
             </tr>
@@ -24,8 +28,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Records affected by lowest risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .records_affected_by_lowest_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.records_affected_by_lowest_risk)
                 }
               </td>
             </tr>
@@ -33,8 +36,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Average prosecutor risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .average_prosecutor_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.average_prosecutor_risk)
                 }
               </td>
             </tr>
@@ -42,8 +44,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Highest prosecutor risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .highest_prosecutor_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.highest_prosecutor_risk)
                 }
               </td>
             </tr>
@@ -51,8 +52,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Records affected by highest prosecutor risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures.records_affected_by_highest_prosecutor_risk
-                    * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures
+                    .records_affected_by_highest_prosecutor_risk)
                 }
               </td>
             </tr>
@@ -60,8 +61,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Prosecutor attacker success rate: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.attackerSuccessRate.successRates
-                    .Prosecutor_attacker_success_rate * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Prosecutor_attacker_success_rate)
                 }
               </td>
             </tr>
@@ -69,8 +70,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Highest journalist risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .highest_journalist_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures
+                    .highest_journalist_risk)
                 }
               </td>
             </tr>
@@ -78,8 +79,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Records affected by highest journalist risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures.records_affected_by_highest_journalist_risk
-                    * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures
+                    .records_affected_by_highest_journalist_risk)
                 }
               </td>
             </tr>
@@ -87,8 +88,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Journalist attacker success rate: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.attackerSuccessRate.successRates
-                    .Journalist_attacker_success_rate * percent).toFixed(2)
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Journalist_attacker_success_rate)
                 }
               </td>
             </tr>
@@ -96,8 +97,8 @@ const ReIdentificationRisk = (props) => {
               <td><b>Marketer attacker success rate: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.attackerSuccessRate.successRates
-                    .Marketer_attacker_success_rate * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Marketer_attacker_success_rate)
                 }
               </td>
             </tr>
@@ -105,8 +106,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Estimated prosecutor risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .estimated_prosecutor_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.estimated_prosecutor_risk)
                 }
               </td>
             </tr>
@@ -114,8 +114,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Estimated journalist risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .estimated_journalist_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.estimated_journalist_risk)
                 }
               </td>
             </tr>
@@ -123,8 +122,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Estimated marketer risk: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .estimated_marketer_risk * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.estimated_marketer_risk)
                 }
               </td>
             </tr>
@@ -132,8 +130,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>Sample uniques: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .sample_uniques * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.sample_uniques)
                 }
               </td>
             </tr>
@@ -141,8 +138,7 @@ const ReIdentificationRisk = (props) => {
               <td><b>population uniques: </b></td>
               <td>
                 {
-                  (reIdentificationRisk.measures
-                    .population_uniques * percent).toFixed(2) + percentString
+                  toPercent(reIdentificationRisk.measures.population_uniques)
                 }
               </td>
             </tr>
