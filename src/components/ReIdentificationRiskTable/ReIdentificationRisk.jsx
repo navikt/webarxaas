@@ -3,7 +3,6 @@ import 'react-table/react-table.css';
 
 const ReIdentificationRisk = (props) => {
   const { reIdentificationRisk } = props;
-  console.log(reIdentificationRisk);
 
   const content = (
     <div>
