@@ -22,7 +22,7 @@ const DistributionOfRisk = (props) => {
     accessor: 'recordsWithRiskWithinInteval',
   },
   {
-    Header: 'Records With Maxmal Risk',
+    Header: 'Records With Maximal Risk',
     accessor: 'recordsWithMaxmalRiskWithinInterval',
   }];
 
