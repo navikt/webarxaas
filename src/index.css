@@ -1419,11 +1419,3 @@ body {
 .recharts-wrapper {
   margin: auto;
 }
-.dataset-container {
-  margin-top: 5em;
-}
-@media only screen and (max-width: 342px) {
-  .dataset-container {
-    margin-top: 8em;
-  }
-}
