@@ -3,6 +3,7 @@ import 'react-table/react-table.css';
 
 const ReIdentificationRisk = (props) => {
   const { reIdentificationRisk } = props;
+  console.log(reIdentificationRisk);
 
   const content = (
     <div>
@@ -91,7 +92,9 @@ const ReIdentificationRisk = (props) => {
             </tr>
             <tr>
               <td><b>Quasi-identifiers</b></td>
-              <td>{reIdentificationRisk.quasiIdentifiers.toString()}</td>
+              <td>
+                {reIdentificationRisk.quasiIdentifiers.map(attribute => attribute.concat(', '))}
+              </td>
             </tr>
           </tbody>
         </table>
