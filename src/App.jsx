@@ -30,7 +30,7 @@ function App() {
   let moreInfo = '';
   if (showMoreInfo) {
     moreInfo = (
-      <div className="moreInfoWrapper">
+      <div className="more-info-wrapper">
         <MoreInfo />
       </div>
     );

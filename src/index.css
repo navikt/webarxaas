@@ -1648,14 +1648,14 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
-.moreInfoWrapper {
+.more-info-wrapper {
   margin-top: 4.5em;
 }
 .import-file-container {
   margin-top: 4em;
 }
 @media only screen and (max-width: 495px) {
-  .moreInfoWrapper {
+  .more-info-wrapper {
     margin-top: 7em;
   }
   .import-file-container {
