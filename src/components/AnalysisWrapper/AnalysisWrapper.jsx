@@ -8,7 +8,13 @@ import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph';
 
 const AnalysisWrapper = (props) => {
   const { response } = props;
-  const content = (
+  let content = '';
+
+  if (!response) {
+    return content;
+  }
+
+  content = (
     <div className="analysis-wrapper">
       <h4>Result</h4>
       <div className="analysis-result-wrapper">
@@ -46,6 +52,7 @@ const AnalysisWrapper = (props) => {
       <br />
     </div>
   );
+
   return content;
 };
 export default AnalysisWrapper;

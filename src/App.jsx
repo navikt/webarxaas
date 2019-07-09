@@ -18,15 +18,6 @@ function App() {
     arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
   }
 
-  let result = '';
-  if (response) {
-    result = (
-      <AnalysisWrapper
-        response={response}
-      />
-    );
-  }
-
   let moreInfo = '';
   if (showMoreInfo) {
     moreInfo = (
@@ -57,7 +48,9 @@ function App() {
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
       />
-      {result}
+      <AnalysisWrapper
+        response={response}
+      />
     </div>
   );
 }
