@@ -1,6 +1,5 @@
 import React from 'react';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
-import { Row, Col, Container } from 'reactstrap';
 import DistributionOfRisk from '../DistributionOfRiskTable/DistributionOfRisk';
 import ReIdentificationRisk from '../ReIdentificationRiskTable/ReIdentificationRisk';
 import RiskChart from '../ReIdentificationChart/RiskChart';
@@ -11,39 +10,33 @@ const AnalysisResult = (props) => {
   const content = (
     <div>
       <h4>Result</h4>
-      <Container>
-        <Row>
-          <Col sm={12}>
-            <RiskChart risk={
-              parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
+      <div className="analysis-result-wrapper">
+        <div className="risk-barometer">
+          <RiskChart risk={
+            parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
+          />
+        </div>
+        <Ekspanderbartpanel tittel="Risk Metrics" border>
+          <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
+        </Ekspanderbartpanel>
+
+        <h3>Distribution of risk graph</h3>
+
+        <Ekspanderbartpanel tittel="Distribution Of Risk" border>
+          <div className="risk-distribution-graph">
+            <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
+              .riskIntervalList}
             />
-          </Col>
-          <Col sm={12}>
-            <Ekspanderbartpanel tittel="Risk Metrics" border>
-              <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
+          </div>
+          <div className="risk-distribution-metrics">
+            <Ekspanderbartpanel tittel="More Information" border>
+              <DistributionOfRisk riskIntervalList={response.distributionOfRisk
+                .riskIntervalList}
+              />
             </Ekspanderbartpanel>
-          </Col>
-          <Col sm={12}>
-            <h3>Distribution of risk graph</h3>
-          </Col>
-          <Col sm={12}>
-            <Ekspanderbartpanel tittel="Distribution Of Risk" border>
-              <div className="risk-distribution-graph">
-                <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
-                  .riskIntervalList}
-                />
-              </div>
-              <div className="risk-distribution-metrics">
-                <Ekspanderbartpanel tittel="More Information" border>
-                  <DistributionOfRisk riskIntervalList={response.distributionOfRisk
-                    .riskIntervalList}
-                  />
-                </Ekspanderbartpanel>
-              </div>
-            </Ekspanderbartpanel>
-          </Col>
-        </Row>
-      </Container>
+          </div>
+        </Ekspanderbartpanel>
+      </div>
       <br />
     </div>
   );
