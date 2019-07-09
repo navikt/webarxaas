@@ -1,5 +1,5 @@
 import React from 'react';
-import MoreInfo from './MoreInfo/MoreInfo';
+import MoreInfo from './MoreInfo';
 
 const MoreInfoWrapper = (props) => {
   const { showMoreInfo } = props;

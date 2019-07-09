@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
-import NavbarMain from './components/navbar/navbarMain';
-import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
+import NavbarMain from './components/Navbar/NavbarMain';
+import TableWrapper from './components/TableWrapper/TableWrapper';
 import MoreInfoWrapper from './components/MoreInfoWrapper/MoreInfoWrapper';
 import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
@@ -34,7 +34,7 @@ function App() {
         setAttributes={setAttributes}
         setDataset={setDataset}
       />
-      <DatasetWrapper
+      <TableWrapper
         loadingDataset={loadingDataset}
         setLoadingAnalysis={setLoadingAnalysis}
         setAttributes={setAttributes}

@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import ReactTable from 'react-table';
-import 'react-table/react-table.css';
 import { Select } from 'nav-frontend-skjema';
-import HandleTypeSelect from '../../../util/handleTypeSelect';
+import HandleTypeSelect from '../../util/handleTypeSelect';
 
 const Table = React.memo(({ dataset, attributes, setAttributes }) => {
   const columns = Object.keys(dataset[0]).map((key, index) => ({
@@ -30,7 +29,7 @@ const Table = React.memo(({ dataset, attributes, setAttributes }) => {
   const data = dataset.slice(1);
 
   const content = (
-    <div align="center">
+    <div className="table-container">
       <ReactTable
         data={data}
         columns={columns}
