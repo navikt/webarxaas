@@ -3,11 +3,13 @@ import './App.css';
 import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 import AnalysisResult from './components/AnalysisResult/AnalysisResult';
+import MoreInfo from './components/MoreInfo/MoreInfo';
 
 function App() {
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
 
   let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
   if (process.env.NODE_ENV === 'production') {
@@ -23,8 +25,16 @@ function App() {
     );
   }
 
+  let moreInfo = '';
+  if (showMoreInfo) {
+    moreInfo = (
+      <MoreInfo />
+    );
+  }
+
   return (
     <div className="App">
+
       <NavbarMain
         setAttributes={setAttributes}
         setDataset={setDataset}
@@ -32,7 +42,9 @@ function App() {
         attributes={attributes}
         dataset={dataset}
         endpoint={arxaasEndpoint}
+        setShowMoreInfo={setShowMoreInfo}
       />
+      {moreInfo}
       <DatasetWrapper
         setAttributes={setAttributes}
         attributes={attributes}

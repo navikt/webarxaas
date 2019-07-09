@@ -4,10 +4,11 @@ import FileUpload from './fileUpload';
 import ArxRequest from '../../util/arxRequest';
 import BuildPayload from '../../util/buildPayload';
 import AnalyzeButton from './analyzeButton';
+import MoreInfoButton from './MoreInfoButton';
 
 const NavbarMain = (props) => {
   const {
-    setAttributes, setDataset, endpoint, dataset, attributes, setResponse,
+    setAttributes, setDataset, endpoint, dataset, attributes, setResponse, setShowMoreInfo,
   } = props;
 
   const handleRequest = (e, service) => {
@@ -27,6 +28,9 @@ const NavbarMain = (props) => {
       />
       <AnalyzeButton
         handleRequest={handleRequest}
+      />
+      <MoreInfoButton
+        setShowMoreInfo={setShowMoreInfo}
       />
     </Navbar>
   );
