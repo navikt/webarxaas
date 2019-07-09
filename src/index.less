@@ -3,7 +3,7 @@
 @import '~nav-frontend-ekspanderbartpanel-style';
 @import '~nav-frontend-chevron-style';
 @import '~nav-frontend-toggle-style';
-
+@import '~nav-frontend-spinner-style';
 
 body {
   margin: 0;
@@ -12,8 +12,16 @@ body {
   font-family: sans-serif;
 }
 
+.dataset-container {
+  margin-top: 2em;
+}
+
 .recharts-wrapper {
   margin: auto;
+}
+
+.analysis-wrapper {
+  margin-top:2em;
 }
 
 .risk-distribution-metrics{
@@ -25,12 +33,18 @@ body {
   overflow-x: auto;
 }
 
-.dataset-container {
+.import-file-container {
   margin-top: 5em;
 }
 
 @media only screen and (max-width: 342px) {
-  .dataset-container {
+  .import-file-container {
     margin-top: 8em;
   }
+}
+
+.risk-barometer {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  overflow-x: auto;
 }

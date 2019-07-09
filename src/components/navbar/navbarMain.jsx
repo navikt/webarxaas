@@ -18,6 +18,7 @@ const NavbarMain = (props) => {
     }
   };
 
+const NavbarMain = () => {
   const content = (
     <Navbar bg="light" expand="lg" fixed="top">
       <Navbar.Brand href="#home">Anonymization as a Service</Navbar.Brand>

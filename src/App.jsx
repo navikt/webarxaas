@@ -4,8 +4,11 @@ import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
 import AnalysisResult from './components/AnalysisResult/AnalysisResult';
 import MoreInfo from './components/MoreInfo/MoreInfo';
+import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
+import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
 
 function App() {
+  const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
@@ -19,7 +22,7 @@ function App() {
   let result = '';
   if (response) {
     result = (
-      <AnalysisResult
+      <AnalysisWrapper
         response={response}
       />
     );
@@ -44,11 +47,20 @@ function App() {
         endpoint={arxaasEndpoint}
         setShowMoreInfo={setShowMoreInfo}
       />
+      <ImportFileWrapper
+        loadingDataset={loadingDataset}
+        setLoadingDataset={setLoadingDataset}
+        setAttributes={setAttributes}
+        setDataset={setDataset}
+      />
       {moreInfo}
       <DatasetWrapper
+        loadingDataset={loadingDataset}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
+        setResponse={setResponse}
+        endpoint={arxaasEndpoint}
       />
       {result}
     </div>

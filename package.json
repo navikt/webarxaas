@@ -19,6 +19,8 @@
     "nav-frontend-paneler-style": "^0.3.15",
     "nav-frontend-skjema": "^1.0.67",
     "nav-frontend-skjema-style": "^1.0.40",
+    "nav-frontend-spinner": "^1.0.18",
+    "nav-frontend-spinner-style": "^0.2.5",
     "nav-frontend-toggle": "0.0.23",
     "nav-frontend-toggle-style": "0.0.22",
     "nav-frontend-typografi": "^2.0.12",
