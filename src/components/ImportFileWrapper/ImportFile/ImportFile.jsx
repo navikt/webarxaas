@@ -14,7 +14,7 @@ const ImportFile = (props) => {
         className="input-file knapp knapp--standard"
         onChange={
           (e) => {
-            props.setLoadingDataset(true);
+            setLoadingDataset(true);
             ParseFile(
               e.target.files[0],
               setAttributes,

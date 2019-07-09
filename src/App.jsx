@@ -8,6 +8,7 @@ import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper'
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
+  const [loadingAnalysis, setLoadingAnalysis] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
@@ -16,15 +17,6 @@ function App() {
   let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
   if (process.env.NODE_ENV === 'production') {
     arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
-  }
-
-  let result = '';
-  if (response) {
-    result = (
-      <AnalysisWrapper
-        response={response}
-      />
-    );
   }
 
   let moreInfo = '';
@@ -51,13 +43,17 @@ function App() {
       />
       <DatasetWrapper
         loadingDataset={loadingDataset}
+        setLoadingAnalysis={setLoadingAnalysis}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
       />
-      {result}
+      <AnalysisWrapper
+        response={response}
+        loadingAnalysis={loadingAnalysis}
+      />
     </div>
   );
 }

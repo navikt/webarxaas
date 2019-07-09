@@ -2,22 +2,13 @@ import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton';
-import ArxRequest from '../../util/arxRequest';
-import BuildPayload from '../../util/buildPayload';
 
 const datasetWrapper = (props) => {
-  let content;
-
   const {
-    loadingDataset, setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
   } = props;
 
-  const handleRequest = (e, service) => {
-    if (dataset && attributes) {
-      const payload = BuildPayload(dataset, attributes);
-      ArxRequest(endpoint, payload, service, setResponse);
-    }
-  };
+  let content = '';
 
   if (loadingDataset) {
     content = (
@@ -34,12 +25,14 @@ const datasetWrapper = (props) => {
           attributes={attributes}
         />
         <AnalyzeButton
-          handleRequest={handleRequest}
+          setLoadingAnalysis={setLoadingAnalysis}
+          dataset={dataset}
+          attributes={attributes}
+          endpoint={endpoint}
+          setResponse={setResponse}
         />
       </div>
     );
-  } else {
-    content = '';
   }
 
   return content;
