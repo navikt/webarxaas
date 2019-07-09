@@ -5,11 +5,13 @@ const MoreInfoButton = (props) => {
   const { setShowMoreInfo } = props;
 
   const content = (
-    <ToggleKnapp
-      onClick={(e, pressed) => setShowMoreInfo(pressed)}
-    >
-      Toggle Help
-    </ToggleKnapp>
+    <div className="info-button">
+      <ToggleKnapp
+        onClick={(e, pressed) => setShowMoreInfo(pressed)}
+      >
+        Toggle Help
+      </ToggleKnapp>
+    </div>
   );
 
 
