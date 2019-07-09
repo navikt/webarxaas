@@ -1,4 +1,5 @@
 import React from 'react';
+import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import DistributionOfRisk from '../DistributionOfRiskTable/DistributionOfRisk';
 import ReIdentificationRisk from '../ReIdentificationRiskTable/ReIdentificationRisk';
@@ -16,23 +17,31 @@ const AnalysisResult = (props) => {
             parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
           />
         </div>
-        <Ekspanderbartpanel tittel="Risk Metrics" border>
-          <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
-        </Ekspanderbartpanel>
-        <Ekspanderbartpanel tittel="Distribution Of Risk" border>
-          <div className="risk-distribution-graph">
-            <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
-              .riskIntervalList}
-            />
-          </div>
-          <div className="risk-distribution-metrics">
-            <Ekspanderbartpanel tittel="More Information" border>
-              <DistributionOfRisk riskIntervalList={response.distributionOfRisk
-                .riskIntervalList}
-              />
-            </Ekspanderbartpanel>
-          </div>
-        </Ekspanderbartpanel>
+        <Container>
+          <Row>
+            <Col sm={12}>
+              <Ekspanderbartpanel tittel="Risk Metrics" border>
+                <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
+              </Ekspanderbartpanel>
+            </Col>
+            <Col sm={12}>
+              <Ekspanderbartpanel tittel="Distribution Of Risk" border>
+                <div className="risk-distribution-graph">
+                  <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
+                    .riskIntervalList}
+                  />
+                </div>
+                <div className="risk-distribution-metrics">
+                  <Ekspanderbartpanel tittel="More Information" border>
+                    <DistributionOfRisk riskIntervalList={response.distributionOfRisk
+                      .riskIntervalList}
+                    />
+                  </Ekspanderbartpanel>
+                </div>
+              </Ekspanderbartpanel>
+            </Col>
+          </Row>
+        </Container>
       </div>
       <br />
     </div>
