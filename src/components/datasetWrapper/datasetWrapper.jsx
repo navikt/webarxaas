@@ -13,7 +13,7 @@ const datasetWrapper = (props) => {
   const handleRequest = (e, service) => {
     if (dataset && attributes) {
       const payload = BuildPayload(dataset, attributes);
-      ArxRequest(endpoint, payload, service, setResponse);
+      ArxRequest(setLoadingAnalysis, endpoint, payload, service, setResponse);
     }
   };
 

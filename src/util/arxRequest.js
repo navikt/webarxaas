@@ -1,4 +1,4 @@
-export default function ArxRequest(endpoint, payload, service, setResponse) {
+export default function ArxRequest(setLoadingAnalysis, endpoint, payload, service, setResponse) {
   fetch(`${endpoint}/api/${service}`, {
     crossDomain: true,
     method: 'post',
@@ -8,5 +8,6 @@ export default function ArxRequest(endpoint, payload, service, setResponse) {
     },
   }).then(response => (response.json())).then((data) => {
     setResponse(data);
+    setLoadingAnalysis(false);
   });
 }
