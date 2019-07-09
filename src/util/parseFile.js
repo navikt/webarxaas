@@ -3,7 +3,6 @@ import papaparse from 'papaparse';
 export default function ParseFile(
   file, setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
 ) {
-  console.log(file);
   if (file) {
     papaparse.parse(file, {
       complete(results) {
