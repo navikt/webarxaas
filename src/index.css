@@ -1642,6 +1642,11 @@ body .blokk-xl {
     stroke-dashoffset: -120px;
   }
 }
+.info-button {
+  position: absolute;
+  right: 0;
+  margin-right: 1em;
+}
 body {
   margin: 0;
   margin-top: 2em;

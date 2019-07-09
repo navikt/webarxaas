@@ -1,13 +1,12 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import { Select } from 'nav-frontend-skjema';
 import HandleTypeSelect from '../../../util/handleTypeSelect';
 
-const Table = (props) => {
-  const { attributes, setAttributes } = props;
-
-  const columns = Object.keys(props.dataset[0]).map((key, index) => ({
+const Table = React.memo(({ dataset, attributes, setAttributes }) => {
+  const columns = Object.keys(dataset[0]).map((key, index) => ({
     Header:
       // eslint-disable-next-line react/jsx-indent
       <div>
@@ -22,13 +21,13 @@ const Table = (props) => {
           <option value="SENSITIVE">Sensitive</option>
           <option value="IDENTIFYING">Identifying</option>
         </Select>
-        {props.dataset[0][key]}
+        {dataset[0][key]}
       </div>,
     accessor: key,
     width: 164,
   }));
 
-  const data = props.dataset.slice(1);
+  const data = dataset.slice(1);
 
   const content = (
     <div align="center">
@@ -42,6 +41,6 @@ const Table = (props) => {
   );
 
   return content;
-};
+});
 
 export default Table;
