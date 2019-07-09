@@ -9,7 +9,7 @@ import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph';
 
 const AnalysisWrapper = (props) => {
   const { loadingAnalysis, response } = props;
-  let content;
+  let content = '';
 
   if (loadingAnalysis) {
     content = (
@@ -17,9 +17,7 @@ const AnalysisWrapper = (props) => {
         <NavFrontendSpinner transparent />
       </div>
     );
-  } else if (!response) {
-    content = '';
-  } else {
+  } else if (response) {
     content = (
       <div className="analysis-wrapper">
         <h4>Result</h4>
