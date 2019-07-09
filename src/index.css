@@ -1652,14 +1652,14 @@ body {
   margin-top: 4.5em;
 }
 .import-file-container {
-  margin-top: 4em;
+  margin-top: 4.5em;
 }
-@media only screen and (max-width: 495px) {
+@media only screen and (max-width: 510px) {
   .more-info-wrapper {
     margin-top: 7em;
   }
   .import-file-container {
-    margin-top: 6em;
+    margin-top: 7em;
   }
 }
 .dataset-container {
