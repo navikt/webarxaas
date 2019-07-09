@@ -25,6 +25,7 @@ const Table = (props) => {
         {props.dataset[0][key]}
       </div>,
     accessor: key,
+    width: 164,
   }));
 
   const data = props.dataset.slice(1);
