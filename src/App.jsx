@@ -6,6 +6,7 @@ import AnalysisResult from './components/AnalysisResult/AnalysisResult';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
 
 function App() {
+  const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
@@ -31,10 +32,13 @@ function App() {
         setDataset={setDataset}
       />
       <ImportFileWrapper
+        loadingDataset={loadingDataset}
+        setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
       />
       <DatasetWrapper
+        loadingDataset={loadingDataset}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}

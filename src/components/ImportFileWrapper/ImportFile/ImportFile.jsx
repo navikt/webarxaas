@@ -3,18 +3,22 @@ import ParseFile from '../../../util/parseFile';
 
 const ImportFile = (props) => {
   const content = (
-    <div align="center">
+    <div>
       <input
         type="file"
         id="file"
         className="input-file knapp knapp--standard"
         onChange={
-          e => ParseFile(
-            e.target.files[0],
-            props.setAttributes,
-            props.setDataset,
-            props.defaultAttributeType,
-          )
+          (e) => {
+            props.setLoadingDataset(true);
+            ParseFile(
+              e.target.files[0],
+              props.setAttributes,
+              props.setDataset,
+              props.defaultAttributeType,
+              props.setLoadingDataset,
+            );
+          }
         }
       />
     </div>

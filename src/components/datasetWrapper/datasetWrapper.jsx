@@ -1,4 +1,5 @@
 import React from 'react';
+import NavFrontendSpinner from 'nav-frontend-spinner';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton';
 import ArxRequest from '../../util/arxRequest';
@@ -8,7 +9,7 @@ const datasetWrapper = (props) => {
   let content;
 
   const {
-    setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setAttributes, dataset, attributes, endpoint, setResponse,
   } = props;
 
   const handleRequest = (e, service) => {
@@ -18,7 +19,9 @@ const datasetWrapper = (props) => {
     }
   };
 
-  if (props.dataset) {
+  if (loadingDataset) {
+    content = <NavFrontendSpinner transparent />;
+  } else if (dataset) {
     content = (
       <div className="dataset-container">
         <Table

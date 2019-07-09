@@ -1,6 +1,8 @@
 import papaparse from 'papaparse';
 
-export default function ParseFile(file, setAttributes, setDataset, defaultAttributeType) {
+export default function ParseFile(
+  file, setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
+) {
   if (file) {
     papaparse.parse(file, {
       complete(results) {
@@ -9,6 +11,7 @@ export default function ParseFile(file, setAttributes, setDataset, defaultAttrib
           const attributeTypeModel = defaultAttributeType;
           setAttributes(headers.map(field => ({ field, attributeTypeModel })));
           setDataset(results.data);
+          setLoadingDataset(false);
         }
       },
     });
