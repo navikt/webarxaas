@@ -1411,6 +1411,168 @@ body .blokk-xl {
 .chevron--venstre.chevron--stor:after {
   transform: translateX(-3px) rotate(45deg);
 }
+.toggleKnapp {
+  display: inline-block;
+  font-weight: 600;
+  font-family: 'Source Sans Pro', Arial, sans-serif;
+  font-size: 1em;
+  white-space: nowrap;
+  border-radius: 0.125em;
+  cursor: pointer;
+  user-select: none;
+  letter-spacing: 0.0625em;
+  line-height: 1.375rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: transparent;
+  padding: calc(.475rem - 1px) 2.5rem calc(.525rem - 1px) 2.5rem;
+  border: 2px solid #0067C5;
+  color: #0067C5;
+  transform: translateY(-2px);
+  position: relative;
+  box-shadow: 0 2px 0 #C6C2BF;
+  z-index: 2;
+}
+.toggleKnapp:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px #254b6d;
+}
+.toggleKnapp:visited {
+  color: #0067C5;
+}
+.toggleKnapp:hover {
+  background-color: #0067C5;
+  color: #FFF;
+}
+.toggleKnapp:active {
+  background-color: #005B82;
+  border-color: #005B82;
+  color: #FFF;
+}
+.toggleKnapp:disabled,
+.toggleKnapp--disabled {
+  background-color: #B7B1A9;
+  border-color: #B7B1A9;
+  color: #FFF;
+  box-shadow: none;
+  transform: none;
+  cursor: not-allowed;
+}
+.toggleKnapp:disabled:after,
+.toggleKnapp--disabled:after {
+  display: none;
+}
+.toggleKnapp:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -3px;
+  height: 1px;
+  border-radius: 0.125rem;
+  background: rgba(0, 0, 0, 0.25);
+  transform: translateY(-1px);
+}
+.toggleKnapp:before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: -4px;
+  height: 2px;
+}
+.toggleKnapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 3px 0 #d2cfcc;
+}
+.toggleKnapp:hover:before {
+  bottom: -5px;
+  height: 3px;
+}
+.toggleKnapp:active,
+.toggleKnapp--active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.toggleKnapp:active:after,
+.toggleKnapp--active:after,
+.toggleKnapp:active:before,
+.toggleKnapp--active:before {
+  display: none;
+}
+.toggleKnapp svg g {
+  fill: #005B82;
+  border-color: #005B82;
+  stroke: #005B82;
+}
+.toggleKnapp:after {
+  display: none;
+}
+.toggleKnapp:hover {
+  border-color: #0074df;
+  background-color: #0074df;
+}
+.toggleKnapp:hover:after {
+  display: block;
+}
+.toggleKnapp:hover svg g {
+  fill: white;
+  border-color: white;
+  stroke: white;
+}
+.toggleKnapp--pressed {
+  box-shadow: none;
+  transform: translateY(0);
+  border-color: #005B82;
+  background-color: #005B82;
+  color: #FFF;
+}
+.toggleKnapp--pressed svg g {
+  fill: #FFF;
+  border-color: #FFF;
+  stroke: #FFF;
+}
+.toggleKnapp--pressed:hover,
+.toggleKnapp--pressed:active {
+  box-shadow: none;
+  transform: translateY(0);
+  background-color: #254652;
+  border-color: #254652;
+}
+.toggleKnapp--pressed:after,
+.toggleKnapp--pressed:before {
+  display: none;
+}
+.toggleKnapp--kompakt {
+  padding: 0.5rem 1rem;
+}
+.toggleGruppe {
+  padding: 0 1px;
+}
+.toggleGruppe .toggleKnapp {
+  border-radius: 0;
+  margin: 0 -1px;
+}
+.toggleGruppe .toggleKnapp:first-child {
+  border-top-left-radius: 0.125rem;
+  border-bottom-left-radius: 0.125rem;
+}
+.toggleGruppe .toggleKnapp:last-child {
+  border-top-right-radius: 0.125rem;
+  border-bottom-right-radius: 0.125rem;
+}
+.toggleGruppe .toggleKnapp:hover {
+  z-index: 3;
+}
+.toggleGruppe .toggleKnapp--pressed {
+  z-index: 1;
+}
+.toggleGruppe .toggleKnapp--pressed:hover,
+.toggleGruppe .toggleKnapp--pressed:active {
+  z-index: auto;
+}
 .spinner {
   display: inline-block;
   position: relative;
@@ -1482,8 +1644,23 @@ body .blokk-xl {
 }
 body {
   margin: 0;
+  margin-top: 2em;
   padding: 0;
   font-family: sans-serif;
+}
+.more-info-wrapper {
+  margin-top: 4.5em;
+}
+.import-file-container {
+  margin-top: 4em;
+}
+@media only screen and (max-width: 495px) {
+  .more-info-wrapper {
+    margin-top: 7em;
+  }
+  .import-file-container {
+    margin-top: 6em;
+  }
 }
 .dataset-container {
   margin-top: 2em;
@@ -1500,14 +1677,6 @@ body {
 .risk-distribution-graph {
   width: auto;
   overflow-x: auto;
-}
-.import-file-container {
-  margin-top: 5em;
-}
-@media only screen and (max-width: 342px) {
-  .import-file-container {
-    margin-top: 8em;
-  }
 }
 .risk-barometer {
   margin-top: 1em;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
+import MoreInfo from './components/MoreInfo/MoreInfo';
 import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
 
@@ -10,6 +11,7 @@ function App() {
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
+  const [showMoreInfo, setShowMoreInfo] = useState(false);
 
   let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
   if (process.env.NODE_ENV === 'production') {
@@ -25,12 +27,22 @@ function App() {
     );
   }
 
+  let moreInfo = '';
+  if (showMoreInfo) {
+    moreInfo = (
+      <div className="more-info-wrapper">
+        <MoreInfo />
+      </div>
+    );
+  }
+
   return (
     <div className="App">
+
       <NavbarMain
-        setAttributes={setAttributes}
-        setDataset={setDataset}
+        setShowMoreInfo={setShowMoreInfo}
       />
+      {moreInfo}
       <ImportFileWrapper
         loadingDataset={loadingDataset}
         setLoadingDataset={setLoadingDataset}
