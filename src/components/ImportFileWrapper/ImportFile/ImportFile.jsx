@@ -2,6 +2,10 @@ import React from 'react';
 import ParseFile from '../../../util/parseFile';
 
 const ImportFile = (props) => {
+  const {
+    setLoadingDataset, setAttributes, setDataset, defaultAttributeType,
+  } = props;
+
   const content = (
     <div>
       <input
@@ -13,10 +17,10 @@ const ImportFile = (props) => {
             props.setLoadingDataset(true);
             ParseFile(
               e.target.files[0],
-              props.setAttributes,
-              props.setDataset,
-              props.defaultAttributeType,
-              props.setLoadingDataset,
+              setAttributes,
+              setDataset,
+              defaultAttributeType,
+              setLoadingDataset,
             );
           }
         }
