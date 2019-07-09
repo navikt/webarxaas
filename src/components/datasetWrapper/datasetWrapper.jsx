@@ -6,10 +6,8 @@ import ArxRequest from '../../util/arxRequest';
 import BuildPayload from '../../util/buildPayload';
 
 const datasetWrapper = (props) => {
-  let content;
-
   const {
-    loadingDataset, setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
   } = props;
 
   const handleRequest = (e, service) => {
@@ -18,6 +16,8 @@ const datasetWrapper = (props) => {
       ArxRequest(endpoint, payload, service, setResponse);
     }
   };
+
+  let content;
 
   if (loadingDataset) {
     content = (
@@ -34,6 +34,7 @@ const datasetWrapper = (props) => {
           attributes={attributes}
         />
         <AnalyzeButton
+          setLoadingAnalysis={setLoadingAnalysis}
           handleRequest={handleRequest}
         />
       </div>

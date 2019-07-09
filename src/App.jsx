@@ -8,6 +8,7 @@ import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper'
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
+  const [loadingAnalysis, setLoadingAnalysis] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
@@ -42,6 +43,7 @@ function App() {
       />
       <DatasetWrapper
         loadingDataset={loadingDataset}
+        setLoadingAnalysis={setLoadingAnalysis}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
@@ -50,6 +52,7 @@ function App() {
       />
       <AnalysisWrapper
         response={response}
+        loadingAnalysis={loadingAnalysis}
       />
     </div>
   );
