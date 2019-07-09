@@ -3,6 +3,7 @@ import papaparse from 'papaparse';
 export default function ParseFile(
   file, setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
 ) {
+  console.log(file);
   if (file) {
     papaparse.parse(file, {
       complete(results) {
@@ -14,6 +15,11 @@ export default function ParseFile(
           setLoadingDataset(false);
         }
       },
+      error() {
+        setLoadingDataset(false);
+      },
     });
+  } else {
+    setLoadingDataset(false);
   }
 }
