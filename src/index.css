@@ -1572,7 +1572,7 @@ body .blokk-xl {
 .toggleGruppe .toggleKnapp--pressed:hover,
 .toggleGruppe .toggleKnapp--pressed:active {
   z-index: auto;
-=======
+}
 .spinner {
   display: inline-block;
   position: relative;

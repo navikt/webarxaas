@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './App.css';
 import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
-import AnalysisResult from './components/AnalysisResult/AnalysisResult';
 import MoreInfo from './components/MoreInfo/MoreInfo';
 import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
@@ -39,21 +38,15 @@ function App() {
     <div className="App">
 
       <NavbarMain
-        setAttributes={setAttributes}
-        setDataset={setDataset}
-        setResponse={setResponse}
-        attributes={attributes}
-        dataset={dataset}
-        endpoint={arxaasEndpoint}
         setShowMoreInfo={setShowMoreInfo}
       />
+      {moreInfo}
       <ImportFileWrapper
         loadingDataset={loadingDataset}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
       />
-      {moreInfo}
       <DatasetWrapper
         loadingDataset={loadingDataset}
         setAttributes={setAttributes}
