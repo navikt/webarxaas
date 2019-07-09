@@ -12,8 +12,8 @@ const RiskChart = (props) => {
 
   const content = (
     <BarChart
-      width={500}
-      height={100}
+      width={1000}
+      height={150}
       layout="vertical"
       data={riskData}
       margin={{
@@ -21,11 +21,11 @@ const RiskChart = (props) => {
       }}
     >
       <CartesianGrid strokeDasharray="3 3" horizontalPoints={[20]} />
-      <XAxis type="number" ticks={[0, 25, 50, 75, 100]} />
-      <YAxis type="category" dataKey="name" />
+      <XAxis type="number" ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} />
+      <YAxis type="category" />
       <Tooltip />
       <Legend />
-      <Bar dataKey="risk" fill="#f54542" />
+      <Bar dataKey="risk" fill="#f54542" barSize={40} name="Prosecutor Risk" />
     </BarChart>
   );
   return content;
