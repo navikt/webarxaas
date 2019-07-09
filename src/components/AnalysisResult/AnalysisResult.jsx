@@ -8,7 +8,7 @@ import RiskDistributionGraph from '../DistributionOfRiskGraph/RiskDistributionGr
 const AnalysisResult = (props) => {
   const { response } = props;
   const content = (
-    <div>
+    <div className="analysis-wrapper">
       <h4>Result</h4>
       <div className="analysis-result-wrapper">
         <div className="risk-barometer">
@@ -19,9 +19,6 @@ const AnalysisResult = (props) => {
         <Ekspanderbartpanel tittel="Risk Metrics" border>
           <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
         </Ekspanderbartpanel>
-
-        <h3>Distribution of risk graph</h3>
-
         <Ekspanderbartpanel tittel="Distribution Of Risk" border>
           <div className="risk-distribution-graph">
             <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
