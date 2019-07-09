@@ -3,12 +3,13 @@ import ImportFile from './ImportFile/ImportFile';
 
 const ImportFileWrapper = (props) => {
   const {
-    setAttributes, setDataset,
+    setLoadingDataset, setAttributes, setDataset,
   } = props;
 
   const content = (
     <div className="import-file-container">
       <ImportFile
+        setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
         defaultAttributeType="QUASIIDENTIFYING"
