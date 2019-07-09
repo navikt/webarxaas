@@ -2,7 +2,7 @@ import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTable';
-import ReIdentificationRisk from './ReIdentificationRisk/ReIdentificationRisk';
+import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable';
 import RiskChart from './ReIdentificationRisk/RiskChart';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph';
 
@@ -21,7 +21,7 @@ const AnalysisWrapper = (props) => {
           <Row>
             <Col sm={12}>
               <Ekspanderbartpanel tittel="Risk Metrics" border>
-                <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
+                <ReIdentificationRiskTable reIdentificationRisk={response.reIdentificationRisk} />
               </Ekspanderbartpanel>
             </Col>
             <Col sm={12}>

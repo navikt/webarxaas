@@ -1,7 +1,7 @@
 import React from 'react';
 import 'react-table/react-table.css';
 
-const ReIdentificationRisk = (props) => {
+const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
 
   const toPercent = (ratio) => {
@@ -161,4 +161,4 @@ const ReIdentificationRisk = (props) => {
   return content;
 };
 
-export default ReIdentificationRisk;
+export default ReIdentificationRiskTable;
