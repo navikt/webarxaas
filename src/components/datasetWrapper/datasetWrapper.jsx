@@ -20,7 +20,11 @@ const datasetWrapper = (props) => {
   };
 
   if (loadingDataset) {
-    content = <NavFrontendSpinner transparent />;
+    content = (
+      <div className="dataset-container">
+        <NavFrontendSpinner transparent />
+      </div>
+    );
   } else if (dataset) {
     content = (
       <div className="dataset-container">
