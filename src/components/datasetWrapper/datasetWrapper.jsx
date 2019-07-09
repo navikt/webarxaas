@@ -8,7 +8,7 @@ const datasetWrapper = (props) => {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
   } = props;
 
-  let content;
+  let content = '';
 
   if (loadingDataset) {
     content = (
@@ -33,8 +33,6 @@ const datasetWrapper = (props) => {
         />
       </div>
     );
-  } else {
-    content = '';
   }
 
   return content;
