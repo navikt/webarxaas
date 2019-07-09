@@ -1,12 +1,12 @@
 import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
-import DistributionOfRisk from '../DistributionOfRiskTable/DistributionOfRisk';
-import ReIdentificationRisk from '../ReIdentificationRiskTable/ReIdentificationRisk';
-import RiskChart from '../ReIdentificationChart/RiskChart';
-import RiskDistributionGraph from '../DistributionOfRiskGraph/RiskDistributionGraph';
+import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTable';
+import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable';
+import RiskChart from './ReIdentificationRisk/RiskChart';
+import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph';
 
-const AnalysisResult = (props) => {
+const AnalysisWrapper = (props) => {
   const { response } = props;
   const content = (
     <div className="analysis-wrapper">
@@ -21,7 +21,7 @@ const AnalysisResult = (props) => {
           <Row>
             <Col sm={12}>
               <Ekspanderbartpanel tittel="Risk Metrics" border>
-                <ReIdentificationRisk reIdentificationRisk={response.reIdentificationRisk} />
+                <ReIdentificationRiskTable reIdentificationRisk={response.reIdentificationRisk} />
               </Ekspanderbartpanel>
             </Col>
             <Col sm={12}>
@@ -33,7 +33,7 @@ const AnalysisResult = (props) => {
                 </div>
                 <div className="risk-distribution-metrics">
                   <Ekspanderbartpanel tittel="More Information" border>
-                    <DistributionOfRisk riskIntervalList={response.distributionOfRisk
+                    <DistributionOfRiskTable riskIntervalList={response.distributionOfRisk
                       .riskIntervalList}
                     />
                   </Ekspanderbartpanel>
@@ -48,4 +48,4 @@ const AnalysisResult = (props) => {
   );
   return content;
 };
-export default AnalysisResult;
+export default AnalysisWrapper;

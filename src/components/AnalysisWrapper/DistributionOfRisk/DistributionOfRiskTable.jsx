@@ -2,7 +2,7 @@ import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
-const DistributionOfRisk = (props) => {
+const DistributionOfRiskTable = (props) => {
   const { riskIntervalList } = props;
   const riskData = [];
   riskIntervalList.forEach((obj) => {
@@ -39,4 +39,4 @@ const DistributionOfRisk = (props) => {
   return content;
 };
 
-export default DistributionOfRisk;
+export default DistributionOfRiskTable;
