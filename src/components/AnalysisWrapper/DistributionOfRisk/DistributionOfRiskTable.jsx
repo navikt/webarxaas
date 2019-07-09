@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
+import toPercent from '../../../util/ratioToPercent';
 
 const DistributionOfRiskTable = (props) => {
   const { riskIntervalList } = props;
@@ -8,8 +9,8 @@ const DistributionOfRiskTable = (props) => {
   riskIntervalList.forEach((obj) => {
     riskData.push({
       interval: obj.interval,
-      recordsWithRiskWithinInteval: `${(obj.recordsWithRiskWithinInteval * 100).toFixed(2)} %`,
-      recordsWithMaxmalRiskWithinInterval: `${(obj.recordsWithMaxmalRiskWithinInterval * 100).toFixed(2)} %`,
+      recordsWithRiskWithinInteval: toPercent(obj.recordsWithRiskWithinInteval),
+      recordsWithMaxmalRiskWithinInterval: toPercent(obj.recordsWithMaxmalRiskWithinInterval),
     });
   });
 
