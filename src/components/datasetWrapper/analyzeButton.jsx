@@ -1,15 +1,19 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
+import handleRequest from '../../util/handleRequest';
 
 const AnalyzeButton = (props) => {
-  const { setLoadingAnalysis, handleRequest } = props;
+  const {
+    setLoadingAnalysis, dataset, attributes, endpoint, setResponse,
+  } = props;
+
   const content = (
     <div>
       <Knapp
         onClick={
-          (e) => {
+          () => {
             setLoadingAnalysis(true);
-            handleRequest(e, 'analyze');
+            handleRequest(setLoadingAnalysis, 'analyze', dataset, attributes, endpoint, setResponse);
           }
         }
       >
