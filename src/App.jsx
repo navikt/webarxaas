@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import NavbarMain from './components/navbar/navbarMain';
 import DatasetWrapper from './components/datasetWrapper/datasetWrapper';
-import AnalysisResult from './components/AnalysisResult/AnalysisResult';
+import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
   let result = '';
   if (response) {
     result = (
-      <AnalysisResult
+      <AnalysisWrapper
         response={response}
       />
     );
