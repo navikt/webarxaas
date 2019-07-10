@@ -1689,3 +1689,10 @@ body {
   margin-bottom: 1em;
   overflow-x: auto;
 }
+.more-info-content {
+  text-align: center;
+}
+.more-info-attribute {
+  display: inline-block;
+  text-align: left;
+}
