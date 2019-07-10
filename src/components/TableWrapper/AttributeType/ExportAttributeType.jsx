@@ -7,7 +7,7 @@ const ExportAttribute = (props) => {
   const handleExport = () => {
     const json = JSON.stringify(AttributeTypes);
     const element = document.createElement('a');
-    const jsonData = new Blob([json], { type: 'json' });
+    const jsonData = new Blob([json], { type: 'application/json' });
     element.href = URL.createObjectURL(jsonData);
     element.download = 'myAttributeTypes.json';
     document.body.appendChild(element); // Required for this to work on Firefox
