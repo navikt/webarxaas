@@ -4,7 +4,7 @@ import Table from './Table';
 import AnalyzeButton from './AnalyzeButton';
 import ExportAttribute from './AttributeType/ExportAttributeType';
 
-const datasetWrapper = (props) => {
+const TableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
   } = props;
@@ -40,4 +40,4 @@ const datasetWrapper = (props) => {
   return content;
 };
 
-export default datasetWrapper;
+export default TableWrapper;
