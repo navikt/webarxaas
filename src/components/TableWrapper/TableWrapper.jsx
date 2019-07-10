@@ -3,7 +3,7 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import Table from './Table';
 import AnalyzeButton from './AnalyzeButton';
 
-const datasetWrapper = (props) => {
+const TableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
   } = props;
@@ -38,4 +38,4 @@ const datasetWrapper = (props) => {
   return content;
 };
 
-export default datasetWrapper;
+export default TableWrapper;
