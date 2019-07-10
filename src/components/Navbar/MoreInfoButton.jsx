@@ -1,5 +1,5 @@
-import React from '../../../node_modules/react';
-import { ToggleKnapp } from '../../../node_modules/nav-frontend-toggle';
+import React from 'react';
+import { ToggleKnapp } from 'nav-frontend-toggle';
 
 const MoreInfoButton = (props) => {
   const { setShowMoreInfo } = props;
