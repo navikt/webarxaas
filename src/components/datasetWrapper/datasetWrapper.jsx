@@ -2,6 +2,7 @@ import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import Table from './table/table';
 import AnalyzeButton from './analyzeButton';
+import ExportAttribute from './AttributeType/ExportAttributeType';
 
 const datasetWrapper = (props) => {
   const {
@@ -19,6 +20,7 @@ const datasetWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="dataset-container">
+        <ExportAttribute AttributeTypes={attributes} />
         <Table
           setAttributes={setAttributes}
           dataset={dataset}
