@@ -13,13 +13,13 @@ const TableWrapper = (props) => {
 
   if (loadingDataset) {
     content = (
-      <div className="dataset-container">
+      <div className="table-wrapper">
         <NavFrontendSpinner transparent />
       </div>
     );
   } else if (dataset) {
     content = (
-      <div className="dataset-container">
+      <div className="table-wrapper">
         <ExportAttribute AttributeTypes={attributes} />
         <Table
           setAttributes={setAttributes}
