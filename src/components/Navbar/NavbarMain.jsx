@@ -1,5 +1,5 @@
-import React from 'react';
-import { Navbar } from 'react-bootstrap';
+import React from '../../../node_modules/react';
+import { Navbar } from '../../../node_modules/react-bootstrap';
 import MoreInfoButton from './MoreInfoButton';
 
 const NavbarMain = (props) => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import Table from './table/table';
-import AnalyzeButton from './analyzeButton';
+import Table from './Table';
+import AnalyzeButton from './AnalyzeButton';
 import ExportAttribute from './AttributeType/ExportAttributeType';
 
 const datasetWrapper = (props) => {

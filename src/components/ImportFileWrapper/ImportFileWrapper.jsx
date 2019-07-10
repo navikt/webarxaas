@@ -1,5 +1,5 @@
 import React from 'react';
-import ImportFile from './ImportFile/ImportFile';
+import ImportFile from './ImportFile';
 
 const ImportFileWrapper = (props) => {
   const {

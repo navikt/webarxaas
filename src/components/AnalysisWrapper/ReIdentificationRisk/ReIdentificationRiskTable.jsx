@@ -1,5 +1,4 @@
 import React from 'react';
-import 'react-table/react-table.css';
 import toPercent from '../../../util/ratioToPercent';
 
 const ReIdentificationRiskTable = (props) => {
