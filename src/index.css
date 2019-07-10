@@ -37,6 +37,7 @@ CLEARFIX
  */
 /* Document
    ========================================================================== */
+@import '~react-table/react-table.css';
 html {
   font-family: sans-serif;
   /* 1 */

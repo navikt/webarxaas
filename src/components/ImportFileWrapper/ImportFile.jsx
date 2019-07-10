@@ -1,5 +1,5 @@
 import React from 'react';
-import ParseFile from '../../../util/parseFile';
+import ParseFile from '../../util/parseFile';
 
 const ImportFile = (props) => {
   const {
