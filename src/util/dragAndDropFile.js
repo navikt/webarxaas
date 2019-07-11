@@ -10,19 +10,25 @@ export default function dragAndDropFile(
   }());
 
   // applying the effect for every form
-  const forms = document.querySelectorAll('.box');
+  const forms = document.querySelectorAll('.import-file-dataset-form');
   Array.prototype.forEach.call(forms, (form) => {
-    const input = form.querySelector('.input-file');
-    const triggerFileDrop = function () {
-      const event = document.createEvent('HTMLEvents');
-      event.initEvent('ondrop', true, false);
-      form.dispatchEvent(event);
-    };
+    const input = form.querySelector('.import-file-dataset-input');
 
     // drag&drop files if the feature is available
     if (isAdvancedUpload) {
       form.classList.add('has-advanced-upload'); // letting CSS know drag&drop is supported by the browser
 
+      form.addEventListener('drop', (e) => {
+        if (isAdvancedUpload) {
+          input.files = e.dataTransfer.files;
+          setLoadingDataset(true);
+          ParseFile(
+            input.files[0], setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
+          );
+        }
+      });
+
+      // css
       ['drag', 'dragstart', 'dragend', 'dragover', 'dragenter', 'dragleave', 'drop'].forEach((event) => {
         form.addEventListener(event, (e) => {
           // preventing unwanted behaviours
@@ -40,22 +46,7 @@ export default function dragAndDropFile(
           form.classList.remove('is-dragover');
         });
       });
-      form.addEventListener('drop', (e) => {
-        input.files = e.dataTransfer.files;
-        triggerFileDrop();
-      });
     }
-
-    // if the form was submitted
-    form.addEventListener('ondrop', (e) => {
-      // ajax file upload for modern browsers
-      if (isAdvancedUpload) {
-        setLoadingDataset(true);
-        ParseFile(
-          input.files[0], setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
-        );
-      }
-    });
 
     // Firefox focus bug fix for file input
     input.addEventListener('focus', () => { input.classList.add('has-focus'); });
