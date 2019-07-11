@@ -18,11 +18,11 @@ const ImportAttribute = (props) => {
     <div className="import-attribute-from-file">
       <label htmlFor="file">
         Import attributes from file
-      <input
-        className="import-attributes-button knapp knapp--standard"
-        type="file"
-        onChange={e => handleImport(e.target.files[0])}
-      />
+        <input
+          className="import-attributes-button knapp knapp--standard"
+          type="file"
+          onChange={e => handleImport(e.target.files[0])}
+        />
       </label>
     </div>
   );
