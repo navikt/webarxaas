@@ -7,7 +7,7 @@ const ImportFileWrapper = (props) => {
   } = props;
 
   const content = (
-    <div className="import-file-container">
+    <div className="import-file-wrapper">
       <ImportFile
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
