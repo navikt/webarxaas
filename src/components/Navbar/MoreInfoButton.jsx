@@ -9,7 +9,7 @@ const MoreInfoButton = (props) => {
       <ToggleKnapp
         onClick={(e, pressed) => setShowMoreInfo(pressed)}
       >
-        Toggle Help
+        More Info
       </ToggleKnapp>
     </div>
   );
