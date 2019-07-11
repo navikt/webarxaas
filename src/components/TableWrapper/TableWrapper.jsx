@@ -7,7 +7,7 @@ import ImportAttribute from './AttributeType/ImportAttributeType';
 
 const TableWrapper = (props) => {
   const {
-    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse, forceUpdate,
   } = props;
 
   let content = '';
@@ -29,6 +29,7 @@ const TableWrapper = (props) => {
           setAttributes={setAttributes}
           dataset={dataset}
           attributes={attributes}
+          forceUpdate={forceUpdate}
         />
         <AnalyzeButton
           setLoadingAnalysis={setLoadingAnalysis}

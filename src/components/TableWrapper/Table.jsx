@@ -4,21 +4,28 @@ import ReactTable from 'react-table';
 import { Select } from 'nav-frontend-skjema';
 import HandleTypeSelect from '../../util/handleTypeSelect';
 
-const Table = React.memo(({ dataset, attributes, setAttributes }) => {
+const Table = React.memo( ({ dataset, attributes, setAttributes, forceUpdate }) => {
+  console.log("Table rerendered")
+  console.log(attributes);
   const columns = Object.keys(dataset[0]).map((key, index) => ({
     Header:
       // eslint-disable-next-line react/jsx-indent
       <div>
         <Select
+          value={attributes[key].attributeTypeModel}
           label=""
           onChange={(e) => {
+            console.log(e);
             HandleTypeSelect(e.target, attributes[key].field, index, attributes, setAttributes);
+            setAttributes(attributes);
+            console.log(attributes);
+            forceUpdate(Math.random());
           }}
         >
-          <option value="QUASIIDENTIFYING">Quasi-identifying</option>
-          <option value="INSENSITIVE">Insensitive</option>
-          <option value="SENSITIVE">Sensitive</option>
-          <option value="IDENTIFYING">Identifying</option>
+          <option key="QUASIIDENTIFYING" value="QUASIIDENTIFYING">Quasi-identifying</option>
+          <option key="INSENSITIVE" value="INSENSITIVE">Insensitive</option>
+          <option key="SENSITIVE" value="SENSITIVE">Sensitive</option>
+          <option key="IDENTIFYING" value="IDENTIFYING">Identifying</option>
         </Select>
         {dataset[0][key]}
       </div>,

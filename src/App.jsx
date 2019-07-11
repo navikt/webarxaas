@@ -13,6 +13,7 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
+  const [, forceUpdate] = useState();
 
   let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
   if (process.env.NODE_ENV === 'production') {
@@ -42,6 +43,7 @@ function App() {
         dataset={dataset}
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
+        forceUpdate={forceUpdate}
       />
       <AnalysisWrapper
         response={response}
