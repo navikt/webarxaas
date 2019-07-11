@@ -14,8 +14,11 @@ const ImportAttribute = (props) => {
   };
 
   const content = (
-    <div>
-      <input type="file" onChange={e => handleImport(e.target.files[0])} />
+    <div className="import-attribute-from-file">
+      <label htmlFor="file">
+        Import attributes from file
+        <input type="file" onChange={e => handleImport(e.target.files[0])} />
+      </label>
     </div>
   );
   return content;
