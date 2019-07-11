@@ -13,6 +13,7 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
+  const [operation, setOperation] = useState('');
 
   let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
   if (process.env.NODE_ENV === 'production') {
@@ -42,8 +43,9 @@ function App() {
         dataset={dataset}
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
+        setOperation={setOperation}
       />
-      <ResultWrapper response={response} loadingAnalysis={loadingAnalysis} event="Analyze" />
+      <ResultWrapper response={response} loadingAnalysis={loadingAnalysis} operation={operation} />
     </div>
   );
 }

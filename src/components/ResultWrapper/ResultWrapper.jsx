@@ -2,18 +2,9 @@ import React from 'react';
 import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
 
 const ResultWrapper = (props) => {
-  const { response, loadingAnalysis, event } = props;
+  const { response, loadingAnalysis, operation } = props;
 
   const renderAction = (action) => {
-    /* if (action === 'anonymize' && response.anonymizeResult) {
-      return (
-        <div>
-          <h1>Anonymize</h1>
-          {' '}
-          <AnonymizeResult response={response} />
-        </div>
-      );
-    }  */
     if (action === 'Analyze' && response.reIdentificationRisk) {
       return (<AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />);
     } if (response.message) {
@@ -27,6 +18,6 @@ const ResultWrapper = (props) => {
     }
     return (' ');
   };
-  return renderAction(event);
+  return renderAction(operation);
 };
 export default ResultWrapper;
