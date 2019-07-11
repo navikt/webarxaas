@@ -3,7 +3,7 @@ import ImportFile from './ImportFile';
 
 const ImportFileWrapper = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset,
+    setLoadingDataset, setAttributes, setDataset, setOperation,
   } = props;
 
   const content = (
@@ -13,6 +13,7 @@ const ImportFileWrapper = (props) => {
         setAttributes={setAttributes}
         setDataset={setDataset}
         defaultAttributeType="QUASIIDENTIFYING"
+        setOperation={setOperation}
       />
     </div>
   );

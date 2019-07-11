@@ -5,6 +5,7 @@ import handleRequest from '../../util/handleRequest';
 const AnalyzeButton = (props) => {
   const {
     setLoadingAnalysis, dataset, attributes, endpoint, setResponse,
+    setOperation,
   } = props;
 
   const content = (
@@ -12,6 +13,7 @@ const AnalyzeButton = (props) => {
       <Knapp
         onClick={
           () => {
+            setOperation('Analyze');
             setLoadingAnalysis(true);
             handleRequest(setLoadingAnalysis, 'analyze', dataset, attributes, endpoint, setResponse);
           }

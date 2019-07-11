@@ -4,7 +4,7 @@ import DragAndDropFile from '../../util/dragAndDropFile';
 
 const ImportFile = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset, defaultAttributeType,
+    setLoadingDataset, setAttributes, setDataset, defaultAttributeType, setOperation,
   } = props;
 
   useEffect(() => {
@@ -24,6 +24,7 @@ const ImportFile = (props) => {
           multiple=""
           onChange={
             (e) => {
+              setOperation('Import');
               setLoadingDataset(true);
               ParseFile(
                 e.target.files[0],

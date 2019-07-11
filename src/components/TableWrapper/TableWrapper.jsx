@@ -8,6 +8,7 @@ import ImportAttribute from './AttributeType/ImportAttributeType';
 const TableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
+    setOperation,
   } = props;
 
   let content = '';
@@ -36,6 +37,7 @@ const TableWrapper = (props) => {
           attributes={attributes}
           endpoint={endpoint}
           setResponse={setResponse}
+          setOperation={setOperation}
         />
       </div>
     );
