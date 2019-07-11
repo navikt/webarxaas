@@ -3,6 +3,7 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import Table from './Table';
 import AnalyzeButton from './AnalyzeButton';
 import ExportAttribute from './AttributeType/ExportAttributeType';
+import ImportAttribute from './AttributeType/ImportAttributeType';
 
 const TableWrapper = (props) => {
   const {
@@ -20,7 +21,10 @@ const TableWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="table-wrapper">
-        <ExportAttribute AttributeTypes={attributes} />
+        <div>
+          <ExportAttribute AttributeTypes={attributes} />
+          <ImportAttribute setAttributes={setAttributes} />
+        </div>
         <Table
           setAttributes={setAttributes}
           dataset={dataset}
