@@ -20,13 +20,8 @@ const ResultWrapper = (props) => {
       return (
         <div>
           <b>Something went wrong. Error:</b>
+          <br />
           {response.message}
-        </div>
-      );
-    } if (response.includes('Failed to fetch')) {
-      return (
-        <div>
-          <b>{response}</b>
         </div>
       );
     }

@@ -10,7 +10,9 @@ export default function ArxRequest(setLoadingAnalysis, endpoint, payload, servic
     setResponse(data);
     setLoadingAnalysis(false);
   }).catch((error) => {
-    setResponse(`No service connection, ${error}`);
+    const errorMessage = error;
+    errorMessage.message = `No service connection, ${error}`;
+    setResponse(errorMessage);
     setLoadingAnalysis(false);
   });
 }
