@@ -34,6 +34,7 @@ function App() {
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
+        setOperation={setOperation}
       />
       <TableWrapper
         loadingDataset={loadingDataset}
