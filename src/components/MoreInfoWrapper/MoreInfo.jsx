@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 
 const MoreInfo = (props) => {
@@ -15,7 +16,6 @@ const MoreInfo = (props) => {
           <p>
           To display Æ, Ø, and Å, make sure the imported dataset is saved as a CSV file with UTF-8
           </p>
-         
           <p><b>Attribute types:</b></p>
           <li>
             <b>Identifying </b>
