@@ -76,5 +76,12 @@
     "less-watch-compiler": "^1.11.3",
     "npm-run-all": "^4.0.2",
     "react-test-renderer": "^16.8.6"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,ts,tsx}",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/path/to/dir/"
+    ]
   }
 }

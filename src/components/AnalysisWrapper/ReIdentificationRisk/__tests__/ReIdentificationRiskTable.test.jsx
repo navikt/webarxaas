@@ -54,6 +54,8 @@ describe('reidentificationrisk table tests', () => {
       <tr><td><b>Estimated marketer risk: </b></td><td>5.00 %</td></tr>,
       <tr><td><b>Sample uniques: </b></td><td>0.10 %</td></tr>,
       <tr><td><b>population uniques: </b></td><td>0.00 %</td></tr>,
+      <tr><td><b>Population model: </b></td><td>ZAYATZ</td></tr>,
+      <tr><td><b>Quasi-identifiers</b></td><td>Alder, Innvandrerbakgrunn, </td></tr>,
     ];
     // eslint-disable-next-line no-restricted-syntax
     for (const testCase of testCases) {
