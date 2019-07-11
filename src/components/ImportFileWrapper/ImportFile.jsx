@@ -3,7 +3,7 @@ import ParseFile from '../../util/parseFile';
 
 const ImportFile = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset, defaultAttributeType,
+    setLoadingDataset, setAttributes, setDataset, defaultAttributeType, setOperation,
   } = props;
 
   const content = (
@@ -19,6 +19,7 @@ const ImportFile = (props) => {
               className="input-file knapp knapp--standard box__button"
               onChange={
                 (e) => {
+                  setOperation(' ');
                   setLoadingDataset(true);
                   ParseFile(
                     e.target.files[0],
@@ -28,7 +29,6 @@ const ImportFile = (props) => {
                     setLoadingDataset,
                   );
                 }
-              }
             />
           </label>
         </div>
