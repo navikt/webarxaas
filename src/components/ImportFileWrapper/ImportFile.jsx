@@ -29,6 +29,7 @@ const ImportFile = (props) => {
                     setLoadingDataset,
                   );
                 }
+              }
             />
           </label>
         </div>
