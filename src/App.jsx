@@ -3,8 +3,8 @@ import './App.css';
 import NavbarMain from './components/Navbar/NavbarMain';
 import TableWrapper from './components/TableWrapper/TableWrapper';
 import MoreInfoWrapper from './components/MoreInfoWrapper/MoreInfoWrapper';
-import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
+import ResultWrapper from './components/ResultWrapper/ResultWrapper';
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
@@ -13,6 +13,7 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
+  const [operation, setOperation] = useState('');
 
   let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
   if (process.env.NODE_ENV === 'production') {
@@ -42,11 +43,9 @@ function App() {
         dataset={dataset}
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
+        setOperation={setOperation}
       />
-      <AnalysisWrapper
-        response={response}
-        loadingAnalysis={loadingAnalysis}
-      />
+      <ResultWrapper response={response} loadingAnalysis={loadingAnalysis} operation={operation} />
     </div>
   );
 }
