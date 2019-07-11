@@ -3,8 +3,8 @@ import './App.css';
 import NavbarMain from './components/Navbar/NavbarMain';
 import TableWrapper from './components/TableWrapper/TableWrapper';
 import MoreInfoWrapper from './components/MoreInfoWrapper/MoreInfoWrapper';
-import AnalysisWrapper from './components/AnalysisWrapper/AnalysisWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
+import ResultWrapper from './components/ResultWrapper/ResultWrapper';
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
@@ -43,10 +43,7 @@ function App() {
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
       />
-      <AnalysisWrapper
-        response={response}
-        loadingAnalysis={loadingAnalysis}
-      />
+      <ResultWrapper response={response} loadingAnalysis={loadingAnalysis} event="Analyze" />
     </div>
   );
 }
