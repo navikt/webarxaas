@@ -43,7 +43,11 @@ function App() {
         endpoint={arxaasEndpoint}
         setOperation={setOperation}
       />
-      <ResultWrapper response={response} loadingAnalysis={loadingAnalysis} operation={operation} />
+      <ResultWrapper
+        response={response}
+        loadingAnalysis={loadingAnalysis}
+        operation={operation}
+      />
     </div>
   );
 }
