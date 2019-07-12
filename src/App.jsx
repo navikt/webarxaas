@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import env from '@beam-australia/react-env';
 import './App.css';
 import NavbarMain from './components/Navbar/NavbarMain';
 import TableWrapper from './components/TableWrapper/TableWrapper';
@@ -14,11 +15,7 @@ function App() {
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [operation, setOperation] = useState('');
-
-  let arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_DEV;
-  if (process.env.NODE_ENV === 'production') {
-    arxaasEndpoint = process.env.REACT_APP_ARXAAS_URL_PROD;
-  }
+  const arxaasEndpoint = env('ARXAAS_URL');
 
   return (
     <div className="App">
