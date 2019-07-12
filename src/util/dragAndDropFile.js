@@ -11,7 +11,7 @@ export default function dragAndDropFile(
     return (('draggable' in div) || ('ondragstart' in div && 'ondrop' in div)) && 'FormData' in window && 'FileReader' in window;
   };
 
-  if (isSupportedBrowser) {
+  if (isSupportedBrowser && form != null) {
     form.classList.add('has-advanced-upload');
 
     form.addEventListener('drop', (e) => {
