@@ -4,7 +4,7 @@ export default function dragAndDropFile(
   setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
 ) {
   const form = document.querySelector('.import-file-dataset-form');
-  const input = form.querySelector('.import-file-dataset-input');
+  const input = document.querySelector('.import-file-dataset-input');
 
   const isSupportedBrowser = () => {
     const div = document.createElement('div');
