@@ -3,7 +3,6 @@ import toPercent from '../../../util/ratioToPercent';
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
-
   const content = (
     <div>
       <h3>Reidentification Risk</h3>
