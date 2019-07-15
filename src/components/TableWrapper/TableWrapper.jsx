@@ -1,9 +1,10 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import Table from './Table';
-import AnalyzeButton from './AnalyzeButton';
-import ExportAttribute from './AttributeType/ExportAttributeType';
-import ImportAttribute from './AttributeType/ImportAttributeType';
+
+import Table from './Table/Table';
+import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
+import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
+import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 import AnonymizeButton from './AnonymizeButton';
 
 const TableWrapper = (props) => {
@@ -23,9 +24,14 @@ const TableWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="table-wrapper">
-        <div>
-          <ExportAttribute AttributeTypes={attributes} />
-          <ImportAttribute setAttributes={setAttributes} />
+        <div className="row">
+          <div className="col-6">
+            <ImportAttribute setAttributes={setAttributes} />
+          </div>
+          <div className="col-6">
+            <ExportAttribute AttributeTypes={attributes} />
+          </div>
+
         </div>
         <Table
           setAttributes={setAttributes}

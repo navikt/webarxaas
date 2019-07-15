@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import { shallow } from '../../../../enzyme';
+import { shallow } from '../../../../../enzyme';
 
 
-import ReIdentificationRiskTable from '../ReIdentificationRiskTable';
+import ReIdentificationRiskTable from '../ReIdentificationRiskTable/ReIdentificationRiskTable';
 import reIdentificationRiskResponse from './reIdentificationRiskResponse';
 
 describe('reidentificationrisk table tests', () => {
@@ -53,7 +53,7 @@ describe('reidentificationrisk table tests', () => {
       <tr><td><b>Estimated journalist risk: </b></td><td>100.00 %</td></tr>,
       <tr><td><b>Estimated marketer risk: </b></td><td>5.00 %</td></tr>,
       <tr><td><b>Sample uniques: </b></td><td>0.10 %</td></tr>,
-      <tr><td><b>population uniques: </b></td><td>0.00 %</td></tr>,
+      <tr><td><b>Population uniques: </b></td><td>0.00 %</td></tr>,
       <tr><td><b>Population model: </b></td><td>ZAYATZ</td></tr>,
       <tr><td><b>Quasi-identifiers</b></td><td>Alder, Innvandrerbakgrunn, </td></tr>,
     ];
