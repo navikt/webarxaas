@@ -43,14 +43,6 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Sample uniques: </b></td>
-              <td>
-                {
-                  toPercent(reIdentificationRisk.measures.sample_uniques)
-                }
-              </td>
-            </tr>
-            <tr>
               <td><b>Estimated journalist risk: </b></td>
               <td>
                 {
@@ -85,7 +77,6 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
-
             <tr>
               <td><b>Estimated marketer risk: </b></td>
               <td>
@@ -133,7 +124,14 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
-
+            <tr>
+              <td><b>Sample uniques: </b></td>
+              <td>
+                {
+                  toPercent(reIdentificationRisk.measures.sample_uniques)
+                }
+              </td>
+            </tr>
             <tr>
               <td><b>Prosecutor attacker success rate: </b></td>
               <td>
@@ -143,14 +141,12 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
-
             <tr>
               <td><b>Quasi-identifiers</b></td>
               <td>
                 {reIdentificationRisk.quasiIdentifiers.map(attribute => attribute.concat(', '))}
               </td>
             </tr>
-
           </tbody>
         </table>
       </div>
