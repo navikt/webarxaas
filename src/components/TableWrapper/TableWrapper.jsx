@@ -22,9 +22,14 @@ const TableWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="table-wrapper">
-        <div>
-          <ExportAttribute AttributeTypes={attributes} />
-          <ImportAttribute setAttributes={setAttributes} />
+        <div className="row">
+          <div className="col-6">
+            <ImportAttribute setAttributes={setAttributes} />
+          </div>
+          <div className="col-6">
+            <ExportAttribute AttributeTypes={attributes} />
+          </div>
+
         </div>
         <Table
           setAttributes={setAttributes}
