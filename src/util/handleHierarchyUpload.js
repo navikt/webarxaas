@@ -8,7 +8,6 @@ export default function handleHierarchyUpload(file, index, attributes, setAttrib
         ...newAttributes[index],
         hierarchy: hierarchy.data,
       };
-      console.log(newAttributes);
       setAttributes(newAttributes);
     },
   });
