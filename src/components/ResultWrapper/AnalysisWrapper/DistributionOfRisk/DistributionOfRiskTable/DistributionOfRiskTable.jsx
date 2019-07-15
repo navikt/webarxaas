@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactTable from 'react-table';
-import toPercent from '../../../util/ratioToPercent';
+import toPercent from '../../../../../util/ratioToPercent';
+import 'react-table/react-table.css';
 
 const DistributionOfRiskTable = (props) => {
   const { riskIntervalList } = props;
