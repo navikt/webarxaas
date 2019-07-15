@@ -1,10 +1,23 @@
 import React from 'react';
 import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
+import AnonymizeWrapper from '../AnonymizeWrapper/AnonymizeWrapper';
 
 const ResultWrapper = (props) => {
-  const { response, loadingAnalysis, operation } = props;
+  const {
+    response, loadingAnalysis, operation, setAttributes,
+    attributes,
+  } = props;
 
   const renderAction = (action) => {
+    console.log(action);
+    if (action === 'Anonymize') {
+      return (
+        <AnonymizeWrapper
+          setAttributes={setAttributes}
+          attributes={attributes}
+        />
+      );
+    }
     if (action === 'Analyze' && response.reIdentificationRisk) {
       return (<AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />);
     } if (response.message) {

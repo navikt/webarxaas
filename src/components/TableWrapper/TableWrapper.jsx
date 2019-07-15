@@ -4,6 +4,7 @@ import Table from './Table';
 import AnalyzeButton from './AnalyzeButton';
 import ExportAttribute from './AttributeType/ExportAttributeType';
 import ImportAttribute from './AttributeType/ImportAttributeType';
+import AnonymizeButton from './AnonymizeButton';
 
 const TableWrapper = (props) => {
   const {
@@ -39,6 +40,7 @@ const TableWrapper = (props) => {
           setResponse={setResponse}
           setOperation={setOperation}
         />
+        <AnonymizeButton setOperation={setOperation} />
       </div>
     );
   }
