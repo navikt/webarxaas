@@ -8,17 +8,10 @@ const AnonymizeWrapper = (props) => {
 
   const content = (
     <div>
-      <table>
-        {attributes.map(({ field }, index) => (
-          <HierarchyImport
-            name={field}
-            key={field}
-            index={index}
-            attributes={attributes}
-            setAttributes={setAttributes}
-          />
-        ))}
-      </table>
+      <HierarchyImport
+        attributes={attributes}
+        setAttributes={setAttributes}
+      />
     </div>
   );
   return content;

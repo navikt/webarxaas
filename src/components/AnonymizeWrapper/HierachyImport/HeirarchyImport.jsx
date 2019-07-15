@@ -3,18 +3,27 @@ import handleHierarchyUpload from '../../../util/handleHierarchyUpload';
 
 const HeirarcyImport = (props) => {
   const {
-    name, index, attributes, setAttributes,
+    attributes, setAttributes,
   } = props;
-
   const content = (
-    <tbody>
-      <tr>
-        <td>{name}</td>
-        <td>
-          <input type="file" onChange={e => handleHierarchyUpload(e.target.files[0], name, index, attributes, setAttributes)} />
-        </td>
-      </tr>
-    </tbody>
+    <table>
+      {attributes.map(({ field, attributeTypeModel }, index) => {
+        if (attributeTypeModel === 'QUASIIDENTIFYING') {
+          return (
+            <tbody key={field}>
+              <tr>
+                <td>{field}</td>
+                <td>
+                  <input type="file" onChange={e => handleHierarchyUpload(e.target.files[0], field, index, attributes, setAttributes)} />
+                </td>
+              </tr>
+            </tbody>
+          );
+        }
+        return null;
+      })
+      }
+    </table>
   );
   return content;
 };
