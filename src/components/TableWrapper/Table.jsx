@@ -29,14 +29,12 @@ const Table = React.memo(({ dataset, attributes, setAttributes }) => {
   const data = dataset.slice(1);
 
   const content = (
-    <div className="table-with-anti-bootstrap-name">
-      <ReactTable
-        data={data}
-        columns={columns}
-        sortable={false}
-        defaultPageSize={5}
-      />
-    </div>
+    <ReactTable
+      data={data}
+      columns={columns}
+      sortable={false}
+      defaultPageSize={5}
+    />
   );
 
   return content;
