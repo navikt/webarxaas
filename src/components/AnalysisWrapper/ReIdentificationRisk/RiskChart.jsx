@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 const RiskChart = (props) => {
   const { risk } = props;
   const riskData = [{
-    name: 'Prosecutor Risk', risk,
+    name: '', risk,
   }];
 
   const content = (
@@ -25,7 +25,7 @@ const RiskChart = (props) => {
       <YAxis type="category" dataKey="name" />
       <Tooltip />
       <Legend />
-      <Bar dataKey="risk" fill="#f54542" barSize={40} name="Prosecutor Risk" />
+      <Bar dataKey="risk" fill="#f54542" barSize={40} name="Estimated Prosecutor Risk" />
     </BarChart>
   );
   return content;
