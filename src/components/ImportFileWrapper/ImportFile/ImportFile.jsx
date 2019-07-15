@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import ParseFile from '../../util/parseFile';
-import DragAndDropFile from '../../util/dragAndDropFile';
+import ParseFile from '../../../util/parseFile';
+import DragAndDropFile from '../../../util/dragAndDropFile';
 
 const ImportFile = (props) => {
   const {

@@ -2,7 +2,8 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import { Select } from 'nav-frontend-skjema';
-import HandleTypeSelect from '../../util/handleTypeSelect';
+import HandleTypeSelect from '../../../util/handleTypeSelect';
+import 'react-table/react-table.css';
 
 const Table = React.memo(({ dataset, attributes, setAttributes }) => {
   const columns = Object.keys(dataset[0]).map((key, index) => ({
@@ -29,14 +30,12 @@ const Table = React.memo(({ dataset, attributes, setAttributes }) => {
   const data = dataset.slice(1);
 
   const content = (
-    <div className="table-with-anti-bootstrap-name">
-      <ReactTable
-        data={data}
-        columns={columns}
-        sortable={false}
-        defaultPageSize={5}
-      />
-    </div>
+    <ReactTable
+      data={data}
+      columns={columns}
+      sortable={false}
+      defaultPageSize={5}
+    />
   );
 
   return content;
