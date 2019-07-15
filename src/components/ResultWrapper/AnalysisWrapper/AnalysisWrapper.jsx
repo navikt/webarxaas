@@ -2,10 +2,10 @@ import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTable';
+import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRisk/DistributionOfRiskTable';
 import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable';
 import RiskChart from './ReIdentificationRisk/RiskChart';
-import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph';
+import RiskDistributionGraph from './DistributionOfRisk/DistributionOfRisk/RiskDistributionGraph';
 
 const AnalysisWrapper = (props) => {
   const { loadingAnalysis, response } = props;

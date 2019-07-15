@@ -1,5 +1,5 @@
 import React from 'react';
-import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
+import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
 
 const ResultWrapper = (props) => {
   const { response, loadingAnalysis, operation } = props;

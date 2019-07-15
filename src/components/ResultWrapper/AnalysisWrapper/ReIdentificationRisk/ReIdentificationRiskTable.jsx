@@ -1,5 +1,5 @@
 import React from 'react';
-import toPercent from '../../../util/ratioToPercent';
+import toPercent from '../../../../util/ratioToPercent';
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
