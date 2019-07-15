@@ -8,25 +8,35 @@ const ResultWrapper = (props) => {
     attributes,
   } = props;
 
+
+  const anonymizeAction = () => (
+    <AnonymizeWrapper
+      setAttributes={setAttributes}
+      attributes={attributes}
+    />
+  );
+
+  const analyzeAction = () => (
+    <AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />
+  );
+
+  const errorAction = message => (
+    <div>
+      <b>Something went wrong. Error:</b>
+      <br />
+      {message}
+    </div>
+  );
+
   const renderAction = (action) => {
     if (action === 'Anonymize') {
-      return (
-        <AnonymizeWrapper
-          setAttributes={setAttributes}
-          attributes={attributes}
-        />
-      );
+      return anonymizeAction();
     }
     if (action === 'Analyze' && response.reIdentificationRisk) {
-      return (<AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />);
-    } if (response.message) {
-      return (
-        <div>
-          <b>Something went wrong. Error:</b>
-          <br />
-          {response.message}
-        </div>
-      );
+      return analyzeAction();
+    }
+    if (response.message) {
+      return errorAction(response.message);
     }
     return (' ');
   };
