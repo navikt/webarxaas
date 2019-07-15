@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import env from '@beam-australia/react-env';
 import './App.css';
-import NavbarMain from './components/Navbar/NavbarMain';
+import NavbarMain from './components/NavbarMain/NavbarMain';
 import TableWrapper from './components/TableWrapper/TableWrapper';
 import MoreInfoWrapper from './components/MoreInfoWrapper/MoreInfoWrapper';
 import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
