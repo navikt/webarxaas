@@ -9,7 +9,6 @@ const ResultWrapper = (props) => {
   } = props;
 
   const renderAction = (action) => {
-    console.log(action);
     if (action === 'Anonymize') {
       return (
         <AnonymizeWrapper
