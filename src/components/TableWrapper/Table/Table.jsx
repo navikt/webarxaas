@@ -2,7 +2,7 @@
 import React from 'react';
 import ReactTable from 'react-table';
 import { Select } from 'nav-frontend-skjema';
-import HandleTypeSelect from '../../util/handleTypeSelect';
+import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
 
 const Table = React.memo(({ dataset, attributes, setAttributes }) => {

@@ -1,9 +1,9 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-import Table from './Table';
-import AnalyzeButton from './AnalyzeButton';
-import ExportAttribute from './AttributeType/ExportAttributeType';
-import ImportAttribute from './AttributeType/ImportAttributeType';
+import Table from './Table/Table';
+import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
+import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
+import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 
 const TableWrapper = (props) => {
   const {

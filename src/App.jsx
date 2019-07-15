@@ -19,7 +19,6 @@ function App() {
 
   return (
     <div className="App">
-
       <NavbarMain
         setShowMoreInfo={setShowMoreInfo}
       />
