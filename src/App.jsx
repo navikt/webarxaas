@@ -46,6 +46,8 @@ function App() {
         response={response}
         loadingAnalysis={loadingAnalysis}
         operation={operation}
+        setAttributes={setAttributes}
+        attributes={attributes}
       />
     </div>
   );
