@@ -4,8 +4,8 @@ import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 
 const ResultWrapper = (props) => {
   const {
-    response, loadingAnalysis, operation, setAttributes,
-    attributes, privacyModels, setPrivacyModels,
+    response, setResponse, loadingAnalysis, operation, setAttributes,
+    attributes, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
   } = props;
   const { message, reIdentificationRisk } = response;
 
@@ -32,6 +32,8 @@ const ResultWrapper = (props) => {
           attributes={attributes}
           privacyModels={privacyModels}
           setPrivacyModels={setPrivacyModels}
+          suppressionLimit={suppressionLimit}
+          setSuppressionLimit={setSuppressionLimit}
         />
       </div>
     );
@@ -41,6 +43,8 @@ const ResultWrapper = (props) => {
         <AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />
       </div>
     );
+  } if (operation === 'Import') {
+    setResponse('');
   }
 
   return content;
