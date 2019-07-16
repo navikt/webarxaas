@@ -37,13 +37,11 @@ const AnalysisWrapper = (props) => {
                 <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
                   .riskIntervalList}
                 />
-                <div className="risk-distribution-metrics">
-                  <Ekspanderbartpanel tittel="More Information" border>
-                    <DistributionOfRiskTable riskIntervalList={response.distributionOfRisk
-                      .riskIntervalList}
-                    />
-                  </Ekspanderbartpanel>
-                </div>
+                <Ekspanderbartpanel tittel="More Information" border>
+                  <DistributionOfRiskTable riskIntervalList={response.distributionOfRisk
+                    .riskIntervalList}
+                  />
+                </Ekspanderbartpanel>
               </Ekspanderbartpanel>
             </Col>
           </Row>
