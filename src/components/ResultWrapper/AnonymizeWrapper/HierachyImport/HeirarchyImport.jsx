@@ -1,5 +1,5 @@
 import React from 'react';
-import handleHierarchyUpload from '../../../util/handleHierarchyUpload';
+import handleHierarchyUpload from '../../../../util/handleHierarchyUpload';
 
 const HeirarcyImport = (props) => {
   const {
