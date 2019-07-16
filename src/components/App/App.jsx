@@ -3,7 +3,7 @@ import env from '@beam-australia/react-env';
 import NavbarMain from '../NavbarMain/NavbarMain';
 import TableWrapper from '../TableWrapper/TableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
-import ImportFileWrapper from '../ImportFileWrapper/ImportFileWrapper';
+import ImportFileWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import ResultWrapper from '../ResultWrapper/ResultWrapper';
 import './__css__/App.css';
 
