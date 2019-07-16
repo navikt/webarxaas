@@ -37,7 +37,8 @@
     "react-scripts": "3.0.1",
     "react-table": "^6.10.0",
     "reactstrap": "^8.0.0",
-    "recharts": "^1.6.2"
+    "recharts": "^1.6.2",
+    "lodash": ">=4.17.13"
   },
   "scripts": {
     "start:js": "react-scripts start",

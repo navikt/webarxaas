@@ -4,6 +4,7 @@ import Table from './Table/Table';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
 import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
+import AnonymizeButton from './AnonymizeButton';
 
 const TableWrapper = (props) => {
   const {
@@ -31,19 +32,28 @@ const TableWrapper = (props) => {
           </div>
 
         </div>
-        <Table
-          setAttributes={setAttributes}
-          dataset={dataset}
-          attributes={attributes}
-        />
-        <AnalyzeButton
-          setLoadingAnalysis={setLoadingAnalysis}
-          dataset={dataset}
-          attributes={attributes}
-          endpoint={endpoint}
-          setResponse={setResponse}
-          setOperation={setOperation}
-        />
+        <div className="dataset-table">
+          <Table
+            setAttributes={setAttributes}
+            dataset={dataset}
+            attributes={attributes}
+          />
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <AnalyzeButton
+              setLoadingAnalysis={setLoadingAnalysis}
+              dataset={dataset}
+              attributes={attributes}
+              endpoint={endpoint}
+              setResponse={setResponse}
+              setOperation={setOperation}
+            />
+          </div>
+          <div className="col-6">
+            <AnonymizeButton setOperation={setOperation} />
+          </div>
+        </div>
       </div>
     );
   }
