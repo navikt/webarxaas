@@ -45,6 +45,7 @@ function App() {
       />
       <ResultWrapper
         response={response}
+        setResponse={setResponse}
         loadingAnalysis={loadingAnalysis}
         operation={operation}
         setAttributes={setAttributes}
