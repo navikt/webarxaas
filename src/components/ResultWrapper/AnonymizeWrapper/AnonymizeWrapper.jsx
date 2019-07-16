@@ -1,6 +1,7 @@
 import React from 'react';
 import HierarchyImport from './HierachyImport/HeirarchyImport';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
+import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
 
 const AnonymizeWrapper = (props) => {
   const {
@@ -19,6 +20,7 @@ const AnonymizeWrapper = (props) => {
         </div>
         <div className="col-4">
           <PrivacyModelManager privacyModels={privacyModels} setPrivacyModels={setPrivacyModels} />
+          <PrivacyModelTable privacyModels={privacyModels} setPrivacyModels={setPrivacyModels} />
         </div>
       </div>
     </div>
