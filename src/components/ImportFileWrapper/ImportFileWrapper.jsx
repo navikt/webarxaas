@@ -1,5 +1,5 @@
 import React from 'react';
-import ImportFile from './ImportFile/ImportFile';
+import ImportFile from './ImportDataset/ImportDataset';
 
 const ImportFileWrapper = (props) => {
   const {
@@ -7,7 +7,7 @@ const ImportFileWrapper = (props) => {
   } = props;
 
   const content = (
-    <div className="import-file-wrapper">
+    <div className="import-dataset-wrapper">
       <ImportFile
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
