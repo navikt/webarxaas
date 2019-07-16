@@ -58,7 +58,7 @@ jobs:
       - persist_to_workspace:
           root: build
           paths: ./*
-  deploy:
+  deploy-dev:
     docker:
       - image: "navikt/deployment-cli:v0.1.7"
     working_directory: ~/repo
@@ -90,7 +90,7 @@ workflows:
           filters:
             branches:
               only: master
-      - deploy:
+      - deploy-dev:
           requires:
             - build
             - package
