@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import React from 'react';
+import './__css__/MoreInfo.css';
 
 const MoreInfo = (props) => {
   const { showMoreInfo } = props;
