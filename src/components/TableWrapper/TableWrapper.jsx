@@ -1,6 +1,5 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-
 import Table from './Table/Table';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
