@@ -4,7 +4,7 @@ const SuppressionLimit = (props) => {
   const { suppressionLimit, setSuppressionLimit } = props;
 
   const content = (
-    <div>
+    <div className="suppression-limit">
       <label htmlFor="limit">
                 Limit:
         <input type="number" id="limit" min="0" max="1" step="0.001" />

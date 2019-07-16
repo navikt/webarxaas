@@ -12,7 +12,7 @@ const AnonymizeWrapper = (props) => {
   } = props;
 
   const content = (
-    <div>
+    <div className="anonymize-wrapper">
       <div className="row">
         <div className="col-4">
           <HierarchyImport
