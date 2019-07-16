@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import ParseFile from '../../../util/parseFile';
 import DragAndDropFile from '../../../util/dragAndDropFile';
+import './__css__/ImportFile.css';
 
 const ImportFile = (props) => {
   const {
