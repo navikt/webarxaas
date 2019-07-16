@@ -6,6 +6,7 @@ import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTabl
 import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable/ReIdentificationRiskTable';
 import RiskChart from './ReIdentificationRisk/RiskChart/RiskChart';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
+import './__css__/AnalysisWrapper.css';
 
 const AnalysisWrapper = (props) => {
   const { loadingAnalysis, response } = props;
