@@ -3,21 +3,30 @@ import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
 
 const ResultWrapper = (props) => {
   const { response, loadingAnalysis, operation } = props;
+  const { message, reIdentificationRisk } = response;
 
-  const renderAction = (action) => {
-    if (action === 'Analyze' && response.reIdentificationRisk) {
-      return (<AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />);
-    } if (response.message) {
-      return (
-        <div>
-          <b>Something went wrong. Error:</b>
-          <br />
-          {response.message}
-        </div>
-      );
-    }
-    return (' ');
-  };
-  return renderAction(operation);
+  let content = (
+    <div className="result-wrapper">
+      <AnalysisWrapper loadingAnalysis={loadingAnalysis} />
+    </div>
+  );
+
+  if (message) {
+    content = (
+      <div>
+        <b>Something went wrong. Error:</b>
+        <br />
+        {message}
+      </div>
+    );
+  } if (operation === 'Analyze' && reIdentificationRisk) {
+    content = (
+      <div className="result-wrapper">
+        <AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />
+      </div>
+    );
+  }
+
+  return content;
 };
 export default ResultWrapper;
