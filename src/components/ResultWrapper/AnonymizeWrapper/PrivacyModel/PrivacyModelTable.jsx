@@ -5,7 +5,7 @@ const PrivacyModelTable = (props) => {
   const { privacyModels, setPrivacyModels } = props;
 
   const content = (
-    <div>
+    <div className="privacy-model-table">
       <table border="1">
         <thead>
           <tr>
