@@ -1,6 +1,6 @@
 import React from 'react';
 import HierarchyImport from './HierachyImport/HeirarchyImport';
-import PrivacyModelManager from './PrivacyModelWrapper/PrivacyModelManager';
+import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 
 const AnonymizeWrapper = (props) => {
   const {
