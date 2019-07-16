@@ -5,7 +5,7 @@ import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 const ResultWrapper = (props) => {
   const {
     response, setResponse, loadingAnalysis, operation, setAttributes,
-    attributes, privacyModels, setPrivacyModels,
+    attributes, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
   } = props;
   const { message, reIdentificationRisk } = response;
 
@@ -32,6 +32,8 @@ const ResultWrapper = (props) => {
           attributes={attributes}
           privacyModels={privacyModels}
           setPrivacyModels={setPrivacyModels}
+          suppressionLimit={suppressionLimit}
+          setSuppressionLimit={setSuppressionLimit}
         />
       </div>
     );

@@ -16,6 +16,7 @@ function App() {
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
+  const [suppressionLimit, setSuppressionLimit] = useState(null);
   const arxaasEndpoint = env('ARXAAS_URL');
 
   return (
@@ -52,6 +53,8 @@ function App() {
         attributes={attributes}
         privacyModels={privacyModels}
         setPrivacyModels={setPrivacyModels}
+        suppressionLimit={suppressionLimit}
+        setSuppressionLimit={setSuppressionLimit}
       />
     </div>
   );
