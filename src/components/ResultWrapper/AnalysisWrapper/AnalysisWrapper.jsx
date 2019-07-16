@@ -22,11 +22,9 @@ const AnalysisWrapper = (props) => {
     content = (
       <div className="analysis-wrapper">
         <h4>Result</h4>
-        <div className="risk-barometer">
-          <RiskChart risk={
-            parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
-          />
-        </div>
+        <RiskChart risk={
+          parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
+        />
         <Container>
           <Row>
             <Col sm={12}>
