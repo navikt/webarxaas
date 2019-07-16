@@ -1,7 +1,7 @@
 import React from 'react';
 
 import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
-import AnonymizeWrapper from '../AnonymizeWrapper/AnonymizeWrapper';
+import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 
 
 const ResultWrapper = (props) => {

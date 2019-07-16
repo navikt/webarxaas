@@ -33,20 +33,28 @@ const TableWrapper = (props) => {
           </div>
 
         </div>
-        <Table
-          setAttributes={setAttributes}
-          dataset={dataset}
-          attributes={attributes}
-        />
-        <AnalyzeButton
-          setLoadingAnalysis={setLoadingAnalysis}
-          dataset={dataset}
-          attributes={attributes}
-          endpoint={endpoint}
-          setResponse={setResponse}
-          setOperation={setOperation}
-        />
-        <AnonymizeButton setOperation={setOperation} />
+        <div className="dataset-table">
+          <Table
+            setAttributes={setAttributes}
+            dataset={dataset}
+            attributes={attributes}
+          />
+        </div>
+        <div className="row">
+          <div className="col-6">
+            <AnalyzeButton
+              setLoadingAnalysis={setLoadingAnalysis}
+              dataset={dataset}
+              attributes={attributes}
+              endpoint={endpoint}
+              setResponse={setResponse}
+              setOperation={setOperation}
+            />
+          </div>
+          <div className="col-6">
+            <AnonymizeButton setOperation={setOperation} />
+          </div>
+        </div>
       </div>
     );
   }
