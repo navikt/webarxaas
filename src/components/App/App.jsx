@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import env from '@beam-australia/react-env';
-import NavbarMain from './components/NavbarMain/NavbarMain';
-import TableWrapper from './components/TableWrapper/TableWrapper';
-import MoreInfoWrapper from './components/MoreInfoWrapper/MoreInfoWrapper';
-import ImportFileWrapper from './components/ImportFileWrapper/ImportFileWrapper';
-import ResultWrapper from './components/ResultWrapper/ResultWrapper';
-import './App.css';
+import NavbarMain from '../NavbarMain/NavbarMain';
+import TableWrapper from '../TableWrapper/TableWrapper';
+import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
+import ImportFileWrapper from '../ImportFileWrapper/ImportFileWrapper';
+import ResultWrapper from '../ResultWrapper/ResultWrapper';
+import './__css__/App.css';
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
