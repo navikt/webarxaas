@@ -5,7 +5,7 @@ import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 const ResultWrapper = (props) => {
   const {
     response, loadingAnalysis, operation, setAttributes,
-    attributes,
+    attributes, privacyModels, setPrivacyModels,
   } = props;
   const { message, reIdentificationRisk } = response;
 
@@ -17,7 +17,7 @@ const ResultWrapper = (props) => {
 
   if (message) {
     content = (
-      <div>
+      <div className="result-wrapper">
         <b>Something went wrong. Error:</b>
         <br />
         {message}
@@ -26,10 +26,14 @@ const ResultWrapper = (props) => {
   }
   if (operation === 'Anonymize') {
     content = (
-      <AnonymizeWrapper
-        setAttributes={setAttributes}
-        attributes={attributes}
-      />
+      <div className="result-wrapper">
+        <AnonymizeWrapper
+          setAttributes={setAttributes}
+          attributes={attributes}
+          privacyModels={privacyModels}
+          setPrivacyModels={setPrivacyModels}
+        />
+      </div>
     );
   } if (operation === 'Analyze' && reIdentificationRisk) {
     content = (
