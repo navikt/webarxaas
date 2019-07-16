@@ -7,7 +7,7 @@ import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 const ResultWrapper = (props) => {
   const {
     response, loadingAnalysis, operation, setAttributes,
-    attributes,
+    attributes, privacyModels, setPrivacyModels,
   } = props;
 
 
@@ -15,6 +15,8 @@ const ResultWrapper = (props) => {
     <AnonymizeWrapper
       setAttributes={setAttributes}
       attributes={attributes}
+      privacyModels={privacyModels}
+      setPrivacyModels={setPrivacyModels}
     />
   );
 

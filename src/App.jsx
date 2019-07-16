@@ -15,6 +15,7 @@ function App() {
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [operation, setOperation] = useState('');
+  const [privacyModels, setPrivacyModels] = useState([]);
   const arxaasEndpoint = env('ARXAAS_URL');
 
   return (
@@ -48,6 +49,8 @@ function App() {
         operation={operation}
         setAttributes={setAttributes}
         attributes={attributes}
+        privacyModels={privacyModels}
+        setPrivacyModels={setPrivacyModels}
       />
     </div>
   );
