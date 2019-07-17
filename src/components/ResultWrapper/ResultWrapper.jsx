@@ -5,7 +5,7 @@ const ResultWrapper = (props) => {
   const {
     response, setResponse, loadingAnalysis, operation,
   } = props;
-  const { message, reIdentificationRisk } = response;
+  const { message, reIdentificationRisk, anonymizeResult } = response;
 
   let content = (
     <div className="result-wrapper">
@@ -22,7 +22,7 @@ const ResultWrapper = (props) => {
       </div>
     );
   }
-  if (operation === 'Anonymize') {
+  if (operation === 'Anonymize' && anonymizeResult) {
     content = (
       <div className="result-wrapper">
         placeholder for anonymization result
