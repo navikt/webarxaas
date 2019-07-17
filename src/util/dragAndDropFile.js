@@ -3,8 +3,8 @@ import ParseFile from './parseFile';
 export default function dragAndDropFile(
   setAttributes, setDataset, defaultAttributeType, setLoadingDataset,
 ) {
-  const form = document.querySelector('.import-file-dataset-form');
-  const input = document.querySelector('.import-file-dataset-input');
+  const form = document.querySelector('.import-dataset-form');
+  const input = document.querySelector('.import-dataset-input');
 
   const isSupportedBrowser = () => {
     const div = document.createElement('div');

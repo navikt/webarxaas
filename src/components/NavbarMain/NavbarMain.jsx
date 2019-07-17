@@ -6,12 +6,14 @@ const NavbarMain = (props) => {
   const { setShowMoreInfo } = props;
 
   const content = (
-    <Navbar bg="light" expand="lg" fixed="top">
-      <Navbar.Brand href="#home">Anonymization as a Service</Navbar.Brand>
-      <MoreInfoButton
-        setShowMoreInfo={setShowMoreInfo}
-      />
-    </Navbar>
+    <div className="navbar-main">
+      <Navbar bg="light" expand="lg" fixed="top">
+        <Navbar.Brand href="#home">Anonymization as a Service</Navbar.Brand>
+        <MoreInfoButton
+          setShowMoreInfo={setShowMoreInfo}
+        />
+      </Navbar>
+    </div>
   );
   return content;
 };
