@@ -1,7 +1,7 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
 
-const AnonymizeConfigButton = (props) => {
+const AnonymizeButton = (props) => {
   const { setOperation } = props;
 
   const content = (
@@ -13,4 +13,4 @@ const AnonymizeConfigButton = (props) => {
   );
   return content;
 };
-export default AnonymizeConfigButton;
+export default AnonymizeButton;
