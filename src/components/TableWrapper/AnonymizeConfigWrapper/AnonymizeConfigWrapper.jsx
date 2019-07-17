@@ -9,12 +9,12 @@ const AnonymizeConfigWrapper = (props) => {
     attributes, setAttributes,
     privacyModels, setPrivacyModels,
     suppressionLimit, setSuppressionLimit,
-    operation,
+    showAnonymizeConfig,
   } = props;
 
   let content = '';
 
-  if (operation === 'Anonymize') {
+  if (showAnonymizeConfig) {
     content = (
       <div className="anonymize-wrapper">
         <div className="row">
