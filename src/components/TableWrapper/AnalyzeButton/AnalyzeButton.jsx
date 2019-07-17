@@ -15,7 +15,7 @@ const AnalyzeButton = (props) => {
           () => {
             setOperation('Analyze');
             setLoadingAnalyze(true);
-            handleRequest(setLoadingAnalyze, 'analyze', dataset, attributes, null, null, endpoint, setResponse);
+            handleRequest(setLoadingAnalyze, 'analyze', endpoint, setResponse, dataset, attributes);
           }
         }
       >

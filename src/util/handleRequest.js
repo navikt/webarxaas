@@ -2,8 +2,8 @@ import ArxRequest from './arxRequest';
 import BuildPayload from './buildPayload';
 
 export default function handleRequest(
-  setLoading, service, dataset, attributes,
-  privacyModels = [], suppressionLimit = null, endpoint, setResponse,
+  setLoading, service, endpoint, setResponse, dataset, attributes,
+  privacyModels = [], suppressionLimit = null,
 ) {
   if (dataset && attributes && privacyModels) {
     const payload = BuildPayload(dataset, attributes, privacyModels, suppressionLimit);

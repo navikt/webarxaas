@@ -14,7 +14,7 @@ const AnonymizeButton = (props) => {
       <Knapp onClick={() => {
         setOperation('Anonymize');
         setLoadingAnonymize(true);
-        handleRequest(setLoadingAnonymize, 'anonymize', dataset, attributes, privacyModels, suppressionLimit, endpoint, setResponse);
+        handleRequest(setLoadingAnonymize, 'anonymize', endpoint, setResponse, dataset, attributes, privacyModels, suppressionLimit);
       }}
       >
         Start anonymization

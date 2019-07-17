@@ -19,7 +19,7 @@ const AnonymizeConfigWrapper = (props) => {
 
   if (showAnonymizeConfig) {
     content = (
-      <div className="anonymize-wrapper">
+      <div className="anonymize-config-wrapper">
         <div className="row">
           <div className="col-4">
             <HierarchyImport
@@ -44,7 +44,7 @@ const AnonymizeConfigWrapper = (props) => {
             />
           </div>
         </div>
-        <div className="start-anonymization">
+        <div className="anonymize-button">
           <AnonymizeButton
             setLoadingAnonymize={setLoadingAnonymize}
             setOperation={setOperation}
