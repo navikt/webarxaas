@@ -43,18 +43,17 @@ function App() {
         setResponse={setResponse}
         endpoint={arxaasEndpoint}
         setOperation={setOperation}
+        privacyModels={privacyModels}
+        setPrivacyModels={setPrivacyModels}
+        suppressionLimit={suppressionLimit}
+        setSuppressionLimit={setSuppressionLimit}
+        operation={operation}
       />
       <ResultWrapper
         response={response}
         setResponse={setResponse}
         loadingAnalysis={loadingAnalysis}
         operation={operation}
-        setAttributes={setAttributes}
-        attributes={attributes}
-        privacyModels={privacyModels}
-        setPrivacyModels={setPrivacyModels}
-        suppressionLimit={suppressionLimit}
-        setSuppressionLimit={setSuppressionLimit}
       />
     </div>
   );
