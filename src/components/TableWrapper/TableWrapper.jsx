@@ -4,7 +4,7 @@ import Table from './Table/Table';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
-import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
+import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeButton';
 import AnonymizeConfigWrapper from './AnonymizeConfigWrapper/AnonymizeConfigWrapper';
 import './__css__/TableWrapper.css';
 
@@ -53,7 +53,7 @@ const TableWrapper = (props) => {
             />
           </div>
           <div className="col-6">
-            <AnonymizeButton setOperation={setOperation} />
+            <AnonymizeConfigButton setOperation={setOperation} />
           </div>
           <div>
             <AnonymizeConfigWrapper
