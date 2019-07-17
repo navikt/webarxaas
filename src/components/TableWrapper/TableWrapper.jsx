@@ -10,7 +10,8 @@ import './__css__/TableWrapper.css';
 
 const TableWrapper = (props) => {
   const {
-    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
+    setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
     showAnonymizeConfig, setShowAnonymizeConfig,
   } = props;
@@ -45,7 +46,7 @@ const TableWrapper = (props) => {
         <div className="row">
           <div className="col-6">
             <AnalyzeButton
-              setLoadingAnalysis={setLoadingAnalysis}
+              setLoadingAnalyze={setLoadingAnalyze}
               dataset={dataset}
               attributes={attributes}
               endpoint={endpoint}
@@ -67,6 +68,11 @@ const TableWrapper = (props) => {
               suppressionLimit={suppressionLimit}
               setSuppressionLimit={setSuppressionLimit}
               showAnonymizeConfig={showAnonymizeConfig}
+              setLoadingAnonymize={setLoadingAnonymize}
+              setOperation={setOperation}
+              dataset={dataset}
+              setResponse={setResponse}
+              endpoint={endpoint}
             />
           </div>
         </div>

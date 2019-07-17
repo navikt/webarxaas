@@ -3,20 +3,23 @@ import HierarchyImport from './HierachyImport/HeirarchyImport';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
 import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
+import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 
 const AnonymizeConfigWrapper = (props) => {
   const {
     attributes, setAttributes,
     privacyModels, setPrivacyModels,
     suppressionLimit, setSuppressionLimit,
-    showAnonymizeConfig,
+    showAnonymizeConfig, setLoadingAnonymize,
+    setOperation, dataset, setResponse,
+    endpoint,
   } = props;
 
   let content = '';
 
   if (showAnonymizeConfig) {
     content = (
-      <div className="anonymize-wrapper">
+      <div className="anonymize-config-wrapper">
         <div className="row">
           <div className="col-4">
             <HierarchyImport
@@ -40,6 +43,18 @@ const AnonymizeConfigWrapper = (props) => {
               setSuppressionLimit={setSuppressionLimit}
             />
           </div>
+        </div>
+        <div className="anonymize-button">
+          <AnonymizeButton
+            setLoadingAnonymize={setLoadingAnonymize}
+            setOperation={setOperation}
+            dataset={dataset}
+            attributes={attributes}
+            privacyModels={privacyModels}
+            suppressionLimit={suppressionLimit}
+            setResponse={setResponse}
+            endpoint={endpoint}
+          />
         </div>
       </div>
 
