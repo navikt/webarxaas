@@ -1,4 +1,4 @@
-export default function ArxRequest(setLoading, endpoint, payload, service, setResponse) {
+export default function ArxRequest(setLoadingFunction, endpoint, payload, service, setResponse) {
   fetch(`${endpoint}/api/${service}`, {
     crossDomain: true,
     method: 'post',
@@ -8,11 +8,11 @@ export default function ArxRequest(setLoading, endpoint, payload, service, setRe
     },
   }).then(response => (response.json())).then((data) => {
     setResponse(data);
-    setLoading(false);
+    setLoadingFunction(false);
   }).catch((error) => {
     const errorMessage = error;
     errorMessage.message = `No service connection, ${error}`;
     setResponse(errorMessage);
-    setLoading(false);
+    setLoadingFunction(false);
   });
 }
