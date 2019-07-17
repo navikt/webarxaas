@@ -3,13 +3,15 @@ import HierarchyImport from './HierachyImport/HeirarchyImport';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
 import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
+import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 
 const AnonymizeConfigWrapper = (props) => {
   const {
     attributes, setAttributes,
     privacyModels, setPrivacyModels,
     suppressionLimit, setSuppressionLimit,
-    showAnonymizeConfig,
+    showAnonymizeConfig, setLoadingAnonymize,
+    setOperation,
   } = props;
 
   let content = '';
@@ -40,6 +42,9 @@ const AnonymizeConfigWrapper = (props) => {
               setSuppressionLimit={setSuppressionLimit}
             />
           </div>
+        </div>
+        <div className="start-anonymization">
+          <AnonymizeButton setLoadingAnonymize={setLoadingAnonymize} setOperation={setOperation} />
         </div>
       </div>
 

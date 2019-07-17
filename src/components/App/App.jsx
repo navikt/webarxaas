@@ -10,6 +10,7 @@ import './__css__/App.css';
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [loadingAnalysis, setLoadingAnalysis] = useState(false);
+  const [loadingAnonymize, setLoadingAnonymize] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
@@ -38,6 +39,7 @@ function App() {
       <TableWrapper
         loadingDataset={loadingDataset}
         setLoadingAnalysis={setLoadingAnalysis}
+        setLoadingAnonymize={setLoadingAnonymize}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
@@ -55,6 +57,7 @@ function App() {
         response={response}
         setResponse={setResponse}
         loadingAnalysis={loadingAnalysis}
+        loadingAnonymize={loadingAnonymize}
         operation={operation}
       />
     </div>

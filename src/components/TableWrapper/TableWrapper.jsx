@@ -10,7 +10,8 @@ import './__css__/TableWrapper.css';
 
 const TableWrapper = (props) => {
   const {
-    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setLoadingAnalysis, setLoadingAnonymize,
+    setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
     showAnonymizeConfig, setShowAnonymizeConfig,
   } = props;
@@ -67,6 +68,8 @@ const TableWrapper = (props) => {
               suppressionLimit={suppressionLimit}
               setSuppressionLimit={setSuppressionLimit}
               showAnonymizeConfig={showAnonymizeConfig}
+              setLoadingAnonymize={setLoadingAnonymize}
+              setOperation={setOperation}
             />
           </div>
         </div>
