@@ -53,7 +53,7 @@ const TableWrapper = (props) => {
               setOperation={setOperation}
             />
           </div>
-          <div className="col-6">
+          <div className="col-6  analyze-anonymize-button">
             <ToggleKnapp onClick={(e, pressed) => { setAnonymizeConfig(pressed); }}>
               Anonymize
             </ToggleKnapp>
