@@ -4,7 +4,7 @@ import handleRequest from '../../../util/handleRequest';
 
 const AnalyzeButton = (props) => {
   const {
-    setLoadingAnalysis, dataset, attributes, endpoint, setResponse,
+    setLoadingAnalyze, dataset, attributes, endpoint, setResponse,
     setOperation,
   } = props;
 
@@ -14,8 +14,8 @@ const AnalyzeButton = (props) => {
         onClick={
           () => {
             setOperation('Analyze');
-            setLoadingAnalysis(true);
-            handleRequest(setLoadingAnalysis, 'analyze', dataset, attributes, null, null, endpoint, setResponse);
+            setLoadingAnalyze(true);
+            handleRequest(setLoadingAnalyze, 'analyze', dataset, attributes, null, null, endpoint, setResponse);
           }
         }
       >

@@ -9,10 +9,10 @@ import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/Ri
 import './__css__/AnalysisWrapper.css';
 
 const AnalysisWrapper = (props) => {
-  const { loadingAnalysis, response } = props;
+  const { loadingAnalyze, response } = props;
   let content = '';
 
-  if (loadingAnalysis) {
+  if (loadingAnalyze) {
     content = (
       <div className="analysis-wrapper">
         <NavFrontendSpinner transparent />

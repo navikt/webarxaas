@@ -3,13 +3,13 @@ import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
 
 const ResultWrapper = (props) => {
   const {
-    response, setResponse, loadingAnalysis, operation,
+    response, setResponse, loadingAnalyze, operation,
   } = props;
   const { message, reIdentificationRisk, anonymizeResult } = response;
 
   let content = (
     <div className="result-wrapper">
-      <AnalysisWrapper loadingAnalysis={loadingAnalysis} />
+      <AnalysisWrapper loadingAnalyze={loadingAnalyze} />
     </div>
   );
 
@@ -31,7 +31,7 @@ const ResultWrapper = (props) => {
   } if (operation === 'Analyze' && reIdentificationRisk) {
     content = (
       <div className="result-wrapper">
-        <AnalysisWrapper response={response} loadingAnalysis={loadingAnalysis} />
+        <AnalysisWrapper response={response} loadingAnalyze={loadingAnalyze} />
       </div>
     );
   } if (operation === 'Import') {
