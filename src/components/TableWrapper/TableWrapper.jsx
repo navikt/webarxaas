@@ -1,17 +1,18 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
+import { ToggleKnapp } from 'nav-frontend-toggle';
 import Table from './Table/Table';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
-import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeButton';
 import AnonymizeConfigWrapper from './AnonymizeConfigWrapper/AnonymizeConfigWrapper';
 import './__css__/TableWrapper.css';
 
 const TableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
-    setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit, operation,
+    setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
+    showAnonymizeConfig, setAnonymizeConfig,
   } = props;
 
   let content = '';
@@ -53,7 +54,9 @@ const TableWrapper = (props) => {
             />
           </div>
           <div className="col-6">
-            <AnonymizeConfigButton setOperation={setOperation} />
+            <ToggleKnapp onClick={(e, pressed) => { setAnonymizeConfig(pressed); }}>
+              Anonymize
+            </ToggleKnapp>
           </div>
           <div>
             <AnonymizeConfigWrapper
@@ -63,7 +66,7 @@ const TableWrapper = (props) => {
               setPrivacyModels={setPrivacyModels}
               suppressionLimit={suppressionLimit}
               setSuppressionLimit={setSuppressionLimit}
-              operation={operation}
+              showAnonymizeConfig={showAnonymizeConfig}
             />
           </div>
         </div>
