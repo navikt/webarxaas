@@ -22,7 +22,7 @@ const ResultWrapper = (props) => {
       </div>
     );
   }
-  if (operation === 'Start Anonymization') {
+  if (operation === 'Anonymize') {
     content = (
       <div className="result-wrapper">
         placeholder for anonymization result

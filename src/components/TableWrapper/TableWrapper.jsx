@@ -70,6 +70,9 @@ const TableWrapper = (props) => {
               showAnonymizeConfig={showAnonymizeConfig}
               setLoadingAnonymize={setLoadingAnonymize}
               setOperation={setOperation}
+              dataset={dataset}
+              setResponse={setResponse}
+              endpoint={endpoint}
             />
           </div>
         </div>

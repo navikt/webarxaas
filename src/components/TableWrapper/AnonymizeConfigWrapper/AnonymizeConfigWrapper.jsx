@@ -11,7 +11,8 @@ const AnonymizeConfigWrapper = (props) => {
     privacyModels, setPrivacyModels,
     suppressionLimit, setSuppressionLimit,
     showAnonymizeConfig, setLoadingAnonymize,
-    setOperation,
+    setOperation, dataset, setResponse,
+    endpoint,
   } = props;
 
   let content = '';
@@ -44,7 +45,16 @@ const AnonymizeConfigWrapper = (props) => {
           </div>
         </div>
         <div className="start-anonymization">
-          <AnonymizeButton setLoadingAnonymize={setLoadingAnonymize} setOperation={setOperation} />
+          <AnonymizeButton
+            setLoadingAnonymize={setLoadingAnonymize}
+            setOperation={setOperation}
+            dataset={dataset}
+            attributes={attributes}
+            privacyModels={privacyModels}
+            suppressionLimit={suppressionLimit}
+            setResponse={setResponse}
+            endpoint={endpoint}
+          />
         </div>
       </div>
 
