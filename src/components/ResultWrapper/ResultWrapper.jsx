@@ -1,11 +1,9 @@
 import React from 'react';
 import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
-import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 
 const ResultWrapper = (props) => {
   const {
-    response, setResponse, loadingAnalysis, operation, setAttributes,
-    attributes, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
+    response, setResponse, loadingAnalysis, operation,
   } = props;
   const { message, reIdentificationRisk } = response;
 
@@ -24,17 +22,10 @@ const ResultWrapper = (props) => {
       </div>
     );
   }
-  if (operation === 'Anonymize') {
+  if (operation === 'Start Anonymization') {
     content = (
       <div className="result-wrapper">
-        <AnonymizeWrapper
-          setAttributes={setAttributes}
-          attributes={attributes}
-          privacyModels={privacyModels}
-          setPrivacyModels={setPrivacyModels}
-          suppressionLimit={suppressionLimit}
-          setSuppressionLimit={setSuppressionLimit}
-        />
+        placeholder for anonymization result
       </div>
     );
   } if (operation === 'Analyze' && reIdentificationRisk) {

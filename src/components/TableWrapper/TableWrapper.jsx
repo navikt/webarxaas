@@ -5,12 +5,13 @@ import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
+import AnonymizeConfigWrapper from './AnonymizeConfigWrapper/AnonymizeConfigWrapper';
 import './__css__/TableWrapper.css';
 
 const TableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
-    setOperation,
+    setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit, operation,
   } = props;
 
   let content = '';
@@ -53,6 +54,17 @@ const TableWrapper = (props) => {
           </div>
           <div className="col-6">
             <AnonymizeButton setOperation={setOperation} />
+          </div>
+          <div>
+            <AnonymizeConfigWrapper
+              setAttributes={setAttributes}
+              attributes={attributes}
+              privacyModels={privacyModels}
+              setPrivacyModels={setPrivacyModels}
+              suppressionLimit={suppressionLimit}
+              setSuppressionLimit={setSuppressionLimit}
+              operation={operation}
+            />
           </div>
         </div>
       </div>
