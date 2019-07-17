@@ -12,7 +12,7 @@ const TableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizeConfig, setAnonymizeConfig,
+    showAnonymizeConfig, setShowAnonymizeConfig,
   } = props;
 
   let content = '';
@@ -53,8 +53,8 @@ const TableWrapper = (props) => {
               setOperation={setOperation}
             />
           </div>
-          <div className="col-6  analyze-anonymize-button">
-            <ToggleKnapp onClick={(e, pressed) => { setAnonymizeConfig(pressed); }}>
+          <div className="col-6 analyze-anonymize-button">
+            <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizeConfig(pressed); }}>
               Anonymize
             </ToggleKnapp>
           </div>

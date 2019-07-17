@@ -14,7 +14,7 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [showAnonymizeConfig, setAnonymizeConfig] = useState(false);
+  const [showAnonymizeConfig, setShowAnonymizeConfig] = useState(false);
   const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
@@ -49,7 +49,7 @@ function App() {
         suppressionLimit={suppressionLimit}
         setSuppressionLimit={setSuppressionLimit}
         showAnonymizeConfig={showAnonymizeConfig}
-        setAnonymizeConfig={setAnonymizeConfig}
+        setShowAnonymizeConfig={setShowAnonymizeConfig}
       />
       <ResultWrapper
         response={response}
