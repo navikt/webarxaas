@@ -2,7 +2,7 @@ import React from 'react';
 import ImportDataset from './ImportDataset/ImportDataset';
 import './__css__/ImportDatasetWrapper.css';
 
-const ImportFileWrapper = (props) => {
+const ImportDatasetWrapper = (props) => {
   const {
     setLoadingDataset, setAttributes, setDataset, setOperation,
   } = props;
@@ -22,4 +22,4 @@ const ImportFileWrapper = (props) => {
   return content;
 };
 
-export default ImportFileWrapper;
+export default ImportDatasetWrapper;
