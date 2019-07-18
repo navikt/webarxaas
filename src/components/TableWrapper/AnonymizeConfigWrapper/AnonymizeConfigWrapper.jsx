@@ -16,7 +16,7 @@ const AnonymizeConfigWrapper = (props) => {
 
   if (showAnonymizeConfig) {
     content = (
-      <div className="anonymize-wrapper">
+      <div className="anonymize-wrapper container-fluid">
         <div className="row">
           <div className="col-4">
             <HierarchyImport

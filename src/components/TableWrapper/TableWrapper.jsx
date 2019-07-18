@@ -25,7 +25,7 @@ const TableWrapper = (props) => {
     );
   } else if (dataset) {
     content = (
-      <div className="table-wrapper">
+      <div className="table-wrapper container-fluid">
         <div className="row">
           <div className="col-6">
             <ImportAttribute setAttributes={setAttributes} />
@@ -42,7 +42,7 @@ const TableWrapper = (props) => {
             attributes={attributes}
           />
         </div>
-        <div className="row">
+        <div className="row container-fluid">
           <div className="col-6">
             <AnalyzeButton
               setLoadingAnalysis={setLoadingAnalysis}
