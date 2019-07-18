@@ -71,9 +71,7 @@ const MoreInfo = (props) => {
                 <br />
               A dataset is k-anonymous if each record cannot be distinguished from at least k-1 other records regarding the quasi-identifiers.
                 <br />
-              Each group of indistinguishable records forms a so-called equivalence class. More information can be found 
-                {' '}
-                <a href="https://www.worldscientific.com/doi/abs/10.1142/S0218488502001648">here.</a>
+              Each group of indistinguishable records forms a so-called equivalence class. 
               </p>
             </li>
           </ul>
