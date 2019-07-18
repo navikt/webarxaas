@@ -15,6 +15,10 @@ const AnonymizationWrapper = (props) => {
     content = (
       <div className="anonymization-wrapper">
         <h4>Result</h4>
+        <p>
+          Anonymization Status:
+          {response.anonymizeResult.anonymizationStatus}
+        </p>
       </div>
     );
   }
