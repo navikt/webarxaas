@@ -1,14 +1,14 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { ToggleKnapp } from 'nav-frontend-toggle';
-import Table from './Table/Table';
+import Table from './DatasetTable/DatasetTable';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
 import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
-import './__css__/TableWrapper.css';
+import './__css__/DatasetTableWrapper.css';
 
-const TableWrapper = (props) => {
+const DatasetTableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
     setAttributes, dataset, attributes, endpoint, setResponse,
@@ -83,4 +83,4 @@ const TableWrapper = (props) => {
   return content;
 };
 
-export default TableWrapper;
+export default DatasetTableWrapper;
