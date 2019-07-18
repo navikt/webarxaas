@@ -23,7 +23,10 @@ const AnalysisWrapper = (props) => {
       <div className="analysis-wrapper">
         <h4>Result</h4>
         <RiskChart risk={
-          parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100}
+          (parseFloat(
+            response.reIdentificationRisk.measures.estimated_prosecutor_risk,
+          ) * 100)
+            .toFixed(2)}
         />
         <Container>
           <Row>
