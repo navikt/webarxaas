@@ -1,6 +1,7 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import './__css__/AnonymizationWrapper.css';
+import AnonymizedDatasetTable from './AnonymizedDatasetTable/AnonymizedDatasetTable';
 
 const AnonymizationWrapper = (props) => {
   const { response, loadingAnonymize } = props;
@@ -19,6 +20,7 @@ const AnonymizationWrapper = (props) => {
           Anonymization Status:
           {response.anonymizeResult.anonymizationStatus}
         </p>
+        <AnonymizedDatasetTable response={response} />
       </div>
     );
   }
