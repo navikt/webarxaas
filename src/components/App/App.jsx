@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import env from '@beam-australia/react-env';
 import NavbarMain from '../NavbarMain/NavbarMain';
-import TableWrapper from '../TableWrapper/TableWrapper';
+import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import ResultWrapper from '../ResultWrapper/ResultWrapper';
@@ -36,7 +36,7 @@ function App() {
         setDataset={setDataset}
         setOperation={setOperation}
       />
-      <TableWrapper
+      <DatasetTableWrapper
         loadingDataset={loadingDataset}
         setLoadingAnalyze={setLoadingAnalyze}
         setLoadingAnonymize={setLoadingAnonymize}

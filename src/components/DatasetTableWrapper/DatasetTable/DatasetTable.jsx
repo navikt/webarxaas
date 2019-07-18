@@ -5,7 +5,7 @@ import { Select } from 'nav-frontend-skjema';
 import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
 
-const Table = React.memo(({ dataset, attributes, setAttributes }) => {
+const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   const columns = Object.keys(dataset[0]).map((key, index) => ({
     Header:
       // eslint-disable-next-line react/jsx-indent
@@ -41,4 +41,4 @@ const Table = React.memo(({ dataset, attributes, setAttributes }) => {
   return content;
 });
 
-export default Table;
+export default DatasetTable;
