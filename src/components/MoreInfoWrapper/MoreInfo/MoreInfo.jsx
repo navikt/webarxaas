@@ -57,9 +57,9 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-              In the prosecutor model the attacker targets a specific individual
+              In the prosecutor model the attacker targets a specific individual,
                 <br />
-              and it is assumed that the attacker already knows that data about the individual is contained in the dataset.
+              and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.
               </p>
             </li>
           </ul>
@@ -81,7 +81,7 @@ const MoreInfo = (props) => {
               <p>
               This privacy model can be used to protect data against attribute disclosure by ensuring that each sensitive attribute has at least
                 <br />
-              ℓ "well represented" values in each equivalence class.
+              ℓ well represented values in each equivalence class.
               </p>
             </li>
           </ul>
