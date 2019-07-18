@@ -15,7 +15,7 @@ const AnonymizationWrapper = (props) => {
   } else if (response) {
     content = (
       <div className="anonymization-wrapper">
-        <h4>Result</h4>
+        <h4>Anonymization Result</h4>
         <p>
           Anonymization Status:
           {response.anonymizeResult.anonymizationStatus}
