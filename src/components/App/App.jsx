@@ -9,12 +9,13 @@ import './__css__/App.css';
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
-  const [loadingAnalysis, setLoadingAnalysis] = useState(false);
+  const [loadingAnalyze, setLoadingAnalyze] = useState(false);
+  const [loadingAnonymize, setLoadingAnonymize] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [showAnonymizeConfig, setShowAnonymizeConfig] = useState(false);
+  const [showAnonymizationConfig, setShowAnonymizationConfig] = useState(false);
   const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
@@ -37,7 +38,8 @@ function App() {
       />
       <TableWrapper
         loadingDataset={loadingDataset}
-        setLoadingAnalysis={setLoadingAnalysis}
+        setLoadingAnalyze={setLoadingAnalyze}
+        setLoadingAnonymize={setLoadingAnonymize}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
@@ -48,13 +50,14 @@ function App() {
         setPrivacyModels={setPrivacyModels}
         suppressionLimit={suppressionLimit}
         setSuppressionLimit={setSuppressionLimit}
-        showAnonymizeConfig={showAnonymizeConfig}
-        setShowAnonymizeConfig={setShowAnonymizeConfig}
+        showAnonymizationConfig={showAnonymizationConfig}
+        setShowAnonymizationConfig={setShowAnonymizationConfig}
       />
       <ResultWrapper
         response={response}
         setResponse={setResponse}
-        loadingAnalysis={loadingAnalysis}
+        loadingAnalyze={loadingAnalyze}
+        loadingAnonymize={loadingAnonymize}
         operation={operation}
       />
     </div>

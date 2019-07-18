@@ -5,14 +5,15 @@ import Table from './Table/Table';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
-import AnonymizeConfigWrapper from './AnonymizeConfigWrapper/AnonymizeConfigWrapper';
+import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import './__css__/TableWrapper.css';
 
 const TableWrapper = (props) => {
   const {
-    loadingDataset, setLoadingAnalysis, setAttributes, dataset, attributes, endpoint, setResponse,
+    loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
+    setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizeConfig, setShowAnonymizeConfig,
+    showAnonymizationConfig, setShowAnonymizationConfig,
   } = props;
 
   let content = '';
@@ -45,7 +46,7 @@ const TableWrapper = (props) => {
         <div className="row container-fluid">
           <div className="col-6">
             <AnalyzeButton
-              setLoadingAnalysis={setLoadingAnalysis}
+              setLoadingAnalyze={setLoadingAnalyze}
               dataset={dataset}
               attributes={attributes}
               endpoint={endpoint}
@@ -54,19 +55,24 @@ const TableWrapper = (props) => {
             />
           </div>
           <div className="col-6 analyze-anonymize-button">
-            <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizeConfig(pressed); }}>
+            <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
               Anonymize dataset
             </ToggleKnapp>
           </div>
           <div>
-            <AnonymizeConfigWrapper
+            <AnonymizationConfigWrapper
               setAttributes={setAttributes}
               attributes={attributes}
               privacyModels={privacyModels}
               setPrivacyModels={setPrivacyModels}
               suppressionLimit={suppressionLimit}
               setSuppressionLimit={setSuppressionLimit}
-              showAnonymizeConfig={showAnonymizeConfig}
+              showAnonymizationConfig={showAnonymizationConfig}
+              setLoadingAnonymize={setLoadingAnonymize}
+              setOperation={setOperation}
+              dataset={dataset}
+              setResponse={setResponse}
+              endpoint={endpoint}
             />
           </div>
         </div>

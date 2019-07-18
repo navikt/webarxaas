@@ -1,8 +1,9 @@
-export default function BuildPayload(dataset, attributes) {
+export default function BuildPayload(dataset, attributes,
+  privacyModels, suppressionLimit) {
   const jsonModel = {};
   jsonModel.data = dataset;
   jsonModel.attributes = attributes;
-  jsonModel.privacyModels = [];
-  jsonModel.suppressionLimit = null;
+  jsonModel.privacyModels = privacyModels;
+  jsonModel.suppressionLimit = suppressionLimit;
   return jsonModel;
 }

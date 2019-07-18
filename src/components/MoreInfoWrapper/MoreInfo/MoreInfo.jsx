@@ -14,26 +14,77 @@ const MoreInfo = (props) => {
 
         <div className="more-info-attribute">
           <p><b>CSV import file:</b></p>
-          <p>
-          To display Æ, Ø, and Å, make sure the imported dataset is saved as a CSV file with UTF-8
-          </p>
+          <ul>
+            <li>
+              <p>
+                To display Æ, Ø, and Å, make sure the imported tabular dataset is saved as a CSV file with UTF-8
+              </p>
+            </li>
+          </ul>
           <p><b>Attribute types:</b></p>
-          <li>
-            <b>Identifying </b>
-               attributes will be removed from the dataset.
-          </li>
-          <li>
-            <b>Quasi-identifying </b>
-            attributes will be transformed.
-          </li>
-          <li>
-            <b>Sensitive </b>
-          attributes will be kept as-is but they can be protected using privacy models, such as t-closeness or l-diversity.
-          </li>
-          <li>
-            <b>Insensitive </b>
-            attributes will be kept unmodified.
-          </li>
+          <ul>
+            <li>
+              <b>Identifying </b>
+              attributes are associated with a high risk of re-identification. They will be removed from the dataset.
+              <br />
+              Typical examples are names or Social Security Numbers.
+            </li>
+            <br />
+            <li>
+              <b>Quasi-identifying </b>
+              attributes can in combination be used for re-identification attacks.
+              <br />
+              They will be transformed. Typical examples are gender, date of birth and ZIP codes.
+            </li>
+            <br />
+            <li>
+              <b>Sensitive </b>
+              attributes encode properties with which individuals are not willing to be linked with.
+              <br />
+              As such, they might be of interest to an attacker and, if disclosed, could cause harm to data subjects.
+              <br />
+              They will be kept unmodified but may be subject to further constraints, such as t-closeness or l-diversity.
+              <br />
+              Typical examples are diagnoses.
+            </li>
+            <br />
+            <li>
+              <b>Insensitive </b>
+              attributes are not associated with privacy risks. They will be kept unmodified.
+            </li>
+          </ul>
+          <p><b>Prosecutor model</b></p>
+          <ul>
+            <li>
+              <p>
+              In the prosecutor model the attacker targets a specific individual,
+                <br />
+              and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.
+              </p>
+            </li>
+          </ul>
+          <p><b>k-Anonymity</b></p>
+          <ul>
+            <li>
+              <p>
+              This well-known privacy model aims at protecting datasets from re-identification in the prosecutor model.
+                <br />
+              A dataset is k-anonymous if each record cannot be distinguished from at least k-1 other records regarding the quasi-identifiers.
+                <br />
+              Each group of indistinguishable records forms a so-called equivalence class.
+              </p>
+            </li>
+          </ul>
+          <p><b>ℓ-Diversity</b></p>
+          <ul>
+            <li>
+              <p>
+              This privacy model can be used to protect data against attribute disclosure by ensuring that each sensitive attribute has at least
+                <br />
+              ℓ well represented values in each equivalence class.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     );
