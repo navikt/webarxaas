@@ -20,7 +20,7 @@ const AnonymizationWrapper = (props) => {
           Anonymization Status:
           {response.anonymizeResult.anonymizationStatus}
         </p>
-        <AnonymizedDatasetTable response={response} />
+        <AnonymizedDatasetTable anonymizeResult={response.anonymizeResult} />
       </div>
     );
   }
