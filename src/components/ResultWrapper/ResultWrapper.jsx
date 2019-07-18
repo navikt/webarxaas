@@ -1,6 +1,6 @@
 import React from 'react';
 import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
-import AnonymizationWrapper from './AnonymizationWrapper/AnonymizationWrapper';
+import AnonymizedDatasetWrapper from './AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 
 const ResultWrapper = (props) => {
   const {
@@ -26,7 +26,7 @@ const ResultWrapper = (props) => {
   if (operation === 'Anonymize' && anonymizeResult) {
     content = (
       <div className="result-wrapper">
-        <AnonymizationWrapper response={response} loadingAnonymize={loadingAnonymize} />
+        <AnonymizedDatasetWrapper response={response} loadingAnonymize={loadingAnonymize} />
       </div>
     );
   } if (operation === 'Analyze' && reIdentificationRisk) {

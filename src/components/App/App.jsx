@@ -3,7 +3,7 @@ import env from '@beam-australia/react-env';
 import NavbarMain from '../NavbarMain/NavbarMain';
 import TableWrapper from '../TableWrapper/TableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
-import ImportFileWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
+import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import ResultWrapper from '../ResultWrapper/ResultWrapper';
 import './__css__/App.css';
 
@@ -15,7 +15,7 @@ function App() {
   const [attributes, setAttributes] = useState([]);
   const [response, setResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [showAnonymizeConfig, setShowAnonymizeConfig] = useState(false);
+  const [showAnonymizationConfig, setShowAnonymizationConfig] = useState(false);
   const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
@@ -29,7 +29,7 @@ function App() {
       <MoreInfoWrapper
         showMoreInfo={showMoreInfo}
       />
-      <ImportFileWrapper
+      <ImportDatasetWrapper
         loadingDataset={loadingDataset}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
@@ -50,8 +50,8 @@ function App() {
         setPrivacyModels={setPrivacyModels}
         suppressionLimit={suppressionLimit}
         setSuppressionLimit={setSuppressionLimit}
-        showAnonymizeConfig={showAnonymizeConfig}
-        setShowAnonymizeConfig={setShowAnonymizeConfig}
+        showAnonymizationConfig={showAnonymizationConfig}
+        setShowAnonymizationConfig={setShowAnonymizationConfig}
       />
       <ResultWrapper
         response={response}

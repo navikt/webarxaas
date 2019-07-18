@@ -3,7 +3,7 @@ import ParseFile from '../../../util/parseFile';
 import DragAndDropFile from '../../../util/dragAndDropFile';
 import './__css__/ImportDataset.css';
 
-const ImportFile = (props) => {
+const ImportDataset = (props) => {
   const {
     setLoadingDataset, setAttributes, setDataset, defaultAttributeType, setOperation,
   } = props;
@@ -39,4 +39,4 @@ const ImportFile = (props) => {
   return content;
 };
 
-export default ImportFile;
+export default ImportDataset;

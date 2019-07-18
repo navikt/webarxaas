@@ -5,7 +5,7 @@ import Table from './Table/Table';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
-import AnonymizeConfigWrapper from './AnonymizeConfigWrapper/AnonymizeConfigWrapper';
+import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import './__css__/TableWrapper.css';
 
 const TableWrapper = (props) => {
@@ -13,7 +13,7 @@ const TableWrapper = (props) => {
     loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
     setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizeConfig, setShowAnonymizeConfig,
+    showAnonymizationConfig, setShowAnonymizationConfig,
   } = props;
 
   let content = '';
@@ -26,7 +26,7 @@ const TableWrapper = (props) => {
     );
   } else if (dataset) {
     content = (
-      <div className="table-wrapper">
+      <div className="table-wrapper container-fluid">
         <div className="row">
           <div className="col-6">
             <ImportAttribute setAttributes={setAttributes} />
@@ -43,7 +43,7 @@ const TableWrapper = (props) => {
             attributes={attributes}
           />
         </div>
-        <div className="row">
+        <div className="row container-fluid">
           <div className="col-6">
             <AnalyzeButton
               setLoadingAnalyze={setLoadingAnalyze}
@@ -55,19 +55,19 @@ const TableWrapper = (props) => {
             />
           </div>
           <div className="col-6 analyze-anonymize-button">
-            <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizeConfig(pressed); }}>
+            <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
               Anonymize dataset
             </ToggleKnapp>
           </div>
           <div>
-            <AnonymizeConfigWrapper
+            <AnonymizationConfigWrapper
               setAttributes={setAttributes}
               attributes={attributes}
               privacyModels={privacyModels}
               setPrivacyModels={setPrivacyModels}
               suppressionLimit={suppressionLimit}
               setSuppressionLimit={setSuppressionLimit}
-              showAnonymizeConfig={showAnonymizeConfig}
+              showAnonymizationConfig={showAnonymizationConfig}
               setLoadingAnonymize={setLoadingAnonymize}
               setOperation={setOperation}
               dataset={dataset}
