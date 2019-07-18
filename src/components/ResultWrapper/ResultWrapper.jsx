@@ -1,9 +1,10 @@
 import React from 'react';
 import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
+import AnonymizationWrapper from './AnonymizationWrapper/AnonymizationWrapper';
 
 const ResultWrapper = (props) => {
   const {
-    response, setResponse, loadingAnalyze, operation,
+    response, setResponse, loadingAnalyze, loadingAnonymize, operation,
   } = props;
   const { message, reIdentificationRisk, anonymizeResult } = response;
 
@@ -25,7 +26,7 @@ const ResultWrapper = (props) => {
   if (operation === 'Anonymize' && anonymizeResult) {
     content = (
       <div className="result-wrapper">
-        placeholder for anonymization result
+        <AnonymizationWrapper response={response} loadingAnonymize={loadingAnonymize} />
       </div>
     );
   } if (operation === 'Analyze' && reIdentificationRisk) {
