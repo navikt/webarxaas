@@ -1,0 +1,27 @@
+import React from 'react';
+import { Knapp } from 'nav-frontend-knapper';
+import papaparse from 'papaparse';
+
+const DownloadAnonymizedDataset = (props) => {
+  const { anonymizeResult } = props;
+
+  const handleDownload = () => {
+    const data = papaparse.unparse(anonymizeResult.data, { delimiter: ';' });
+    const element = document.createElement('a');
+    const csvData = new Blob([data], { type: 'text/plain' });
+    element.href = URL.createObjectURL(csvData);
+    element.download = 'myAnonymizedDataset.csv';
+    document.body.appendChild(element); // Required for this to work in FireFox
+    element.click();
+  };
+
+  const content = (
+    <div className="download-anonymized-dataset">
+      <Knapp onClick={() => handleDownload()}>
+        Download Dataset
+      </Knapp>
+    </div>
+  );
+  return content;
+};
+export default DownloadAnonymizedDataset;
