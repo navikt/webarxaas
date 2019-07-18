@@ -9,8 +9,10 @@ const ReIdentificationRiskTable = (props) => {
       <div align="left">
         <table className="table table-hover">
           <tbody>
+            <p><b>Prosecutor model: </b></p>
+
             <tr>
-              <td><b>Estimated prosecutor risk: </b></td>
+              <td>Estimated prosecutor risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.estimated_prosecutor_risk)
@@ -18,7 +20,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Average prosecutor risk: </b></td>
+              <td>Average prosecutor risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.average_prosecutor_risk)
@@ -26,7 +28,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Highest prosecutor risk: </b></td>
+              <td>Highest prosecutor risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.highest_prosecutor_risk)
@@ -34,7 +36,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Records affected by highest prosecutor risk: </b></td>
+              <td>Records affected by highest prosecutor risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures
@@ -42,8 +44,11 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
+
+            <br />
+            <p><b>Journalist model: </b></p>
             <tr>
-              <td><b>Estimated journalist risk: </b></td>
+              <td>Estimated journalist risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.estimated_journalist_risk)
@@ -51,7 +56,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Journalist attacker success rate: </b></td>
+              <td>Journalist attacker success rate: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.attackerSuccessRate.successRates
@@ -60,7 +65,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Highest journalist risk: </b></td>
+              <td>Highest journalist risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures
@@ -69,7 +74,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Records affected by highest journalist risk: </b></td>
+              <td>Records affected by highest journalist risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures
@@ -77,8 +82,11 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
+
+            <br />
+            <p><b>Marketer model: </b></p>
             <tr>
-              <td><b>Estimated marketer risk: </b></td>
+              <td>Estimated marketer risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.estimated_marketer_risk)
@@ -86,7 +94,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Marketer attacker success rate: </b></td>
+              <td>Marketer attacker success rate: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.attackerSuccessRate.successRates
@@ -94,8 +102,12 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
+
+            <br />
+            <p><b>Population: </b></p>
+
             <tr>
-              <td><b>Population uniques: </b></td>
+              <td>Population uniques: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures
@@ -105,11 +117,14 @@ const ReIdentificationRiskTable = (props) => {
             </tr>
 
             <tr>
-              <td><b>Population model: </b></td>
+              <td>Population model: </td>
               <td>{reIdentificationRisk.populationModel}</td>
             </tr>
+
+            <br />
+            <p><b>Lowest risk</b></p>
             <tr>
-              <td><b>Lowest risk: </b></td>
+              <td>Lowest risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.lowest_risk)
@@ -117,13 +132,15 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td><b>Records affected by lowest risk: </b></td>
+              <td>Records affected by lowest risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.records_affected_by_lowest_risk)
                 }
               </td>
             </tr>
+
+            <br />
             <tr>
               <td><b>Sample uniques: </b></td>
               <td>
@@ -132,6 +149,8 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
+
+            <br />
             <tr>
               <td><b>Prosecutor attacker success rate: </b></td>
               <td>
@@ -141,8 +160,10 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
+
+            <br />
             <tr>
-              <td><b>Quasi-identifiers</b></td>
+              <td><b>Quasi-identifiers: </b></td>
               <td>
                 {reIdentificationRisk.quasiIdentifiers.map(attribute => attribute.concat(', '))}
               </td>
