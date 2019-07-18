@@ -59,7 +59,7 @@ const MoreInfo = (props) => {
               <p>
               In the prosecutor model the attacker targets a specific individual
                 <br />
-              and it is assumed that she already knows that data about the individual is contained in the dataset.
+              and it is assumed that the attacker already knows that data about the individual is contained in the dataset.
               </p>
             </li>
           </ul>
