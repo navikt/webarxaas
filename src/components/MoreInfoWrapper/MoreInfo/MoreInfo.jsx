@@ -77,6 +77,16 @@ const MoreInfo = (props) => {
               </p>
             </li>
           </ul>
+          <p><b>ℓ-Diversity</b></p>
+          <ul>
+            <li>
+              <p>
+              This privacy model can be used to protect data against attribute disclosure by ensuring that each sensitive attribute has at least
+                <br />
+              ℓ "well represented" values in each equivalence class.
+              </p>
+            </li>
+          </ul>
         </div>
       </div>
     );
