@@ -6,14 +6,16 @@ import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
-  const columns = Object.keys(dataset[0]).map((key, index) => ({
+
+  const columns = Object.keys(dataset[0]).map(index => ({
     Header:
       // eslint-disable-next-line react/jsx-indent
       <div>
         <Select
           label=""
+          value={attributes[index].attributeTypeModel}
           onChange={(e) => {
-            HandleTypeSelect(e.target, attributes[key].field, index, attributes, setAttributes);
+            HandleTypeSelect(e.target, attributes[index].field, index, attributes, setAttributes);
           }}
         >
           <option value="QUASIIDENTIFYING">Quasi-identifying</option>
@@ -21,9 +23,9 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
           <option value="SENSITIVE">Sensitive</option>
           <option value="IDENTIFYING">Identifying</option>
         </Select>
-        {dataset[0][key]}
+        {dataset[0][index]}
       </div>,
-    accessor: key,
+    accessor: index,
     width: 164,
   }));
 
