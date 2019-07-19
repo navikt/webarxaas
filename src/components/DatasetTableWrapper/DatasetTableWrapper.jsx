@@ -13,7 +13,7 @@ const DatasetTableWrapper = (props) => {
     loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
     setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizationConfig, setShowAnonymizationConfig,
+    showAnonymizationConfig, setShowAnonymizationConfig, fileName,
   } = props;
 
   let content = '';
@@ -27,8 +27,13 @@ const DatasetTableWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="dataset-table-wrapper">
-        <ImportAttribute setAttributes={setAttributes} />
-        <ExportAttribute AttributeTypes={attributes} />
+        <ImportAttribute
+          setAttributes={setAttributes}
+        />
+        <ExportAttribute
+          AttributeTypes={attributes}
+          fileName={fileName}
+        />
         <DatasetTable
           setAttributes={setAttributes}
           dataset={dataset}
@@ -42,7 +47,8 @@ const DatasetTableWrapper = (props) => {
           setResponse={setResponse}
           setOperation={setOperation}
         />
-        <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
+        <ToggleKnapp
+          onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
           Anonymize dataset
         </ToggleKnapp>
         <AnonymizationConfigWrapper

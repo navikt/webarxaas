@@ -4,7 +4,7 @@ import './__css__/ImportDatasetWrapper.css';
 
 const ImportDatasetWrapper = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset, setOperation,
+    setLoadingDataset, setAttributes, setDataset, setOperation, setFileName,
   } = props;
 
   const content = (
@@ -15,6 +15,7 @@ const ImportDatasetWrapper = (props) => {
         setDataset={setDataset}
         defaultAttributeType="QUASIIDENTIFYING"
         setOperation={setOperation}
+        setFileName={setFileName}
       />
     </div>
   );

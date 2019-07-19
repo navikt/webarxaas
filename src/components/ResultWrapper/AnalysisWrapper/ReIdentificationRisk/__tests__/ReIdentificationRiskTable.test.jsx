@@ -44,7 +44,7 @@ describe('reidentificationrisk table tests', () => {
       <tr><td>Average prosecutor risk: </td><td>5.00 %</td></tr>,
       <tr><td>Highest prosecutor risk: </td><td>100.00 %</td></tr>,
       <tr><td>Records affected by highest prosecutor risk: </td><td>0.10 %</td></tr>,
-      <tr><td><b>Prosecutor attacker success rate: </b></td><td>5.00 %</td></tr>,
+      <tr><td>Prosecutor attacker success rate: </td><td>5.00 %</td></tr>,
       <tr><td>Highest journalist risk: </td><td>100.00 %</td></tr>,
       <tr><td>Records affected by highest journalist risk: </td><td>0.10 %</td></tr>,
       <tr><td>Journalist attacker success rate: </td><td>5.00 %</td></tr>,

@@ -5,9 +5,8 @@ import './__css__/ImportDataset.css';
 
 const ImportDataset = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset, defaultAttributeType, setOperation,
+    setLoadingDataset, setAttributes, setDataset, defaultAttributeType, setOperation, setFileName,
   } = props;
-
   useEffect(() => {
     DragAndDropFile(setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
   });
@@ -21,6 +20,7 @@ const ImportDataset = (props) => {
           className="import-dataset-input knapp knapp--standard"
           onChange={
             (e) => {
+              setFileName(e.target.files[0].name);
               setOperation('Import');
               setLoadingDataset(true);
               ParseFile(
