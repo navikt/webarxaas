@@ -9,7 +9,7 @@ const AnalyzeButton = (props) => {
   } = props;
 
   const content = (
-    <div className="analyze-button analyze-anonymize-button">
+    <div className="analyze-button">
       <Knapp
         onClick={
           () => {

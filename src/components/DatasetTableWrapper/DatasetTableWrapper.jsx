@@ -42,26 +42,24 @@ const DatasetTableWrapper = (props) => {
           setResponse={setResponse}
           setOperation={setOperation}
         />
-        <div className="analyze-anonymize-button">
-          <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
-            Anonymize dataset
-          </ToggleKnapp>
-        </div>
-          <AnonymizationConfigWrapper
-            setAttributes={setAttributes}
-            attributes={attributes}
-            privacyModels={privacyModels}
-            setPrivacyModels={setPrivacyModels}
-            suppressionLimit={suppressionLimit}
-            setSuppressionLimit={setSuppressionLimit}
-            showAnonymizationConfig={showAnonymizationConfig}
-            setLoadingAnonymize={setLoadingAnonymize}
-            setOperation={setOperation}
-            dataset={dataset}
-            setResponse={setResponse}
-            endpoint={endpoint}
-          />
-        </div>
+        <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
+          Anonymize dataset
+        </ToggleKnapp>
+        <AnonymizationConfigWrapper
+          setAttributes={setAttributes}
+          attributes={attributes}
+          privacyModels={privacyModels}
+          setPrivacyModels={setPrivacyModels}
+          suppressionLimit={suppressionLimit}
+          setSuppressionLimit={setSuppressionLimit}
+          showAnonymizationConfig={showAnonymizationConfig}
+          setLoadingAnonymize={setLoadingAnonymize}
+          setOperation={setOperation}
+          dataset={dataset}
+          setResponse={setResponse}
+          endpoint={endpoint}
+        />
+      </div>
     );
   }
 
