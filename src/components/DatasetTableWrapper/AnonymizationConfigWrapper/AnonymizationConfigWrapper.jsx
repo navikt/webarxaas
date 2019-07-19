@@ -44,18 +44,16 @@ const AnonymizationConfigWrapper = (props) => {
             />
           </div>
         </div>
-        <div className="anonymize-button">
-          <AnonymizeButton
-            setLoadingAnonymize={setLoadingAnonymize}
-            setOperation={setOperation}
-            dataset={dataset}
-            attributes={attributes}
-            privacyModels={privacyModels}
-            suppressionLimit={suppressionLimit}
-            setResponse={setResponse}
-            endpoint={endpoint}
-          />
-        </div>
+        <AnonymizeButton
+          setLoadingAnonymize={setLoadingAnonymize}
+          setOperation={setOperation}
+          dataset={dataset}
+          attributes={attributes}
+          privacyModels={privacyModels}
+          suppressionLimit={suppressionLimit}
+          setResponse={setResponse}
+          endpoint={endpoint}
+        />
       </div>
     );
   }
