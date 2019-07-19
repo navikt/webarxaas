@@ -13,7 +13,7 @@ const DatasetTableWrapper = (props) => {
     loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
     setAttributes, dataset, attributes, endpoint, setResponse,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizationConfig, setShowAnonymizationConfig,
+    showAnonymizationConfig, setShowAnonymizationConfig, fileName,
   } = props;
 
   let content = '';
@@ -32,7 +32,10 @@ const DatasetTableWrapper = (props) => {
             <ImportAttribute setAttributes={setAttributes} />
           </div>
           <div className="col-6">
-            <ExportAttribute AttributeTypes={attributes} />
+            <ExportAttribute
+              AttributeTypes={attributes}
+              fileName={fileName}
+            />
           </div>
 
         </div>
