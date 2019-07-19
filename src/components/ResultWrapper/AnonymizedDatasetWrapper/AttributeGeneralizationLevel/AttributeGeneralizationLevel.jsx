@@ -17,7 +17,6 @@ const AttributeGeneralizationLevel = (props) => {
   ];
   const content = (
     <div className="attribute-generalization-level">
-      <h3>Attribute Generalization Level</h3>
       <ReactTable
         data={attributeGeneralization}
         columns={columns}
