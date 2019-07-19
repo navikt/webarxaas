@@ -9,7 +9,7 @@ import './__css__/AnonymizedDatasetWrapper.css';
 
 
 const AnonymizedDatasetWrapper = (props) => {
-  const { response, loadingAnonymize } = props;
+  const { response, loadingAnonymize, fileName } = props;
   let content = ' ';
   if (loadingAnonymize) {
     content = (
@@ -26,7 +26,10 @@ const AnonymizedDatasetWrapper = (props) => {
           {response.anonymizeResult.anonymizationStatus}
         </p>
         <AnonymizedDatasetTable anonymizeResult={response.anonymizeResult} />
-        <DownloadAnonymizedDataset anonymizeResult={response.anonymizeResult} />
+        <DownloadAnonymizedDataset
+          anonymizeResult={response.anonymizeResult}
+          fileName={fileName}
+        />
         <div className="col-12">
           <Ekspanderbartpanel tittel="Attribute Generalization Level" border>
             <AttributeGeneralizationLevel

@@ -4,14 +4,14 @@ import papaparse from 'papaparse';
 import './__css__/DownloadAnonymizedDataset.css';
 
 const DownloadAnonymizedDataset = (props) => {
-  const { anonymizeResult } = props;
+  const { anonymizeResult, fileName } = props;
 
   const handleDownload = () => {
     const data = papaparse.unparse(anonymizeResult.data, { delimiter: ';' });
     const element = document.createElement('a');
     const csvData = new Blob([data], { type: 'text/plain' });
     element.href = URL.createObjectURL(csvData);
-    element.download = 'myAnonymizedDataset.csv';
+    element.download = fileName ? fileName.toString().replace('.csv', '').concat('_Anonymized.csv') : 'export_Anonymized.csv';
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
   };

@@ -4,9 +4,11 @@ import AnonymizedDatasetWrapper from './AnonymizedDatasetWrapper/AnonymizedDatas
 
 const ResultWrapper = (props) => {
   const {
-    response, setResponse, loadingAnalyze, loadingAnonymize, operation,
+    response, setResponse, loadingAnalyze, loadingAnonymize, operation, fileName,
   } = props;
-  const { message, reIdentificationRisk, anonymizeResult } = response;
+  const {
+    message, reIdentificationRisk, anonymizeResult,
+  } = response;
 
   let content = (
     <div className="result-wrapper">
@@ -26,7 +28,11 @@ const ResultWrapper = (props) => {
   if (operation === 'Anonymize' && anonymizeResult) {
     content = (
       <div className="result-wrapper">
-        <AnonymizedDatasetWrapper response={response} loadingAnonymize={loadingAnonymize} />
+        <AnonymizedDatasetWrapper
+          response={response}
+          loadingAnonymize={loadingAnonymize}
+          fileName={fileName}
+        />
       </div>
     );
   } if (operation === 'Analyze' && reIdentificationRisk) {
