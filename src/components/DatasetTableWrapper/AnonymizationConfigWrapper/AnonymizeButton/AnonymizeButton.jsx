@@ -10,7 +10,7 @@ const AnonymizeButton = (props) => {
   } = props;
 
   const content = (
-    <div className="anonymize-button analyze-anonymize-button">
+    <div className="anonymize-button">
       <Knapp onClick={() => {
         setOperation('Anonymize');
         setLoadingAnonymize(true);
