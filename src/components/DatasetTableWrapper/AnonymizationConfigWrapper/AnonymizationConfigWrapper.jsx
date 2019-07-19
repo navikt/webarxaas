@@ -57,7 +57,6 @@ const AnonymizationConfigWrapper = (props) => {
           />
         </div>
       </div>
-
     );
   }
   return content;
