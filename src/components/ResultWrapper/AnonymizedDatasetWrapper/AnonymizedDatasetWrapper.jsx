@@ -3,6 +3,7 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import AnonymizedDatasetTable from './AnonymizedDatasetTable/AnonymizedDatasetTable';
 import DownloadAnonymizedDataset from './DownloadAnonymizedDataset/DownloadAnonymizedDataset';
 import './__css__/AnonymizedDatasetWrapper.css';
+import AttributeGeneralizationLevel from './AttributeGeneralizationLevel/AttributeGeneralizationLevel';
 
 const AnonymizedDatasetWrapper = (props) => {
   const { response, loadingAnonymize } = props;
@@ -23,6 +24,9 @@ const AnonymizedDatasetWrapper = (props) => {
         </p>
         <AnonymizedDatasetTable anonymizeResult={response.anonymizeResult} />
         <DownloadAnonymizedDataset anonymizeResult={response.anonymizeResult} />
+        <AttributeGeneralizationLevel
+          attributeGeneralization={response.anonymizeResult.metrics.attributeGeneralization}
+        />
       </div>
     );
   }
