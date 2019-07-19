@@ -11,7 +11,7 @@ const DownloadAnonymizedDataset = (props) => {
     const element = document.createElement('a');
     const csvData = new Blob([data], { type: 'text/plain' });
     element.href = URL.createObjectURL(csvData);
-    element.download = fileName ? fileName.toString().replace('.csv', '').concat('_Anonymized.csv') : 'export_Anonymized.csv';
+    element.download = fileName ? fileName.toString().replace('.csv', '').concat('_anonymized.csv') : 'export_anonymized.csv';
     document.body.appendChild(element); // Required for this to work in FireFox
     element.click();
   };
