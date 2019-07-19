@@ -1,8 +1,4 @@
 .risk-chart {
-  margin-top: 1em;
-  margin-bottom: 1em;
+  margin: 1em 0 1em -2em;
   overflow-x: auto;
-}
-.recharts-wrapper {
-  margin: auto;
 }
