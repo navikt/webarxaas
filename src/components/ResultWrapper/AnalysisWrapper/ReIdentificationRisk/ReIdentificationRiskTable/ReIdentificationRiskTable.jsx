@@ -44,6 +44,15 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
+            <tr>
+              <td>Prosecutor attacker success rate: </td>
+              <td>
+                {
+                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
+                    .Prosecutor_attacker_success_rate)
+                }
+              </td>
+            </tr>
 
             <br />
             <p><b>Journalist model: </b></p>
@@ -146,17 +155,6 @@ const ReIdentificationRiskTable = (props) => {
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.sample_uniques)
-                }
-              </td>
-            </tr>
-
-            <br />
-            <tr>
-              <td><b>Prosecutor attacker success rate: </b></td>
-              <td>
-                {
-                  toPercent(reIdentificationRisk.attackerSuccessRate.successRates
-                    .Prosecutor_attacker_success_rate)
                 }
               </td>
             </tr>
