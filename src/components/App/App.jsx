@@ -19,6 +19,7 @@ function App() {
   const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
+  const [fileName, setFileName] = useState('');
   const arxaasEndpoint = env('ARXAAS_URL');
 
   return (
@@ -35,7 +36,9 @@ function App() {
         setAttributes={setAttributes}
         setDataset={setDataset}
         setOperation={setOperation}
+        setFileName={setFileName}
       />
+
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
         setLoadingAnalyze={setLoadingAnalyze}
@@ -52,6 +55,7 @@ function App() {
         setSuppressionLimit={setSuppressionLimit}
         showAnonymizationConfig={showAnonymizationConfig}
         setShowAnonymizationConfig={setShowAnonymizationConfig}
+        fileName={fileName}
       />
       <ResultWrapper
         response={response}
