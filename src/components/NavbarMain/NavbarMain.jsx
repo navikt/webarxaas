@@ -1,6 +1,7 @@
 import React from '../../../node_modules/react';
 import { Navbar } from '../../../node_modules/react-bootstrap';
 import MoreInfoButton from './MoreInfoButton/MoreInfoButton';
+import './__css__/NavbarMain.css';
 
 const NavbarMain = (props) => {
   const { setShowMoreInfo } = props;
