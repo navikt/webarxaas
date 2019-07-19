@@ -6,6 +6,13 @@ import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
+  const isSelected = (attribute, value) => attribute.attributeTypeModel === value;
+  const types = [
+    ['QUASIIDENTIFYING', 'Quasi-identifying'],
+    ['INSENSITIVE', 'Insensitive'],
+    ['SENSITIVE', 'Sensitive'],
+    ['IDENTIFYING', 'Identifying'],
+  ];
 
   const columns = Object.keys(dataset[0]).map(index => ({
     Header:
@@ -13,15 +20,19 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
       <div>
         <Select
           label=""
-          value={attributes[index].attributeTypeModel}
           onChange={(e) => {
             HandleTypeSelect(e.target, attributes[index].field, index, attributes, setAttributes);
           }}
         >
-          <option value="QUASIIDENTIFYING">Quasi-identifying</option>
-          <option value="INSENSITIVE">Insensitive</option>
-          <option value="SENSITIVE">Sensitive</option>
-          <option value="IDENTIFYING">Identifying</option>
+          {types.map(([value, label]) => (
+            <option
+              value={value}
+              key={value}
+              selected={isSelected(attributes[index], value)}
+            >
+              {label}
+            </option>
+          ))}
         </Select>
         {dataset[0][index]}
       </div>,
