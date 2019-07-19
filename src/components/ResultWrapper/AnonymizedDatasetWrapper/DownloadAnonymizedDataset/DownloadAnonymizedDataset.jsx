@@ -1,6 +1,7 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
 import papaparse from 'papaparse';
+import './__css__/DownloadAnonymizedDataset.css';
 
 const DownloadAnonymizedDataset = (props) => {
   const { anonymizeResult } = props;
