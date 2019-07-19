@@ -36,13 +36,11 @@ const DatasetTableWrapper = (props) => {
           </div>
 
         </div>
-        <div className="dataset-table">
           <DatasetTable
             setAttributes={setAttributes}
             dataset={dataset}
             attributes={attributes}
           />
-        </div>
         <div className="analyze-button row container-fluid">
           <div className="col-6">
             <AnalyzeButton
