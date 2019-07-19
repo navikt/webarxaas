@@ -1,7 +1,7 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import { ToggleKnapp } from 'nav-frontend-toggle';
-import Table from './DatasetTable/DatasetTable';
+import DatasetTable from './DatasetTable/DatasetTable';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
@@ -20,13 +20,13 @@ const DatasetTableWrapper = (props) => {
 
   if (loadingDataset) {
     content = (
-      <div className="table-wrapper">
+      <div className="dataset-table-wrapper">
         <NavFrontendSpinner transparent />
       </div>
     );
   } else if (dataset) {
     content = (
-      <div className="table-wrapper container-fluid">
+      <div className="dataset-table-wrapper container-fluid">
         <div className="row">
           <div className="col-6">
             <ImportAttribute setAttributes={setAttributes} />
@@ -37,13 +37,13 @@ const DatasetTableWrapper = (props) => {
 
         </div>
         <div className="dataset-table">
-          <Table
+          <DatasetTable
             setAttributes={setAttributes}
             dataset={dataset}
             attributes={attributes}
           />
         </div>
-        <div className="row container-fluid">
+        <div className="analyze-button row container-fluid">
           <div className="col-6">
             <AnalyzeButton
               setLoadingAnalyze={setLoadingAnalyze}
@@ -54,12 +54,12 @@ const DatasetTableWrapper = (props) => {
               setOperation={setOperation}
             />
           </div>
-          <div className="col-6 analyze-anonymize-button">
+          <div className="analyze-anonymize-button col-6">
             <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
               Anonymize dataset
             </ToggleKnapp>
           </div>
-          <div>
+          <div className="anonymization-config-wrapper">
             <AnonymizationConfigWrapper
               setAttributes={setAttributes}
               attributes={attributes}
