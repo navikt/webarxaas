@@ -13,7 +13,12 @@ const AnonymizedDatasetTable = (props) => {
 
   const content = (
     <div className="anonymized-dataset-table">
-      <ReactTable data={data} columns={columns} />
+      <ReactTable
+        data={data}
+        columns={columns}
+        sortable={false}
+        defaultPageSize={5}
+      />
     </div>
   );
   return content;

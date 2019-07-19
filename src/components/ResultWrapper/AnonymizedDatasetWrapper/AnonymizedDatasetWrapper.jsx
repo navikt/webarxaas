@@ -1,8 +1,12 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
+import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import AnonymizedDatasetTable from './AnonymizedDatasetTable/AnonymizedDatasetTable';
 import DownloadAnonymizedDataset from './DownloadAnonymizedDataset/DownloadAnonymizedDataset';
+import AttributeGeneralizationLevel from './AttributeGeneralizationLevel/AttributeGeneralizationLevel';
+import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
 import './__css__/AnonymizedDatasetWrapper.css';
+
 
 const AnonymizedDatasetWrapper = (props) => {
   const { response, loadingAnonymize } = props;
@@ -23,6 +27,14 @@ const AnonymizedDatasetWrapper = (props) => {
         </p>
         <AnonymizedDatasetTable anonymizeResult={response.anonymizeResult} />
         <DownloadAnonymizedDataset anonymizeResult={response.anonymizeResult} />
+        <div className="col-12">
+          <Ekspanderbartpanel tittel="Attribute Generalization Level" border>
+            <AttributeGeneralizationLevel
+              attributeGeneralization={response.anonymizeResult.metrics.attributeGeneralization}
+            />
+          </Ekspanderbartpanel>
+          <AnalysisWrapper response={response.riskProfile} loadingAnalyze={loadingAnonymize} />
+        </div>
       </div>
     );
   }
