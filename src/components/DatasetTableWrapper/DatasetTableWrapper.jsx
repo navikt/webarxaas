@@ -26,55 +26,42 @@ const DatasetTableWrapper = (props) => {
     );
   } else if (dataset) {
     content = (
-      <div className="dataset-table-wrapper container-fluid">
-        <div className="row">
-          <div className="col-6">
-            <ImportAttribute setAttributes={setAttributes} />
-          </div>
-          <div className="col-6">
-            <ExportAttribute AttributeTypes={attributes} />
-          </div>
-
+      <div className="dataset-table-wrapper">
+        <ImportAttribute setAttributes={setAttributes} />
+        <ExportAttribute AttributeTypes={attributes} />
+        <DatasetTable
+          setAttributes={setAttributes}
+          dataset={dataset}
+          attributes={attributes}
+        />
+        <AnalyzeButton
+          setLoadingAnalyze={setLoadingAnalyze}
+          dataset={dataset}
+          attributes={attributes}
+          endpoint={endpoint}
+          setResponse={setResponse}
+          setOperation={setOperation}
+        />
+        <div className="analyze-anonymize-button">
+          <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
+            Anonymize dataset
+          </ToggleKnapp>
         </div>
-          <DatasetTable
+          <AnonymizationConfigWrapper
             setAttributes={setAttributes}
-            dataset={dataset}
             attributes={attributes}
+            privacyModels={privacyModels}
+            setPrivacyModels={setPrivacyModels}
+            suppressionLimit={suppressionLimit}
+            setSuppressionLimit={setSuppressionLimit}
+            showAnonymizationConfig={showAnonymizationConfig}
+            setLoadingAnonymize={setLoadingAnonymize}
+            setOperation={setOperation}
+            dataset={dataset}
+            setResponse={setResponse}
+            endpoint={endpoint}
           />
-        <div className="analyze-button row container-fluid">
-          <div className="col-6">
-            <AnalyzeButton
-              setLoadingAnalyze={setLoadingAnalyze}
-              dataset={dataset}
-              attributes={attributes}
-              endpoint={endpoint}
-              setResponse={setResponse}
-              setOperation={setOperation}
-            />
-          </div>
-          <div className="analyze-anonymize-button col-6">
-            <ToggleKnapp onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}>
-              Anonymize dataset
-            </ToggleKnapp>
-          </div>
-          <div className="anonymization-config-wrapper">
-            <AnonymizationConfigWrapper
-              setAttributes={setAttributes}
-              attributes={attributes}
-              privacyModels={privacyModels}
-              setPrivacyModels={setPrivacyModels}
-              suppressionLimit={suppressionLimit}
-              setSuppressionLimit={setSuppressionLimit}
-              showAnonymizationConfig={showAnonymizationConfig}
-              setLoadingAnonymize={setLoadingAnonymize}
-              setOperation={setOperation}
-              dataset={dataset}
-              setResponse={setResponse}
-              endpoint={endpoint}
-            />
-          </div>
         </div>
-      </div>
     );
   }
 
