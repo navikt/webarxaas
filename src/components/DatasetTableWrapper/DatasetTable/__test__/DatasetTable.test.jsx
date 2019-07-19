@@ -4,9 +4,11 @@ import DatasetTable from '../DatasetTable';
 
 describe('DatasetTable: Render tests', () => {
   let wrapper;
+  let mockDataset;
+  let mockAttributes;
   beforeAll(() => {
-    const mockDataset = 'Navn,Alder,Innvandrerbakgrunn,Medisinsk forhold,Eirik,47,Togo,Ingen,Ella,30,Surinam,Ingen,Solveig,37,Malta,Ingen,Eirik,52,Norge,Ingen,Heidi,37,Surinam,Ingen';
-    const mockAttributes = [
+    mockDataset = 'Navn,Alder,Innvandrerbakgrunn,Medisinsk forhold,Eirik,47,Togo,Ingen,Ella,30,Surinam,Ingen,Solveig,37,Malta,Ingen,Eirik,52,Norge,Ingen,Heidi,37,Surinam,Ingen';
+    mockAttributes = [
       { field: 'Series_reference', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Period', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Data_value', attributeTypeModel: 'QUASIIDENTIFYING' },
@@ -22,10 +24,13 @@ describe('DatasetTable: Render tests', () => {
       { field: 'Series_title_4', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Series_title_5', attributeTypeModel: 'QUASIIDENTIFYING' },
     ];
-    wrapper = shallow(<DatasetTable
-      dataset={mockDataset}
-      attributes={mockAttributes}
-    />);
+
+    wrapper = shallow(
+      <DatasetTable
+        dataset={mockDataset}
+        attributes={mockAttributes}
+      />,
+    );
   });
 
   it('Render component', () => {
