@@ -7,24 +7,37 @@ import 'react-table/react-table.css';
 import './__css__/DatasetTable.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
-  const columns = Object.keys(dataset[0]).map((key, index) => ({
+  const isSelected = (attribute, value) => attribute.attributeTypeModel === value;
+  const types = [
+    ['QUASIIDENTIFYING', 'Quasi-identifying'],
+    ['INSENSITIVE', 'Insensitive'],
+    ['SENSITIVE', 'Sensitive'],
+    ['IDENTIFYING', 'Identifying'],
+  ];
+
+  const columns = Object.keys(dataset[0]).map(index => ({
     Header:
       // eslint-disable-next-line react/jsx-indent
       <div className="dataset-table-column">
         <Select
           label=""
           onChange={(e) => {
-            HandleTypeSelect(e.target, attributes[key].field, index, attributes, setAttributes);
+            HandleTypeSelect(e.target, attributes[index].field, index, attributes, setAttributes);
           }}
         >
-          <option value="QUASIIDENTIFYING">Quasi-identifying</option>
-          <option value="INSENSITIVE">Insensitive</option>
-          <option value="SENSITIVE">Sensitive</option>
-          <option value="IDENTIFYING">Identifying</option>
+          {types.map(([value, label]) => (
+            <option
+              value={value}
+              key={value}
+              selected={isSelected(attributes[index], value)}
+            >
+              {label}
+            </option>
+          ))}
         </Select>
-        {dataset[0][key]}
+        {dataset[0][index]}
       </div>,
-    accessor: key,
+    accessor: index,
     width: 164,
   }));
 
