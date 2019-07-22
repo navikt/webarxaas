@@ -48,6 +48,7 @@ jobs:
           command: |
             yarn test -- --coverage
             # upload test report to Code Climate using `after-build`
+            ./cc-test-reporter after-build --exit-code $?
             
   package:
     docker:
