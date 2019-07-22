@@ -46,7 +46,7 @@ jobs:
       - run:
           name: Run Test
           command: |
-            yarn test -- --coverage
+            npm test -- --coverage
             # upload test report to Code Climate using `after-build`
             ./cc-test-reporter after-build --exit-code $?
             
