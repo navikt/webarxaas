@@ -28,21 +28,24 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-      - run: yarn install
 
-      - before_script:
+
+      - run:
           name: Setup Code Climate test-reporter
           command: |
           # download test reporter as a static binary
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
+            
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-
-      # run tests! using yarn as it was CircleCI default
+     
+          - run: yarn install
+     
+          # run tests! using yarn as it was CircleCI default
       - run:
           name: Run Test
           command: |
