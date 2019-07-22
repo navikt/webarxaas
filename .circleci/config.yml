@@ -46,9 +46,9 @@ jobs:
       - run:
           name: Run Test
           command: |
-            yarn test
+            yarn test -- --coverage
             # upload test report to Code Climate using `after-build`
-
+            
   package:
     docker:
       - image: circleci/node:8.10
