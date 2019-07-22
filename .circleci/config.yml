@@ -35,7 +35,8 @@ jobs:
           command: |
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-            
+            ./cc-test-reporter before-build
+
       - save_cache:
           paths:
             - node_modules
@@ -45,7 +46,6 @@ jobs:
       - run:
           name: Run Test
           command: |
-            ./cc-test-reporter before-build
             yarn test -- --coverage
             # upload test report to Code Climate using `after-build`
             ./cc-test-reporter after-build --exit-code $?
