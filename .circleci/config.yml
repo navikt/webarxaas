@@ -48,11 +48,6 @@ jobs:
           command: |
             yarn test
             # upload test report to Code Climate using `after-build`
-            ./cc-test-reporter format-coverage -t lcov .coverage/lcov.info
-            ./cc-test-reporter upload-coverage
-            
-   
-
 
   package:
     docker:
