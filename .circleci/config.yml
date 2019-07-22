@@ -28,33 +28,30 @@ jobs:
             # fallback to using the latest cache if no exact match is found
             - v1-dependencies-
 
-
+      - run: yarn install
 
       - run:
           name: Setup Code Climate test-reporter
           command: |
-          # download test reporter as a static binary
             curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
             chmod +x ./cc-test-reporter
-            
 
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
-     
-          - run: yarn install
-     
-          # run tests! using yarn as it was CircleCI default
+
+      # run tests! using yarn as it was CircleCI default
       - run:
           name: Run Test
           command: |
             yarn test
-          # notify Code Climate of a pending test report using `before-build`
+            # notify Code Climate of a pending test report using `before-build`
             ./cc-test-reporter before-build
             sudo vendor/bin/phpunit --coverage-clover clover.xml
-          # upload test report to Code Climate using `after-build`
+            # upload test report to Code Climate using `after-build`
             ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+
 
   package:
     docker:
