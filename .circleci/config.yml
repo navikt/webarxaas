@@ -48,9 +48,7 @@ jobs:
           name: Run Test
           command: |
             yarn test
-            sudo vendor/bin/phpunit --coverage-clover clover.xml
-            # upload test report to Code Climate using `after-build`
-            ./cc-test-reporter after-build --coverage-input-type clover --exit-code $?
+   
       - run:
           nyc --reporter=lcov yarn run unit
 
