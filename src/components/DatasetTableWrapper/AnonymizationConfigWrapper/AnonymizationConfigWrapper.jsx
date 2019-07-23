@@ -24,7 +24,6 @@ const AnonymizationConfigWrapper = (props) => {
         <div className="container-fluid">
           <div className="row">
             <div className="col" align="center">
-              <b><p>Import Hierachys:</p></b>
               <br />
               <HierarchyImport
                 attributes={attributes}
