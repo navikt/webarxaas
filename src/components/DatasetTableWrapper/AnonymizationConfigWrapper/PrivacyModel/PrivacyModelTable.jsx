@@ -6,11 +6,12 @@ const PrivacyModelTable = (props) => {
 
   const content = (
     <div className="privacy-model-table">
-      <table border="1">
+      <table border="1" className="table table-bordered">
         <thead>
           <tr>
             <th>Model</th>
             <th>Params</th>
+            <th>Remove </th>
           </tr>
         </thead>
         <tbody>
