@@ -10,6 +10,7 @@ const AnalyzeButton = (props) => {
 
   const content = (
     <div className="analyze-button col">
+      <br />
       <Knapp
         onClick={
           () => {

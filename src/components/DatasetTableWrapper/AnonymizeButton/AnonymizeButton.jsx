@@ -6,6 +6,7 @@ const AnalyzeButton = (props) => {
 
   const content = (
     <div className="anonymize-button col">
+      <br />
       <ToggleKnapp
         onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}
       >
