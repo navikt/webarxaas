@@ -23,14 +23,14 @@ const AnonymizationConfigWrapper = (props) => {
         <br />
         <div className="container-fluid">
           <div className="row">
-            <div className="col" align="center">
+            <div className="col border border-dark" align="center">
               <br />
               <HierarchyImport
                 attributes={attributes}
                 setAttributes={setAttributes}
               />
             </div>
-            <div className="col" align="center">
+            <div className="col border border-dark" align="center">
               <br />
               <PrivacyModelManager
                 privacyModels={privacyModels}
@@ -41,7 +41,7 @@ const AnonymizationConfigWrapper = (props) => {
                 setPrivacyModels={setPrivacyModels}
               />
             </div>
-            <div className="col" align="center">
+            <div className="col border border-dark" align="center">
               <br />
               <SuppressionLimit
                 suppressionLimit={suppressionLimit}
