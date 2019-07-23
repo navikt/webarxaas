@@ -8,7 +8,7 @@ const AttributeRiskTable = (props) => {
   const riskData = attributeRisk.quasiIdentifierRiskList
     .filter(quasiIdentifierRisk => quasiIdentifierRisk.identifier.length > 1)
     .map(obj => ({
-      identifier: obj.identifier.toString(),
+      identifier: obj.identifier.reduce((acc, item) => `${acc}, ${item}`),
       distinction: toPercent(obj.distinction),
       separation: toPercent(obj.separation),
     }));
@@ -16,14 +16,20 @@ const AttributeRiskTable = (props) => {
   const columns = [{
     Header: 'Identifiers',
     accessor: 'identifier',
+    style: {
+      textAlign: 'left',
+      'white-space': 'unset',
+    },
   },
   {
     Header: 'Distinction',
     accessor: 'distinction',
+    width: 100,
   },
   {
     Header: 'Separation',
     accessor: 'separation',
+    width: 100,
   }];
 
   const content = (
