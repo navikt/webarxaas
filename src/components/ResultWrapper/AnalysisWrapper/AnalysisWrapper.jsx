@@ -19,13 +19,12 @@ const AnalysisWrapper = (props) => {
       </div>
     );
   } else if (response) {
+    console.log(response);
     content = (
       <div className="analysis-wrapper">
         <h4>Analysis Result</h4>
         <RiskChart risk={
-          (parseFloat(
-            response.reIdentificationRisk.measures.estimated_prosecutor_risk,
-          ) * 100)
+          (parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100)
             .toFixed(2)}
         />
         <Container>

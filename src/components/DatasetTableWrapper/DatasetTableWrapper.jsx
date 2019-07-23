@@ -51,7 +51,7 @@ const DatasetTableWrapper = (props) => {
             setResponse={setResponse}
             setOperation={setOperation}
           />
-          <AnonymizeButton 
+          <AnonymizeButton
             setShowAnonymizationConfig={setShowAnonymizationConfig}
           />
         </div>
