@@ -7,7 +7,7 @@ import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRi
 import RiskChart from './ReIdentificationRisk/RiskChart/RiskChart';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
 import './__css__/AnalysisWrapper.css';
-import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph';
+import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
 
 const AnalysisWrapper = (props) => {
   const { loadingAnalyze, response } = props;
