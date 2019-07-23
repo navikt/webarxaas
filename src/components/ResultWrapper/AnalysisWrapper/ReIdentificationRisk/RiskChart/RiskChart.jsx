@@ -2,7 +2,6 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
-import PropTypes from 'prop-types';
 import './__css__/RiskChart.css';
 
 const RiskChart = (props) => {
@@ -35,5 +34,4 @@ const RiskChart = (props) => {
 };
 
 export default RiskChart;
-RiskChart.propTypes = { risk: PropTypes.number };
 RiskChart.defaultProps = { risk: 100 };
