@@ -7,7 +7,8 @@ import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRi
 import RiskChart from './ReIdentificationRisk/RiskChart/RiskChart';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
 import './__css__/AnalysisWrapper.css';
-import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph';
+import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
+import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
 
 const AnalysisWrapper = (props) => {
   const { loadingAnalyze, response } = props;
@@ -49,6 +50,9 @@ const AnalysisWrapper = (props) => {
             <Col sm={12}>
               <Ekspanderbartpanel tittel="Attribute Risk" border>
                 <AttributeRiskGraph attributeRisk={response.attributeRisk} />
+                <Ekspanderbartpanel tittel="More Information" border>
+                  <AttributeRiskTable attributeRisk={response.attributeRisk} />
+                </Ekspanderbartpanel>
               </Ekspanderbartpanel>
             </Col>
           </Row>
