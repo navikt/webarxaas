@@ -20,28 +20,35 @@ const AnonymizationConfigWrapper = (props) => {
   if (showAnonymizationConfig) {
     content = (
       <div className="anonymization-config-wrapper container-fluid">
-        <div className="row">
-          <div className="col">
-            <HierarchyImport
-              attributes={attributes}
-              setAttributes={setAttributes}
-            />
-          </div>
-          <div className="col">
-            <PrivacyModelManager
-              privacyModels={privacyModels}
-              setPrivacyModels={setPrivacyModels}
-            />
-            <PrivacyModelTable
-              privacyModels={privacyModels}
-              setPrivacyModels={setPrivacyModels}
-            />
-          </div>
-          <div className="col">
-            <SuppressionLimit
-              suppressionLimit={suppressionLimit}
-              setSuppressionLimit={setSuppressionLimit}
-            />
+        <br />
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col" align="center">
+              <b><p>Import Hierachys:</p></b>
+              <br />
+              <HierarchyImport
+                attributes={attributes}
+                setAttributes={setAttributes}
+              />
+            </div>
+            <div className="col" align="center">
+              <br />
+              <PrivacyModelManager
+                privacyModels={privacyModels}
+                setPrivacyModels={setPrivacyModels}
+              />
+              <PrivacyModelTable
+                privacyModels={privacyModels}
+                setPrivacyModels={setPrivacyModels}
+              />
+            </div>
+            <div className="col" align="center">
+              <br />
+              <SuppressionLimit
+                suppressionLimit={suppressionLimit}
+                setSuppressionLimit={setSuppressionLimit}
+              />
+            </div>
           </div>
         </div>
         <AnonymizeButton
