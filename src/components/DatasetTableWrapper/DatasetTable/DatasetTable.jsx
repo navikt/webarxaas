@@ -20,7 +20,7 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   const columns = Object.keys(dataset[0]).map(index => ({
     Header:
       // eslint-disable-next-line react/jsx-indent
-      <div>
+      <div className="dataset-table-column">
         <Select
           label=""
           value={defaultTypes[index]}
@@ -49,12 +49,14 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   const data = dataset.slice(1);
 
   const content = (
-    <ReactTable
-      data={data}
-      columns={columns}
-      sortable={false}
-      defaultPageSize={5}
-    />
+    <div className="dataset-table">
+      <ReactTable
+        data={data}
+        columns={columns}
+        sortable={false}
+        defaultPageSize={5}
+      />
+    </div>
   );
 
   return content;
