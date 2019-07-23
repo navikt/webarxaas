@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid,
 } from 'recharts';
+import './__css__/AttributeRiskGraph.css';
 
 const AttributeRiskGraph = (props) => {
   const { attributeRisk } = props;
