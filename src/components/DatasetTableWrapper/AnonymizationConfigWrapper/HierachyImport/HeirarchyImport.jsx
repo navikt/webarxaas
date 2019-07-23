@@ -8,7 +8,7 @@ const HeirarcyImport = (props) => {
   const content = (
     <table>
       <th />
-      <th>Import Hierarchy:</th>
+      <th>Import Hierarchies:</th>
       {attributes.map(({ field, attributeTypeModel }, index) => {
         if (attributeTypeModel === 'QUASIIDENTIFYING') {
           return (
