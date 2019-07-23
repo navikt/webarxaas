@@ -6,7 +6,7 @@ const PrivacyModelTable = (props) => {
 
   const content = (
     <div className="privacy-model-table">
-      <table border="1" className="table table-bordered">
+      <table className="table table-bordered">
         <thead>
           <tr>
             <th>Model</th>
