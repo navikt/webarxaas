@@ -24,7 +24,6 @@ const ImportAttribute = (props) => {
           className="import-attribute-type-button knapp knapp--standard"
           type="file"
           onChange={e => handleImport(e.target.files[0])}
-          
         />
       </label>
     </div>
