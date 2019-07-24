@@ -16,7 +16,6 @@ const AnonymizationConfigWrapper = (props) => {
   } = props;
 
   let content = '';
-
   if (showAnonymizationConfig) {
     content = (
       <div className="anonymization-config-wrapper container-fluid">
