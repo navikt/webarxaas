@@ -19,8 +19,7 @@ describe('Unit test for parsing csv files', () => {
   };
 
   beforeAll(() => {
-    const blob = new Blob([testCSVFile]);
-    testFile = blob;
+    testFile = testCSVFile;
     defaultAttributeType = 'QUASIIDENTIFYING';
   });
 
