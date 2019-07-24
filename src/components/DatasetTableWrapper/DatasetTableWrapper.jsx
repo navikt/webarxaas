@@ -3,7 +3,7 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 
 import DatasetTable from './DatasetTable/DatasetTable';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
-import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
+import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeConfigButton';
 import ExportAttribute from './ExportAttributeType/ExportAttributeType';
 import ImportAttribute from './ImportAttributeType/ImportAttributeType';
 import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
@@ -51,7 +51,7 @@ const DatasetTableWrapper = (props) => {
             setResponse={setResponse}
             setOperation={setOperation}
           />
-          <AnonymizeButton
+          <AnonymizeConfigButton
             setShowAnonymizationConfig={setShowAnonymizationConfig}
           />
         </div>
