@@ -16,5 +16,4 @@ const AnonymizeConfigButton = (props) => {
   );
   return content;
 };
-
 export default AnonymizeConfigButton;
