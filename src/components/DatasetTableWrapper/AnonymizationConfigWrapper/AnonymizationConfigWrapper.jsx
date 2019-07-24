@@ -16,7 +16,8 @@ const AnonymizationConfigWrapper = (props) => {
   } = props;
 
   let content = '';
-
+  console.log(privacyModels);
+  console.log(suppressionLimit);
   if (showAnonymizationConfig) {
     content = (
       <div className="anonymization-config-wrapper container-fluid">
