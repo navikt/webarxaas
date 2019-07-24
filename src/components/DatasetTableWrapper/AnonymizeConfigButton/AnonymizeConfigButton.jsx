@@ -1,7 +1,7 @@
 import React from 'react';
 import { ToggleKnapp } from 'nav-frontend-toggle';
 
-const AnonymizeButton = (props) => {
+const AnonymizeConfigButton = (props) => {
   const { setShowAnonymizationConfig } = props;
 
   const content = (
@@ -16,5 +16,4 @@ const AnonymizeButton = (props) => {
   );
   return content;
 };
-
-export default AnonymizeButton;
+export default AnonymizeConfigButton;
