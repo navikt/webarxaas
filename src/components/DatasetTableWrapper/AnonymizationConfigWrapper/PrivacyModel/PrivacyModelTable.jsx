@@ -19,17 +19,20 @@ const PrivacyModelTable = (props) => {
           {privacyModels.map((model, index) => (
             <tr key={model.privacyModel}>
               <td>{model.privacyModel}</td>
-              <td>
-                {Object.entries(model.params).map(paramPair => (
-                  <div key={paramPair[0]}>
-                    <p>
-                      {paramPair[0]}
-                      {': '}
-                      {paramPair[1]}
-                    </p>
-                  </div>
-                ))}
-
+              <td style={{ padding: 0 }}>
+                <table>
+                  <tbody>
+                    {Object.entries(model.params).map(paramPair => (
+                      <tr>
+                        <td>
+                          {paramPair[0]}
+                          {': '}
+                        </td>
+                        <td>{paramPair[1]}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </td>
               <td>
                 <button type="button" className="btn btn-danger btn-sm" onClick={() => handlePrivacyRemove(index, privacyModels, setPrivacyModels)}>Remove</button>
