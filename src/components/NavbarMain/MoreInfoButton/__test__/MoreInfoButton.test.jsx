@@ -17,5 +17,7 @@ describe('test for MoreInfo button', () => {
     expect(app.contains(<h1>Information</h1>)).toEqual(false);
     app.find('ToggleKnapp').simulate('click');
     expect(app.contains(<h1>Information</h1>)).toEqual(true);
+    app.find('ToggleKnapp').simulate('click');
+    expect(app.contains(<h1>Information</h1>)).toEqual(false);
   });
 });
