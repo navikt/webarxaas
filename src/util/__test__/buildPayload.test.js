@@ -7,8 +7,14 @@ describe('Test for buildpayload', () => {
   let suppressionLimit;
 
   beforeAll(() => {
-    dataset = [['Navn', 'Alder', 'Innvandrerbakgrunn', 'Medisinsk forhold'], ['Eirik', '47', 'Togo', 'Ingen'], ['Ella', '30', 'Surinam', 'Ingen'], ['Solveig', '37', 'Malta', 'Ingen']];
-    attributes = [{ field: 'Navn', attributeTypeModel: 'QUASIIDENTIFYING' }, { field: 'Alder', attributeTypeModel: 'QUASIIDENTIFYING' }, { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING' }, { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING' }];
+    dataset = [['Navn', 'Alder', 'Innvandrerbakgrunn', 'Medisinsk forhold'],
+      ['Eirik', '47', 'Togo', 'Ingen'],
+      ['Ella', '30', 'Surinam', 'Ingen'],
+      ['Solveig', '37', 'Malta', 'Ingen']];
+    attributes = [{ field: 'Navn', attributeTypeModel: 'QUASIIDENTIFYING' },
+      { field: 'Alder', attributeTypeModel: 'QUASIIDENTIFYING' },
+      { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING' },
+      { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING' }];
     privacyModels = [{ privacyModel: 'KANONYMITY', params: { k: '2' } }];
     suppressionLimit = 0.1;
   });
