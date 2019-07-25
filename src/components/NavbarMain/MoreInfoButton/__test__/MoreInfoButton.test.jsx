@@ -13,11 +13,12 @@ describe('test for MoreInfo button', () => {
   });
 
   it('Test button state change', () => {
+    const moreInfoText = (<h1>Information</h1>);
     const app = mount(<App />);
-    expect(app.contains(<h1>Information</h1>)).toEqual(false);
+    expect(app.contains(moreInfoText)).toEqual(false);
     app.find('ToggleKnapp').simulate('click');
-    expect(app.contains(<h1>Information</h1>)).toEqual(true);
+    expect(app.contains(moreInfoText)).toEqual(true);
     app.find('ToggleKnapp').simulate('click');
-    expect(app.contains(<h1>Information</h1>)).toEqual(false);
+    expect(app.contains(moreInfoText)).toEqual(false);
   });
 });
