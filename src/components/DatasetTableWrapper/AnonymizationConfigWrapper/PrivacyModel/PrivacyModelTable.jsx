@@ -3,7 +3,6 @@ import handlePrivacyRemove from '../../../../util/handlePrivacyRemove';
 
 const PrivacyModelTable = (props) => {
   const { privacyModels, setPrivacyModels } = props;
-  console.log(privacyModels);
 
   const content = (
     <div className="privacy-model-table">
