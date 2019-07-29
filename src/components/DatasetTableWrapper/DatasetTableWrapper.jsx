@@ -4,8 +4,8 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import DatasetTable from './DatasetTable/DatasetTable';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeConfigButton';
-import ExportAttribute from './ExportAttributeType/ExportAttributeTypeButton';
-import ImportAttribute from './ImportAttributeType/ImportAttributeTypeButton';
+import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
+import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import './__css__/DatasetTableWrapper.css';
 
