@@ -16,7 +16,7 @@ const ImportAttribute = (props) => {
 
   const content = (
 
-    <div className="import-attribute-type col">
+    <div className="import-attribute-type">
       <label htmlFor="file">
         Import attribute types from file:
         <br />
