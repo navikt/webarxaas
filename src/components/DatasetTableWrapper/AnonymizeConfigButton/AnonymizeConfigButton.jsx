@@ -5,7 +5,7 @@ const AnonymizeConfigButton = (props) => {
   const { setShowAnonymizationConfig } = props;
 
   const content = (
-    <div className="anonymize-button col">
+    <div className="anonymize-config-button col">
       <ToggleKnapp
         onClick={(e, pressed) => { setShowAnonymizationConfig(pressed); }}
       >

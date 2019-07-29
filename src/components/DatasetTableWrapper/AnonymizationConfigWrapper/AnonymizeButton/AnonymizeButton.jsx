@@ -1,6 +1,7 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
 import handleRequest from '../../../../util/handleRequest';
+import './__css__/AnonymizeButton.css';
 
 const AnonymizeButton = (props) => {
   const {
