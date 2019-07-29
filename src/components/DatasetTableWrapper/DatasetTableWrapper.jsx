@@ -28,15 +28,13 @@ const DatasetTableWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="dataset-table-wrapper">
-        <div className="row">
-          <ImportAttribute
-            setAttributes={setAttributes}
-          />
-          <ExportAttribute
-            AttributeTypes={attributes}
-            fileName={fileName}
-          />
-        </div>
+        <ImportAttribute
+          setAttributes={setAttributes}
+        />
+        <ExportAttribute
+          AttributeTypes={attributes}
+          fileName={fileName}
+        />
         <DatasetTable
           setAttributes={setAttributes}
           dataset={dataset}
