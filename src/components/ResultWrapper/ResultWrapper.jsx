@@ -1,6 +1,7 @@
 import React from 'react';
 import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
 import AnonymizedDatasetWrapper from './AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import './__css__/ResultWrapper.css';
 
 const ResultWrapper = (props) => {
   const {
