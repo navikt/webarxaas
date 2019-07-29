@@ -40,7 +40,7 @@ const DatasetTableWrapper = (props) => {
           dataset={dataset}
           attributes={attributes}
         />
-        <div className="row">
+        <div className="dataset-table-wrapper-button-row row">
           <AnalyzeButton
             setLoadingAnalyze={setLoadingAnalyze}
             dataset={dataset}
