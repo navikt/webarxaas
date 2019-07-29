@@ -63,6 +63,7 @@ function App() {
         loadingAnalyze={loadingAnalyze}
         loadingAnonymize={loadingAnonymize}
         operation={operation}
+        fileName={fileName}
       />
     </div>
   );

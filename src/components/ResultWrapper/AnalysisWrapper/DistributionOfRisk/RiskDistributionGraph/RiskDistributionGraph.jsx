@@ -11,7 +11,7 @@ const RiskDistributionGraph = (props) => {
   RiskDistribution.forEach((obj) => {
     riskData.push({
       name: obj.interval,
-      risk: (parseFloat(obj.recordsWithRiskWithinInteval) * 100).toFixed(2),
+      risk: (parseFloat(obj.recordsWithRiskWithinInterval) * 100).toFixed(2),
     });
   });
 

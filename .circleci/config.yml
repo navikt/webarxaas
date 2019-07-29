@@ -30,13 +30,26 @@ jobs:
 
       - run: yarn install
 
+      - run:
+          name: Setup Code Climate test-reporter
+          command: |
+            curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+            chmod +x ./cc-test-reporter
+            ./cc-test-reporter before-build
+
       - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
       # run tests! using yarn as it was CircleCI default
-      - run: yarn test
+      - run:
+          name: Run Test
+          command: |
+            yarn test -- --coverage
+            # upload test report to Code Climate using `after-build`
+            ./cc-test-reporter after-build --exit-code $?
+            
   package:
     docker:
       - image: circleci/node:8.10

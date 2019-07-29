@@ -7,6 +7,8 @@ import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRi
 import RiskChart from './ReIdentificationRisk/RiskChart/RiskChart';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
 import './__css__/AnalysisWrapper.css';
+import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
+import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
 
 const AnalysisWrapper = (props) => {
   const { loadingAnalyze, response } = props;
@@ -23,9 +25,7 @@ const AnalysisWrapper = (props) => {
       <div className="analysis-wrapper">
         <h4>Analysis Result</h4>
         <RiskChart risk={
-          (parseFloat(
-            response.reIdentificationRisk.measures.estimated_prosecutor_risk,
-          ) * 100)
+          (parseFloat(response.reIdentificationRisk.measures.estimated_prosecutor_risk) * 100)
             .toFixed(2)}
         />
         <Container>
@@ -44,6 +44,14 @@ const AnalysisWrapper = (props) => {
                   <DistributionOfRiskTable riskIntervalList={response.distributionOfRisk
                     .riskIntervalList}
                   />
+                </Ekspanderbartpanel>
+              </Ekspanderbartpanel>
+            </Col>
+            <Col sm={12}>
+              <Ekspanderbartpanel tittel="Attribute Risk" border>
+                <AttributeRiskGraph attributeRisk={response.attributeRisk} />
+                <Ekspanderbartpanel tittel="More Information" border>
+                  <AttributeRiskTable attributeRisk={response.attributeRisk} />
                 </Ekspanderbartpanel>
               </Ekspanderbartpanel>
             </Col>

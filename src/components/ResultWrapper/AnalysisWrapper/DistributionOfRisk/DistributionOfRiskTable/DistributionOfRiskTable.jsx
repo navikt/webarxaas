@@ -10,8 +10,8 @@ const DistributionOfRiskTable = (props) => {
   riskIntervalList.forEach((obj) => {
     riskData.push({
       interval: obj.interval,
-      recordsWithRiskWithinInteval: toPercent(obj.recordsWithRiskWithinInteval),
-      recordsWithMaxmalRiskWithinInterval: toPercent(obj.recordsWithMaxmalRiskWithinInterval),
+      recordsWithRiskWithinInterval: toPercent(obj.recordsWithRiskWithinInterval),
+      recordsWithMaximalRiskWithinInterval: toPercent(obj.recordsWithMaximalRiskWithinInterval),
     });
   });
 
@@ -21,11 +21,11 @@ const DistributionOfRiskTable = (props) => {
   },
   {
     Header: 'Records With Risk',
-    accessor: 'recordsWithRiskWithinInteval',
+    accessor: 'recordsWithRiskWithinInterval',
   },
   {
     Header: 'Records With Maximal Risk',
-    accessor: 'recordsWithMaxmalRiskWithinInterval',
+    accessor: 'recordsWithMaximalRiskWithinInterval',
   }];
 
   const content = (
