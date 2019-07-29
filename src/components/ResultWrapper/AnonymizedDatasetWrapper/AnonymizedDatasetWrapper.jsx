@@ -27,12 +27,14 @@ const AnonymizedDatasetWrapper = (props) => {
           fileName={fileName}
         />
         <div className="col-12">
+          <Ekspanderbartpanel tittel="Analysis Result" apen="true" border>
+            <AnalysisWrapper response={response.riskProfile} loadingAnalyze={loadingAnonymize} />
+          </Ekspanderbartpanel>
           <Ekspanderbartpanel tittel="Attribute Generalization Level" border>
             <AttributeGeneralizationLevel
               attributeGeneralization={response.anonymizeResult.metrics.attributeGeneralization}
             />
           </Ekspanderbartpanel>
-          <AnalysisWrapper response={response.riskProfile} loadingAnalyze={loadingAnonymize} />
         </div>
       </div>
     );
