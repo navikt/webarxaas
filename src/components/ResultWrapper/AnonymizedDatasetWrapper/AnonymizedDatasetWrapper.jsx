@@ -21,10 +21,6 @@ const AnonymizedDatasetWrapper = (props) => {
     content = (
       <div className="anonymized-dataset-wrapper">
         <h4>Anonymization Result</h4>
-        <p>
-          Anonymization Status:
-          {response.anonymizeResult.anonymizationStatus}
-        </p>
         <AnonymizedDatasetTable anonymizeResult={response.anonymizeResult} />
         <DownloadAnonymizedDataset
           anonymizeResult={response.anonymizeResult}
