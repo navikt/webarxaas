@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-one-expression-per-line */
 import React from 'react';
-import { shallow } from '../../../../../enzyme';
+import { shallow } from '../../../../../../enzyme';
 
 
-import ReIdentificationRiskTable from '../ReIdentificationRiskTable/ReIdentificationRiskTable';
+import ReIdentificationRiskTable from '../ReIdentificationRiskTable';
 import reIdentificationRiskResponse from './reIdentificationRiskResponse';
 
 describe('reidentificationrisk table tests', () => {
