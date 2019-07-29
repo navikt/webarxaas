@@ -1,5 +1,5 @@
 import React from 'react';
-import './__css__/ImportAttributeType.css';
+import './__css__/ImportAttributeTypeButton.css';
 
 const ImportAttribute = (props) => {
   const { setAttributes } = props;

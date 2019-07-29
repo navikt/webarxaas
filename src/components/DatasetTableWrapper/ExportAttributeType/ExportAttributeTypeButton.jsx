@@ -1,6 +1,6 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
-import './__css__/ExportAttributeType.css';
+import './__css__/ExportAttributeTypeButton.css';
 
 const ExportAttribute = (props) => {
   const { AttributeTypes, fileName } = props;
