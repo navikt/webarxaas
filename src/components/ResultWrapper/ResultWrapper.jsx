@@ -20,7 +20,6 @@ const ResultWrapper = (props) => {
     content = (
       <div className="result-wrapper">
         <b>Something went wrong. Error:</b>
-        <br />
         {message}
       </div>
     );

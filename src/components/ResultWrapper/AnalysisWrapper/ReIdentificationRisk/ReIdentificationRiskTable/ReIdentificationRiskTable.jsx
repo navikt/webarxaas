@@ -54,7 +54,6 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
             <p><b>Journalist model: </b></p>
             <tr>
               <td>Estimated journalist risk: </td>
@@ -92,7 +91,6 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
             <p><b>Marketer model: </b></p>
             <tr>
               <td>Estimated marketer risk: </td>
@@ -112,7 +110,6 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
             <p><b>Population: </b></p>
 
             <tr>
@@ -130,7 +127,6 @@ const ReIdentificationRiskTable = (props) => {
               <td>{reIdentificationRisk.populationModel}</td>
             </tr>
 
-            <br />
             <p><b>Lowest risk</b></p>
             <tr>
               <td>Lowest risk: </td>
@@ -149,7 +145,6 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
             <tr>
               <td><b>Sample uniques: </b></td>
               <td>
@@ -159,7 +154,6 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
             <tr>
               <td><b>Quasi-identifiers: </b></td>
               <td>

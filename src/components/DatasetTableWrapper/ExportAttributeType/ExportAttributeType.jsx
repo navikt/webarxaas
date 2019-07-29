@@ -16,7 +16,6 @@ const ExportAttribute = (props) => {
 
   const content = (
     <div className="col">
-      <br />
       <Knapp onClick={() => handleExport()}>
                 Export Attribute Types
       </Knapp>
