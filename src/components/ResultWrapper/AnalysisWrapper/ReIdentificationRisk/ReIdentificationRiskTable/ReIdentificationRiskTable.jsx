@@ -1,5 +1,6 @@
 import React from 'react';
 import toPercent from '../../../../../util/ratioToPercent';
+import './__css__/ReIdentificationRiskTable.css';
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
@@ -46,7 +47,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Prosecutor attacker success rate: </td>
+              <td className="last-element-of-group">Prosecutor attacker success rate: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.attackerSuccessRate.successRates
@@ -85,7 +86,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Records affected by highest journalist risk: </td>
+              <td className="last-element-of-group">Records affected by highest journalist risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures
@@ -106,7 +107,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Marketer attacker success rate: </td>
+              <td className="last-element-of-group">Marketer attacker success rate: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.attackerSuccessRate.successRates
@@ -128,7 +129,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Population model: </td>
+              <td className="last-element-of-group">Population model: </td>
               <td>{reIdentificationRisk.populationModel}</td>
             </tr>
 
@@ -144,7 +145,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Records affected by lowest risk: </td>
+              <td className="last-element-of-group">Records affected by lowest risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.records_affected_by_lowest_risk)
