@@ -24,6 +24,7 @@ const UserActionsWrapper = (props) => {
 
   return (
     <div className="user-actions-wrapper">
+      <h1 style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>Data actions</h1>
       <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
         <AnalyzeButton
           setLoadingAnalyze={setLoadingAnalyze}
