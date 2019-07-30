@@ -28,7 +28,10 @@ const AnonymizedDatasetWrapper = (props) => {
         />
         <div className="col-12">
           <Ekspanderbartpanel tittel="Analysis Result" apen="true" border>
-            <AnalysisWrapper response={response.riskProfile} loadingAnalyze={loadingAnonymize} />
+            <AnalysisWrapper
+              response={response.riskProfile}
+              loadingAnalyze={loadingAnonymize}
+            />
           </Ekspanderbartpanel>
           <Ekspanderbartpanel tittel="Attribute Generalization Level" border>
             <AttributeGeneralizationLevel
