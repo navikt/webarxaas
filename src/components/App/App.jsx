@@ -64,6 +64,7 @@ function App() {
         <AnalysisWrapper
           response={analyzeResponse}
           loadingAnalyze={loadingAnalyze}
+          operation={operation}
         />
       </Ekspanderbartpanel>
 
@@ -80,6 +81,7 @@ function App() {
           dataset={dataset}
           setResponse={setAnonymizeResponse}
           endpoint={arxaasEndpoint}
+
         />
         <AnonymizedDatasetWrapper
           response={anonymizeResponse}

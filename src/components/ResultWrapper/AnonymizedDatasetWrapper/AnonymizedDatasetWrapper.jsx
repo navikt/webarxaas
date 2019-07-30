@@ -9,8 +9,23 @@ import './__css__/AnonymizedDatasetWrapper.css';
 
 
 const AnonymizedDatasetWrapper = (props) => {
-  const { response, loadingAnonymize, fileName } = props;
-  let content = ' ';
+  const {
+    response, loadingAnonymize, fileName,
+  } = props;
+  const {
+    message,
+  } = response;
+
+  let content = '';
+
+  if (message) {
+    return (
+      <div className="result-wrapper">
+        <b>Something went wrong. Error:</b>
+        {message}
+      </div>
+    );
+  }
   if (loadingAnonymize) {
     content = (
       <div className="anonymized-dataset-wrapper">
