@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import handlePrivacyAdd from '../../../../util/handlePrivacyAdd';
+import handlePrivacyAdd from '../../../util/handlePrivacyAdd';
 
 const PrivacyModelManager = (props) => {
   const { privacyModels, setPrivacyModels } = props;

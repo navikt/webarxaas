@@ -1,6 +1,6 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
-import handleRequest from '../../../util/handleRequest';
+import handleRequest from '../../util/handleRequest';
 
 const AnalyzeButton = (props) => {
   const {

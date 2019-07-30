@@ -1,5 +1,5 @@
 import React from 'react';
-import { shallow, mount } from '../../../../enzyme';
+import { shallow, mount } from '../../../enzyme';
 import AnonymizeConfigButton from '../AnonymizeConfigButton';
 
 describe('Test for anonymize button', () => {
