@@ -21,7 +21,6 @@ function App() {
   const [analyzeResponse, setAnalyzeResponse] = useState('');
   const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [showAnonymizationConfig, setShowAnonymizationConfig] = useState(false);
   const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
@@ -47,19 +46,9 @@ function App() {
 
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
-        setLoadingAnalyze={setLoadingAnalyze}
-        setLoadingAnonymize={setLoadingAnonymize}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
-        endpoint={arxaasEndpoint}
-        setOperation={setOperation}
-        privacyModels={privacyModels}
-        setPrivacyModels={setPrivacyModels}
-        suppressionLimit={suppressionLimit}
-        setSuppressionLimit={setSuppressionLimit}
-        showAnonymizationConfig={showAnonymizationConfig}
-        setShowAnonymizationConfig={setShowAnonymizationConfig}
         fileName={fileName}
       />
 

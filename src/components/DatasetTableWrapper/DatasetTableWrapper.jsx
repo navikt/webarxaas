@@ -1,20 +1,13 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-
 import DatasetTable from './DatasetTable/DatasetTable';
-import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
-import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeConfigButton';
 import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
 import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
-import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import './__css__/DatasetTableWrapper.css';
 
 const DatasetTableWrapper = (props) => {
   const {
-    loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
-    setAttributes, dataset, attributes, endpoint,
-    setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizationConfig, setShowAnonymizationConfig, fileName,
+    loadingDataset, setAttributes, dataset, attributes, fileName,
   } = props;
 
   let content = '';
