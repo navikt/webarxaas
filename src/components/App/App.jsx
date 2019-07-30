@@ -5,10 +5,11 @@ import NavbarMain from '../NavbarMain/NavbarMain';
 import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
-import ResultWrapper from '../ResultWrapper/ResultWrapper';
 import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
-import './__css__/App.css';
 import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
+import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
+import './__css__/App.css';
+
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
@@ -60,16 +61,20 @@ function App() {
         setShowAnonymizationConfig={setShowAnonymizationConfig}
         fileName={fileName}
       />
-      <ResultWrapper
-        response={response}
-        setResponse={setResponse}
-        loadingAnalyze={loadingAnalyze}
-        loadingAnonymize={loadingAnonymize}
-        operation={operation}
-        fileName={fileName}
-      />
+
       <Ekspanderbartpanel tittel="Analyze" border>
-        <AnalysisWrapper response={response} loadingAnalyze={loadingAnalyze} />
+        <AnalyzeButton
+          setLoadingAnalyze={setLoadingAnalyze}
+          dataset={dataset}
+          attributes={attributes}
+          endpoint={arxaasEndpoint}
+          setResponse={setResponse}
+          setOperation={setOperation}
+        />
+        <AnalysisWrapper
+          response={response}
+          loadingAnalyze={loadingAnalyze}
+        />
       </Ekspanderbartpanel>
 
       <Ekspanderbartpanel tittel="Anonymize" border>
