@@ -2,14 +2,12 @@
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table';
 import { Select } from 'nav-frontend-skjema';
-import { ToggleKnapp } from 'nav-frontend-toggle';
 import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
 import './__css__/DatasetTable.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   const [defaultTypes, setDefaultTypes] = useState(attributes.map(attr => attr.attributeTypeModel));
-  const [showAll, setShowAllData] = useState(false);
 
   useEffect(() => {
     setDefaultTypes(attributes.map(attr => attr.attributeTypeModel));
@@ -50,15 +48,17 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
     width: 164,
   }));
 
-  const data = showAll ? dataset.slice(1) : dataset.slice(1, 100);
+  const data = dataset.slice(1, 101);
 
   const content = (
     <div className="dataset-table">
-      <ToggleKnapp
-        onClick={(e, pressed) => setShowAllData(pressed)}
-      >
-        Show all rows
-      </ToggleKnapp>
+      <h3 className="text-left ml-2">
+        Previewing first 100 rows of
+        {' '}
+        { dataset.length }
+        {' '}
+        rows in total:
+      </h3>
       <ReactTable
         data={data}
         columns={columns}
