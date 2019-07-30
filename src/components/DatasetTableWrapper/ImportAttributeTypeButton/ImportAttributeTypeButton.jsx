@@ -1,5 +1,5 @@
 import React from 'react';
-import './__css__/ImportAttributeType.css';
+import './__css__/ImportAttributeTypeButton.css';
 
 const ImportAttribute = (props) => {
   const { setAttributes } = props;
@@ -16,9 +16,9 @@ const ImportAttribute = (props) => {
 
   const content = (
 
-    <div className="import-attribute-type col">
+    <div className="import-attribute-type">
       <label htmlFor="file">
-        Import attributes from file:
+        Import attribute types from file:
         <br />
         <input
           className="import-attribute-type-button knapp knapp--standard"

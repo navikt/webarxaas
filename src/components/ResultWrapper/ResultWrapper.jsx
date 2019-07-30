@@ -1,6 +1,7 @@
 import React from 'react';
 import AnalysisWrapper from './AnalysisWrapper/AnalysisWrapper';
 import AnonymizedDatasetWrapper from './AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import './__css__/ResultWrapper.css';
 
 const ResultWrapper = (props) => {
   const {
@@ -20,7 +21,6 @@ const ResultWrapper = (props) => {
     content = (
       <div className="result-wrapper">
         <b>Something went wrong. Error:</b>
-        <br />
         {message}
       </div>
     );

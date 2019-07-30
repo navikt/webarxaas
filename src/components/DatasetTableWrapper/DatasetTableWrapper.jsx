@@ -4,8 +4,8 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import DatasetTable from './DatasetTable/DatasetTable';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeConfigButton';
-import ExportAttribute from './ExportAttributeType/ExportAttributeType';
-import ImportAttribute from './ImportAttributeType/ImportAttributeType';
+import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
+import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import './__css__/DatasetTableWrapper.css';
 
@@ -28,21 +28,19 @@ const DatasetTableWrapper = (props) => {
   } else if (dataset) {
     content = (
       <div className="dataset-table-wrapper">
-        <div className="row">
-          <ImportAttribute
-            setAttributes={setAttributes}
-          />
-          <ExportAttribute
-            AttributeTypes={attributes}
-            fileName={fileName}
-          />
-        </div>
+        <ImportAttribute
+          setAttributes={setAttributes}
+        />
+        <ExportAttribute
+          AttributeTypes={attributes}
+          fileName={fileName}
+        />
         <DatasetTable
           setAttributes={setAttributes}
           dataset={dataset}
           attributes={attributes}
         />
-        <div className="row">
+        <div className="dataset-table-wrapper-button-row row">
           <AnalyzeButton
             setLoadingAnalyze={setLoadingAnalyze}
             dataset={dataset}

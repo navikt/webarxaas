@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 import AttributeTypeSelector from './AttributeTypeSelector/AttributeTypeSelector';
+import './__css__/DatasetTable.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   const [defaultTypes, setDefaultTypes] = useState(attributes.map(attr => attr.attributeTypeModel));

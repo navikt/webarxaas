@@ -1,5 +1,6 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
+import './__css__/ExportAttributeTypeButton.css';
 
 const ExportAttribute = (props) => {
   const { AttributeTypes, fileName } = props;
@@ -15,10 +16,9 @@ const ExportAttribute = (props) => {
   };
 
   const content = (
-    <div className="col">
-      <br />
+    <div className="export-attribute-type-button">
       <Knapp onClick={() => handleExport()}>
-                Export Attribute Types
+        Export Attribute Types
       </Knapp>
     </div>
   );
