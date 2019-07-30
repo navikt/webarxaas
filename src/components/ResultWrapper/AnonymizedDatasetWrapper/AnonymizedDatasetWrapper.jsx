@@ -21,22 +21,23 @@ const AnonymizedDatasetWrapper = (props) => {
     content = (
       <div className="anonymized-dataset-wrapper">
         <h4>Anonymization Result</h4>
-        <p>
-          Anonymization Status:
-          {response.anonymizeResult.anonymizationStatus}
-        </p>
         <AnonymizedDatasetTable anonymizeResult={response.anonymizeResult} />
         <DownloadAnonymizedDataset
           anonymizeResult={response.anonymizeResult}
           fileName={fileName}
         />
         <div className="col-12">
+          <Ekspanderbartpanel tittel="Analysis Result" apen="true" border>
+            <AnalysisWrapper
+              response={response.riskProfile}
+              loadingAnalyze={loadingAnonymize}
+            />
+          </Ekspanderbartpanel>
           <Ekspanderbartpanel tittel="Attribute Generalization Level" border>
             <AttributeGeneralizationLevel
               attributeGeneralization={response.anonymizeResult.metrics.attributeGeneralization}
             />
           </Ekspanderbartpanel>
-          <AnalysisWrapper response={response.riskProfile} loadingAnalyze={loadingAnonymize} />
         </div>
       </div>
     );

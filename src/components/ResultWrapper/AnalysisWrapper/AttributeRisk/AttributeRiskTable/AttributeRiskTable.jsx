@@ -6,7 +6,6 @@ import 'react-table/react-table.css';
 const AttributeRiskTable = (props) => {
   const { attributeRisk } = props;
   const riskData = attributeRisk.quasiIdentifierRiskList
-    .filter(quasiIdentifierRisk => quasiIdentifierRisk.identifier.length > 1)
     .map(obj => ({
       identifier: obj.identifier.reduce((acc, item) => `${acc}, ${item}`),
       distinction: toPercent(obj.distinction),
