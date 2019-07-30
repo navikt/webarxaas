@@ -4,13 +4,13 @@ import handlePrivacyAdd from '../../../../util/handlePrivacyAdd';
 const PrivacyModelManager = (props) => {
   const { privacyModels, setPrivacyModels } = props;
   const [selectedPrivacyModel, setSelectedPrivacyModel] = useState('KANONYMITY');
-  const [param, setParam] = useState('{}');
+  const [param, setParam] = useState('');
 
   const kanonymity = (
     <div>
       <label htmlFor="K">
         K:
-        <input id="K" type="number" className="form-control" min="2" max="1000" onChange={e => setParam({ k: e.target.value })} />
+        <input id="K" type="number" className="form-control" min="2" max="1000" required onChange={e => setParam({ k: e.target.value })} />
       </label>
     </div>
   );
@@ -99,14 +99,18 @@ const PrivacyModelManager = (props) => {
       <button
         className="btn btn-outline-primary"
         type="button"
-        onClick={() => handlePrivacyAdd(
-          {
-            privacyModel: selectedPrivacyModel,
-            params: param,
-          },
-          privacyModels,
-          setPrivacyModels,
-        )}
+        disabled={!param}
+        onClick={() => {
+          handlePrivacyAdd(
+            {
+              privacyModel: selectedPrivacyModel,
+              params: param,
+            },
+            privacyModels,
+            setPrivacyModels,
+          );
+          setParam('');
+        }}
       >
         Add Privacy Model
       </button>
