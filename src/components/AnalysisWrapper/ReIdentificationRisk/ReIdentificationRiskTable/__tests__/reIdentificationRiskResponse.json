@@ -1,0 +1,28 @@
+{
+  "measures": {
+    "estimated_journalist_risk": 1.0,
+    "records_affected_by_highest_prosecutor_risk": 0.001,
+    "sample_uniques": 0.001,
+    "lowest_risk": 0.006622516556291391,
+    "estimated_prosecutor_risk": 1.0,
+    "highest_journalist_risk": 1.0,
+    "records_affected_by_lowest_risk": 0.40119999999999995,
+    "average_prosecutor_risk": 0.05,
+    "estimated_marketer_risk": 0.05,
+    "highest_prosecutor_risk": 1.0,
+    "records_affected_by_highest_journalist_risk": 0.001,
+    "population_uniques": 1.7033791067730293E-6
+  },
+  "attackerSuccessRate": {
+    "successRates": {
+      "Prosecutor_attacker_success_rate": 0.05,
+      "Marketer_attacker_success_rate": 0.05,
+      "Journalist_attacker_success_rate": 0.05
+    }
+  },
+  "quasiIdentifiers": [
+    "Alder",
+    "Innvandrerbakgrunn"
+  ],
+  "populationModel": "ZAYATZ"
+}
