@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import env from '@beam-australia/react-env';
-import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavbarMain from '../NavbarMain/NavbarMain';
 import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
-import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
-import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
-import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
-import AnonymizedDatasetWrapper from '../ResultWrapper/AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 import './__css__/App.css';
 
 
@@ -50,40 +45,7 @@ function App() {
         fileName={fileName}
       />
 
-      <Ekspanderbartpanel tittel="Analyze" border>
-        <AnalyzeButton
-          setLoadingAnalyze={setLoadingAnalyze}
-          dataset={dataset}
-          attributes={attributes}
-          endpoint={arxaasEndpoint}
-          setResponse={setAnalyzeResponse}
-        />
-        <AnalysisWrapper
-          response={analyzeResponse}
-          loadingAnalyze={loadingAnalyze}
-        />
-      </Ekspanderbartpanel>
 
-      <Ekspanderbartpanel tittel="Anonymize" border>
-        <AnonymizationConfigWrapper
-          setAttributes={setAttributes}
-          attributes={attributes}
-          privacyModels={privacyModels}
-          setPrivacyModels={setPrivacyModels}
-          suppressionLimit={suppressionLimit}
-          setSuppressionLimit={setSuppressionLimit}
-          setLoadingAnonymize={setLoadingAnonymize}
-          dataset={dataset}
-          setResponse={setAnonymizeResponse}
-          endpoint={arxaasEndpoint}
-
-        />
-        <AnonymizedDatasetWrapper
-          response={anonymizeResponse}
-          loadingAnonymize={loadingAnonymize}
-          fileName={fileName}
-        />
-      </Ekspanderbartpanel>
     </div>
   );
 }
