@@ -6,14 +6,28 @@ import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTabl
 import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable/ReIdentificationRiskTable';
 import RiskChart from './ReIdentificationRisk/RiskChart/RiskChart';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
-import './__css__/AnalysisWrapper.css';
 import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
 import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
+import './__css__/AnalysisWrapper.css';
 
 const AnalysisWrapper = (props) => {
-  const { loadingAnalyze, response } = props;
+  const {
+    loadingAnalyze, response,
+  } = props;
+  const {
+    message,
+  } = response;
+
   let content = '';
 
+  if (message) {
+    return (
+      <div className="result-wrapper">
+        <b>Something went wrong. Error:</b>
+        {message}
+      </div>
+    );
+  }
   if (loadingAnalyze) {
     content = (
       <div className="analysis-wrapper">

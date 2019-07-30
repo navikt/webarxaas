@@ -11,54 +11,49 @@ const AnonymizationConfigWrapper = (props) => {
     attributes, setAttributes,
     privacyModels, setPrivacyModels,
     suppressionLimit, setSuppressionLimit,
-    showAnonymizationConfig, setLoadingAnonymize,
-    setOperation, dataset, setResponse,
+    setLoadingAnonymize, dataset, setResponse,
     endpoint,
   } = props;
 
-  let content = '';
-  if (showAnonymizationConfig) {
-    content = (
-      <div className="anonymization-config-wrapper container-fluid">
-        <div className="container-fluid">
-          <div className="row">
-            <div className="heirarchy-import col border border-dark" align="center">
-              <HierarchyImport
-                attributes={attributes}
-                setAttributes={setAttributes}
-              />
-            </div>
-            <div className="privacy-model col border border-dark" align="center">
-              <PrivacyModelManager
-                privacyModels={privacyModels}
-                setPrivacyModels={setPrivacyModels}
-              />
-              <PrivacyModelTable
-                privacyModels={privacyModels}
-                setPrivacyModels={setPrivacyModels}
-              />
-            </div>
-            <div className="suppression-limit col border border-dark" align="center">
-              <SuppressionLimit
-                suppressionLimit={suppressionLimit}
-                setSuppressionLimit={setSuppressionLimit}
-              />
-            </div>
+  const content = (
+    <div className="anonymization-config-wrapper container-fluid">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="hierarchy-import col border border-dark" align="center">
+            <HierarchyImport
+              attributes={attributes}
+              setAttributes={setAttributes}
+            />
+          </div>
+          <div className="privacy-model col border border-dark" align="center">
+            <PrivacyModelManager
+              privacyModels={privacyModels}
+              setPrivacyModels={setPrivacyModels}
+            />
+            <PrivacyModelTable
+              privacyModels={privacyModels}
+              setPrivacyModels={setPrivacyModels}
+            />
+          </div>
+          <div className="suppression-limit col border border-dark" align="center">
+            <SuppressionLimit
+              suppressionLimit={suppressionLimit}
+              setSuppressionLimit={setSuppressionLimit}
+            />
           </div>
         </div>
-        <AnonymizeButton
-          setLoadingAnonymize={setLoadingAnonymize}
-          setOperation={setOperation}
-          dataset={dataset}
-          attributes={attributes}
-          privacyModels={privacyModels}
-          suppressionLimit={suppressionLimit}
-          setResponse={setResponse}
-          endpoint={endpoint}
-        />
       </div>
-    );
-  }
+      <AnonymizeButton
+        setLoadingAnonymize={setLoadingAnonymize}
+        dataset={dataset}
+        attributes={attributes}
+        privacyModels={privacyModels}
+        suppressionLimit={suppressionLimit}
+        setResponse={setResponse}
+        endpoint={endpoint}
+      />
+    </div>
+  );
   return content;
 };
 export default AnonymizationConfigWrapper;

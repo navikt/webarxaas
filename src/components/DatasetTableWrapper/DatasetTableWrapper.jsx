@@ -1,20 +1,13 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
-
 import DatasetTable from './DatasetTable/DatasetTable';
-import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
-import AnonymizeConfigButton from './AnonymizeConfigButton/AnonymizeConfigButton';
 import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
 import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
-import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import './__css__/DatasetTableWrapper.css';
 
 const DatasetTableWrapper = (props) => {
   const {
-    loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
-    setAttributes, dataset, attributes, endpoint, setResponse,
-    setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
-    showAnonymizationConfig, setShowAnonymizationConfig, fileName,
+    loadingDataset, setAttributes, dataset, attributes, fileName,
   } = props;
 
   let content = '';
@@ -39,33 +32,6 @@ const DatasetTableWrapper = (props) => {
           setAttributes={setAttributes}
           dataset={dataset}
           attributes={attributes}
-        />
-        <div className="dataset-table-wrapper-button-row row">
-          <AnalyzeButton
-            setLoadingAnalyze={setLoadingAnalyze}
-            dataset={dataset}
-            attributes={attributes}
-            endpoint={endpoint}
-            setResponse={setResponse}
-            setOperation={setOperation}
-          />
-          <AnonymizeConfigButton
-            setShowAnonymizationConfig={setShowAnonymizationConfig}
-          />
-        </div>
-        <AnonymizationConfigWrapper
-          setAttributes={setAttributes}
-          attributes={attributes}
-          privacyModels={privacyModels}
-          setPrivacyModels={setPrivacyModels}
-          suppressionLimit={suppressionLimit}
-          setSuppressionLimit={setSuppressionLimit}
-          showAnonymizationConfig={showAnonymizationConfig}
-          setLoadingAnonymize={setLoadingAnonymize}
-          setOperation={setOperation}
-          dataset={dataset}
-          setResponse={setResponse}
-          endpoint={endpoint}
         />
       </div>
     );

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import env from '@beam-australia/react-env';
+import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavbarMain from '../NavbarMain/NavbarMain';
 import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
-import ResultWrapper from '../ResultWrapper/ResultWrapper';
+import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
+import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
+import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
+import AnonymizedDatasetWrapper from '../ResultWrapper/AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 import './__css__/App.css';
+
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
@@ -13,10 +18,9 @@ function App() {
   const [loadingAnonymize, setLoadingAnonymize] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
-  const [response, setResponse] = useState('');
+  const [analyzeResponse, setAnalyzeResponse] = useState('');
+  const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [showAnonymizationConfig, setShowAnonymizationConfig] = useState(false);
-  const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
   const [fileName, setFileName] = useState('');
@@ -35,36 +39,51 @@ function App() {
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
-        setOperation={setOperation}
         setFileName={setFileName}
       />
 
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
-        setLoadingAnalyze={setLoadingAnalyze}
-        setLoadingAnonymize={setLoadingAnonymize}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
-        setResponse={setResponse}
-        endpoint={arxaasEndpoint}
-        setOperation={setOperation}
-        privacyModels={privacyModels}
-        setPrivacyModels={setPrivacyModels}
-        suppressionLimit={suppressionLimit}
-        setSuppressionLimit={setSuppressionLimit}
-        showAnonymizationConfig={showAnonymizationConfig}
-        setShowAnonymizationConfig={setShowAnonymizationConfig}
         fileName={fileName}
       />
-      <ResultWrapper
-        response={response}
-        setResponse={setResponse}
-        loadingAnalyze={loadingAnalyze}
-        loadingAnonymize={loadingAnonymize}
-        operation={operation}
-        fileName={fileName}
-      />
+
+      <Ekspanderbartpanel tittel="Analyze" border>
+        <AnalyzeButton
+          setLoadingAnalyze={setLoadingAnalyze}
+          dataset={dataset}
+          attributes={attributes}
+          endpoint={arxaasEndpoint}
+          setResponse={setAnalyzeResponse}
+        />
+        <AnalysisWrapper
+          response={analyzeResponse}
+          loadingAnalyze={loadingAnalyze}
+        />
+      </Ekspanderbartpanel>
+
+      <Ekspanderbartpanel tittel="Anonymize" border>
+        <AnonymizationConfigWrapper
+          setAttributes={setAttributes}
+          attributes={attributes}
+          privacyModels={privacyModels}
+          setPrivacyModels={setPrivacyModels}
+          suppressionLimit={suppressionLimit}
+          setSuppressionLimit={setSuppressionLimit}
+          setLoadingAnonymize={setLoadingAnonymize}
+          dataset={dataset}
+          setResponse={setAnonymizeResponse}
+          endpoint={arxaasEndpoint}
+
+        />
+        <AnonymizedDatasetWrapper
+          response={anonymizeResponse}
+          loadingAnonymize={loadingAnonymize}
+          fileName={fileName}
+        />
+      </Ekspanderbartpanel>
     </div>
   );
 }
