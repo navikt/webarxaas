@@ -20,7 +20,14 @@ const HeirarcyImport = (props) => {
               <tr>
                 <td>{field}</td>
                 <td>
-                  <input type="file" onChange={e => handleHierarchyUpload(e.target.files[0], index, attributes, setAttributes)} />
+                  <input
+                    type="file"
+                    onChange={(e) => {
+                      if (e.target.files[0]) {
+                        handleHierarchyUpload(e.target.files[0], index, attributes, setAttributes);
+                      }
+                    }}
+                  />
                 </td>
               </tr>
             </tbody>

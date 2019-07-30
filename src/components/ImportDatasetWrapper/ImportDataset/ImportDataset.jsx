@@ -21,15 +21,17 @@ const ImportDataset = (props) => {
           className="import-dataset-input knapp knapp--standard"
           onChange={
             (e) => {
-              setFileName(e.target.files[0].name);
-              setLoadingDataset(true);
-              ParseFile(
-                e.target.files[0],
-                setAttributes,
-                setDataset,
-                defaultAttributeType,
-                setLoadingDataset,
-              );
+              if (e.target.files[0]) {
+                setFileName(e.target.files[0].name);
+                setLoadingDataset(true);
+                ParseFile(
+                  e.target.files[0],
+                  setAttributes,
+                  setDataset,
+                  defaultAttributeType,
+                  setLoadingDataset,
+                );
+              }
             }
           }
         />
