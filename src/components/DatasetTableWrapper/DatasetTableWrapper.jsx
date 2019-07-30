@@ -12,7 +12,7 @@ import './__css__/DatasetTableWrapper.css';
 const DatasetTableWrapper = (props) => {
   const {
     loadingDataset, setLoadingAnalyze, setLoadingAnonymize,
-    setAttributes, dataset, attributes, endpoint, setResponse,
+    setAttributes, dataset, attributes, endpoint,
     setOperation, privacyModels, setPrivacyModels, suppressionLimit, setSuppressionLimit,
     showAnonymizationConfig, setShowAnonymizationConfig, fileName,
   } = props;

@@ -8,6 +8,7 @@ import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
 import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
+import AnonymizedDatasetWrapper from '../ResultWrapper/AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 import './__css__/App.css';
 
 
@@ -17,7 +18,8 @@ function App() {
   const [loadingAnonymize, setLoadingAnonymize] = useState(false);
   const [dataset, setDataset] = useState('');
   const [attributes, setAttributes] = useState([]);
-  const [response, setResponse] = useState('');
+  const [analyzeResponse, setAnalyzeResponse] = useState('');
+  const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
   const [showAnonymizationConfig, setShowAnonymizationConfig] = useState(false);
   const [operation, setOperation] = useState('');
@@ -50,7 +52,6 @@ function App() {
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
-        setResponse={setResponse}
         endpoint={arxaasEndpoint}
         setOperation={setOperation}
         privacyModels={privacyModels}
@@ -68,11 +69,11 @@ function App() {
           dataset={dataset}
           attributes={attributes}
           endpoint={arxaasEndpoint}
-          setResponse={setResponse}
+          setResponse={setAnalyzeResponse}
           setOperation={setOperation}
         />
         <AnalysisWrapper
-          response={response}
+          response={analyzeResponse}
           loadingAnalyze={loadingAnalyze}
         />
       </Ekspanderbartpanel>
@@ -88,8 +89,13 @@ function App() {
           setLoadingAnonymize={setLoadingAnonymize}
           setOperation={setOperation}
           dataset={dataset}
-          setResponse={setResponse}
+          setResponse={setAnonymizeResponse}
           endpoint={arxaasEndpoint}
+        />
+        <AnonymizedDatasetWrapper
+          response={anonymizeResponse}
+          loadingAnonymize={loadingAnonymize}
+          fileName={fileName}
         />
       </Ekspanderbartpanel>
     </div>
