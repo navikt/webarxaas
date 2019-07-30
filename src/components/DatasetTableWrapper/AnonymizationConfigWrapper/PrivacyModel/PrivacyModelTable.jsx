@@ -16,13 +16,13 @@ const PrivacyModelTable = (props) => {
         </thead>
         <tbody>
           {privacyModels.map((model, index) => (
-            <tr key={model.privacyModel}>
+            <tr key={index.toString() + model.privacyModel.toString()}>
               <td>{model.privacyModel}</td>
               <td style={{ padding: 0 }}>
                 <table>
                   <tbody>
                     {Object.entries(model.params).map(paramPair => (
-                      <tr>
+                      <tr key={index.toString() + paramPair.toString()}>
                         <td>
                           {paramPair[0]}
                           {': '}
