@@ -47,10 +47,11 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
     width: 164,
   }));
 
-  const data = dataset.slice(1);
+  const data = dataset.slice(1, 101);
 
   const content = (
     <div className="dataset-table">
+      <h3 className="text-left ml-2">Preview subset of dataset:</h3>
       <ReactTable
         data={data}
         columns={columns}
