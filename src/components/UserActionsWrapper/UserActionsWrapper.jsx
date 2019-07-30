@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, propTypes } from 'react';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
 import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
@@ -58,6 +58,14 @@ const UserActionsWrapper = (props) => {
       </Ekspanderbartpanel>
     </div>
   );
+};
+
+UserActionsWrapper.propTypes = {
+  dataset: propTypes.isRequired,
+  attributes: propTypes.isRequired,
+  endpoint: propTypes.string.isRequired,
+  fileName: propTypes.string.isRequired,
+  setAttributes: propTypes.isRequired,
 };
 
 export default UserActionsWrapper;
