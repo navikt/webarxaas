@@ -21,7 +21,6 @@ function App() {
   const [analyzeResponse, setAnalyzeResponse] = useState('');
   const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [showMoreInfo, setShowMoreInfo] = useState(false);
-  const [operation, setOperation] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
   const [fileName, setFileName] = useState('');
@@ -40,7 +39,6 @@ function App() {
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
-        setOperation={setOperation}
         setFileName={setFileName}
       />
 
@@ -59,12 +57,10 @@ function App() {
           attributes={attributes}
           endpoint={arxaasEndpoint}
           setResponse={setAnalyzeResponse}
-          setOperation={setOperation}
         />
         <AnalysisWrapper
           response={analyzeResponse}
           loadingAnalyze={loadingAnalyze}
-          operation={operation}
         />
       </Ekspanderbartpanel>
 
@@ -77,7 +73,6 @@ function App() {
           suppressionLimit={suppressionLimit}
           setSuppressionLimit={setSuppressionLimit}
           setLoadingAnonymize={setLoadingAnonymize}
-          setOperation={setOperation}
           dataset={dataset}
           setResponse={setAnonymizeResponse}
           endpoint={arxaasEndpoint}
