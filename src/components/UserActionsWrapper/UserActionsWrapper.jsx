@@ -1,4 +1,5 @@
-import React, { useState, propTypes } from 'react';
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
 import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
@@ -61,11 +62,11 @@ const UserActionsWrapper = (props) => {
 };
 
 UserActionsWrapper.propTypes = {
-  dataset: propTypes.isRequired,
-  attributes: propTypes.isRequired,
-  endpoint: propTypes.string.isRequired,
-  fileName: propTypes.string.isRequired,
-  setAttributes: propTypes.isRequired,
+  dataset: PropTypes.isRequired,
+  attributes: PropTypes.isRequired,
+  endpoint: PropTypes.string.isRequired,
+  fileName: PropTypes.string.isRequired,
+  setAttributes: PropTypes.isRequired,
 };
 
 export default UserActionsWrapper;
