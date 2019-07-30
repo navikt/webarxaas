@@ -7,7 +7,6 @@ import AttributeGeneralizationLevel from './AttributeGeneralizationLevel/Attribu
 import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
 import './__css__/AnonymizedDatasetWrapper.css';
 
-
 const AnonymizedDatasetWrapper = (props) => {
   const {
     response, loadingAnonymize, fileName,
@@ -42,7 +41,7 @@ const AnonymizedDatasetWrapper = (props) => {
           fileName={fileName}
         />
         <div className="col-12">
-          <Ekspanderbartpanel tittel="Analysis Result" apen="true" border>
+          <Ekspanderbartpanel tittel="Analysis Result" open="{true}" border>
             <AnalysisWrapper
               response={response.riskProfile}
               loadingAnalyze={loadingAnonymize}
