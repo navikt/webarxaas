@@ -62,8 +62,8 @@ const UserActionsWrapper = (props) => {
 };
 
 UserActionsWrapper.propTypes = {
-  dataset: PropTypes.string.isRequired,
-  attributes: PropTypes.array.isRequired,
+  dataset: PropTypes.any.isRequired,
+  attributes: PropTypes.any.isRequired,
   endpoint: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
   setAttributes: PropTypes.func.isRequired,
