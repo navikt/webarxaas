@@ -80,7 +80,6 @@ function App() {
           setPrivacyModels={setPrivacyModels}
           suppressionLimit={suppressionLimit}
           setSuppressionLimit={setSuppressionLimit}
-          showAnonymizationConfig={showAnonymizationConfig}
           setLoadingAnonymize={setLoadingAnonymize}
           setOperation={setOperation}
           dataset={dataset}
