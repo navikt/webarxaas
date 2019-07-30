@@ -5,12 +5,11 @@ import NavbarMain from '../NavbarMain/NavbarMain';
 import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
-import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
+import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
 import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
-import AnonymizedDatasetWrapper from '../ResultWrapper/AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import AnonymizedDatasetWrapper from '../AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 import './__css__/App.css';
-
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
