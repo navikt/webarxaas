@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import env from '@beam-australia/react-env';
+import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavbarMain from '../NavbarMain/NavbarMain';
 import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import ResultWrapper from '../ResultWrapper/ResultWrapper';
+import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
 import './__css__/App.css';
+import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
@@ -65,6 +68,26 @@ function App() {
         operation={operation}
         fileName={fileName}
       />
+      <Ekspanderbartpanel tittel="Analyze" border>
+        <AnalysisWrapper response={response} loadingAnalyze={loadingAnalyze} />
+      </Ekspanderbartpanel>
+
+      <Ekspanderbartpanel tittel="Anonymize" border>
+        <AnonymizationConfigWrapper
+          setAttributes={setAttributes}
+          attributes={attributes}
+          privacyModels={privacyModels}
+          setPrivacyModels={setPrivacyModels}
+          suppressionLimit={suppressionLimit}
+          setSuppressionLimit={setSuppressionLimit}
+          showAnonymizationConfig={showAnonymizationConfig}
+          setLoadingAnonymize={setLoadingAnonymize}
+          setOperation={setOperation}
+          dataset={dataset}
+          setResponse={setResponse}
+          endpoint={arxaasEndpoint}
+        />
+      </Ekspanderbartpanel>
     </div>
   );
 }
