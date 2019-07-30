@@ -1,9 +1,8 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table';
-import { Select } from 'nav-frontend-skjema';
-import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
+import AttributeTypeSelector from './AttributeTypeSelector/AttributeTypeSelector';
 import './__css__/DatasetTable.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
@@ -23,25 +22,14 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
     Header:
       // eslint-disable-next-line react/jsx-indent
       <div className="dataset-table-column">
-        <Select
-          label=""
-          value={defaultTypes[index]}
-          onChange={(e) => {
-            const currentTypes = [...defaultTypes];
-            currentTypes[index] = e.target.value;
-            setDefaultTypes(currentTypes);
-            HandleTypeSelect(e.target, attributes[index].field, index, attributes, setAttributes);
-          }}
-        >
-          {types.map(([value, label]) => (
-            <option
-              value={value}
-              key={value}
-            >
-              {label}
-            </option>
-          ))}
-        </Select>
+        <AttributeTypeSelector
+          defaultTypes={defaultTypes}
+          setDefaultTypes={setDefaultTypes}
+          types={types}
+          attributes={attributes}
+          index={index}
+          setAttributes={setAttributes}
+        />
         {dataset[0][index]}
       </div>,
     accessor: index,
@@ -55,7 +43,7 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
       <h3 className="text-left ml-2">
         Previewing first 100 rows of
         {' '}
-        { dataset.length }
+        {dataset.length}
         {' '}
         rows in total:
       </h3>
