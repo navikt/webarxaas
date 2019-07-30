@@ -7,7 +7,6 @@ import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import UserActionsWrapper from '../UserActionsWrapper/UserActionsWrapper';
 import './__css__/App.css';
 
-
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState('');

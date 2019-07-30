@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
-import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
-import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
-import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
-import AnonymizedDatasetWrapper from '../ResultWrapper/AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
+import AnonymizationConfigWrapper from '../AnonymizationConfigWrapper/AnonymizationConfigWrapper';
+import AnalyzeButton from '../AnalyzeButton/AnalyzeButton';
+import AnonymizedDatasetWrapper from '../AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 import './__css__/UserActionsWrapper.css';
 
 const UserActionsWrapper = (props) => {
