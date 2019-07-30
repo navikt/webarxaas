@@ -5,6 +5,7 @@ import { Select } from 'nav-frontend-skjema';
 import { ToggleKnapp } from 'nav-frontend-toggle';
 import HandleTypeSelect from '../../../util/handleTypeSelect';
 import 'react-table/react-table.css';
+import './__css__/DatasetTable.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   const [defaultTypes, setDefaultTypes] = useState(attributes.map(attr => attr.attributeTypeModel));

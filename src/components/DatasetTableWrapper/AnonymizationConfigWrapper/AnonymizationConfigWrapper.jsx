@@ -19,18 +19,15 @@ const AnonymizationConfigWrapper = (props) => {
   if (showAnonymizationConfig) {
     content = (
       <div className="anonymization-config-wrapper container-fluid">
-        <br />
         <div className="container-fluid">
           <div className="row">
             <div className="col border border-dark" align="center">
-              <br />
               <HierarchyImport
                 attributes={attributes}
                 setAttributes={setAttributes}
               />
             </div>
             <div className="col border border-dark" align="center">
-              <br />
               <PrivacyModelManager
                 privacyModels={privacyModels}
                 setPrivacyModels={setPrivacyModels}
@@ -41,7 +38,7 @@ const AnonymizationConfigWrapper = (props) => {
               />
             </div>
             <div className="col border border-dark" align="center">
-              <br />
+              
               <SuppressionLimit
                 suppressionLimit={suppressionLimit}
                 setSuppressionLimit={setSuppressionLimit}

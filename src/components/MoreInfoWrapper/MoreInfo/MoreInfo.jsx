@@ -29,14 +29,12 @@ const MoreInfo = (props) => {
               <br />
               Typical examples are names or Social Security Numbers.
             </li>
-            <br />
             <li>
               <b>Quasi-identifying </b>
               attributes can in combination be used for re-identification attacks.
               <br />
               Typical examples are gender, date of birth and ZIP codes.
             </li>
-            <br />
             <li>
               <b>Sensitive </b>
               attributes encode properties with which individuals are not willing to be linked with.
@@ -47,7 +45,6 @@ const MoreInfo = (props) => {
               <br />
               Typical examples are diagnoses.
             </li>
-            <br />
             <li>
               <b>Insensitive </b>
               attributes are not associated with privacy risks.
@@ -81,7 +78,7 @@ const MoreInfo = (props) => {
               <p>
               This privacy model can be used to protect data against attribute disclosure by ensuring that each sensitive attribute has at least
                 <br />
-              ℓ well represented values in each equivalence class.
+            ℓ well represented values in each equivalence class.
               </p>
             </li>
           </ul>

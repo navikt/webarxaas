@@ -1,5 +1,6 @@
 import React from 'react';
 import toPercent from '../../../../../util/ratioToPercent';
+import './__css__/ReIdentificationRiskTable.css';
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
@@ -7,10 +8,11 @@ const ReIdentificationRiskTable = (props) => {
     <div>
       <h3>Reidentification Risk</h3>
       <div align="left">
-        <table className="table table-hover">
+        <table className="re-identification-risk-table table table-hover">
           <tbody>
-            <p><b>Prosecutor model: </b></p>
-
+            <tr>
+              <td><p><b>Prosecutor model: </b></p></td>
+            </tr>
             <tr>
               <td>Estimated prosecutor risk: </td>
               <td>
@@ -45,7 +47,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Prosecutor attacker success rate: </td>
+              <td className="last-element-of-group">Prosecutor attacker success rate: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.attackerSuccessRate.successRates
@@ -54,8 +56,9 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
-            <p><b>Journalist model: </b></p>
+            <tr>
+              <td><p><b>Journalist model: </b></p></td>
+            </tr>
             <tr>
               <td>Estimated journalist risk: </td>
               <td>
@@ -83,7 +86,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Records affected by highest journalist risk: </td>
+              <td className="last-element-of-group">Records affected by highest journalist risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures
@@ -92,8 +95,9 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
-            <p><b>Marketer model: </b></p>
+            <tr>
+              <td><p><b>Marketer model: </b></p></td>
+            </tr>
             <tr>
               <td>Estimated marketer risk: </td>
               <td>
@@ -103,7 +107,7 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Marketer attacker success rate: </td>
+              <td className="last-element-of-group">Marketer attacker success rate: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.attackerSuccessRate.successRates
@@ -112,9 +116,9 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
 
-            <br />
-            <p><b>Population: </b></p>
-
+            <tr>
+              <td><p><b>Population: </b></p></td>
+            </tr>
             <tr>
               <td>Population uniques: </td>
               <td>
@@ -124,14 +128,14 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
-
             <tr>
-              <td>Population model: </td>
+              <td className="last-element-of-group">Population model: </td>
               <td>{reIdentificationRisk.populationModel}</td>
             </tr>
 
-            <br />
-            <p><b>Lowest risk</b></p>
+            <tr>
+              <td><p><b>Lowest risk</b></p></td>
+            </tr>
             <tr>
               <td>Lowest risk: </td>
               <td>
@@ -141,15 +145,13 @@ const ReIdentificationRiskTable = (props) => {
               </td>
             </tr>
             <tr>
-              <td>Records affected by lowest risk: </td>
+              <td className="last-element-of-group">Records affected by lowest risk: </td>
               <td>
                 {
                   toPercent(reIdentificationRisk.measures.records_affected_by_lowest_risk)
                 }
               </td>
             </tr>
-
-            <br />
             <tr>
               <td><b>Sample uniques: </b></td>
               <td>
@@ -158,8 +160,6 @@ const ReIdentificationRiskTable = (props) => {
                 }
               </td>
             </tr>
-
-            <br />
             <tr>
               <td><b>Quasi-identifiers: </b></td>
               <td>
