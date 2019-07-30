@@ -1,39 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import AnalysisWrapper from '../ResultWrapper/AnalysisWrapper/AnalysisWrapper';
 import AnonymizationConfigWrapper from '../DatasetTableWrapper/AnonymizationConfigWrapper/AnonymizationConfigWrapper';
 import AnalyzeButton from '../DatasetTableWrapper/AnalyzeButton/AnalyzeButton';
 import AnonymizedDatasetWrapper from '../ResultWrapper/AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import './__css__/UserActionsWrapper.css';
 
-const userActionsWrapper = (props) => {
+const UserActionsWrapper = (props) => {
+  const [loadingAnalyze, setLoadingAnalyze] = useState(false);
+  const [loadingAnonymize, setLoadingAnonymize] = useState(false);
+  const [analyzeResponse, setAnalyzeResponse] = useState('');
+  const [anonymizeResponse, setAnonymizeResponse] = useState('');
+  const [privacyModels, setPrivacyModels] = useState([]);
+  const [suppressionLimit, setSuppressionLimit] = useState(null);
   const {
-    setLoadingAnalyze,
     dataset,
     attributes,
-    arxaasEndpoint,
-    setAnalyzeResponse,
-    analyzeResponse,
-    loadingAnalyze,
+    endpoint,
+    fileName,
     setAttributes,
-    privacyModels,
-    setPrivacyModels,
-    suppressionLimit,
-    setSuppressionLimit,
-    setLoadingAnonymize,
-    setAnonymizeResponse,
-    anonymizeResponse,
-    loadingAnonymize,
-    fileName
   } = props;
 
   return (
-    <div>
+    <div className="user-actions-wrapper">
       <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
         <AnalyzeButton
           setLoadingAnalyze={setLoadingAnalyze}
           dataset={dataset}
           attributes={attributes}
-          endpoint={arxaasEndpoint}
+          endpoint={endpoint}
           setResponse={setAnalyzeResponse}
         />
         <AnalysisWrapper
@@ -53,7 +48,7 @@ const userActionsWrapper = (props) => {
           setLoadingAnonymize={setLoadingAnonymize}
           dataset={dataset}
           setResponse={setAnonymizeResponse}
-          endpoint={arxaasEndpoint}
+          endpoint={endpoint}
         />
         <AnonymizedDatasetWrapper
           response={anonymizeResponse}
@@ -65,4 +60,4 @@ const userActionsWrapper = (props) => {
   );
 };
 
-export default userActionsWrapper;
+export default UserActionsWrapper;
