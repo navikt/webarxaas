@@ -10,7 +10,7 @@ const PrivacyModelManager = (props) => {
     <div>
       <label htmlFor="K">
         K:
-        <input id="K" type="number" className="form-control" min="2" max="1000" required onChange={e => setParam({ k: e.target.value })} />
+        <input id="K" type="number" min="2" max="1000" required onChange={e => setParam({ k: e.target.value })} />
       </label>
     </div>
   );
