@@ -40,12 +40,12 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
 
   const content = (
     <div className="dataset-table">
-      <h3 className="text-left ml-2">
-        Previewing first 100 rows of
+      <h3 className="text-center ml-2">
+        Previewing first 100 of
         {' '}
         {dataset.length}
         {' '}
-        rows in total:
+        rows in dataset:
       </h3>
       <ReactTable
         data={data}
