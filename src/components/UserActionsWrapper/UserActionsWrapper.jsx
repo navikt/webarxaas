@@ -14,6 +14,7 @@ const UserActionsWrapper = (props) => {
   const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
+
   const {
     dataset,
     attributes,
@@ -21,11 +22,21 @@ const UserActionsWrapper = (props) => {
     fileName,
     setAttributes,
   } = props;
+  const [datasetCache, setDatasetCache] = useState(dataset);
+
+  // Reset state when a new dataset is imported
+  if (dataset !== datasetCache && datasetCache !== null) {
+    setAnalyzeResponse('');
+    setAnonymizeResponse('');
+    setPrivacyModels([]);
+    setSuppressionLimit(null);
+    setDatasetCache(dataset);
+  }
 
   return (
     <div className="user-actions-wrapper">
       <h1 style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>Data actions</h1>
-      <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }} apen="{true}">
+      <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }} apen>
         <AnalyzeButton
           setLoadingAnalyze={setLoadingAnalyze}
           dataset={dataset}
@@ -64,8 +75,8 @@ const UserActionsWrapper = (props) => {
 };
 
 UserActionsWrapper.propTypes = {
-  dataset: PropTypes.any.isRequired,
-  attributes: PropTypes.any.isRequired,
+  dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
+  attributes: PropTypes.arrayOf(PropTypes.string).isRequired,
   endpoint: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
   setAttributes: PropTypes.func.isRequired,
