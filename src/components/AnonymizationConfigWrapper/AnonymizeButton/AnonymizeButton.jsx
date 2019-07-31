@@ -17,7 +17,7 @@ const AnonymizeButton = (props) => {
         handleRequest(setLoadingAnonymize, 'anonymize', endpoint, setResponse, dataset, attributes, privacyModels, suppressionLimit);
       }}
       >
-        Start anonymization
+        Anonymize Dataset
       </Knapp>
     </div>
   );

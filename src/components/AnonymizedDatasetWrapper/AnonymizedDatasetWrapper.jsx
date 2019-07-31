@@ -41,7 +41,7 @@ const AnonymizedDatasetWrapper = (props) => {
           fileName={fileName}
         />
         <div className="col-12">
-          <Ekspanderbartpanel tittel="Analysis Result" open="{true}" border>
+          <Ekspanderbartpanel tittel="Analysis Result" apen="{true}" border>
             <AnalysisWrapper
               response={response.riskProfile}
               loadingAnalyze={loadingAnonymize}
