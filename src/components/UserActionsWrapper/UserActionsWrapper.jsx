@@ -24,7 +24,8 @@ const UserActionsWrapper = (props) => {
 
   return (
     <div className="user-actions-wrapper">
-      <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
+      <h1 style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>Data actions</h1>
+      <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }} apen="{true}">
         <AnalyzeButton
           setLoadingAnalyze={setLoadingAnalyze}
           dataset={dataset}
@@ -36,6 +37,7 @@ const UserActionsWrapper = (props) => {
           response={analyzeResponse}
           loadingAnalyze={loadingAnalyze}
         />
+        <br />
       </Ekspanderbartpanel>
 
       <Ekspanderbartpanel tittel="Anonymize" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>

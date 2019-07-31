@@ -1,5 +1,9 @@
 .user-actions-wrapper {
     margin: 2em 0;
     padding: 4em 0;
-    background-color: #c8dadf;
+    background-color: #e9ecef;
+}
+
+.user-actions-wrapper h1 {
+    margin: 0 0 1em;
 }
