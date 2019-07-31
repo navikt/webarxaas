@@ -29,6 +29,7 @@ function App() {
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
+        dataset={dataset}
         setFileName={setFileName}
       />
 
