@@ -10,6 +10,7 @@ const ImportDataset = (props) => {
   useEffect(() => {
     DragAndDropFile(setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
   });
+  
   let importDatasetFormStyle = 'import-dataset-form has-advanced-upload';
   let onRow = '';
   if (dataset) {
