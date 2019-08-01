@@ -4,6 +4,6 @@ export default function BuildPayload(dataset, attributes,
   jsonModel.data = dataset;
   jsonModel.attributes = attributes;
   jsonModel.privacyModels = privacyModels;
-  jsonModel.suppressionLimit = suppressionLimit;
+  jsonModel.suppressionLimit = suppressionLimit / 100;
   return jsonModel;
 }
