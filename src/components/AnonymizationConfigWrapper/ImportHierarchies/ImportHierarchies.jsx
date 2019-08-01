@@ -19,7 +19,9 @@ const ImportHierarchies = (props) => {
                       type="file"
                       onChange={(e) => {
                         if (e.target.files[0]) {
-                          handleHierarchyUpload(e.target.files[0], index, attributes, setAttributes);
+                          handleHierarchyUpload(
+                            e.target.files[0], index, attributes, setAttributes,
+                          );
                         }
                       }}
                     />
