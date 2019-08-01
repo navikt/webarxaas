@@ -1,5 +1,5 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
+import { Card, CardHeader } from '@material-ui/core';
 import ImportHierarchies from './ImportHierarchies/ImportHierarchies';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
@@ -22,39 +22,33 @@ const AnonymizationConfigWrapper = (props) => {
         <div className="row">
           <div className="hierarchy-import-card col">
             <Card>
-              <Card.Body>
-                <Card.Title>Import Hierarchies</Card.Title>
-                <ImportHierarchies
-                  attributes={attributes}
-                  setAttributes={setAttributes}
-                />
-              </Card.Body>
+              <CardHeader title="Import Hierarchies" />
+              <ImportHierarchies
+                attributes={attributes}
+                setAttributes={setAttributes}
+              />
             </Card>
           </div>
-          <div className="privacy-model-card col">
+          <div className="privacy-model-manager-card col">
             <Card>
-              <Card.Body>
-                <Card.Title>Set Privacy Model(s)</Card.Title>
-                <PrivacyModelManager
-                  privacyModels={privacyModels}
-                  setPrivacyModels={setPrivacyModels}
-                />
-                <PrivacyModelTable
-                  privacyModels={privacyModels}
-                  setPrivacyModels={setPrivacyModels}
-                />
-              </Card.Body>
+              <CardHeader title="Set Privacy Model(s)" />
+              <PrivacyModelManager
+                privacyModels={privacyModels}
+                setPrivacyModels={setPrivacyModels}
+              />
+              <PrivacyModelTable
+                privacyModels={privacyModels}
+                setPrivacyModels={setPrivacyModels}
+              />
             </Card>
           </div>
           <div className="suppression-limit-card col">
             <Card>
-              <Card.Body>
-                <Card.Title>Set Suppression Limit</Card.Title>
-                <SuppressionLimit
-                  suppressionLimit={suppressionLimit}
-                  setSuppressionLimit={setSuppressionLimit}
-                />
-              </Card.Body>
+              <CardHeader title="Set Suppression Limit" />
+              <SuppressionLimit
+                suppressionLimit={suppressionLimit}
+                setSuppressionLimit={setSuppressionLimit}
+              />
             </Card>
           </div>
         </div>
