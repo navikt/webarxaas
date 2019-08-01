@@ -50,7 +50,6 @@ const SuppressionLimit = (props) => {
       <br />
       <Chip
         label={suppressionLabel}
-        clickable
         className={classes.chip}
         color="primary"
       />
