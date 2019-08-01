@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import HierarchyImport from './ImportHierarchies/ImportHierarchies';
+import ImportHierarchies from './ImportHierarchies/ImportHierarchies';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
 import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
@@ -24,7 +24,7 @@ const AnonymizationConfigWrapper = (props) => {
             <Card>
               <Card.Body>
                 <Card.Title>Import Hierarchies</Card.Title>
-                <HierarchyImport
+                <ImportHierarchies
                   attributes={attributes}
                   setAttributes={setAttributes}
                 />
