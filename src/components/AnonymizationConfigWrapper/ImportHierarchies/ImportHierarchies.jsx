@@ -1,7 +1,7 @@
 import React from 'react';
 import handleHierarchyUpload from '../../../util/handleHierarchyUpload';
 
-const HeirarcyImport = (props) => {
+const ImportHierarchies = (props) => {
   const {
     attributes, setAttributes,
   } = props;
@@ -36,4 +36,4 @@ const HeirarcyImport = (props) => {
   );
   return content;
 };
-export default HeirarcyImport;
+export default ImportHierarchies;

@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
-import HierarchyImport from './HierachyImport/HeirarchyImport';
+import HierarchyImport from './ImportHierarchies/ImportHierarchies';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
 import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
