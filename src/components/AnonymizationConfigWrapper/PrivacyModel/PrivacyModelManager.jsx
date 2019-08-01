@@ -74,7 +74,7 @@ const PrivacyModelManager = (props) => {
   };
 
   const content = (
-    <div>
+    <div className="privacy-model-manager" align="center">
       <select
         className="form-control"
         onChange={(e) => {
