@@ -1,6 +1,7 @@
 import React from 'react';
-import AnalyzeButton from '../AnalyzeButton/AnalyzeButton';
-import AnalysisWrapper from '../AnalyzeResultWrapper/AnalyzeResultWrapper';
+import PropTypes from 'prop-types';
+import AnalyzeButton from '../../AnalyzeButton/AnalyzeButton';
+import AnalysisWrapper from '../../AnalyzeResultWrapper/AnalyzeResultWrapper';
 
 const AnalyzeWrapper = (props) => {
   const {
@@ -29,6 +30,16 @@ const AnalyzeWrapper = (props) => {
       <br />
     </div>
   );
+};
+
+AnalyzeWrapper.propTypes = {
+  dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
+  attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  endpoint: PropTypes.string.isRequired,
+  loadingAnalyze: PropTypes.bool.isRequired,
+  setLoadingAnalyze: PropTypes.func.isRequired,
+  setAnalyzeResponse: PropTypes.func.isRequired,
+  analyzeResponse: PropTypes.arrayOf(PropTypes.array).isRequired,
 };
 
 export default AnalyzeWrapper;

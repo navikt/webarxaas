@@ -1,6 +1,7 @@
 import React from 'react';
-import AnonymizationConfigWrapper from '../AnonymizationConfigWrapper/AnonymizationConfigWrapper';
-import AnonymizedDatasetWrapper from '../AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import PropTypes from 'prop-types';
+import AnonymizationConfigWrapper from '../../AnonymizationConfigWrapper/AnonymizationConfigWrapper';
+import AnonymizedDatasetWrapper from '../../AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 
 const AnonymizeWrapper = (props) => {
   const {
@@ -39,6 +40,22 @@ const AnonymizeWrapper = (props) => {
       />
     </div>
   );
+};
+
+AnonymizeWrapper.propTypes = {
+  dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
+  attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
+  endpoint: PropTypes.string.isRequired,
+  fileName: PropTypes.string.isRequired,
+  setAttributes: PropTypes.func.isRequired,
+  privacyModels: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setPrivacyModels: PropTypes.func.isRequired,
+  suppressionLimit: PropTypes.number.isRequired,
+  setSuppressionLimit: PropTypes.func.isRequired,
+  setAnonymizeResponse: PropTypes.func.isRequired,
+  anonymizeResponse: PropTypes.arrayOf(PropTypes.string).isRequired,
+  setLoadingAnonymize: PropTypes.func.isRequired,
+  loadingAnonymize: PropTypes.bool.isRequired,
 };
 
 export default AnonymizeWrapper;

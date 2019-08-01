@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
@@ -14,7 +15,7 @@ const useStyles = makeStyles({
 
 const UserActionsTab = (props) => {
   const classes = useStyles();
-  const {tabIndex, setTabIndex} = props;
+  const { tabIndex, setTabIndex } = props;
 
   function handleChange(event, newValue) {
     setTabIndex(newValue);
@@ -36,6 +37,11 @@ const UserActionsTab = (props) => {
       </Tabs>
     </Paper>
   );
+};
+
+UserActionsTab.propTypes = {
+  tabIndex: PropTypes.number.isRequired,
+  setTabIndex: PropTypes.func.isRequired,
 };
 
 export default UserActionsTab;

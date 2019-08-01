@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Paper from '@material-ui/core/Paper';
 import { makeStyles } from '@material-ui/core/styles';
-import AnalyzeWrapper from './AnalyzeWrapper';
-import UserActionsTab from './UserActionsTab';
+import AnalyzeWrapper from './AnalyzeWrapper/AnalyzeWrapper';
+import UserActionsTab from './UserActionsTab/UserActionsTab';
 import './__css__/UserActionsWrapper.css';
-import AnonymizeWrapper from './AnonymizeWrapper';
+import AnonymizeWrapper from './AnonymizeWrapper/AnonymizeWrapper';
 
 const useStyles = makeStyles({
   root: {
@@ -21,7 +21,7 @@ const UserActionsWrapper = (props) => {
   const [analyzeResponse, setAnalyzeResponse] = useState('');
   const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
-  const [suppressionLimit, setSuppressionLimit] = useState(null);
+  const [suppressionLimit, setSuppressionLimit] = useState(0);
   const [tabIndex, setTabIndex] = useState(0);
 
   const {
@@ -38,7 +38,7 @@ const UserActionsWrapper = (props) => {
     setAnalyzeResponse('');
     setAnonymizeResponse('');
     setPrivacyModels([]);
-    setSuppressionLimit(null);
+    setSuppressionLimit(0);
     setDatasetCache(dataset);
   }
 
@@ -91,7 +91,7 @@ const UserActionsWrapper = (props) => {
 
 UserActionsWrapper.propTypes = {
   dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
-  attributes: PropTypes.arrayOf(PropTypes.string).isRequired,
+  attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
   endpoint: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
   setAttributes: PropTypes.func.isRequired,
