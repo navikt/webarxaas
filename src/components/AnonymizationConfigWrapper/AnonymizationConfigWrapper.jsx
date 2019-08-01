@@ -31,21 +31,31 @@ const AnonymizationConfigWrapper = (props) => {
               </Card.Body>
             </Card>
           </div>
-          <div className="privacy-model-card col border border-dark" align="center">
-            <PrivacyModelManager
-              privacyModels={privacyModels}
-              setPrivacyModels={setPrivacyModels}
-            />
-            <PrivacyModelTable
-              privacyModels={privacyModels}
-              setPrivacyModels={setPrivacyModels}
-            />
+          <div className="privacy-model-card col">
+            <Card>
+              <Card.Body>
+                <Card.Title>Set Privacy Model(s)</Card.Title>
+                <PrivacyModelManager
+                  privacyModels={privacyModels}
+                  setPrivacyModels={setPrivacyModels}
+                />
+                <PrivacyModelTable
+                  privacyModels={privacyModels}
+                  setPrivacyModels={setPrivacyModels}
+                />
+              </Card.Body>
+            </Card>
           </div>
-          <div className="suppression-limit-card col border border-dark" align="center">
-            <SuppressionLimit
-              suppressionLimit={suppressionLimit}
-              setSuppressionLimit={setSuppressionLimit}
-            />
+          <div className="suppression-limit-card col">
+            <Card>
+              <Card.Body>
+                <Card.Title>Set Suppression Limit</Card.Title>
+                <SuppressionLimit
+                  suppressionLimit={suppressionLimit}
+                  setSuppressionLimit={setSuppressionLimit}
+                />
+              </Card.Body>
+            </Card>
           </div>
         </div>
       </div>
