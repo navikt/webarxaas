@@ -1,11 +1,19 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
-import AnalysisWrapper from '../AnalysisWrapper/AnalysisWrapper';
-import AnonymizationConfigWrapper from '../AnonymizationConfigWrapper/AnonymizationConfigWrapper';
-import AnalyzeButton from '../AnalyzeButton/AnalyzeButton';
-import AnonymizedDatasetWrapper from '../AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+import AnalyzeWrapper from './AnalyzeWrapper';
+import UserActionsTab from './UserActionsTab';
 import './__css__/UserActionsWrapper.css';
+import AnonymizeWrapper from './AnonymizeWrapper';
+
+const useStyles = makeStyles({
+  root: {
+    minHeight: '30em',
+    padding: '0 0 5em 0',
+  },
+});
+
 
 const UserActionsWrapper = (props) => {
   const [loadingAnalyze, setLoadingAnalyze] = useState(false);
@@ -14,6 +22,7 @@ const UserActionsWrapper = (props) => {
   const [anonymizeResponse, setAnonymizeResponse] = useState('');
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(null);
+  const [tabIndex, setTabIndex] = useState(0);
 
   const {
     dataset,
@@ -33,43 +42,49 @@ const UserActionsWrapper = (props) => {
     setDatasetCache(dataset);
   }
 
-  return (
-    <div className="user-actions-wrapper">
-      <h1 style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>Data actions</h1>
-      <Ekspanderbartpanel tittel="Analyze" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }} apen>
-        <AnalyzeButton
-          setLoadingAnalyze={setLoadingAnalyze}
-          dataset={dataset}
-          attributes={attributes}
-          endpoint={endpoint}
-          setResponse={setAnalyzeResponse}
-        />
-        <AnalysisWrapper
-          response={analyzeResponse}
-          loadingAnalyze={loadingAnalyze}
-        />
-        <br />
-      </Ekspanderbartpanel>
+  let userActionView = '';
+  if (tabIndex === 0) {
+    userActionView = (
+      <AnalyzeWrapper
+        dataset={dataset}
+        attributes={attributes}
+        endpoint={endpoint}
+        loadingAnalyze={loadingAnalyze}
+        setLoadingAnalyze={setLoadingAnalyze}
+        setAnalyzeResponse={setAnalyzeResponse}
+        analyzeResponse={analyzeResponse}
+      />
+    );
+  } else {
+    userActionView = (
+      <AnonymizeWrapper
+        dataset={dataset}
+        fileName={fileName}
+        attributes={attributes}
+        endpoint={endpoint}
+        setAttributes={setAttributes}
+        privacyModels={privacyModels}
+        setPrivacyModels={setPrivacyModels}
+        suppressionLimit={suppressionLimit}
+        setSuppressionLimit={setSuppressionLimit}
+        setAnonymizeResponse={setAnonymizeResponse}
+        anonymizeResponse={anonymizeResponse}
+        setLoadingAnonymize={setLoadingAnonymize}
+        loadingAnonymize={loadingAnonymize}
+      />
+    );
+  }
 
-      <Ekspanderbartpanel tittel="Anonymize" border style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
-        <AnonymizationConfigWrapper
-          setAttributes={setAttributes}
-          attributes={attributes}
-          privacyModels={privacyModels}
-          setPrivacyModels={setPrivacyModels}
-          suppressionLimit={suppressionLimit}
-          setSuppressionLimit={setSuppressionLimit}
-          setLoadingAnonymize={setLoadingAnonymize}
-          dataset={dataset}
-          setResponse={setAnonymizeResponse}
-          endpoint={endpoint}
-        />
-        <AnonymizedDatasetWrapper
-          response={anonymizeResponse}
-          loadingAnonymize={loadingAnonymize}
-          fileName={fileName}
-        />
-      </Ekspanderbartpanel>
+  const paperClasses = useStyles();
+
+  return (
+    <div className="user-actions-wrapper" style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
+      <h1>Data actions</h1>
+      <Paper className={paperClasses.root}>
+        <UserActionsTab tabIndex={tabIndex} setTabIndex={setTabIndex} />
+        <br />
+        {userActionView}
+      </Paper>
     </div>
   );
 };

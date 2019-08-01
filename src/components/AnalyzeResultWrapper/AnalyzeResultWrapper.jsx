@@ -10,7 +10,7 @@ import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRisk
 import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
 import './__css__/AnalysisWrapper.css';
 
-const AnalysisWrapper = (props) => {
+const AnalyzeResultWrapper = (props) => {
   const {
     loadingAnalyze, response,
   } = props;
@@ -77,4 +77,4 @@ const AnalysisWrapper = (props) => {
 
   return content;
 };
-export default AnalysisWrapper;
+export default AnalyzeResultWrapper;
