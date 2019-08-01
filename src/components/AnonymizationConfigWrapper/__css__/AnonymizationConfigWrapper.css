@@ -1,6 +1,6 @@
-.hierarchy-import,
-.privacy-model,
-.suppression-limit {
+.hierarchy-import-card,
+.privacy-model-card,
+.suppression-limit-card {
   max-height: 33em;
   min-width: 20em;
   overflow-y: auto;

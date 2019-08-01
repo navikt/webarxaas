@@ -1,4 +1,5 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card';
 import HierarchyImport from './HierachyImport/HeirarchyImport';
 import PrivacyModelManager from './PrivacyModel/PrivacyModelManager';
 import PrivacyModelTable from './PrivacyModel/PrivacyModelTable';
@@ -19,13 +20,18 @@ const AnonymizationConfigWrapper = (props) => {
     <div className="anonymization-config-wrapper container-fluid">
       <div className="container-fluid">
         <div className="row">
-          <div className="hierarchy-import col border border-dark" align="center">
-            <HierarchyImport
-              attributes={attributes}
-              setAttributes={setAttributes}
-            />
+          <div className="hierarchy-import-card col">
+            <Card>
+              <Card.Body>
+                <Card.Title>Import Hierarchies</Card.Title>
+                <HierarchyImport
+                  attributes={attributes}
+                  setAttributes={setAttributes}
+                />
+              </Card.Body>
+            </Card>
           </div>
-          <div className="privacy-model col border border-dark" align="center">
+          <div className="privacy-model-card col border border-dark" align="center">
             <PrivacyModelManager
               privacyModels={privacyModels}
               setPrivacyModels={setPrivacyModels}
@@ -35,7 +41,7 @@ const AnonymizationConfigWrapper = (props) => {
               setPrivacyModels={setPrivacyModels}
             />
           </div>
-          <div className="suppression-limit col border border-dark" align="center">
+          <div className="suppression-limit-card col border border-dark" align="center">
             <SuppressionLimit
               suppressionLimit={suppressionLimit}
               setSuppressionLimit={setSuppressionLimit}
