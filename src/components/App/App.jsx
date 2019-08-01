@@ -5,6 +5,7 @@ import DatasetTableWrapper from '../DatasetTableWrapper/DatasetTableWrapper';
 import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import UserActionsWrapper from '../UserActionsWrapper/UserActionsWrapper';
+import Footer from '../Footer/Footer';
 import './__css__/App.css';
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         fileName={fileName}
       />
 
+      <Footer />
     </div>
   );
 }

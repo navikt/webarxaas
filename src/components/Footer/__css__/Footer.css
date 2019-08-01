@@ -1,0 +1,13 @@
+.footer-menu-item {
+  list-style-type: none;
+  display: inline;
+  color: black;
+  padding: 0 1em 0 1em;
+}
+.footer-menu {
+  margin: auto;
+  padding: 0 0 1em 0;
+}
+a {
+  color: #0067C5 !important;
+}
