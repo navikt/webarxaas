@@ -47,9 +47,9 @@ const ImportHierarchies = (props) => {
           {attributes.map(({ field, attributeTypeModel }, index) => {
             if (attributeTypeModel === 'QUASIIDENTIFYING') {
               return (
-                <div>
+                <div key={field}>
                   <Divider />
-                  <ListItem key={field}>
+                  <ListItem>
                     {attributes[index].fileName
                       ? (
                         <Tooltip title={attributes[index].fileName} placement="top">
