@@ -32,7 +32,6 @@ const AnonymizedDatasetWrapper = (props) => {
       </div>
     );
   } else if (response.anonymizeResult) {
-    console.log(response.timestamp);
     content = (
       <div className="anonymized-dataset-wrapper">
         <h4>Anonymization Result</h4>
