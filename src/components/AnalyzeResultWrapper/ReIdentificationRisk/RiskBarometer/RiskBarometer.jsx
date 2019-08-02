@@ -11,7 +11,7 @@ const RiskBarometer = (props) => {
   }];
 
   const content = (
-    <div className="risk-chart">
+    <div className="risk-barometer">
       <BarChart
         width={1000}
         height={150}

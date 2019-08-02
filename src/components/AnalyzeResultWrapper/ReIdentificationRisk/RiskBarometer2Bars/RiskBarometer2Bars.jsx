@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
+import './__css__/RiskBarometer2Bars.css';
 
 const RiskBarometer2Bars = (props) => {
   const { highestRisk, affectedRecords } = props;
@@ -10,7 +11,7 @@ const RiskBarometer2Bars = (props) => {
   }];
 
   const content = (
-    <div className="risk-chart">
+    <div className="risk-barometer-2-bars">
       <BarChart
         width={1000}
         height={150}
