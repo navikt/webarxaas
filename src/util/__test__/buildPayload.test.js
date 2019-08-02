@@ -16,7 +16,7 @@ describe('Test for buildpayload', () => {
       { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING' }];
     privacyModels = [{ privacyModel: 'KANONYMITY', params: { k: '2' } }];
-    suppressionLimit = 0.1;
+    suppressionLimit = 10;
   });
 
   it('json object correctly made', () => {
