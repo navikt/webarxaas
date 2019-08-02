@@ -7,19 +7,22 @@ import ListItemText from '@material-ui/core/ListItemText';
 import AttachFile from '@material-ui/icons/AttachFile';
 import FileCopy from '@material-ui/icons/FileCopy';
 import Button from '@material-ui/core/Button';
+import Tooltip from '@material-ui/core/Tooltip';
 import handleHierarchyUpload from '../../../util/handleHierarchyUpload';
 
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles({
   root: {
     width: '100%',
-    maxWidth: 360,
-    backgroundColor: theme.palette.background.paper,
   },
   input: {
     display: 'none',
   },
-}));
+  deleteButton: {
+    backgroundColor: '#dc3545',
+    margin: '0 0 0 1em',
+  },
+});
 
 const ImportHierarchies = (props) => {
   const classes = useStyles();
@@ -38,12 +41,21 @@ const ImportHierarchies = (props) => {
             if (attributeTypeModel === 'QUASIIDENTIFYING') {
               return (
                 <ListItem key={field}>
-                  <ListItemIcon>
-                    {hierarchyLoaded[index] ? <FileCopy color="primary" /> : <AttachFile /> }
-                  </ListItemIcon>
+                  {hierarchyLoaded[index]
+                    ? (
+                      <Tooltip title={hierarchyLoaded[index]} placement="top">
+                        <ListItemIcon>
+                          <FileCopy color="primary" />
+                        </ListItemIcon>
+                      </Tooltip>
 
+                    )
+                    : (
+                      <ListItemIcon>
+                        <AttachFile />
+                      </ListItemIcon>
+                    )}
                   <ListItemText primary={field} />
-
                   <label htmlFor={`contained-button-file-${index}`}>
                     <Button variant="contained" component="span">
                       <input
@@ -53,7 +65,7 @@ const ImportHierarchies = (props) => {
                         onChange={(e) => {
                           if (e.target.files[0]) {
                             const tmp = { ...hierarchyLoaded };
-                            tmp[index] = true;
+                            tmp[index] = e.target.files[0].name;
                             setHierarchyLoaded(tmp);
                             handleHierarchyUpload(
                               e.target.files[0], index, attributes, setAttributes,
@@ -61,7 +73,7 @@ const ImportHierarchies = (props) => {
                           }
                         }}
                       />
-                      Upload
+                      Import
                     </Button>
                   </label>
                 </ListItem>
