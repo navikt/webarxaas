@@ -3,7 +3,7 @@ import './__css__/Footer.css';
 
 const Footer = () => {
   const content = (
-    <div className="footer" id="footer">
+    <div className="footer container-fluid">
       <div className="row">
         <ul className="footer-menu">
           <li className="footer-menu-item">
@@ -23,7 +23,7 @@ const Footer = () => {
       <div className="copyright">
         <p className="mbr-text mb-0 mbr-fonts-style mbr-white display-7">
           © Copyright 2019
-            {' '}
+          {' '}
           <a href="https://www.nav.no/Forsiden">NAV</a>
           {' '}
           - All Rights Reserved
