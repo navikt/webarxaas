@@ -1,5 +1,8 @@
-@media (max-width: 590px) {
+.navbar-brand {
+  margin-left: 1em;
+}
+@media (max-width: 765px) {
   .navbar-brand {
-    visibility: hidden;
+    display: none !important;
   }
 }
