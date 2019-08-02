@@ -18,8 +18,8 @@ const useStyles = makeStyles({
 const UserActionsWrapper = (props) => {
   const [loadingAnalyze, setLoadingAnalyze] = useState(false);
   const [loadingAnonymize, setLoadingAnonymize] = useState(false);
-  const [analyzeResponse, setAnalyzeResponse] = useState('');
-  const [anonymizeResponse, setAnonymizeResponse] = useState('');
+  const [analyzeResponse, setAnalyzeResponse] = useState({});
+  const [anonymizeResponse, setAnonymizeResponse] = useState({});
   const [privacyModels, setPrivacyModels] = useState([]);
   const [suppressionLimit, setSuppressionLimit] = useState(0);
   const [tabIndex, setTabIndex] = useState(0);
@@ -35,8 +35,8 @@ const UserActionsWrapper = (props) => {
 
   // Reset state when a new dataset is imported
   if (dataset !== datasetCache && datasetCache !== null) {
-    setAnalyzeResponse('');
-    setAnonymizeResponse('');
+    setAnalyzeResponse({});
+    setAnonymizeResponse({});
     setPrivacyModels([]);
     setSuppressionLimit(0);
     setDatasetCache(dataset);
@@ -78,7 +78,7 @@ const UserActionsWrapper = (props) => {
   const paperClasses = useStyles();
 
   return (
-    <div className="user-actions-wrapper" style={dataset ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
+    <div className="user-actions-wrapper" style={dataset.length > 1 ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
       <h1>Data actions</h1>
       <Paper className={paperClasses.root}>
         <UserActionsTab tabIndex={tabIndex} setTabIndex={setTabIndex} />

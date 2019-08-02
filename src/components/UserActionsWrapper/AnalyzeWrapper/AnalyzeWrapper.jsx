@@ -39,7 +39,7 @@ AnalyzeWrapper.propTypes = {
   loadingAnalyze: PropTypes.bool.isRequired,
   setLoadingAnalyze: PropTypes.func.isRequired,
   setAnalyzeResponse: PropTypes.func.isRequired,
-  analyzeResponse: PropTypes.arrayOf(PropTypes.array).isRequired,
+  analyzeResponse: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default AnalyzeWrapper;

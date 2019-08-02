@@ -31,7 +31,8 @@ const AnonymizedDatasetWrapper = (props) => {
         <NavFrontendSpinner transparent />
       </div>
     );
-  } else if (response) {
+  } else if (response.anonymizeResult) {
+    console.log(response.timestamp);
     content = (
       <div className="anonymized-dataset-wrapper">
         <h4>Anonymization Result</h4>
