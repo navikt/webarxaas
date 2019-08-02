@@ -12,20 +12,6 @@ const PrivacyModelManager = (props) => {
   const defaultSensitivePrivModelParam = { l: 2 };
 
   const loadPrivacyModels = () => {
-    const foundKModel = privacyModels
-      .findIndex(item => item.privacyModel === defaultQuasiPrivModel);
-
-    if (foundKModel === -1) {
-      handlePrivacyAdd(
-        {
-          privacyModel: defaultQuasiPrivModel,
-          params: defaultQuasiPrivModelParams,
-        },
-        privacyModels,
-        setPrivacyModels,
-      );
-    }
-
     sensitiveAttributes.forEach((attribute) => {
       const foundExsistingPrivModel = privacyModels
         .findIndex(item => item.params.field === attribute.field);
@@ -43,6 +29,20 @@ const PrivacyModelManager = (props) => {
         );
       }
     });
+
+    const foundKModel = privacyModels
+      .findIndex(item => item.privacyModel === defaultQuasiPrivModel);
+
+    if (foundKModel === -1) {
+      handlePrivacyAdd(
+        {
+          privacyModel: defaultQuasiPrivModel,
+          params: defaultQuasiPrivModelParams,
+        },
+        privacyModels,
+        setPrivacyModels,
+      );
+    }
   };
 
   loadPrivacyModels();
