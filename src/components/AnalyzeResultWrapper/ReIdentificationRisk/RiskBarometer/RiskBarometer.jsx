@@ -2,16 +2,16 @@ import React from 'react';
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
-import './__css__/RiskChart.css';
+import './__css__/RiskBarometer.css';
 
-const RiskChart = (props) => {
+const RiskBarometer = (props) => {
   const { risk } = props;
   const riskData = [{
     name: '', risk,
   }];
 
   const content = (
-    <div className="risk-chart">
+    <div className="risk-barometer">
       <BarChart
         width={1000}
         height={150}
@@ -33,5 +33,5 @@ const RiskChart = (props) => {
   return content;
 };
 
-export default RiskChart;
-RiskChart.defaultProps = { risk: 100 };
+export default RiskBarometer;
+RiskBarometer.defaultProps = { risk: 100 };
