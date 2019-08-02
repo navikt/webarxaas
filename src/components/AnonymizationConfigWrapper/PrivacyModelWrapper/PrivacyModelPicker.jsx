@@ -1,10 +1,9 @@
 import React from 'react';
 
 const PrivacyModelPicker = (props) => {
-  const {
-    
-  } = props;
+  const { selectedAttribute } = props;
   const content = (
+    <p>Her er wrapperen</p>
   );
   return content;
 };
