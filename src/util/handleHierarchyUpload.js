@@ -7,6 +7,7 @@ export default function handleHierarchyUpload(file, index, attributes, setAttrib
       newAttributes[index] = {
         ...newAttributes[index],
         hierarchy: hierarchy.data,
+        fileName: file.name,
       };
       setAttributes(newAttributes);
     },
