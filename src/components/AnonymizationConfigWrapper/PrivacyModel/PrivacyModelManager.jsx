@@ -21,11 +21,11 @@ const PrivacyModelManager = (props) => {
     <div>
       <label htmlFor="L">
         L:
-        <input type="number" min="2" max="1000" id="L" onChange={e => setParam({ l: e.target.value, field: document.getElementById('column_name').value })} />
+        <input type="number" min="2" max="1000" id="L" onChange={e => setParam({ l: e.target.value, column_name: document.getElementById('column_name').value })} />
       </label>
       <label htmlFor="column_name">
         Field:
-        <input type="text" id="column_name" onChange={e => setParam({ l: document.getElementById('L').value, field: e.target.value })} />
+        <input type="text" id="column_name" onChange={e => setParam({ l: document.getElementById('L').value, column_name: e.target.value })} />
       </label>
     </div>
   );
@@ -33,11 +33,11 @@ const PrivacyModelManager = (props) => {
     <div>
       <label htmlFor="T">
         T:
-        <input type="number" min="0.000001" max="1" step="0.000001" id="T" onChange={e => setParam({ t: e.target.value, field: document.getElementById('column_name').value })} />
+        <input type="number" min="0.000001" max="1" step="0.000001" id="T" onChange={e => setParam({ t: e.target.value, column_name: document.getElementById('column_name').value })} />
       </label>
       <label htmlFor="column_name">
         Field:
-        <input type="text" id="column_name" onChange={e => setParam({ t: document.getElementById('T').value, field: e.target.value })} />
+        <input type="text" id="column_name" onChange={e => setParam({ t: document.getElementById('T').value, column_name: e.target.value })} />
       </label>
     </div>
   );
@@ -45,15 +45,15 @@ const PrivacyModelManager = (props) => {
     <div>
       <label htmlFor="L">
         L:
-        <input type="number" min="2" max="1000" id="L" onChange={e => setParam({ l: e.target.value, field: document.getElementById('column_name').value, C: document.getElementById('C').value })} />
+        <input type="number" min="2" max="1000" id="L" onChange={e => setParam({ l: e.target.value, column_name: document.getElementById('column_name').value, C: document.getElementById('C').value })} />
       </label>
       <label htmlFor="column_name">
         Field:
-        <input type="text" id="column_name" onChange={e => setParam({ l: document.getElementById('L').value, field: e.target.value, C: document.getElementById('C').value })} />
+        <input type="text" id="column_name" onChange={e => setParam({ l: document.getElementById('L').value, column_name: e.target.value, C: document.getElementById('C').value })} />
       </label>
       <label htmlFor="C">
         C:
-        <input type="number" min="0.00001" max="1000" step="0.00001" id="C" onChange={e => setParam({ l: document.getElementById('L').value, field: document.getElementById('column_name').value, c: e.target.value })} />
+        <input type="number" min="0.00001" max="1000" step="0.00001" id="C" onChange={e => setParam({ l: document.getElementById('L').value, column_name: document.getElementById('column_name').value, c: e.target.value })} />
       </label>
     </div>
   );
