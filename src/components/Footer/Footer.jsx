@@ -7,30 +7,38 @@ const Footer = () => {
       <div className="row">
         <ul className="footer-menu">
           <li className="footer-menu-item">
-            <i className="fab fa-github" />
+            <a className="image-a github" href="https://github.com/navikt/webarx-poc">
+              <i className="fab fa-github" />
+            </a>
             &nbsp;
-            <a className="github" href="https://github.com/navikt/webarx-poc">
+            <a className="text-a github" href="https://github.com/navikt/webarx-poc">
               <b>Source Code</b>
             </a>
           </li>
           <li className="footer-menu-item">
-            <i className="fab fa-github" />
+            <a className="image-a issues" href="https://github.com/navikt/webarx-poc/issues">
+              <i className="fas fa-exclamation" />
+            </a>
             &nbsp;
-            <a className="github" href="https://github.com/navikt/webarx-poc/issues">
-              <b>Issue tracker</b>
+            <a className="text-a issues" href="https://github.com/navikt/webarx-poc/issues">
+              <b>Issues</b>
             </a>
           </li>
           <li className="footer-menu-item">
-            <i className="fab fa-slack" />
+            <a className="image-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
+              <i className="fab fa-slack" />
+            </a>
             &nbsp;
-            <a className="slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
+            <a className="text-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
               <b>Slack</b>
             </a>
           </li>
           <li className="footer-menu-item">
-            <i className="fas fa-envelope" />
+            <a className="image-a email" href="mailto:anonymisering@nav.no">
+              <i className="fas fa-envelope" />
+            </a>
             &nbsp;
-            <a className="email" href="mailto:anonymisering@nav.no">
+            <a className="text-a email" href="mailto:anonymisering@nav.no">
               <b>anonymisering@nav.no</b>
             </a>
           </li>
