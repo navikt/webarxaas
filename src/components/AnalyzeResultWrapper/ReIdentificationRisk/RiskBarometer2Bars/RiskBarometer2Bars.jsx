@@ -26,8 +26,8 @@ const RiskBarometer2Bars = (props) => {
         <YAxis type="category" dataKey="name" />
         <Tooltip />
         <Legend />
-        <Bar dataKey="highestRisk" fill="#1258ba" barSize={40} name="Highest Prosecutor Risk" />
-        <Bar dataKey="affectedRecords" fill="#f54542" barSize={40} name="Records Affected by Highest Prosecutor Risk" />
+        <Bar dataKey="affectedRecords" fill="#1258ba" barSize={40} name="Records Affected by Highest Prosecutor Risk" />
+        <Bar dataKey="highestRisk" fill="#f54542" barSize={40} name="Highest Prosecutor Risk" />
       </BarChart>
     </div>
   );
