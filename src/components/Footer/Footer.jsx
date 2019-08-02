@@ -30,22 +30,27 @@ const Footer = () => {
           <li className="footer-menu-item">
             <i className="fas fa-envelope" />
             &nbsp;
-            <a className="email" href="mailto:Anonymisering@nav.no">
+            <a className="email" href="mailto:anonymisering@nav.no">
               <b>anonymisering@nav.no</b>
             </a>
           </li>
         </ul>
       </div>
       <div className="copyright">
-        <p>
+        <span className="copyright-text">
           © Copyright 2019
-          {' '}
-          <a href="https://www.nav.no/Forsiden">
-            NAV
-          </a>
-          {' '}
-          - All Rights Reserved
-        </p>
+        </span>
+        <a href="https://www.nav.no/Forsiden">
+          <img
+            alt="NAV Logo"
+            src="/img/logo-nav.png"
+            width="75"
+            className="logo-nav d-inline-block align-top"
+          />
+        </a>
+        <span className="copyright-text">
+          All Rights Reserved
+        </span>
       </div>
     </div>
   );
