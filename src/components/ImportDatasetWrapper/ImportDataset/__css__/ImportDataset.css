@@ -1,16 +1,13 @@
 .import-dataset-form {
   font-size: 1.25rem;
   background-color: #c8dadf;
-  position: relative;
-  padding: 100px 20px;
+  padding: 1.5em 0 1.5em 0;
 }
-.import-dataset-form.has-data {
-  padding: 15px 10px;
+.import-dataset-form .import-dataset-icon {
+  height: 3em;
 }
-.import-dataset-form.is-dragover {
-  outline-offset: -1em !important;
-  outline-color: #c8dadf !important;
-  background-color: #fff;
+.import-dataset-form .has-data {
+  display: inline-block;
 }
 .import-dataset-form.has-advanced-upload {
   outline: 2px dashed #92b0b3;
@@ -18,16 +15,16 @@
   -webkit-transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
   transition: outline-offset 0.15s ease-in-out, background-color 0.15s linear;
 }
-.import-dataset-form {
-  display: block;
-  margin-top: 0em;
-  text-align: center;
-}
-.import-dataset-form.has-advanced-upload .import-dataset-icon {
-  width: 100%;
-  height: 110px;
+.import-dataset-icon {
+  width: 7em;
+  height: 5.5em;
+  margin-bottom: 1em;
   fill: #92b0b3;
-  display: block;
+}
+.import-dataset-form.is-dragover {
+  outline-offset: -1em !important;
+  outline-color: #c8dadf !important;
+  background-color: #fff;
 }
 *,
 *::before,
@@ -44,7 +41,6 @@ svg:not(:root) {
 }
 svg {
   fill: currentColor;
-  vertical-align: middle;
   pointer-events: none;
 }
 *,
