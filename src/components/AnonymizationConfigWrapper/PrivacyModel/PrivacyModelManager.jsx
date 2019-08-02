@@ -83,13 +83,7 @@ const PrivacyModelManager = (props) => {
         }
         }
       >
-        <option defaultValue value="KANONYMITY">K-Anonymity</option>
-        <option value="LDIVERSITY_DISTINCT">L-Diversity-Distinct</option>
-        <option value="LDIVERSITY_GRASSBERGERENTROPY">L-Diversity-Grassberger-Entropy</option>
-        <option value="LDIVERSITY_SHANNONENTROPY">L-Diversity-Shannon-Entropy</option>
-        <option value="LDIVERSITY_RECURSIVE">L-Diversity-Recursive</option>
-        <option value="TCLOSENESS_ORDERED_DISTANCE">T-Closeness Ordered Distance</option>
-        <option value="TCLOSENESS_EQUAL_DISTANCE">T-Closeness Equal Distance</option>
+
       </select>
       {paramForm}
       <button

@@ -1,6 +1,7 @@
 import React from 'react';
 import PrivacyModelForm from './PrivacyModelForm';
 import handlePrivacyAdd from '../../../util/handlePrivacyAdd';
+import handlePrivacyRemove from '../../../util/handlePrivacyRemove';
 
 
 const PrivacyModelManager = (props) => {
@@ -30,6 +31,7 @@ const PrivacyModelManager = (props) => {
       }
     });
 
+
     const foundKModel = privacyModels
       .findIndex(item => item.privacyModel === defaultQuasiPrivModel);
 
@@ -45,7 +47,19 @@ const PrivacyModelManager = (props) => {
     }
   };
 
+  /*   const cleanupPrivacyModels = () => {
+      privacyModels.forEach((privacyModel, privacyModelIndex) => {
+        const foundWithSensitiveAttribute = sensitiveAttributes
+          .findIndex(attribute => attribute.field === privacyModel.params.field);
+        console.log(foundWithSensitiveAttribute);
+        if (foundWithSensitiveAttribute === -1) {
+          handlePrivacyRemove(privacyModelIndex, privacyModels, setPrivacyModels);
+        }
+      });
+    }; */
+
   loadPrivacyModels();
+
 
   const privacyModelForms = privacyModels.map((privacyModel) => {
     let primaryLabel;
@@ -73,7 +87,6 @@ const PrivacyModelManager = (props) => {
 
   const content = (
     <div className="privacyModelManager" style={{ padding: '1em' }}>
-      <p>PrivacyModelManager</p>
       {privacyModelForms}
     </div>
   );

@@ -8,5 +8,7 @@ export default function HandleTypeSelect(target, field, index, attributes, setAt
     field,
     attributeTypeModel: selectedType,
   };
-  setAttributes(attributes);
+  const newAttributes = Object.assign([], attributes);
+  console.log(newAttributes);
+  setAttributes(newAttributes);
 }
