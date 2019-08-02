@@ -18,7 +18,7 @@ const DatasetTableWrapper = (props) => {
         <NavFrontendSpinner transparent />
       </div>
     );
-  } else if (dataset) {
+  } else if (dataset.length > 1) {
     content = (
       <div className="dataset-table-wrapper">
         <ImportAttribute
