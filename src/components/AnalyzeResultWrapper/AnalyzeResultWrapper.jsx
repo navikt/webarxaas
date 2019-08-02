@@ -5,6 +5,7 @@ import NavFrontendSpinner from 'nav-frontend-spinner';
 import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTable/DistributionOfRiskTable';
 import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable/ReIdentificationRiskTable';
 import RiskBarometer from './ReIdentificationRisk/RiskBarometer/RiskBarometer';
+import RiskBarometer2Bars from './ReIdentificationRisk/RiskBarometer2Bars/RiskBarometer2Bars';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
 import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
 import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
@@ -40,6 +41,14 @@ const AnalyzeResultWrapper = (props) => {
         <h4>Analysis Result</h4>
         <RiskBarometer risk={
           (parseFloat(response.reIdentificationRisk.measures.average_prosecutor_risk) * 100)
+            .toFixed(2)}
+        />
+        <RiskBarometer2Bars
+          highestRisk={(parseFloat(response.reIdentificationRisk.measures
+            .highest_prosecutor_risk) * 100)
+            .toFixed(2)}
+          affectedRecords={(parseFloat(response.reIdentificationRisk.measures
+            .records_affected_by_highest_prosecutor_risk) * 100)
             .toFixed(2)}
         />
         <Container>
