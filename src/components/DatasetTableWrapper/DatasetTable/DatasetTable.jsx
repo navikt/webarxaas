@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useEffect } from 'react';
 import ReactTable from 'react-table';
-import Alert from 'react-bootstrap/Alert';
 import 'react-table/react-table.css';
 import AttributeTypeSelector from './AttributeTypeSelector/AttributeTypeSelector';
 import './__css__/DatasetTable.css';
@@ -45,13 +44,6 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
 
     content = (
       <div className="dataset-table">
-        <Alert variant="info">
-          Previewing first 100 of
-          {' '}
-          {dataset.length}
-          {' '}
-          rows in dataset:
-        </Alert>
         <ReactTable
           data={data}
           columns={columns}

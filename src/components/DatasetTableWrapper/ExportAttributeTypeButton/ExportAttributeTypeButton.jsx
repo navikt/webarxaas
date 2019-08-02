@@ -1,9 +1,21 @@
 import React from 'react';
-import { Knapp } from 'nav-frontend-knapper';
 import './__css__/ExportAttributeTypeButton.css';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
+import SaveIcon from '@material-ui/icons/Save';
+
+const useStyles = makeStyles(theme => ({
+  button: {
+    margin: theme.spacing(1),
+  },
+  rightIcon: {
+    marginLeft: 10,
+  },
+}));
 
 const ExportAttribute = (props) => {
   const { AttributeTypes, fileName } = props;
+  const classes = useStyles();
 
   const handleExport = () => {
     const json = JSON.stringify(AttributeTypes);
@@ -16,11 +28,10 @@ const ExportAttribute = (props) => {
   };
 
   const content = (
-    <div className="export-attribute-type-button">
-      <Knapp onClick={() => handleExport()}>
-        Export Attribute Types As JSON
-      </Knapp>
-    </div>
+    <Button variant="contained" className={classes.button} onClick={() => handleExport()}>
+    Export Attribute Types as JSON
+      <SaveIcon className={classes.rightIcon} />
+    </Button>
   );
   return content;
 };
