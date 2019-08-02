@@ -4,7 +4,7 @@ import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTable/DistributionOfRiskTable';
 import ReIdentificationRiskTable from './ReIdentificationRisk/ReIdentificationRiskTable/ReIdentificationRiskTable';
-import RiskChart from './ReIdentificationRisk/RiskChart/RiskChart';
+import RiskBarometer from './ReIdentificationRisk/RiskBarometer/RiskBarometer';
 import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/RiskDistributionGraph';
 import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
 import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
@@ -38,7 +38,7 @@ const AnalyzeResultWrapper = (props) => {
     content = (
       <div className="analysis-wrapper">
         <h4>Analysis Result</h4>
-        <RiskChart risk={
+        <RiskBarometer risk={
           (parseFloat(response.reIdentificationRisk.measures.average_prosecutor_risk) * 100)
             .toFixed(2)}
         />
