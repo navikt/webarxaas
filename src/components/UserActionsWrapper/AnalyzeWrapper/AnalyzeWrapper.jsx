@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AnalyzeButton from '../../AnalyzeButton/AnalyzeButton';
-import AnalysisWrapper from '../../AnalyzeResultWrapper/AnalyzeResultWrapper';
+import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
+import AnalyzeResultWrapper from './AnalyzeResultWrapper/AnalyzeResultWrapper';
 
 const AnalyzeWrapper = (props) => {
   const {
@@ -23,7 +23,7 @@ const AnalyzeWrapper = (props) => {
         endpoint={endpoint}
         setResponse={setAnalyzeResponse}
       />
-      <AnalysisWrapper
+      <AnalyzeResultWrapper
         response={analyzeResponse}
         loadingAnalyze={loadingAnalyze}
       />

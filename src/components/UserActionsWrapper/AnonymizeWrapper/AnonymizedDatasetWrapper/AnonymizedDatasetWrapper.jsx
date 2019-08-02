@@ -4,7 +4,7 @@ import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import AnonymizedDatasetTable from './AnonymizedDatasetTable/AnonymizedDatasetTable';
 import DownloadAnonymizedDataset from './DownloadAnonymizedDataset/DownloadAnonymizedDataset';
 import AttributeGeneralizationLevel from './AttributeGeneralizationLevel/AttributeGeneralizationLevel';
-import AnalysisWrapper from '../AnalyzeResultWrapper/AnalyzeResultWrapper';
+import AnalyzeResultWrapper from '../../AnalyzeWrapper/AnalyzeResultWrapper/AnalyzeResultWrapper';
 import './__css__/AnonymizedDatasetWrapper.css';
 
 const AnonymizedDatasetWrapper = (props) => {
@@ -42,7 +42,7 @@ const AnonymizedDatasetWrapper = (props) => {
         />
         <div className="col-12">
           <Ekspanderbartpanel tittel="Analysis Result" apen="{true}" border>
-            <AnalysisWrapper
+            <AnalyzeResultWrapper
               response={response.riskProfile}
               loadingAnalyze={loadingAnonymize}
             />
