@@ -65,6 +65,8 @@ const PrivacyModelManager = (props) => {
         secondaryParamLabel={secondaryLabel}
         primaryParamValue={primaryValue}
         secondaryParamValue={secondaryValue}
+        setPrivacyModels={setPrivacyModels}
+        privacyModels={privacyModels}
       />
     );
   });
