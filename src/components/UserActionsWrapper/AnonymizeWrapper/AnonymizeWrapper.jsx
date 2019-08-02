@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AnonymizationConfigWrapper from '../../AnonymizationConfigWrapper/AnonymizationConfigWrapper';
-import AnonymizedDatasetWrapper from '../../AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
+import AnonymizationConfigWrapper from './AnonymizationConfigWrapper/AnonymizationConfigWrapper';
+import AnonymizedDatasetWrapper from './AnonymizedDatasetWrapper/AnonymizedDatasetWrapper';
 
 const AnonymizeWrapper = (props) => {
   const {

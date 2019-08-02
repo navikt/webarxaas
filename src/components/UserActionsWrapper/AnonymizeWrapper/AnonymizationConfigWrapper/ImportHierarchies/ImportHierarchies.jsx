@@ -9,7 +9,7 @@ import FileCopy from '@material-ui/icons/FileCopy';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Divider from '@material-ui/core/Divider';
-import handleHierarchyUpload from '../../../util/handleHierarchyUpload';
+import handleHierarchyUpload from '../../../../../util/handleHierarchyUpload';
 
 
 const useStyles = makeStyles({

@@ -1,5 +1,5 @@
 import React from 'react';
-import handlePrivacyRemove from '../../../util/handlePrivacyRemove';
+import handlePrivacyRemove from '../../../../../util/handlePrivacyRemove';
 
 const PrivacyModelTable = (props) => {
   const { privacyModels, setPrivacyModels } = props;
