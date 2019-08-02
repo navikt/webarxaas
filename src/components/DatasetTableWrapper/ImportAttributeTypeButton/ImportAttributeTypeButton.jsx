@@ -18,7 +18,7 @@ const ImportAttribute = (props) => {
 
     <div className="import-attribute-type">
       <label htmlFor="file">
-        Import attribute types from file:
+        Import attribute types from JSON file:
         <br />
         <input
           className="import-attribute-type-button knapp knapp--standard"
