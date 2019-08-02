@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -8,6 +8,7 @@ import AttachFile from '@material-ui/icons/AttachFile';
 import FileCopy from '@material-ui/icons/FileCopy';
 import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
+import Divider from '@material-ui/core/Divider';
 import handleHierarchyUpload from '../../../util/handleHierarchyUpload';
 
 
@@ -31,7 +32,13 @@ const ImportHierarchies = (props) => {
     attributes, setAttributes,
   } = props;
 
-  const [hierarchyLoaded, setHierarchyLoaded] = useState({});
+  // Used to force rerender when attributes is updated
+  const [refresh, setRefresh] = useState(false);
+
+  const newSetAttributes = (newAttributes) => {
+    setAttributes(newAttributes);
+    setRefresh(!refresh);
+  };
 
   const content = (
     <div className="hierarchy-import" align="center">
@@ -40,43 +47,44 @@ const ImportHierarchies = (props) => {
           {attributes.map(({ field, attributeTypeModel }, index) => {
             if (attributeTypeModel === 'QUASIIDENTIFYING') {
               return (
-                <ListItem key={field}>
-                  {hierarchyLoaded[index]
-                    ? (
-                      <Tooltip title={hierarchyLoaded[index]} placement="top">
-                        <ListItemIcon>
-                          <FileCopy color="primary" />
-                        </ListItemIcon>
-                      </Tooltip>
+                <div>
+                  <Divider />
+                  <ListItem key={field}>
+                    {attributes[index].fileName
+                      ? (
+                        <Tooltip title={attributes[index].fileName} placement="top">
+                          <ListItemIcon>
+                            <FileCopy color="primary" />
+                          </ListItemIcon>
+                        </Tooltip>
 
-                    )
-                    : (
-                      <ListItemIcon>
-                        <AttachFile />
-                      </ListItemIcon>
-                    )}
-                  <ListItemText primary={field} />
-                  <label htmlFor={`contained-button-file-${index}`}>
-                    <Button variant="contained" component="span">
-                      <input
-                        className={classes.input}
-                        id={`contained-button-file-${index}`}
-                        type="file"
-                        onChange={(e) => {
-                          if (e.target.files[0]) {
-                            const tmp = { ...hierarchyLoaded };
-                            tmp[index] = e.target.files[0].name;
-                            setHierarchyLoaded(tmp);
-                            handleHierarchyUpload(
-                              e.target.files[0], index, attributes, setAttributes,
-                            );
-                          }
-                        }}
-                      />
+                      )
+                      : (
+                        <ListItemIcon>
+                          <AttachFile />
+                        </ListItemIcon>
+                      )}
+                    <ListItemText primary={field} />
+                    <label htmlFor={`contained-button-file-${index}`}>
+                      <Button variant="contained" component="span">
+                        <input
+                          className={classes.input}
+                          id={`contained-button-file-${index}`}
+                          type="file"
+                          onChange={(e) => {
+                            if (e.target.files[0]) {
+                              handleHierarchyUpload(
+                                e.target.files[0], index, attributes, newSetAttributes,
+                              );
+                            }
+                          }}
+                        />
                       Import
-                    </Button>
-                  </label>
-                </ListItem>
+                      </Button>
+                    </label>
+                  </ListItem>
+
+                </div>
               );
             }
             return null;
