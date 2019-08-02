@@ -13,7 +13,7 @@ const ImportDataset = (props) => {
 
   let importDatasetFormStyle = 'import-dataset-form has-advanced-upload';
   let onRow = '';
-  if (dataset) {
+  if (dataset.length > 1) {
     importDatasetFormStyle = 'import-dataset-form has-data has-advanced-upload';
     onRow = 'row';
   }

@@ -10,7 +10,7 @@ import './__css__/App.css';
 
 function App() {
   const [loadingDataset, setLoadingDataset] = useState(false);
-  const [dataset, setDataset] = useState('');
+  const [dataset, setDataset] = useState([]);
   const [attributes, setAttributes] = useState([]);
 
   const [showMoreInfo, setShowMoreInfo] = useState(false);

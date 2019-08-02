@@ -20,7 +20,6 @@ const AnalyzeResultWrapper = (props) => {
   } = response;
 
   let content = '';
-
   if (message) {
     return (
       <div className="result-wrapper">
@@ -35,7 +34,7 @@ const AnalyzeResultWrapper = (props) => {
         <NavFrontendSpinner transparent />
       </div>
     );
-  } else if (response) {
+  } else if (response.reIdentificationRisk) {
     content = (
       <div className="analysis-wrapper">
         <h4>Analysis Result</h4>

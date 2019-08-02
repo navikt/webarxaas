@@ -19,44 +19,48 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
     ['SENSITIVE', 'Sensitive'],
     ['IDENTIFYING', 'Identifying'],
   ];
-  const columns = Object.keys(dataset[0]).map(index => ({
-    Header:
-      // eslint-disable-next-line react/jsx-indent
-      <div className="dataset-table-column">
-        <AttributeTypeSelector
-          defaultTypes={defaultTypes}
-          setDefaultTypes={setDefaultTypes}
-          types={types}
-          attributes={attributes}
-          index={index}
-          setAttributes={setAttributes}
+  let content = ('');
+
+  if (dataset.length > 1) {
+    const columns = Object.keys(dataset[0]).map(index => ({
+      Header:
+        // eslint-disable-next-line react/jsx-indent
+        <div className="dataset-table-column">
+          <AttributeTypeSelector
+            defaultTypes={defaultTypes}
+            setDefaultTypes={setDefaultTypes}
+            types={types}
+            attributes={attributes}
+            index={index}
+            setAttributes={setAttributes}
+          />
+          {dataset[0][index]}
+        </div>,
+      accessor: index,
+      width: 164,
+    }));
+
+    const data = dataset.slice(1, 101);
+
+
+    content = (
+      <div className="dataset-table">
+        <Alert variant="info">
+          Previewing first 100 of
+          {' '}
+          {dataset.length}
+          {' '}
+          rows in dataset:
+        </Alert>
+        <ReactTable
+          data={data}
+          columns={columns}
+          sortable={false}
+          defaultPageSize={5}
         />
-        {dataset[0][index]}
-      </div>,
-    accessor: index,
-    width: 164,
-  }));
-
-  const data = dataset.slice(1, 101);
-
-  const content = (
-    <div className="dataset-table">
-      <Alert variant="info">
-        Previewing first 100 of
-        {' '}
-        {dataset.length}
-        {' '}
-        rows in dataset:
-      </Alert>
-      <ReactTable
-        data={data}
-        columns={columns}
-        sortable={false}
-        defaultPageSize={5}
-      />
-    </div>
-  );
-
+      </div>
+    );
+  }
   return content;
 });
 
