@@ -17,7 +17,7 @@ const AttributeRiskTable = (props) => {
     accessor: 'identifier',
     style: {
       textAlign: 'left',
-      'white-space': 'unset',
+      whiteSpace: 'unset',
     },
   },
   {
@@ -37,7 +37,7 @@ const AttributeRiskTable = (props) => {
       <ReactTable
         data={riskData}
         columns={columns}
-        defaultPageSize={24}
+        defaultPageSize={5}
       />
     </div>
   );
