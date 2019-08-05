@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -32,13 +32,6 @@ const ImportHierarchies = (props) => {
     attributes, setAttributes,
   } = props;
 
-  // Used to force rerender when attributes is updated
-  const [refresh, setRefresh] = useState(false);
-
-  const newSetAttributes = (newAttributes) => {
-    setAttributes(newAttributes);
-    setRefresh(!refresh);
-  };
 
   const content = (
     <div className="hierarchy-import" align="center">
@@ -50,9 +43,9 @@ const ImportHierarchies = (props) => {
                 <div key={field}>
                   <Divider />
                   <ListItem>
-                    {attributes[index].fileName
+                    {attributes[index].hierarchy
                       ? (
-                        <Tooltip title={attributes[index].fileName} placement="top">
+                        <Tooltip title={attributes[index].hierarchy.name} placement="top">
                           <ListItemIcon>
                             <FileCopy color="primary" />
                           </ListItemIcon>
@@ -74,7 +67,7 @@ const ImportHierarchies = (props) => {
                           onChange={(e) => {
                             if (e.target.files[0]) {
                               handleHierarchyUpload(
-                                e.target.files[0], index, attributes, newSetAttributes,
+                                e.target.files[0], index, attributes, setAttributes,
                               );
                             }
                           }}
