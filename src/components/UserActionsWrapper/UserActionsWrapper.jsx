@@ -78,7 +78,7 @@ const UserActionsWrapper = (props) => {
   const paperClasses = useStyles();
 
   return (
-    <div className="user-actions-wrapper" style={dataset.length > 1 ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
+    <div className="user-actions-wrapper wrapper" style={dataset.length > 1 ? {} : { pointerEvents: 'none', opacity: '0.4' }}>
       <Paper className={paperClasses.root}>
         <UserActionsTab tabIndex={tabIndex} setTabIndex={setTabIndex} />
         <br />

@@ -8,7 +8,7 @@ const ImportDatasetWrapper = (props) => {
   } = props;
 
   const content = (
-    <div className="import-dataset-wrapper">
+    <div className="import-dataset-wrapper wrapper">
       <ImportDataset
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}

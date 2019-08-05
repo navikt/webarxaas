@@ -26,13 +26,13 @@ const DatasetTableWrapper = (props) => {
 
   if (loadingDataset) {
     content = (
-      <div className="dataset-table-wrapper">
+      <div className="dataset-table-wrapper wrapper">
         <NavFrontendSpinner transparent />
       </div>
     );
   } else if (dataset.length > 1) {
     content = (
-      <div className="dataset-table-wrapper">
+      <div className="dataset-table-wrapper wrapper">
         <Paper className={classes.paper} elevation={3}>
           <Alert variant="info">
           Previewing first 100 of
