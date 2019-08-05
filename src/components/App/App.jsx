@@ -6,6 +6,7 @@ import MoreInfoWrapper from '../MoreInfoWrapper/MoreInfoWrapper';
 import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import UserActionsWrapper from '../UserActionsWrapper/UserActionsWrapper';
 import Footer from '../Footer/Footer';
+import SnackbarWrapper from '../SnackbarWrapper/SnackbarWrapper';
 import './__css__/App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <NavbarMain
         setShowMoreInfo={setShowMoreInfo}
       />
+      <SnackbarWrapper />
       <MoreInfoWrapper
         showMoreInfo={showMoreInfo}
       />
