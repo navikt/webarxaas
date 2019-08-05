@@ -22,10 +22,10 @@ describe('Test for buildpayload', () => {
   it('json object correctly made', () => {
     const expected = {
       attributes: [
-        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Navn' },
-        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Alder' },
-        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Innvandrerbakgrunn' },
-        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Medisinsk forhold' }],
+        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Navn', hierarchy: null },
+        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Alder', hierarchy: null },
+        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Innvandrerbakgrunn', hierarchy: null },
+        { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Medisinsk forhold', hierarchy: null }],
       data: [['Navn', 'Alder', 'Innvandrerbakgrunn', 'Medisinsk forhold'],
         ['Eirik', '47', 'Togo', 'Ingen'],
         ['Ella', '30', 'Surinam', 'Ingen'],
