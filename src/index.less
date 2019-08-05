@@ -10,10 +10,6 @@ input, label {
     max-width: 100%;
 }
 
-.knapp, .toggleKnapp, input {
-    max-width: 17em;
-}
-
 .ekspanderbartPanel {
     box-shadow: 6px 7px 8px -3px rgba(0,0,0,0.25) !important;
     margin-bottom: 0.1em;
@@ -22,3 +18,16 @@ input, label {
 .wrapper {
     padding: 2em 1em;
 }
+
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    
+    input {
+        max-width: 16em;
+    }    
+    
+  }
