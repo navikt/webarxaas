@@ -27,6 +27,9 @@ const PrivacyModelForm = (props) => {
   };
 
   const handlePrivModelChange = (e) => {
+    const kParamsDefault = {
+      k: 4,
+    };
     const lParamsDefault = {
       l: 2,
       field: fieldName,
@@ -41,24 +44,37 @@ const PrivacyModelForm = (props) => {
       field: fieldName,
     };
 
+    const kModelsList = ['KANONYMITY'];
     const lModelsList = ['LDIVERSITY_DISTINCT', 'LDIVERSITY_GRASSBERGERENTROPY', 'DIVERSITY_SHANNONENTROPY'];
     const lcModelsList = ['LDIVERSITY_RECURSIVE'];
     const tModelsList = ['TCLOSENESS_ORDERED_DISTANCE', 'TCLOSENESS_EQUAL_DISTANCE'];
 
     let defaultParams = {};
+    if (kModelsList.includes(e.target.value)) defaultParams = kParamsDefault;
     if (lModelsList.includes(e.target.value)) defaultParams = lParamsDefault;
     if (lcModelsList.includes(e.target.value)) defaultParams = lcParamsDefault;
     if (tModelsList.includes(e.target.value)) defaultParams = tParamsDefault;
     console.log(e.target.name, e.target.value);
     const index = (privacyModels.findIndex(privModel => privModel.params.field === fieldName));
     privacyModels[index] = {
-      ...privacyModels[index],
+
       privacyModel: e.target.value,
       params: defaultParams,
     };
     const newPrivacyModels = Object.assign([], privacyModels);
     setPrivacyModels(newPrivacyModels);
     console.log(newPrivacyModels);
+  };
+
+  const getSelectItems = () => {
+    const quasiPrivModels = ['KANONYMITY'];
+    const sensitivePrivModels = ['LDIVERSITY_DISTINCT', 'LDIVERSITY_GRASSBERGERENTROPY', 'DIVERSITY_SHANNONENTROPY', 'LDIVERSITY_RECURSIVE', 'TCLOSENESS_ORDERED_DISTANCE', 'TCLOSENESS_EQUAL_DISTANCE'];
+
+    let privModels
+    if (quasiPrivModels.includes(privacyModelType)) privModels = quasiPrivModels;
+    if (sensitivePrivModels.includes(privacyModelType)) privModels = sensitivePrivModels;
+
+    return privModels.map(model => <MenuItem value={model}>{model}</MenuItem>);
   };
 
   const content = (
@@ -68,12 +84,14 @@ const PrivacyModelForm = (props) => {
           value={privacyModelType}
           onChange={handlePrivModelChange}
         >
-          <MenuItem value="LDIVERSITY_DISTINCT">L-Diversity-Distinct</MenuItem>
+          {getSelectItems()}
+       {/* <MenuItem value="LDIVERSITY_DISTINCT">L-Diversity-Distinct</MenuItem>
           <MenuItem value="LDIVERSITY_GRASSBERGERENTROPY">L-Diversity-Grassberger-Entropy</MenuItem>
           <MenuItem value="DIVERSITY_SHANNONENTROPY">L-Diversity-Shannon-Entropy</MenuItem>
           <MenuItem value="LDIVERSITY_RECURSIVE">L-Diversity-Recursive</MenuItem>
           <MenuItem value="TCLOSENESS_ORDERED_DISTANCE">T-Closeness Ordered Distance</MenuItem>
           <MenuItem value="TCLOSENESS_EQUAL_DISTANCE">T-Closeness Equal Distance</MenuItem>
+  */}
         </Select>
       </Col>
       <Col md={4}>{fieldName}</Col>
