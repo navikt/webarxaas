@@ -47,7 +47,7 @@ const DatasetTableWrapper = (props) => {
             setAttributes={setAttributes}
           />
           <ExportAttribute
-            AttributeTypes={attributes}
+            attributes={attributes}
             fileName={fileName}
           />
           <DatasetTable
