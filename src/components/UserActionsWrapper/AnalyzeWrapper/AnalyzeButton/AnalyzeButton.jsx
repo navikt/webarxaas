@@ -8,7 +8,7 @@ const AnalyzeButton = (props) => {
   } = props;
 
   const content = (
-    <div style={{ margin: '5em 0 5em 0' }}>
+    <div className="analyze-button" style={{ margin: '5em 0 5em 0' }}>
       <Knapp
         htmlType="button"
         onClick={
