@@ -8,23 +8,32 @@ const PrivacyModelForm = (props) => {
     privacyModelType, fieldName, primaryParamLabel, secondaryParamLabel, primaryParamValue, secondaryParamValue, setPrivacyModels, privacyModels,
   } = props;
 
-  const secondaryparamField = secondaryParamLabel
-    // eslint-disable-next-line react/jsx-one-expression-per-line
-    ? [<Col md={1}>{secondaryParamLabel}:</Col>, <Col md={1} style={{ padding: 0 }}><input name="secondaryparam" type="number" defaultValue={secondaryParamValue} /></Col>]
-    : [<Col md={2} />];
-
   const updatePrivacyModelState = (e) => {
+    let params = new Map();
+    if (fieldName) params.set('column_name', fieldName);
+    if (e.target.name === 'primaryParam') {
+      params.set(primaryParamLabel, e.target.value);
+      if (secondaryParamLabel) params.set(secondaryParamLabel, secondaryParamValue);
+    }
+    if (e.target.name === 'secondaryParam') {
+      params.set(primaryParamLabel, primaryParamValue);
+      params.set(secondaryParamLabel, e.target.value);
+    }
+    console.log(e.target);
+    console.log(params);
     console.log(e.target.name, e.target.value);
     const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName));
     privacyModels[index] = {
       ...privacyModels[index],
-      params: {
-        [primaryParamLabel]: e.target.value,
-        column_name: fieldName,
-      },
+      params,
     };
     setPrivacyModels(privacyModels);
   };
+
+  const secondaryparamField = secondaryParamLabel
+    // eslint-disable-next-line react/jsx-one-expression-per-line
+    ? [<Col md={1}>{secondaryParamLabel}:</Col>, <Col md={1} style={{ padding: 0 }}><input name="secondaryparam" type="number" defaultValue={secondaryParamValue} onChange={updatePrivacyModelState} /></Col>]
+    : [<Col md={2} />];
 
   const handlePrivModelChange = (e) => {
     const kParamsDefault = {
@@ -85,7 +94,7 @@ const PrivacyModelForm = (props) => {
           onChange={handlePrivModelChange}
         >
           {getSelectItems()}
-       {/* <MenuItem value="LDIVERSITY_DISTINCT">L-Diversity-Distinct</MenuItem>
+          {/* <MenuItem value="LDIVERSITY_DISTINCT">L-Diversity-Distinct</MenuItem>
           <MenuItem value="LDIVERSITY_GRASSBERGERENTROPY">L-Diversity-Grassberger-Entropy</MenuItem>
           <MenuItem value="DIVERSITY_SHANNONENTROPY">L-Diversity-Shannon-Entropy</MenuItem>
           <MenuItem value="LDIVERSITY_RECURSIVE">L-Diversity-Recursive</MenuItem>
