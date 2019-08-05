@@ -14,11 +14,11 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const ExportAttribute = (props) => {
-  const { AttributeTypes, fileName } = props;
+  const { attributes, fileName } = props;
   const classes = useStyles();
 
   const handleExport = () => {
-    const json = JSON.stringify(AttributeTypes);
+    const json = JSON.stringify(attributes);
     const element = document.createElement('a');
     const jsonData = new Blob([json], { type: 'application/json' });
     element.href = URL.createObjectURL(jsonData);
