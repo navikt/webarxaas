@@ -32,13 +32,6 @@ const ImportHierarchies = (props) => {
     attributes, setAttributes,
   } = props;
 
-  // Used to force rerender when attributes is updated
-  const [refresh, setRefresh] = useState(false);
-
-  const newSetAttributes = (newAttributes) => {
-    setAttributes(newAttributes);
-    setRefresh(!refresh);
-  };
 
   const content = (
     <div className="hierarchy-import" align="center">
@@ -74,7 +67,7 @@ const ImportHierarchies = (props) => {
                           onChange={(e) => {
                             if (e.target.files[0]) {
                               handleHierarchyUpload(
-                                e.target.files[0], index, attributes, newSetAttributes,
+                                e.target.files[0], index, attributes, setAttributes,
                               );
                             }
                           }}
