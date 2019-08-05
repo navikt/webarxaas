@@ -54,7 +54,7 @@ const Footer = () => {
             className="logo-nav d-inline-block align-top"
           />
         </a>
-        <a className="copyright-text" href="https://opensource.org/licenses/MIT" >
+        <a className="copyright-text" href="https://github.com/navikt/webarx-poc/blob/master/LICENSE" >
           MIT License
         </a>
       </div>
