@@ -45,6 +45,7 @@ const DatasetTableWrapper = (props) => {
           </Alert>
           <ImportAttribute
             setAttributes={setAttributes}
+            attributes={attributes}
           />
           <ExportAttribute
             attributes={attributes}

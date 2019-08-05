@@ -4,7 +4,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
-
 const useStyles = makeStyles(theme => ({
   button: {
     margin: theme.spacing(1),
@@ -17,31 +16,47 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const verifyAttributes = (jsonImportArray, jsonStateArray) => {
+  if (jsonImportArray.length !== jsonStateArray.length) {
+    return false;
+  }
+  for (let i = 0; i < jsonStateArray.length; i += 1) {
+    if (jsonStateArray[i].field !== jsonImportArray[i].field) {
+      return false;
+    }
+  }
+  return true;
+};
+
 
 const ImportAttribute = (props) => {
   const classes = useStyles();
-  const { setAttributes } = props;
-  const handleImport = (file) => {
-    if (file) {
+  const { setAttributes, attributes } = props;
+  const handleImport = (inputElement) => {
+    if (inputElement.files[0]) {
       const reader = new FileReader();
       reader.onload = (event) => {
-        const json = JSON.parse(event.target.result);
-        setAttributes(json);
+        const jsonImportArray = JSON.parse(event.target.result);
+        if (verifyAttributes(jsonImportArray, attributes)) {
+          setAttributes(jsonImportArray);
+        }
       };
-      reader.readAsText(file);
+      reader.readAsText(inputElement.files[0]);
+      // eslint-disable-next-line no-param-reassign
+      inputElement.value = '';
     }
   };
 
   const content = (
     <label htmlFor="import-attribute-types-button">
       <Button variant="contained" component="span" className={classes.button}>
-          Import Attribute types
+          Import Attribute Types From JSON
         <input
           className={classes.input}
           id="import-attribute-types-button"
           multiple
           type="file"
-          onChange={e => handleImport(e.target.files[0])}
+          onChange={e => handleImport(e.target)}
         />
         <CloudUploadIcon className={classes.rightIcon} />
       </Button>
