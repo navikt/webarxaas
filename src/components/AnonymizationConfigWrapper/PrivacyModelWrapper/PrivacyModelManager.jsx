@@ -15,11 +15,11 @@ const PrivacyModelManager = (props) => {
   const loadPrivacyModels = () => {
     sensitiveAttributes.forEach((attribute) => {
       const foundExsistingPrivModel = privacyModels
-        .findIndex(item => item.params.field === attribute.field);
+        .findIndex(item => item.params.column_name === attribute.field);
 
       if (foundExsistingPrivModel === -1) {
         const params = defaultSensitivePrivModelParam;
-        params.field = attribute.field;
+        params.column_name = attribute.field;
         handlePrivacyAdd(
           {
             privacyModel: defaultSensitivePrivModel,
@@ -74,7 +74,7 @@ const PrivacyModelManager = (props) => {
     return (
       <PrivacyModelForm
         privacyModelType={privacyModel.privacyModel}
-        fieldName={privacyModel.params.field}
+        fieldName={privacyModel.params.column_name}
         primaryParamLabel={primaryLabel}
         secondaryParamLabel={secondaryLabel}
         primaryParamValue={primaryValue}

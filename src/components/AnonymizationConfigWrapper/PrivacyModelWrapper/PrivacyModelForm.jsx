@@ -15,12 +15,12 @@ const PrivacyModelForm = (props) => {
 
   const updatePrivacyModelState = (e) => {
     console.log(e.target.name, e.target.value);
-    const index = (privacyModels.findIndex(privModel => privModel.params.field === fieldName));
+    const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName));
     privacyModels[index] = {
       ...privacyModels[index],
       params: {
         [primaryParamLabel]: e.target.value,
-        field: fieldName,
+        column_name: fieldName,
       },
     };
     setPrivacyModels(privacyModels);
@@ -32,16 +32,16 @@ const PrivacyModelForm = (props) => {
     };
     const lParamsDefault = {
       l: 2,
-      field: fieldName,
+      column_name: fieldName,
     };
     const lcParamsDefault = {
       l: 2,
       c: 0.01,
-      field: fieldName,
+      column_name: fieldName,
     };
     const tParamsDefault = {
       t: 0.01,
-      field: fieldName,
+      column_name: fieldName,
     };
 
     const kModelsList = ['KANONYMITY'];
@@ -55,7 +55,7 @@ const PrivacyModelForm = (props) => {
     if (lcModelsList.includes(e.target.value)) defaultParams = lcParamsDefault;
     if (tModelsList.includes(e.target.value)) defaultParams = tParamsDefault;
     console.log(e.target.name, e.target.value);
-    const index = (privacyModels.findIndex(privModel => privModel.params.field === fieldName));
+    const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName));
     privacyModels[index] = {
 
       privacyModel: e.target.value,
