@@ -6,7 +6,6 @@ export default function HandleTypeSelect(target, field, index, attributes, setAt
     field,
     attributeTypeModel: selectedType,
     hierarchy: null,
-    fileName: null,
   };
   setAttributes(newAttributes);
 }
