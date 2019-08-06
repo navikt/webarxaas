@@ -1,38 +1,65 @@
 import React from 'react';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+import Alert from 'react-bootstrap/Alert';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import DatasetTable from './DatasetTable/DatasetTable';
-import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
-import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
+import ExportAttributeButton from './ExportAttributeTypeButton/ExportAttributeTypeButton';
+import ImportAttributeButton from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 import './__css__/DatasetTableWrapper.css';
 
+const useStyles = makeStyles({
+  paper: {
+    padding: ' 1em 0 2em 0',
+  },
+});
+
+
 const DatasetTableWrapper = (props) => {
+  const classes = useStyles();
   const {
-    loadingDataset, setAttributes, dataset, attributes, fileName,
+    loadingDataset, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+    setAttributes, dataset, attributes, fileName,
   } = props;
 
   let content = '';
 
   if (loadingDataset) {
     content = (
-      <div className="dataset-table-wrapper">
+      <div className="dataset-table-wrapper wrapper">
         <NavFrontendSpinner transparent />
       </div>
     );
-  } else if (dataset) {
+  } else if (dataset.length > 1) {
     content = (
-      <div className="dataset-table-wrapper">
-        <ImportAttribute
-          setAttributes={setAttributes}
-        />
-        <ExportAttribute
-          AttributeTypes={attributes}
-          fileName={fileName}
-        />
-        <DatasetTable
-          setAttributes={setAttributes}
-          dataset={dataset}
-          attributes={attributes}
-        />
+      <div className="dataset-table-wrapper wrapper">
+        <Paper className={classes.paper} elevation={3}>
+          <Alert variant="info">
+          Previewing first 100 of
+            {' '}
+            {dataset.length}
+            {' '}
+          rows in
+            {' '}
+            {fileName}
+          </Alert>
+          <ImportAttributeButton
+            setAttributes={setAttributes}
+            attributes={attributes}
+            setOpenSnackbar={setOpenSnackbar}
+            setVariantSnackbar={setVariantSnackbar}
+            setMessageSnackbar={setMessageSnackbar}
+          />
+          <ExportAttributeButton
+            attributes={attributes}
+            fileName={fileName}
+          />
+          <DatasetTable
+            setAttributes={setAttributes}
+            dataset={dataset}
+            attributes={attributes}
+          />
+        </Paper>
       </div>
     );
   }

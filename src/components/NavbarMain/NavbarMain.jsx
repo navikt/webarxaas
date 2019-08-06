@@ -12,10 +12,11 @@ const NavbarMain = (props) => {
         <Navbar.Brand href="#home">
           <img
             alt="Service Logo"
-            src="/cloud_anon.png"
+            src="/img/logo-arxaas.png"
             width="50"
             className="d-inline-block align-top"
           />
+          &nbsp;
           {' Anonymization as a Service'}
         </Navbar.Brand>
         <MoreInfoButton

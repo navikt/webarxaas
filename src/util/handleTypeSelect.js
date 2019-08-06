@@ -1,12 +1,11 @@
 export default function HandleTypeSelect(target, field, index, attributes, setAttributes) {
+  const newAttributes = [...attributes];
   const { value: selectedType } = target;
-  // eslint-disable-next-line no-param-reassign
-  attributes[index] = {
+  newAttributes[index] = {
     ...attributes[index],
     field,
     attributeTypeModel: selectedType,
+    hierarchy: null,
   };
-  const newAttributes = Object.assign([], attributes);
   setAttributes(newAttributes);
 }
-

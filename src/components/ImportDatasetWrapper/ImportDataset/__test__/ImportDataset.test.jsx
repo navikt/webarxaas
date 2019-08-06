@@ -5,7 +5,7 @@ import ImportDataset from '../ImportDataset';
 describe('ImportDataset: Render tests', () => {
   let wrapper;
   beforeAll(() => {
-    wrapper = shallow(<ImportDataset />);
+    wrapper = shallow(<ImportDataset dataset={[]} />);
   });
 
   it('Render component', () => {

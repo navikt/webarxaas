@@ -1,10 +1,28 @@
+.footer {
+  padding: 11em 0 5em 0;
+}
+.footer-menu {
+  padding-left: 0;
+}
 .footer-menu-item {
   list-style-type: none;
   display: inline;
   padding: 0 1em 0 1em;
 }
-.footer-menu {
-  margin: auto;
-  padding: 0 0 1em 0;
+.logo-nav {
+  margin: 0.25em 0 0 0;
+}
+.copyright-text {
+  position: relative;
+  top: 1.3em;
+  padding: 0 2em 0 2em;
+}
+a {
   color: #0067C5 !important;
+}
+@media (max-width: 630px) {
+  .text-a,
+  .copyright-text {
+    display: none !important;
+  }
 }

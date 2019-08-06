@@ -3,31 +3,60 @@ import './__css__/Footer.css';
 
 const Footer = () => {
   const content = (
-    <div className="footer" id="footer">
-      <div className="row">
-        <ul className="footer-menu">
-          <li className="footer-menu-item">
-            <a className="github" href="https://github.com/navikt/webarx-poc"><b>Github</b></a>
-          </li>
-          <li className="footer-menu-item">
-            <a className="slack" href="https://github.com/navikt/webarx-poc/issues"><b>Issue tracker</b></a>
-          </li>
-          <li className="footer-menu-item">
-            <a className="slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611"><b>Slack channel: anon-team-internal</b></a>
-          </li>
-          <li className="footer-menu-item">
-            <a className="email" href="mailto:Anonymisering@nav.no"><b>Email: Anonymisering@nav.no</b></a>
-          </li>
-        </ul>
-      </div>
+    <div className="footer container-fluid">
+      <ul className="footer-menu">
+        <li className="footer-menu-item">
+          <a className="image-a github" href="https://github.com/navikt/webarx-poc">
+            <i className="fab fa-github" />
+          </a>
+          &nbsp;
+            <a className="text-a github" href="https://github.com/navikt/webarx-poc">
+            <b>Source Code</b>
+          </a>
+        </li>
+        <li className="footer-menu-item">
+          <a className="image-a issues" href="https://github.com/navikt/webarx-poc/issues">
+            <i className="fas fa-exclamation" />
+          </a>
+          &nbsp;
+            <a className="text-a issues" href="https://github.com/navikt/webarx-poc/issues">
+            <b>Issues</b>
+          </a>
+        </li>
+        <li className="footer-menu-item">
+          <a className="image-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
+            <i className="fab fa-slack" />
+          </a>
+          &nbsp;
+            <a className="text-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
+            <b>Slack</b>
+          </a>
+        </li>
+        <li className="footer-menu-item">
+          <a className="image-a email" href="mailto:anonymisering@nav.no">
+            <i className="fas fa-envelope" />
+          </a>
+          &nbsp;
+            <a className="text-a email" href="mailto:anonymisering@nav.no">
+            <b>anonymisering@nav.no</b>
+          </a>
+        </li>
+      </ul>
       <div className="copyright">
-        <p className="mbr-text mb-0 mbr-fonts-style mbr-white display-7">
-          © Copyright 2019
-            {' '}
-          <a href="https://www.nav.no/Forsiden">NAV</a>
-          {' '}
-          - All Rights Reserved
-        </p>
+        <span className="copyright-text">
+          © 2019
+        </span>
+        <a href="https://www.nav.no/Forsiden">
+          <img
+            alt="NAV Logo"
+            src="/img/logo-nav.png"
+            width="75"
+            className="logo-nav d-inline-block align-top"
+          />
+        </a>
+        <a className="copyright-text" href="https://github.com/navikt/webarx-poc/blob/master/LICENSE" >
+          MIT License
+        </a>
       </div>
     </div>
   );

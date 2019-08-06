@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import AnalyzeButton from '../../AnalyzeButton/AnalyzeButton';
-import AnalysisWrapper from '../../AnalyzeResultWrapper/AnalyzeResultWrapper';
+import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
+import AnalyzeResultWrapper from './AnalyzeResultWrapper/AnalyzeResultWrapper';
 
 const AnalyzeWrapper = (props) => {
   const {
@@ -23,7 +23,7 @@ const AnalyzeWrapper = (props) => {
         endpoint={endpoint}
         setResponse={setAnalyzeResponse}
       />
-      <AnalysisWrapper
+      <AnalyzeResultWrapper
         response={analyzeResponse}
         loadingAnalyze={loadingAnalyze}
       />
@@ -39,7 +39,7 @@ AnalyzeWrapper.propTypes = {
   loadingAnalyze: PropTypes.bool.isRequired,
   setLoadingAnalyze: PropTypes.func.isRequired,
   setAnalyzeResponse: PropTypes.func.isRequired,
-  analyzeResponse: PropTypes.arrayOf(PropTypes.array).isRequired,
+  analyzeResponse: PropTypes.objectOf(PropTypes.object).isRequired,
 };
 
 export default AnalyzeWrapper;
