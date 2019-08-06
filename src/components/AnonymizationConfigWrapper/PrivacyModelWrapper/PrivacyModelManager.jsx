@@ -47,17 +47,19 @@ const PrivacyModelManager = (props) => {
     }
   };
 
-  /*   const cleanupPrivacyModels = () => {
-      privacyModels.forEach((privacyModel, privacyModelIndex) => {
+  const cleanupPrivacyModels = () => {
+    privacyModels.forEach((privacyModel, privacyModelIndex) => {
+      if (!privacyModel.params.k) {
         const foundWithSensitiveAttribute = sensitiveAttributes
-          .findIndex(attribute => attribute.field === privacyModel.params.field);
-        console.log(foundWithSensitiveAttribute);
+          .findIndex(attribute => privacyModel.params.column_name === attribute.field);
         if (foundWithSensitiveAttribute === -1) {
           handlePrivacyRemove(privacyModelIndex, privacyModels, setPrivacyModels);
         }
-      });
-    }; */
+      }
+    });
+  };
 
+  cleanupPrivacyModels();
   loadPrivacyModels();
 
   // Goes through all exsisting privacy models, and creates and array of PrivacyModelForms, where labels and param values are transfered
@@ -84,7 +86,7 @@ const PrivacyModelManager = (props) => {
       />
     );
   });
-console.log(privacyModels);
+  console.log(privacyModels);
   const content = (
     <div className="privacyModelManager" style={{ padding: '1em' }}>
       {privacyModelForms}
