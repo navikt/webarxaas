@@ -74,10 +74,9 @@ function SnackbarContentWrapper(props) {
 }
 
 SnackbarContentWrapper.propTypes = {
-  className: PropTypes.string,
-  message: PropTypes.string,
-  onClose: PropTypes.func,
-  variant: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
+  message: PropTypes.string.isRequired,
+  onClose: PropTypes.func.isRequired,
+  variant: PropTypes.string.isRequired,
 };
 
 const useStyles2 = makeStyles(theme => ({
@@ -128,8 +127,8 @@ export default function SnackbarWrapper(props) {
 }
 
 SnackbarWrapper.propTypes = {
-  openSnackbar: PropTypes.bool,
-  setOpenSnackbar: PropTypes.func,
-  messageSnackbar: PropTypes.string,
-  variantSnackbar: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
+  openSnackbar: PropTypes.bool.isRequired,
+  setOpenSnackbar: PropTypes.func.isRequired,
+  messageSnackbar: PropTypes.string.isRequired,
+  variantSnackbar: PropTypes.string.isRequired,
 };
