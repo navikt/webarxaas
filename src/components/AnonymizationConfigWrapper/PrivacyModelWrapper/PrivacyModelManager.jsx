@@ -63,7 +63,7 @@ const PrivacyModelManager = (props) => {
   loadPrivacyModels();
 
   // Goes through all exsisting privacy models, and creates and array of PrivacyModelForms, where labels and param values are transfered
-  const privacyModelForms = privacyModels.map((privacyModel) => {
+  const privacyModelForms = privacyModels.map((privacyModel, index) => {
     let primaryLabel;
     let primaryValue;
     let secondaryLabel;
@@ -75,6 +75,7 @@ const PrivacyModelManager = (props) => {
 
     return (
       <PrivacyModelForm
+        key={index.toString().concat(privacyModel.privacyModel)}
         privacyModelType={privacyModel.privacyModel}
         fieldName={privacyModel.params.column_name}
         primaryParamLabel={primaryLabel}
@@ -86,7 +87,6 @@ const PrivacyModelManager = (props) => {
       />
     );
   });
-  console.log(privacyModels);
   const content = (
     <div className="privacyModelManager" style={{ padding: '1em' }}>
       {privacyModelForms}
