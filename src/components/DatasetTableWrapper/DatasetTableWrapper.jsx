@@ -4,10 +4,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Alert from 'react-bootstrap/Alert';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import DatasetTable from './DatasetTable/DatasetTable';
-import ExportAttribute from './ExportAttributeTypeButton/ExportAttributeTypeButton';
-import ImportAttribute from './ImportAttributeTypeButton/ImportAttributeTypeButton';
+import ExportAttributeButton from './ExportAttributeTypeButton/ExportAttributeTypeButton';
+import ImportAttributeButton from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 import './__css__/DatasetTableWrapper.css';
-
 
 const useStyles = makeStyles({
   paper: {
@@ -19,7 +18,8 @@ const useStyles = makeStyles({
 const DatasetTableWrapper = (props) => {
   const classes = useStyles();
   const {
-    loadingDataset, setAttributes, dataset, attributes, fileName,
+    loadingDataset, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+    setAttributes, dataset, attributes, fileName,
   } = props;
 
   let content = '';
@@ -43,11 +43,14 @@ const DatasetTableWrapper = (props) => {
             {' '}
             {fileName}
           </Alert>
-          <ImportAttribute
+          <ImportAttributeButton
             setAttributes={setAttributes}
             attributes={attributes}
+            setOpenSnackbar={setOpenSnackbar}
+            setVariantSnackbar={setVariantSnackbar}
+            setMessageSnackbar={setMessageSnackbar}
           />
-          <ExportAttribute
+          <ExportAttributeButton
             attributes={attributes}
             fileName={fileName}
           />
