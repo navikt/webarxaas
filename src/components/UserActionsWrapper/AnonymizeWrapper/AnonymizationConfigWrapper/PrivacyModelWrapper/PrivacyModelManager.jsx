@@ -1,7 +1,7 @@
 import React from 'react';
 import PrivacyModelForm from './PrivacyModelForm';
-import handlePrivacyAdd from '../../../util/handlePrivacyAdd';
-import handlePrivacyRemove from '../../../util/handlePrivacyRemove';
+import handlePrivacyAdd from '../../../../../util/handlePrivacyAdd';
+import handlePrivacyRemove from '../../../../../util/handlePrivacyRemove';
 
 
 const PrivacyModelManager = (props) => {
@@ -62,7 +62,8 @@ const PrivacyModelManager = (props) => {
   cleanupPrivacyModels();
   loadPrivacyModels();
 
-  // Goes through all exsisting privacy models, and creates and array of PrivacyModelForms, where labels and param values are transfered
+  // Goes through all exsisting privacy models, and creates and array of PrivacyModelForms,
+  // where labels and param values are transfered
   const privacyModelForms = privacyModels.map((privacyModel, index) => {
     let primaryLabel;
     let primaryValue;
