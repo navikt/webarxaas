@@ -87,9 +87,7 @@ const PrivacyModelForm = (props) => {
     } else if (sensitivePrivModels.includes(privacyModelType)) {
       privModels = sensitivePrivModels;
     }
-    return privModels.map((model, index) => {
-      return (<MenuItem key={index.toString().concat(model)} value={model}>{model}</MenuItem>);
-    });
+    return privModels.map((model, index) => (<MenuItem key={index.toString().concat(model)} value={model}>{model}</MenuItem>));
   };
   const content = (
     <Row>

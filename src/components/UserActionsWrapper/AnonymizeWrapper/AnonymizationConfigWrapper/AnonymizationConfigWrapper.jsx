@@ -3,7 +3,7 @@ import { Card, CardHeader } from '@material-ui/core';
 import ImportHierarchies from './ImportHierarchies/ImportHierarchies';
 import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
-import PrivacyModelWrapper from '../../../AnonymizationConfigWrapper/PrivacyModelWrapper/PrivacyModelWrapper';
+import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
 
 const AnonymizationConfigWrapper = (props) => {
