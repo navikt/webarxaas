@@ -86,14 +86,9 @@ const useStyles2 = makeStyles(theme => ({
 }));
 
 export default function SnackbarWrapper(props) {
-  const classes = useStyles2();
   const {
     openSnackbar, setOpenSnackbar, variantSnackbar, messageSnackbar,
   } = props;
-
-  function handleClick() {
-    setOpenSnackbar(true);
-  }
 
   function handleClose(event, reason) {
     if (reason === 'clickaway') {
@@ -104,9 +99,6 @@ export default function SnackbarWrapper(props) {
 
   return (
     <div>
-      <Button variant="outlined" className={classes.margin} onClick={handleClick}>
-        Open success snackbar
-      </Button>
       <Snackbar
         anchorOrigin={{
           vertical: 'bottom',
