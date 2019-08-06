@@ -10,6 +10,10 @@ import SnackbarWrapper from '../SnackbarWrapper/SnackbarWrapper';
 import './__css__/App.css';
 
 function App() {
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [variantSnackbar, setVariantSnackbar] = useState('');
+  const [messageSnackbar, setMessageSnackbar] = useState('');
+
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState([]);
   const [attributes, setAttributes] = useState([]);
@@ -23,7 +27,12 @@ function App() {
       <NavbarMain
         setShowMoreInfo={setShowMoreInfo}
       />
-      <SnackbarWrapper />
+      <SnackbarWrapper
+        openSnackbar={openSnackbar}
+        setOpenSnackbar={setOpenSnackbar}
+        variantSnackbar={variantSnackbar}
+        messageSnackbar={messageSnackbar}
+      />
       <MoreInfoWrapper
         showMoreInfo={showMoreInfo}
       />
@@ -38,6 +47,9 @@ function App() {
 
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
+        setOpenSnackbar={setOpenSnackbar}
+        setVariantSnackbar={setVariantSnackbar}
+        setMessageSnackbar={setMessageSnackbar}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}

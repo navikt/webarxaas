@@ -46,7 +46,7 @@ const useStyles1 = makeStyles(theme => ({
   },
 }));
 
-function MySnackbarContentWrapper(props) {
+function SnackbarContentWrapper(props) {
   const classes = useStyles1();
   const {
     className, message, onClose, variant, ...other
@@ -62,7 +62,7 @@ function MySnackbarContentWrapper(props) {
           <Icon className={clsx(classes.icon, classes.iconVariant)} />
           {message}
         </span>
-)}
+      )}
       action={[
         <IconButton key="close" aria-label="close" color="inherit" onClick={onClose}>
           <CloseIcon className={classes.icon} />
@@ -73,7 +73,7 @@ function MySnackbarContentWrapper(props) {
   );
 }
 
-MySnackbarContentWrapper.propTypes = {
+SnackbarContentWrapper.propTypes = {
   className: PropTypes.string,
   message: PropTypes.string,
   onClose: PropTypes.func,
@@ -86,19 +86,21 @@ const useStyles2 = makeStyles(theme => ({
   },
 }));
 
-export default function CustomizedSnackbars() {
+export default function SnackbarWrapper(props) {
   const classes = useStyles2();
-  const [open, setOpen] = React.useState(false);
+  const {
+    openSnackbar, setOpenSnackbar, variantSnackbar, messageSnackbar,
+  } = props;
 
   function handleClick() {
-    setOpen(true);
+    setOpenSnackbar(true);
   }
 
   function handleClose(event, reason) {
     if (reason === 'clickaway') {
       return;
     }
-    setOpen(false);
+    setOpenSnackbar(false);
   }
 
   return (
@@ -111,16 +113,23 @@ export default function CustomizedSnackbars() {
           vertical: 'bottom',
           horizontal: 'left',
         }}
-        open={open}
+        open={openSnackbar}
         autoHideDuration={6000}
         onClose={handleClose}
       >
-        <MySnackbarContentWrapper
+        <SnackbarContentWrapper
           onClose={handleClose}
-          variant="success"
-          message="This is a success message!"
+          variant={variantSnackbar}
+          message={messageSnackbar}
         />
       </Snackbar>
     </div>
   );
 }
+
+SnackbarWrapper.propTypes = {
+  openSnackbar: PropTypes.bool,
+  setOpenSnackbar: PropTypes.func,
+  messageSnackbar: PropTypes.string,
+  variantSnackbar: PropTypes.oneOf(['error', 'info', 'success', 'warning']).isRequired,
+};

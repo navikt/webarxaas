@@ -16,28 +16,42 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const verifyAttributes = (jsonImportArray, jsonStateArray) => {
+const verifyAttributes = (
+  jsonImportArray, jsonStateArray, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+) => {
   if (jsonImportArray.length !== jsonStateArray.length) {
+    setVariantSnackbar('error');
+    setMessageSnackbar('Failed to import attributes. Attributes contained fewer or more indexes than attributes in dataset.');
+    setOpenSnackbar(true);
     return false;
   }
   for (let i = 0; i < jsonStateArray.length; i += 1) {
     if (jsonStateArray[i].field !== jsonImportArray[i].field) {
+      setVariantSnackbar('error');
+      setMessageSnackbar('Failed to import attributes. Attributes contained entries that do not match attributes in dataset.');
+      setOpenSnackbar(true);
       return false;
     }
   }
+  setVariantSnackbar('success');
+  setMessageSnackbar('Attributes imported successfully.');
+  setOpenSnackbar(true);
   return true;
 };
 
-
 const ImportAttribute = (props) => {
   const classes = useStyles();
-  const { setAttributes, attributes } = props;
+  const {
+    setAttributes, attributes, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+  } = props;
   const handleImport = (inputElement) => {
     if (inputElement.files[0]) {
       const reader = new FileReader();
       reader.onload = (event) => {
         const jsonImportArray = JSON.parse(event.target.result);
-        if (verifyAttributes(jsonImportArray, attributes)) {
+        if (verifyAttributes(
+          jsonImportArray, attributes, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+        )) {
           setAttributes(jsonImportArray);
         }
       };
