@@ -33,7 +33,7 @@ const PrivacyModelForm = (props) => {
   // Check if secondary parameters exsists, and if so creates an input field
   const secondaryparamField = secondaryParamLabel
     // eslint-disable-next-line react/jsx-one-expression-per-line
-    ? [<Col key="secondaryParamLabel" md={1}>{secondaryParamLabel}:</Col>, <Col key="secondaryParam" md={1} style={{ padding: 0 }}><input name="secondaryparam" type="number" defaultValue={secondaryParamValue} onChange={updatePrivacyModelState} /></Col>]
+    ? [<Col key="secondaryParamLabel" md={1}>{secondaryParamLabel}:</Col>, <Col key="secondaryParam" md={1} style={{ padding: 0 }}><input name="secondaryParam" type="number" defaultValue={secondaryParamValue} onChange={updatePrivacyModelState} /></Col>]
     : [<Col key="secondaryParamPlaceholder" md={2} />];
 
   // Triggered on selected item change, and sets a new default value for the selected item
