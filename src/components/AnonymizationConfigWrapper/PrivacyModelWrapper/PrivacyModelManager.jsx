@@ -17,6 +17,7 @@ const PrivacyModelManager = (props) => {
       const foundExsistingPrivModel = privacyModels
         .findIndex(item => item.params.column_name === attribute.field);
 
+      // If there is not already a exsisting privacy model for this attribute, it will add a new one
       if (foundExsistingPrivModel === -1) {
         const params = defaultSensitivePrivModelParam;
         params.column_name = attribute.field;
@@ -31,10 +32,9 @@ const PrivacyModelManager = (props) => {
       }
     });
 
-
+    // If there not already exsists a quasi privmodel already, a new one will be added
     const foundKModel = privacyModels
       .findIndex(item => item.privacyModel === defaultQuasiPrivModel);
-
     if (foundKModel === -1) {
       handlePrivacyAdd(
         {
@@ -60,7 +60,7 @@ const PrivacyModelManager = (props) => {
 
   loadPrivacyModels();
 
-
+  // Goes through all exsisting privacy models, and creates and array of PrivacyModelForms, where labels and param values are transfered
   const privacyModelForms = privacyModels.map((privacyModel) => {
     let primaryLabel;
     let primaryValue;
@@ -84,7 +84,7 @@ const PrivacyModelManager = (props) => {
       />
     );
   });
-
+console.log(privacyModels);
   const content = (
     <div className="privacyModelManager" style={{ padding: '1em' }}>
       {privacyModelForms}

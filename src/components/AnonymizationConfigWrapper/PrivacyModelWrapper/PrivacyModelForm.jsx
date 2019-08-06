@@ -5,36 +5,38 @@ import { Row, Col } from 'react-bootstrap';
 
 const PrivacyModelForm = (props) => {
   const {
-    privacyModelType, fieldName, primaryParamLabel, secondaryParamLabel, primaryParamValue, secondaryParamValue, setPrivacyModels, privacyModels,
+    privacyModelType, fieldName, primaryParamLabel, secondaryParamLabel, primaryParamValue,
+    secondaryParamValue, setPrivacyModels, privacyModels,
   } = props;
 
   const updatePrivacyModelState = (e) => {
-    let params = new Map();
-    if (fieldName) params.set('column_name', fieldName);
+    const params = {};
+    if (fieldName) params.column_name = fieldName;
     if (e.target.name === 'primaryParam') {
-      params.set(primaryParamLabel, e.target.value);
-      if (secondaryParamLabel) params.set(secondaryParamLabel, secondaryParamValue);
+      params[primaryParamLabel] = e.target.value;
+      if (secondaryParamLabel) params[secondaryParamLabel] = secondaryParamValue;
     }
     if (e.target.name === 'secondaryParam') {
-      params.set(primaryParamLabel, primaryParamValue);
-      params.set(secondaryParamLabel, e.target.value);
+      params[primaryParamLabel] = primaryParamValue;
+      params[secondaryParamLabel] = e.target.value;
     }
-    console.log(e.target);
-    console.log(params);
-    console.log(e.target.name, e.target.value);
-    const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName));
+    const index = privacyModels
+      .findIndex(privModel => privModel.params.column_name === fieldName || (privModel.params.k && primaryParamLabel === 'k'));
+
     privacyModels[index] = {
-      ...privacyModels[index],
+      privacyModel: privacyModelType,
       params,
     };
     setPrivacyModels(privacyModels);
   };
 
+  // Check if secondary parameters exsists, and if so creates an input field
   const secondaryparamField = secondaryParamLabel
     // eslint-disable-next-line react/jsx-one-expression-per-line
     ? [<Col md={1}>{secondaryParamLabel}:</Col>, <Col md={1} style={{ padding: 0 }}><input name="secondaryparam" type="number" defaultValue={secondaryParamValue} onChange={updatePrivacyModelState} /></Col>]
     : [<Col md={2} />];
 
+  // Triggered on selected item change, and sets a new default value for the selected item
   const handlePrivModelChange = (e) => {
     const kParamsDefault = {
       k: 4,
@@ -63,29 +65,31 @@ const PrivacyModelForm = (props) => {
     if (lModelsList.includes(e.target.value)) defaultParams = lParamsDefault;
     if (lcModelsList.includes(e.target.value)) defaultParams = lcParamsDefault;
     if (tModelsList.includes(e.target.value)) defaultParams = tParamsDefault;
-    console.log(e.target.name, e.target.value);
-    const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName));
-    privacyModels[index] = {
 
+    const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName || (privModel.params.k && primaryParamLabel === 'k')));
+
+    privacyModels[index] = {
       privacyModel: e.target.value,
       params: defaultParams,
     };
-    const newPrivacyModels = Object.assign([], privacyModels);
+    const newPrivacyModels = [...privacyModels];
     setPrivacyModels(newPrivacyModels);
-    console.log(newPrivacyModels);
   };
 
+  // Renders the aviable selectable items for the dropdown
   const getSelectItems = () => {
     const quasiPrivModels = ['KANONYMITY'];
     const sensitivePrivModels = ['LDIVERSITY_DISTINCT', 'LDIVERSITY_GRASSBERGERENTROPY', 'DIVERSITY_SHANNONENTROPY', 'LDIVERSITY_RECURSIVE', 'TCLOSENESS_ORDERED_DISTANCE', 'TCLOSENESS_EQUAL_DISTANCE'];
 
-    let privModels
-    if (quasiPrivModels.includes(privacyModelType)) privModels = quasiPrivModels;
-    if (sensitivePrivModels.includes(privacyModelType)) privModels = sensitivePrivModels;
-
+    let privModels;
+    if (quasiPrivModels.includes(privacyModelType)) {
+      privModels = quasiPrivModels;
+    } else if (sensitivePrivModels.includes(privacyModelType)) {
+      privModels = sensitivePrivModels;
+    }
     return privModels.map(model => <MenuItem value={model}>{model}</MenuItem>);
   };
-
+console.log('Primary param value: ', primaryParamValue);
   const content = (
     <Row>
       <Col md={4} >

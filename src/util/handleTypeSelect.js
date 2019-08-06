@@ -12,3 +12,4 @@ export default function HandleTypeSelect(target, field, index, attributes, setAt
   console.log(newAttributes);
   setAttributes(newAttributes);
 }
+
