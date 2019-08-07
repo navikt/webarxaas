@@ -10,7 +10,7 @@ const Footer = () => {
             <i className="fab fa-github" />
           </a>
           &nbsp;
-            <a className="text-a github" href="https://github.com/navikt/webarx-poc">
+          <a className="text-a github" href="https://github.com/navikt/webarx-poc">
             <b>Source Code</b>
           </a>
         </li>
@@ -19,7 +19,7 @@ const Footer = () => {
             <i className="fas fa-exclamation" />
           </a>
           &nbsp;
-            <a className="text-a issues" href="https://github.com/navikt/webarx-poc/issues">
+          <a className="text-a issues" href="https://github.com/navikt/webarx-poc/issues">
             <b>Issues</b>
           </a>
         </li>
@@ -28,7 +28,7 @@ const Footer = () => {
             <i className="fab fa-slack" />
           </a>
           &nbsp;
-            <a className="text-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
+          <a className="text-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
             <b>Slack</b>
           </a>
         </li>
