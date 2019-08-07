@@ -37,7 +37,7 @@ const Footer = () => {
             <i className="fas fa-envelope" />
           </a>
           &nbsp;
-            <a className="text-a email" href="mailto:anonymisering@nav.no">
+          <a className="text-a email" href="mailto:anonymisering@nav.no">
             <b>anonymisering@nav.no</b>
           </a>
         </li>
@@ -54,7 +54,7 @@ const Footer = () => {
             className="logo-nav d-inline-block align-top"
           />
         </a>
-        <a className="copyright-text" href="https://github.com/navikt/webarx-poc/blob/master/LICENSE" >
+        <a className="copyright-text" href="https://github.com/navikt/webarx-poc/blob/master/LICENSE">
           MIT License
         </a>
       </div>
