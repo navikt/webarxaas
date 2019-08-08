@@ -56,7 +56,7 @@ const PrivacyModelForm = (props) => {
     };
 
     const kModelsList = ['KANONYMITY'];
-    const lModelsList = ['LDIVERSITY_DISTINCT', 'LDIVERSITY_GRASSBERGERENTROPY', 'DIVERSITY_SHANNONENTROPY'];
+    const lModelsList = ['LDIVERSITY_DISTINCT', 'LDIVERSITY_GRASSBERGERENTROPY', 'LDIVERSITY_SHANNONENTROPY'];
     const lcModelsList = ['LDIVERSITY_RECURSIVE'];
     const tModelsList = ['TCLOSENESS_ORDERED_DISTANCE', 'TCLOSENESS_EQUAL_DISTANCE'];
 
@@ -78,17 +78,27 @@ const PrivacyModelForm = (props) => {
 
   // Renders the aviable selectable items for the dropdown
   const getSelectItems = () => {
-    const quasiPrivModels = ['KANONYMITY'];
-    const sensitivePrivModels = ['LDIVERSITY_DISTINCT', 'LDIVERSITY_GRASSBERGERENTROPY', 'DIVERSITY_SHANNONENTROPY', 'LDIVERSITY_RECURSIVE', 'TCLOSENESS_ORDERED_DISTANCE', 'TCLOSENESS_EQUAL_DISTANCE'];
-
+    const quasiPrivModels = [{ model: 'KANONYMITY', label: 'K-Anonymity' }];
+    const sensitivePrivModels = [
+      { model: 'LDIVERSITY_DISTINCT', label: 'L-Diversity Distinct' },
+      { model: 'LDIVERSITY_GRASSBERGERENTROPY', label: 'L-Diversity Grassbergen Entropy' },
+      { model: 'LDIVERSITY_SHANNONENTROPY', label: 'L-Diversity Shannon Entropy' },
+      { model: 'LDIVERSITY_RECURSIVE', label: 'L-Diversity Recursive' },
+      { model: 'TCLOSENESS_ORDERED_DISTANCE', label: 'T-Closeness Ordered Distance' },
+      { model: 'TCLOSENESS_EQUAL_DISTANCE', label: 'T-Closeness Equal Distance' },
+    ];
+    console.log(privacyModelType);
     let privModels;
-    if (quasiPrivModels.includes(privacyModelType)) {
+    if (quasiPrivModels.findIndex(e => (e.model === privacyModelType)) !== -1) {
       privModels = quasiPrivModels;
-    } else if (sensitivePrivModels.includes(privacyModelType)) {
+    } else if (sensitivePrivModels.findIndex(e => (e.model === privacyModelType)) !== -1) {
       privModels = sensitivePrivModels;
     }
-    return privModels.map((model, index) => (
-      <MenuItem key={index.toString().concat(model)} value={model}>{model}</MenuItem>));
+    return privModels.map((privModel, index) => (
+      <MenuItem key={index.toString().concat(privModel)} value={privModel.model}>
+        {privModel.label}
+      </MenuItem>
+    ));
   };
   const content = (
     <Row>
@@ -98,20 +108,13 @@ const PrivacyModelForm = (props) => {
           onChange={handlePrivModelChange}
         >
           {getSelectItems()}
-          {/* <MenuItem value="LDIVERSITY_DISTINCT">L-Diversity-Distinct</MenuItem>
-          <MenuItem value="LDIVERSITY_GRASSBERGERENTROPY">L-Diversity-Grassberger-Entropy</MenuItem>
-          <MenuItem value="DIVERSITY_SHANNONENTROPY">L-Diversity-Shannon-Entropy</MenuItem>
-          <MenuItem value="LDIVERSITY_RECURSIVE">L-Diversity-Recursive</MenuItem>
-          <MenuItem value="TCLOSENESS_ORDERED_DISTANCE">T-Closeness Ordered Distance</MenuItem>
-          <MenuItem value="TCLOSENESS_EQUAL_DISTANCE">T-Closeness Equal Distance</MenuItem>
-  */}
         </Select>
       </Col>
       <Col md={4}>{fieldName}</Col>
       {secondaryparamField}
       <Col md={1} style={{ padding: '2' }}>
         {primaryParamLabel}
-        :
+      :
       </Col>
       <Col md={1} style={{ padding: 0 }}><input name="primaryParam" type="number" defaultValue={primaryParamValue} onChange={updatePrivacyModelState} /></Col>
     </Row>
