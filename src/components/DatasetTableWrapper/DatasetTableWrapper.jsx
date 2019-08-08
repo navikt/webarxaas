@@ -14,11 +14,10 @@ const useStyles = makeStyles({
   },
 });
 
-
 const DatasetTableWrapper = (props) => {
   const classes = useStyles();
   const {
-    loadingDataset, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+    loadingDataset, setSnackbar,
     setAttributes, dataset, attributes, fileName,
   } = props;
 
@@ -46,9 +45,7 @@ const DatasetTableWrapper = (props) => {
           <ImportAttributeButton
             setAttributes={setAttributes}
             attributes={attributes}
-            setOpenSnackbar={setOpenSnackbar}
-            setVariantSnackbar={setVariantSnackbar}
-            setMessageSnackbar={setMessageSnackbar}
+            setSnackbar={setSnackbar}
           />
           <ExportAttributeButton
             attributes={attributes}

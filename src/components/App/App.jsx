@@ -10,9 +10,11 @@ import SnackbarWrapper from '../SnackbarWrapper/SnackbarWrapper';
 import './__css__/App.css';
 
 function App() {
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [variantSnackbar, setVariantSnackbar] = useState('');
-  const [messageSnackbar, setMessageSnackbar] = useState('');
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    variant: '',
+    message: '',
+  });
 
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState([]);
@@ -27,35 +29,26 @@ function App() {
       <NavbarMain
         setShowMoreInfo={setShowMoreInfo}
       />
-      <SnackbarWrapper
-        openSnackbar={openSnackbar}
-        setOpenSnackbar={setOpenSnackbar}
-        variantSnackbar={variantSnackbar}
-        messageSnackbar={messageSnackbar}
-      />
       <MoreInfoWrapper
         showMoreInfo={showMoreInfo}
       />
       <ImportDatasetWrapper
         loadingDataset={loadingDataset}
+        setSnackbar={setSnackbar}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
         dataset={dataset}
         setFileName={setFileName}
       />
-
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
-        setOpenSnackbar={setOpenSnackbar}
-        setVariantSnackbar={setVariantSnackbar}
-        setMessageSnackbar={setMessageSnackbar}
+        setSnackbar={setSnackbar}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
         fileName={fileName}
       />
-
       <UserActionsWrapper
         dataset={dataset}
         attributes={attributes}
@@ -63,8 +56,11 @@ function App() {
         endpoint={arxaasEndpoint}
         fileName={fileName}
       />
-
       <Footer />
+      <SnackbarWrapper
+        snackbar={snackbar}
+        setSnackbar={setSnackbar}
+      />
     </div>
   );
 }

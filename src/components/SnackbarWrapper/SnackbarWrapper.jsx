@@ -80,14 +80,17 @@ SnackbarContentWrapper.propTypes = {
 
 export default function SnackbarWrapper(props) {
   const {
-    openSnackbar, setOpenSnackbar, variantSnackbar, messageSnackbar,
+    snackbar, setSnackbar,
   } = props;
 
   function handleClose(event, reason) {
     if (reason === 'clickaway') {
       return;
     }
-    setOpenSnackbar(false);
+    setSnackbar({
+      ...snackbar,
+      open: false,
+    });
   }
 
   return (
@@ -97,14 +100,14 @@ export default function SnackbarWrapper(props) {
           vertical: 'bottom',
           horizontal: 'left',
         }}
-        open={openSnackbar}
+        open={snackbar.open}
         autoHideDuration={6000}
         onClose={handleClose}
       >
         <SnackbarContentWrapper
           onClose={handleClose}
-          variant={variantSnackbar}
-          message={messageSnackbar}
+          variant={snackbar.variant}
+          message={snackbar.message}
         />
       </Snackbar>
     </div>
@@ -112,8 +115,10 @@ export default function SnackbarWrapper(props) {
 }
 
 SnackbarWrapper.propTypes = {
-  openSnackbar: PropTypes.bool.isRequired,
-  setOpenSnackbar: PropTypes.func.isRequired,
-  messageSnackbar: PropTypes.string.isRequired,
-  variantSnackbar: PropTypes.string.isRequired,
+  snackbar: PropTypes.shape({
+    open: PropTypes.bool,
+    variant: PropTypes.string,
+    message: PropTypes.string,
+  }).isRequired,
+  setSnackbar: PropTypes.func.isRequired,
 };

@@ -6,6 +6,7 @@ describe('Unit test for parsing csv files', () => {
   let dataset = '';
   let defaultAttributeType;
   let loadingDataset = true;
+  let snackbar = {};
 
   const setAttributes = (newAttributes) => {
     attributes = newAttributes;
@@ -15,6 +16,9 @@ describe('Unit test for parsing csv files', () => {
   };
   const setLoadingDataset = (newLoadingDataset) => {
     loadingDataset = newLoadingDataset;
+  };
+  const setSnackbar = (newSnackbar) => {
+    snackbar = newSnackbar;
   };
 
   beforeAll(() => {
@@ -27,7 +31,10 @@ describe('Unit test for parsing csv files', () => {
       ['Eirik', '47', 'Togo', 'Ingen'],
       ['Ella', '30', 'Surinam', 'Ingen'],
       ['Solveig', '37', 'Malta', 'Ingen']];
-    ParseFile(testFile, setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
+    ParseFile(
+      testFile, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
     expect(dataset).toEqual(expected);
   });
 
@@ -36,12 +43,31 @@ describe('Unit test for parsing csv files', () => {
       { field: 'Alder', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING' }];
-    ParseFile(testFile, setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
+    ParseFile(
+      testFile, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
     expect(attributes).toEqual(expected);
   });
 
   it('loadingDataset to be set to false', () => {
-    ParseFile(testFile, setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
+    ParseFile(
+      testFile, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
     expect(loadingDataset).toEqual(false);
+  });
+
+  it('loading a dataset will update snackbar variable', () => {
+    const expected = {
+      open: true,
+      variant: 'success',
+      message: 'Dataset imported successfully.',
+    };
+    ParseFile(
+      testFile, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
+    expect(snackbar).toEqual(expected);
   });
 });

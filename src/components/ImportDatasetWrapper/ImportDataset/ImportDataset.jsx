@@ -5,7 +5,8 @@ import './__css__/ImportDataset.css';
 
 const ImportDataset = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset, defaultAttributeType, setFileName, dataset,
+    setLoadingDataset, setSnackbar,
+    setAttributes, setDataset, defaultAttributeType, setFileName, dataset,
   } = props;
   useEffect(() => {
     DragAndDropFile(setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
@@ -37,6 +38,7 @@ const ImportDataset = (props) => {
                       setDataset,
                       defaultAttributeType,
                       setLoadingDataset,
+                      setSnackbar,
                     );
                   }
                 }

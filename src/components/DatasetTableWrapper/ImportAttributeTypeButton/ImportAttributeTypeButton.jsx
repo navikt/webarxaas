@@ -17,32 +17,36 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const verifyAttributes = (
-  jsonImportArray, jsonStateArray, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+  jsonImportArray, jsonStateArray, setSnackbar,
 ) => {
+  const snackbar = (
+    variant, message, open,
+  ) => {
+    setSnackbar({
+      open,
+      variant,
+      message,
+    });
+  };
+
   if (jsonImportArray.length !== jsonStateArray.length) {
-    setVariantSnackbar('error');
-    setMessageSnackbar('Failed to import attributes. Attributes contained fewer or more indexes than attributes in dataset.');
-    setOpenSnackbar(true);
+    snackbar('error', 'Failed to import attributes. Attributes contained fewer or more indexes than attributes in dataset.', true);
     return false;
   }
   for (let i = 0; i < jsonStateArray.length; i += 1) {
     if (jsonStateArray[i].field !== jsonImportArray[i].field) {
-      setVariantSnackbar('error');
-      setMessageSnackbar('Failed to import attributes. Attributes contained entries that do not match attributes in dataset.');
-      setOpenSnackbar(true);
+      snackbar('error', 'Failed to import attributes. Attributes contained fewer or more indexes than attributes in dataset.', true);
       return false;
     }
   }
-  setVariantSnackbar('success');
-  setMessageSnackbar('Attributes imported successfully.');
-  setOpenSnackbar(true);
+  snackbar('success', 'Attributes imported successfully.', true);
   return true;
 };
 
 const ImportAttribute = (props) => {
   const classes = useStyles();
   const {
-    setAttributes, attributes, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+    setAttributes, attributes, setSnackbar,
   } = props;
   const handleImport = (inputElement) => {
     if (inputElement.files[0]) {
@@ -50,7 +54,7 @@ const ImportAttribute = (props) => {
       reader.onload = (event) => {
         const jsonImportArray = JSON.parse(event.target.result);
         if (verifyAttributes(
-          jsonImportArray, attributes, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+          jsonImportArray, attributes, setSnackbar,
         )) {
           setAttributes(jsonImportArray);
         }

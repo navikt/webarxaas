@@ -4,13 +4,15 @@ import './__css__/ImportDatasetWrapper.css';
 
 const ImportDatasetWrapper = (props) => {
   const {
-    setLoadingDataset, setAttributes, setDataset, setFileName, dataset,
+    setLoadingDataset, setSnackbar,
+    setAttributes, setDataset, setFileName, dataset,
   } = props;
 
   const content = (
     <div className="import-dataset-wrapper wrapper">
       <ImportDataset
         setLoadingDataset={setLoadingDataset}
+        setSnackbar={setSnackbar}
         setAttributes={setAttributes}
         setDataset={setDataset}
         defaultAttributeType="QUASIIDENTIFYING"
