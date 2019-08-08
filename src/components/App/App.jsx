@@ -10,9 +10,11 @@ import SnackbarWrapper from '../SnackbarWrapper/SnackbarWrapper';
 import './__css__/App.css';
 
 function App() {
-  const [openSnackbar, setOpenSnackbar] = useState(false);
-  const [variantSnackbar, setVariantSnackbar] = useState('');
-  const [messageSnackbar, setMessageSnackbar] = useState('');
+  const [snackbar, setSnackbar] = useState({
+    open: false,
+    variant: '',
+    message: '',
+  });
 
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState([]);
@@ -32,9 +34,7 @@ function App() {
       />
       <ImportDatasetWrapper
         loadingDataset={loadingDataset}
-        setOpenSnackbar={setOpenSnackbar}
-        setVariantSnackbar={setVariantSnackbar}
-        setMessageSnackbar={setMessageSnackbar}
+        setSnackbar={setSnackbar}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
@@ -43,9 +43,7 @@ function App() {
       />
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
-        setOpenSnackbar={setOpenSnackbar}
-        setVariantSnackbar={setVariantSnackbar}
-        setMessageSnackbar={setMessageSnackbar}
+        setSnackbar={setSnackbar}
         setAttributes={setAttributes}
         attributes={attributes}
         dataset={dataset}
@@ -60,10 +58,8 @@ function App() {
       />
       <Footer />
       <SnackbarWrapper
-        openSnackbar={openSnackbar}
-        setOpenSnackbar={setOpenSnackbar}
-        variantSnackbar={variantSnackbar}
-        messageSnackbar={messageSnackbar}
+        snackbar={snackbar}
+        setSnackbar={setSnackbar}
       />
     </div>
   );

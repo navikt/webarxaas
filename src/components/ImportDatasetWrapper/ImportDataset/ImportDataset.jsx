@@ -5,7 +5,7 @@ import './__css__/ImportDataset.css';
 
 const ImportDataset = (props) => {
   const {
-    setLoadingDataset, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+    setLoadingDataset, setSnackbar,
     setAttributes, setDataset, defaultAttributeType, setFileName, dataset,
   } = props;
   useEffect(() => {
@@ -38,9 +38,7 @@ const ImportDataset = (props) => {
                       setDataset,
                       defaultAttributeType,
                       setLoadingDataset,
-                      setOpenSnackbar,
-                      setVariantSnackbar,
-                      setMessageSnackbar,
+                      setSnackbar,
                     );
                   }
                 }

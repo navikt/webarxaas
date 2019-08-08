@@ -2,14 +2,16 @@ import papaparse from 'papaparse';
 
 export default function ParseFile(
   file, setAttributes, setDataset, defaultAttributeType,
-  setLoadingDataset, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+  setLoadingDataset, setSnackbar,
 ) {
   const snackbar = (
-    variant, message, open,
+    open, variant, message,
   ) => {
-    setVariantSnackbar(variant);
-    setMessageSnackbar(message);
-    setOpenSnackbar(open);
+    setSnackbar({
+      open,
+      variant,
+      message,
+    });
   };
 
   if (file) {
@@ -21,16 +23,16 @@ export default function ParseFile(
           setAttributes(headers.map(field => ({ field, attributeTypeModel })));
           setDataset(results.data);
           setLoadingDataset(false);
-          snackbar('success', 'Dataset imported successfully.', true);
+          snackbar(true, 'success', 'Dataset imported successfully.');
         }
       },
       error() {
         setLoadingDataset(false);
-        snackbar('error', 'Failed to import dataset. Parse error.', true);
+        snackbar(true, 'error', 'Failed to import dataset. Parse error.');
       },
     });
   } else {
     setLoadingDataset(false);
-    snackbar('error', 'Failed to import dataset.', true);
+    snackbar(true, 'error', 'Failed to import dataset.');
   }
 }

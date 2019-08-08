@@ -17,14 +17,16 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const verifyAttributes = (
-  jsonImportArray, jsonStateArray, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+  jsonImportArray, jsonStateArray, setSnackbar,
 ) => {
   const snackbar = (
     variant, message, open,
   ) => {
-    setVariantSnackbar(variant);
-    setMessageSnackbar(message);
-    setOpenSnackbar(open);
+    setSnackbar({
+      open,
+      variant,
+      message,
+    });
   };
 
   if (jsonImportArray.length !== jsonStateArray.length) {
@@ -44,7 +46,7 @@ const verifyAttributes = (
 const ImportAttribute = (props) => {
   const classes = useStyles();
   const {
-    setAttributes, attributes, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+    setAttributes, attributes, setSnackbar,
   } = props;
   const handleImport = (inputElement) => {
     if (inputElement.files[0]) {
@@ -52,7 +54,7 @@ const ImportAttribute = (props) => {
       reader.onload = (event) => {
         const jsonImportArray = JSON.parse(event.target.result);
         if (verifyAttributes(
-          jsonImportArray, attributes, setOpenSnackbar, setVariantSnackbar, setMessageSnackbar,
+          jsonImportArray, attributes, setSnackbar,
         )) {
           setAttributes(jsonImportArray);
         }
