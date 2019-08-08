@@ -46,8 +46,8 @@ const PrivacyModelForm = (props) => {
       column_name: fieldName,
     };
     const lcParamsDefault = {
-      l: 2,
-      c: 0.01,
+      l: 3,
+      c: 2,
       column_name: fieldName,
     };
     const tParamsDefault = {
@@ -87,7 +87,6 @@ const PrivacyModelForm = (props) => {
       { model: 'TCLOSENESS_ORDERED_DISTANCE', label: 'T-Closeness Ordered Distance' },
       { model: 'TCLOSENESS_EQUAL_DISTANCE', label: 'T-Closeness Equal Distance' },
     ];
-    console.log(privacyModelType);
     let privModels;
     if (quasiPrivModels.findIndex(e => (e.model === privacyModelType)) !== -1) {
       privModels = quasiPrivModels;
@@ -95,7 +94,7 @@ const PrivacyModelForm = (props) => {
       privModels = sensitivePrivModels;
     }
     return privModels.map((privModel, index) => (
-      <MenuItem key={index.toString().concat(privModel)} value={privModel.model}>
+      <MenuItem key={index.toString().concat(privModel)} value={privModel.model} style={{ width: 'inherit' }}>
         {privModel.label}
       </MenuItem>
     ));
