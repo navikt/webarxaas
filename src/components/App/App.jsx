@@ -27,24 +27,20 @@ function App() {
       <NavbarMain
         setShowMoreInfo={setShowMoreInfo}
       />
-      <SnackbarWrapper
-        openSnackbar={openSnackbar}
-        setOpenSnackbar={setOpenSnackbar}
-        variantSnackbar={variantSnackbar}
-        messageSnackbar={messageSnackbar}
-      />
       <MoreInfoWrapper
         showMoreInfo={showMoreInfo}
       />
       <ImportDatasetWrapper
         loadingDataset={loadingDataset}
+        setOpenSnackbar={setOpenSnackbar}
+        setVariantSnackbar={setVariantSnackbar}
+        setMessageSnackbar={setMessageSnackbar}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
         setDataset={setDataset}
         dataset={dataset}
         setFileName={setFileName}
       />
-
       <DatasetTableWrapper
         loadingDataset={loadingDataset}
         setOpenSnackbar={setOpenSnackbar}
@@ -55,7 +51,6 @@ function App() {
         dataset={dataset}
         fileName={fileName}
       />
-
       <UserActionsWrapper
         dataset={dataset}
         attributes={attributes}
@@ -63,8 +58,13 @@ function App() {
         endpoint={arxaasEndpoint}
         fileName={fileName}
       />
-
       <Footer />
+      <SnackbarWrapper
+        openSnackbar={openSnackbar}
+        setOpenSnackbar={setOpenSnackbar}
+        variantSnackbar={variantSnackbar}
+        messageSnackbar={messageSnackbar}
+      />
     </div>
   );
 }
