@@ -101,7 +101,7 @@ const PrivacyModelForm = (props) => {
   };
   const content = (
     <Row>
-      <Col md={4}>
+      <Col md={4} style={{ overflow: 'hidden' }}>
         <Select
           value={privacyModelType}
           onChange={handlePrivModelChange}
@@ -113,7 +113,7 @@ const PrivacyModelForm = (props) => {
       {secondaryparamField}
       <Col md={1} style={{ padding: '2' }}>
         {primaryParamLabel}
-      :
+        :
       </Col>
       <Col md={1} style={{ padding: 0 }}><input name="primaryParam" type="number" defaultValue={primaryParamValue} onChange={updatePrivacyModelState} /></Col>
     </Row>
