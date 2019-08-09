@@ -1,6 +1,14 @@
+function emptyHierarchy(attributes) {
+  const newAttribute = [...attributes];
+  newAttribute.forEach((e) => {
+    e.hierarchy = null;
+  });
+  return newAttribute;
+}
 
 export default function handleAttributeExport(attributes, fileName) {
-  const json = JSON.stringify(attributes);
+  const newAttribute = emptyHierarchy(attributes);
+  const json = JSON.stringify(newAttribute);
   const element = document.createElement('a');
   const jsonData = new Blob([json], { type: 'application/json' });
   element.href = URL.createObjectURL(jsonData);

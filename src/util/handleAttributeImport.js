@@ -1,4 +1,5 @@
-export default function verifyAttributes(
+
+function verifyAttributes(
   jsonImportArray, jsonStateArray, setSnackbar,
 ) {
   const snackbar = (
@@ -23,4 +24,23 @@ export default function verifyAttributes(
   }
   snackbar('success', 'Attributes imported successfully.', true);
   return true;
+}
+
+export default function handleAttributeImport(
+  inputElement, attributes, setSnackbar, setAttributes,
+) {
+  if (inputElement.files[0]) {
+    const reader = new FileReader();
+    reader.onload = (event) => {
+      const jsonImportArray = JSON.parse(event.target.result);
+      if (verifyAttributes(
+        jsonImportArray, attributes, setSnackbar,
+      )) {
+        setAttributes(jsonImportArray);
+      }
+    };
+    reader.readAsText(inputElement.files[0]);
+    // eslint-disable-next-line no-param-reassign
+    inputElement.value = '';
+  }
 }
