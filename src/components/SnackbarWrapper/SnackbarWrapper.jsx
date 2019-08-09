@@ -104,11 +104,13 @@ export default function SnackbarWrapper(props) {
         autoHideDuration={6000}
         onClose={handleClose}
       >
-        <SnackbarContentWrapper
-          onClose={handleClose}
-          variant={snackbar.variant}
-          message={snackbar.message}
-        />
+        <div className="snackbar-content-wrapper">
+          <SnackbarContentWrapper
+            onClose={handleClose}
+            variant={snackbar.variant}
+            message={snackbar.message}
+          />
+        </div>
       </Snackbar>
     </div>
   );
