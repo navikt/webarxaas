@@ -70,4 +70,17 @@ describe('Unit test for parsing csv files', () => {
     );
     expect(snackbar).toEqual(expected);
   });
+
+  it('test for failed loading dataset to show correct snackbar', () => {
+    const expected = {
+      open: true,
+      variant: 'error',
+      message: 'Failed to import dataset.',
+    };
+    ParseFile(
+      null, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
+    expect(snackbar).toEqual(expected);
+  });
 });
