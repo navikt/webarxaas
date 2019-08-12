@@ -26,7 +26,7 @@ const RiskBarometer = (props) => {
         <YAxis type="category" dataKey="name" />
         <Tooltip />
         <Legend />
-        <Bar dataKey="risk" fill="#f54542" barSize={40} name="Average Prosecutor Risk" />
+        <Bar dataKey="risk" fill="#1258ba" barSize={40} name="Average Prosecutor Risk" />
       </BarChart>
     </div>
   );
