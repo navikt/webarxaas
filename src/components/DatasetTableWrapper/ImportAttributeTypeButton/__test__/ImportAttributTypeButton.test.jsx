@@ -14,5 +14,6 @@ describe('ImportAttributeTypeButton: Render test', () => {
 
   it('Render test for button', () => {
     expect(wrapper.find(Button).length).toEqual(1);
+    expect(wrapper.find('label').length).toEqual(1);
   });
 });
