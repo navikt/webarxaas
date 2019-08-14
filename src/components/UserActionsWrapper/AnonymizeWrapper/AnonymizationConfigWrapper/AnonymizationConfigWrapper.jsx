@@ -5,6 +5,7 @@ import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
+import HelpText from '../../../helpTextWrapper/helpText';
 
 const AnonymizationConfigWrapper = (props) => {
   const {
@@ -22,6 +23,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="hierarchy-import-card col">
             <Card>
               <CardHeader title="Import Hierarchies" />
+              <HelpText />
               <ImportHierarchies
                 attributes={attributes}
                 setAttributes={setAttributes}
