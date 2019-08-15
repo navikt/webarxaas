@@ -1,6 +1,7 @@
 import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
+import NavFrontendSpinner from 'nav-frontend-spinner';
 import DistributionOfRiskTable from '../DistributionOfRisk/DistributionOfRiskTable/DistributionOfRiskTable';
 import ReIdentificationRiskTable from '../ReIdentificationRisk/ReIdentificationRiskTable/ReIdentificationRiskTable';
 import RiskBarometer from '../ReIdentificationRisk/RiskBarometer/RiskBarometer';
@@ -76,6 +77,16 @@ describe('AnalyzeResultWrapper: Render test', () => {
   it('Render Error test', () => {
     expect(errorWrapper.find('.result-wrapper').length).toEqual(1);
     expect(errorWrapper.contains(<b>Something went wrong. Error:</b>)).toBeTruthy();
+  });
+
+  it('Render test for loading/waiting for response', () => {
+    const loadingAnalyze = true;
+    const loadingResponse = {};
+    const loadingWrapper = shallow(
+      <AnalyzeResultWrapper response={loadingResponse} loadingAnalyze={loadingAnalyze} />,
+    );
+    expect(loadingWrapper.find('.analysis-wrapper').length).toEqual(1);
+    expect(loadingWrapper.find(NavFrontendSpinner).length).toEqual(1);
   });
 
   it('Render test to show components when no errors', () => {
