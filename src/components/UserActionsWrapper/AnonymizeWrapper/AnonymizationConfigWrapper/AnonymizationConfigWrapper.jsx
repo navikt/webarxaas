@@ -5,7 +5,7 @@ import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
-import Refactor from '../../../HelpTextWrapper/Refactor';
+import HelpText from '../../../HelpTextWrapper/HelpText';
 
 const AnonymizationConfigWrapper = (props) => {
   const {
@@ -27,7 +27,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="hierarchy-import-card col">
             <Card>
               <CardHeader title="Import Hierarchies" />
-              <Refactor dialogTitle={dialogTitle} dialogContent={dialogContent} />
+              <HelpText dialogTitle={dialogTitle} dialogContent={dialogContent} />
               <ImportHierarchies
                 attributes={attributes}
                 setAttributes={setAttributes}

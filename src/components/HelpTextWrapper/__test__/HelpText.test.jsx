@@ -1,6 +1,6 @@
 import React from 'react';
 import IconButton from '@material-ui/core/IconButton';
-import HelpText from '../Refactor';
+import HelpText from '../HelpText';
 import { shallow } from '../../../enzyme';
 
 describe('HelpText: Render Test', () => {
