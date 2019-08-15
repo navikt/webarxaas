@@ -69,4 +69,3 @@ const AnonymizationConfigWrapper = (props) => {
   return content;
 };
 export default AnonymizationConfigWrapper;
-// test
