@@ -5,7 +5,7 @@ import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
-import HelpText from '../../../helpTextWrapper/helpText';
+import HelpText from '../../../HelpTextWrapper/HelpText';
 
 const AnonymizationConfigWrapper = (props) => {
   const {
