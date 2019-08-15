@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -10,13 +11,11 @@ import IconButton from '@material-ui/core/IconButton';
 import { HelpOutline } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-function PaperComponent(props) {
-  return (
-    <Draggable cancel={'[class*="MuiDialogContent-root"]'}>
-      <Paper {...props} />
-    </Draggable>
-  );
-}
+const PaperComponent = props => (
+  <Draggable cancel={'[class*="MuiDialogContent-root"]'}>
+    <Paper {...props} />
+  </Draggable>
+);
 
 const useStyles = makeStyles(theme => ({
   button: {
@@ -27,7 +26,8 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function HelpText() {
+const HelpText = (props) => {
+  const { dialogTitle, dialogContent } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -52,12 +52,10 @@ export default function HelpText() {
         aria-labelledby="draggable-dialog-title"
       >
         <DialogTitle style={{ cursor: 'move' }} id="draggable-dialog-title">
-          Hierarchies
+          {dialogTitle}
         </DialogTitle>
         <DialogContent>
-          Hierarchies are strategies on how to throw or generalize data.
-          <br />
-          Import hierarchies transformation models from CSV file.
+          {dialogContent}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose} color="primary">
@@ -67,4 +65,11 @@ export default function HelpText() {
       </Dialog>
     </div>
   );
-}
+};
+
+HelpText.propTypes = {
+  dialogTitle: PropTypes.string.isRequired,
+  dialogContent: PropTypes.string.isRequired,
+};
+
+export default HelpText;
