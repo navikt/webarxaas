@@ -50,6 +50,8 @@ const MoreInfo = (props) => {
               attributes are not associated with privacy risks.
             </li>
           </ul>
+          <br />
+          <p>Attribute types are by default set to quasi-identifying.</p>
           <p><b>Prosecutor model:</b></p>
           <ul>
             <li>
