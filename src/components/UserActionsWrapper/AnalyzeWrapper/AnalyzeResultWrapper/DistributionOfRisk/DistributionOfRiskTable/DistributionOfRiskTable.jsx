@@ -4,6 +4,7 @@ import toPercent from '../../../../../../util/ratioToPercent';
 import 'react-table/react-table.css';
 import './__css__/DistributionOfRiskTable.css';
 
+
 const DistributionOfRiskTable = (props) => {
   const { riskIntervalList } = props;
   const riskData = [];
