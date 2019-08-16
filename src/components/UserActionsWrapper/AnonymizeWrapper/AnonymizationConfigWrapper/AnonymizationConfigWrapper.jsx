@@ -23,7 +23,7 @@ const AnonymizationConfigWrapper = (props) => {
       Hierarchies are strategies that define how the data is generalized.
       <br />
       <br />
-      Import hierarchies transformation models from CSV file.
+      Import hierarchy transformation models from CSV file.
     </p>
   );
 
