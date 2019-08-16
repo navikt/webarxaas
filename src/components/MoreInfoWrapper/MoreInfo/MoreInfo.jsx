@@ -66,7 +66,7 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-              This well-known privacy model aims at protecting datasets from re-identification in the prosecutor model.
+              This well-known privacy model aims at protecting dataset from re-identification in the prosecutor model.
                 <br />
               A dataset is k-anonymous if each record cannot be distinguished from at least k-1 other records regarding the quasi-identifiers.
                 <br />
