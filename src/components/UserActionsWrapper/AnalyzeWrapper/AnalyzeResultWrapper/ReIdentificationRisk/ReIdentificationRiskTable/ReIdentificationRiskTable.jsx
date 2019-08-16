@@ -1,6 +1,27 @@
 import React from 'react';
 import toPercent from '../../../../../../util/ratioToPercent';
 import './__css__/ReIdentificationRiskTable.css';
+import HelpText from '../../../../../HelpTextWrapper/HelpText';
+
+const dialogTitleProsecutorModel = 'Prosecutor Model:';
+
+const dialogContentProsecutorModel = (
+  <p>
+    In the prosecutor model the attacker targets a specific individual,
+    <br />
+    and it is assumed that the attacker already knows that data about the individual,
+     is contained in the dataset.
+  </p>
+);
+
+const dialogTitleJournalistModel = 'Journalist model:';
+
+const dialogContentJournalistModel = (
+  <p>
+    In the journalist model the attacker is trying to randomly re-identify a individual
+     with no background knowledge on anyone in the dataset.
+  </p>
+);
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
@@ -12,6 +33,10 @@ const ReIdentificationRiskTable = (props) => {
           <tbody>
             <tr>
               <td><p><b>Prosecutor model: </b></p></td>
+              <HelpText
+                dialogTitle={dialogTitleProsecutorModel}
+                dialogContent={dialogContentProsecutorModel}
+              />
             </tr>
             <tr>
               <td>Estimated prosecutor risk: </td>
@@ -58,6 +83,10 @@ const ReIdentificationRiskTable = (props) => {
 
             <tr>
               <td><p><b>Journalist model: </b></p></td>
+              <HelpText
+                dialogTitle={dialogTitleJournalistModel}
+                dialogContent={dialogContentJournalistModel}
+              />
             </tr>
             <tr>
               <td>Estimated journalist risk: </td>
