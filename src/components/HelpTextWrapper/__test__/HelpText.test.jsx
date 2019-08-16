@@ -9,7 +9,7 @@ describe('HelpText: Render Test', () => {
   let dialogTitle;
 
   beforeAll(() => {
-    dialogContent = 'Testing dialog content';
+    dialogContent = (<p>Testing dialog content</p>);
     dialogTitle = 'Testing dialog title';
 
     wrapper = shallow(<HelpText dialogTitle={dialogTitle} dialogContent={dialogContent} />);

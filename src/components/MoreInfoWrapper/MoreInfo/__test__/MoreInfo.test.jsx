@@ -18,6 +18,6 @@ describe('MoreInfo: Render test', () => {
 
   it('MoreInfo is not empty when showMoreInfo is false', () => {
     expect(wrapper.find('.more-info').length).toEqual(1);
-    expect(wrapper.find('li').length).toEqual(8);
+    expect(wrapper.find('li').length).toEqual(9);
   });
 });

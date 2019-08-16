@@ -69,7 +69,7 @@ const HelpText = (props) => {
 
 HelpText.propTypes = {
   dialogTitle: PropTypes.string.isRequired,
-  dialogContent: PropTypes.string.isRequired,
+  dialogContent: PropTypes.objectOf(String).isRequired,
 };
 
 export default HelpText;
