@@ -20,7 +20,7 @@ const AnonymizationConfigWrapper = (props) => {
 
   const dialogContentHierarchies = (
     <p>
-      Hierarchies are strategies on how to throw or generalize data.
+      Hierarchies are strategies that define how the data is generalized.
       <br />
       <br />
       Import hierarchies transformation models from CSV file.
@@ -30,7 +30,7 @@ const AnonymizationConfigWrapper = (props) => {
   const dialogTitlePrivacyModel = 'Privacy Models:';
 
   const dialogContentPrivacyModel = (
-    <p>
+    <div>
       <p><b>k-Anonymity</b></p>
       <ul>
         <li>
@@ -68,12 +68,17 @@ const AnonymizationConfigWrapper = (props) => {
           </p>
         </li>
       </ul>
-    </p>
+    </div>
   );
 
   const dialogTitleSuppressionLimit = 'Suppression Limit:';
 
-  const dialogContentSuppressionLimit = (<p>Suppression limit defines the amount of the uniq data ARX is allowed to delete to lower the hierarchy usage.</p>);
+  const dialogContentSuppressionLimit = (
+    <p>
+     Suppression limit defines the amount of the uniq data ARX is
+      allowed to delete to lower the hierarchy usage.
+    </p>
+  );
 
   const content = (
     <div className="anonymization-config-wrapper container-fluid">
