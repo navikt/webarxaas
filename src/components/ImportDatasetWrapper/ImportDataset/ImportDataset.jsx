@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import ParseFile from '../../../util/parseFile';
 import DragAndDropFile from '../../../util/dragAndDropFile';
 import './__css__/ImportDataset.css';
-import ImportDatasetHelpText from '../../HelpTextWrapper/ImportDatasetHelpText/ImportDatasetHelpText';
+import ImportDatasetHelpText from './ImportDatasetHelpText/ImportDatasetHelpText';
 
 const ImportDataset = (props) => {
   const {
