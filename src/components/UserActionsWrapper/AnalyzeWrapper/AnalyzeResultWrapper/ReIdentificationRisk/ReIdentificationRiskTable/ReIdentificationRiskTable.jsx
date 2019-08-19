@@ -275,12 +275,13 @@ const ReIdentificationRiskTable = (props) => {
                   dialogContent={dialogContentSampleUniqueness}
                 />
               </td>
-              <tr>
-                {
-                  toPercent(reIdentificationRisk.measures.sample_uniques)
-                }
-              </tr>
             </tr>
+            <td><p>Sample Uniques:</p></td>
+            <td>
+              {
+                toPercent(reIdentificationRisk.measures.sample_uniques)
+              }
+            </td>
             <tr>
               <td><b>Quasi-identifiers: </b></td>
               <td>

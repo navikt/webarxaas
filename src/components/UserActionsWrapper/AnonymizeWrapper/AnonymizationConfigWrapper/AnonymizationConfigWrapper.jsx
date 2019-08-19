@@ -75,8 +75,8 @@ const AnonymizationConfigWrapper = (props) => {
 
   const dialogContentSuppressionLimit = (
     <p>
-     Suppression limit defines the percentage of rows ARX is allowed to delete from the dataset.
-     <br />
+     Suppression limit defines the percentage of rows allowed to delete from the dataset.
+      <br />
      This is done to lower the amount of outliers in the dataset.
     </p>
   );
