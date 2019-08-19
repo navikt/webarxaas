@@ -1,5 +1,5 @@
 import React from 'react';
-import HelpText from '../HelpText';
+import HelpText from '../../../HelpTextWrapper/HelpText';
 
 const ImportDatasetHelpText = () => {
   const dialogTitleImportDataset = 'CSV import file:';
