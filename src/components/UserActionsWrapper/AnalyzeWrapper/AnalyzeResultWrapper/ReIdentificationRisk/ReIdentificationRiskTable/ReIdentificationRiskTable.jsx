@@ -8,10 +8,10 @@ const dialogTitleProsecutorModel = 'Prosecutor Model:';
 const dialogContentProsecutorModel = (
   <div>
     <p>
-    In the prosecutor model the attacker targets a specific individual,
+      In the prosecutor model the attacker targets a specific individual,
       <br />
-    and it is assumed that the attacker already knows that data about the individual,
-     is contained in the dataset.
+      and it is assumed that the attacker already knows that data about the individual,
+       is contained in the dataset.
     </p>
   </div>
 );
@@ -21,8 +21,8 @@ const dialogTitleJournalistModel = 'Journalist model:';
 const dialogContentJournalistModel = (
   <div>
     <p>
-    In the journalist model the attacker is trying to randomly re-identify a individual
-     with no background knowledge on anyone in the dataset.
+      In the journalist model the attacker is trying to randomly re-identify a individual
+       with no background knowledge on anyone in the dataset.
     </p>
   </div>
 );
@@ -32,9 +32,9 @@ const dialogTitleMarketerModel = 'Marketer model:';
 const dialogContentMarketerModel = (
   <div>
     <p>
-    In the marketer model the attacker does not target a specific individual but aims at
-     re-identifying a high number of individuals. An attack can therefore only be considered
-      successful if a larger fraction of the records could be re-identified.
+      In the marketer model the attacker does not target a specific individual but aims at
+       re-identifying a high number of individuals. An attack can therefore only be considered
+        successful if a larger fraction of the records could be re-identified.
     </p>
   </div>
 );
@@ -72,7 +72,7 @@ const dialogContentLowestRisk = (
         Records affected by lowest risk
         {' '}
       </b>
-        displays the percentage of records with the lowest risk.
+      displays the percentage of records with the lowest risk.
     </p>
   </div>
 );
@@ -83,7 +83,7 @@ const dialogContentSampleUniqueness = (
   <div>
     <p>
       <b>Sample Uniques </b>
-       displays the datasets unique data in percent.
+      displays the datasets unique data in percent.
     </p>
   </div>
 );
@@ -148,10 +148,12 @@ const ReIdentificationRiskTable = (props) => {
 
             <tr>
               <td><p><b>Journalist model: </b></p></td>
-              <HelpText
-                dialogTitle={dialogTitleJournalistModel}
-                dialogContent={dialogContentJournalistModel}
-              />
+              <td>
+                <HelpText
+                  dialogTitle={dialogTitleJournalistModel}
+                  dialogContent={dialogContentJournalistModel}
+                />
+              </td>
             </tr>
             <tr>
               <td>Estimated journalist risk: </td>
@@ -191,10 +193,12 @@ const ReIdentificationRiskTable = (props) => {
 
             <tr>
               <td><p><b>Marketer model: </b></p></td>
-              <HelpText
-                dialogTitle={dialogTitleMarketerModel}
-                dialogContent={dialogContentMarketerModel}
-              />
+              <td>
+                <HelpText
+                  dialogTitle={dialogTitleMarketerModel}
+                  dialogContent={dialogContentMarketerModel}
+                />
+              </td>
             </tr>
             <tr>
               <td>Estimated marketer risk: </td>
@@ -216,10 +220,12 @@ const ReIdentificationRiskTable = (props) => {
 
             <tr>
               <td><p><b>Population: </b></p></td>
-              <HelpText
-                dialogTitle={dialogTitlePopulation}
-                dialogContent={dialogContentPopulation}
-              />
+              <td>
+                <HelpText
+                  dialogTitle={dialogTitlePopulation}
+                  dialogContent={dialogContentPopulation}
+                />
+              </td>
             </tr>
             <tr>
               <td>Population uniques: </td>
@@ -237,11 +243,14 @@ const ReIdentificationRiskTable = (props) => {
 
             <tr>
               <td><p><b>Lowest risk</b></p></td>
-              <HelpText
-                dialogTitle={dialogTitleLowestRisk}
-                dialogContent={dialogContentLowestRisk}
-              />
+              <td>
+                <HelpText
+                  dialogTitle={dialogTitleLowestRisk}
+                  dialogContent={dialogContentLowestRisk}
+                />
+              </td>
             </tr>
+
             <tr>
               <td>Lowest risk: </td>
               <td>
@@ -260,15 +269,20 @@ const ReIdentificationRiskTable = (props) => {
             </tr>
             <tr>
               <td><b>Sample Uniques: </b></td>
-              <HelpText
-                dialogTitle={dialogTitleSampleUniqueness}
-                dialogContent={dialogContentSampleUniqueness}
-              />
-              <tr>
+              <td>
+                <HelpText
+                  dialogTitle={dialogTitleSampleUniqueness}
+                  dialogContent={dialogContentSampleUniqueness}
+                />
+              </td>
+            </tr>
+            <tr>
+              <td><p>Sample Uniques:</p></td>
+              <td>
                 {
                   toPercent(reIdentificationRisk.measures.sample_uniques)
                 }
-              </tr>
+              </td>
             </tr>
             <tr>
               <td><b>Quasi-identifiers: </b></td>
