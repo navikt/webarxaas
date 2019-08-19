@@ -34,7 +34,7 @@ const AttributeRiskTable = (props) => {
 
   const content = (
     <div className="attribute-risk-table">
-      <h3>Attribute Risk</h3>
+      <h3>Attribute Risk </h3>
       <ReactTable
         data={riskData}
         columns={columns}
