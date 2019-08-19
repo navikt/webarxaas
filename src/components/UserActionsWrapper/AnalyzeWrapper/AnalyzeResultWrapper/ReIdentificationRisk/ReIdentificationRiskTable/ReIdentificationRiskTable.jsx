@@ -276,12 +276,14 @@ const ReIdentificationRiskTable = (props) => {
                 />
               </td>
             </tr>
-            <td><p>Sample Uniques:</p></td>
-            <td>
-              {
-                toPercent(reIdentificationRisk.measures.sample_uniques)
-              }
-            </td>
+            <tr>
+              <td><p>Sample Uniques:</p></td>
+              <td>
+                {
+                  toPercent(reIdentificationRisk.measures.sample_uniques)
+                }
+              </td>
+            </tr>
             <tr>
               <td><b>Quasi-identifiers: </b></td>
               <td>
