@@ -5,6 +5,7 @@ import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
+import HierarchiesHelpText from './AnonymizationConfigWrapperHelpText/HierarchiesHelpText';
 import HelpText from '../../../HelpTextWrapper/HelpText';
 
 const AnonymizationConfigWrapper = (props) => {
@@ -15,17 +16,6 @@ const AnonymizationConfigWrapper = (props) => {
     setLoadingAnonymize, dataset, setResponse,
     endpoint,
   } = props;
-
-  const dialogTitleHierarchies = 'Hierarchies:';
-
-  const dialogContentHierarchies = (
-    <p>
-      Hierarchies are strategies that define how the data is generalized.
-      <br />
-      <br />
-      Import hierarchy transformation models from CSV file.
-    </p>
-  );
 
   const dialogTitlePrivacyModel = 'Privacy Models:';
 
@@ -88,10 +78,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="hierarchy-import-card col">
             <Card>
               <CardHeader title="Import Hierarchies" />
-              <HelpText
-                dialogTitle={dialogTitleHierarchies}
-                dialogContent={dialogContentHierarchies}
-              />
+              <HierarchiesHelpText />
               <ImportHierarchies
                 attributes={attributes}
                 setAttributes={setAttributes}
