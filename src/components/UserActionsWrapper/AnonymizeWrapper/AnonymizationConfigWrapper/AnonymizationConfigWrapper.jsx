@@ -7,7 +7,7 @@ import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
 import HierarchiesHelpText from './AnonymizationConfigWrapperHelpText/HierarchiesHelpText';
 import PrivacyModelHelpText from './AnonymizationConfigWrapperHelpText/PrivacyModelHelpText';
-import HelpText from '../../../HelpTextWrapper/HelpText';
+import SuppressionLimitHelpText from './AnonymizationConfigWrapperHelpText/SuppressionLimitHelpText';
 
 const AnonymizationConfigWrapper = (props) => {
   const {
@@ -17,16 +17,6 @@ const AnonymizationConfigWrapper = (props) => {
     setLoadingAnonymize, dataset, setResponse,
     endpoint,
   } = props;
-
-  const dialogTitleSuppressionLimit = 'Suppression Limit:';
-
-  const dialogContentSuppressionLimit = (
-    <p>
-     Suppression limit defines the percentage of rows allowed to delete from the dataset.
-      <br />
-     This is done to lower the amount of outliers in the dataset.
-    </p>
-  );
 
   const content = (
     <div className="anonymization-config-wrapper container-fluid">
@@ -56,10 +46,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="suppression-limit-card col">
             <Card>
               <CardHeader title="Set Suppression Limit" />
-              <HelpText
-                dialogTitle={dialogTitleSuppressionLimit}
-                dialogContent={dialogContentSuppressionLimit}
-              />
+              <SuppressionLimitHelpText />
               <SuppressionLimit
                 suppressionLimit={suppressionLimit}
                 setSuppressionLimit={setSuppressionLimit}
