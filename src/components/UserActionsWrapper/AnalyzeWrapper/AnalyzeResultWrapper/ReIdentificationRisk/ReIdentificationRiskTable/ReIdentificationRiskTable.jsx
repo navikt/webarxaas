@@ -3,6 +3,7 @@ import toPercent from '../../../../../../util/ratioToPercent';
 import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
+import LowestRiskHelpText from './ReidentifcationRiskTableHelpText/LowestRiskHelpText';
 import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const dialogTitleMarketerModel = 'Marketer model:';
@@ -35,23 +36,6 @@ const dialogContentPopulation = (
     </p>
     <br />
     <p>The supported models are PITMAIN and SNB.</p>
-  </div>
-);
-
-const dialogTitleLowestRisk = 'Lowest Risk:';
-
-const dialogContentLowestRisk = (
-  <div>
-    <p>
-      <b>Lowest risk </b>
-      displays the lowest risk in the dataset.
-      <br />
-      <b>
-        Records affected by lowest risk
-        {' '}
-      </b>
-      displays the percentage of records with the lowest risk.
-    </p>
   </div>
 );
 
@@ -218,10 +202,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Lowest risk</b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleLowestRisk}
-                  dialogContent={dialogContentLowestRisk}
-                />
+                <LowestRiskHelpText />
               </td>
             </tr>
 
