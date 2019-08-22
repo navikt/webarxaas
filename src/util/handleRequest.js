@@ -10,12 +10,12 @@ export default function handleRequest(
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes, privacyModels, suppressionLimit);
     formData.append('payload', JSON.stringify(payload));
-    ArxRequest(setLoadingFunction, endpoint, payload, service, setResponse);
+    ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
   } else if (datasetFile && attributes) {
     const formData = new FormData();
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes);
     formData.append('payload', JSON.stringify(payload));
-    ArxRequest(setLoadingFunction, endpoint, payload, service, setResponse);
+    ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
   }
 }
