@@ -2,30 +2,9 @@ import React from 'react';
 import toPercent from '../../../../../../util/ratioToPercent';
 import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
+import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
+import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
 import HelpText from '../../../../../HelpTextWrapper/HelpText';
-
-const dialogTitleJournalistModel = 'Journalist model:';
-
-const dialogContentJournalistModel = (
-  <div>
-    <p>
-      In the journalist model the attacker is trying to randomly re-identify a individual
-       with no background knowledge on anyone in the dataset.
-    </p>
-  </div>
-);
-
-const dialogTitleMarketerModel = 'Marketer model:';
-
-const dialogContentMarketerModel = (
-  <div>
-    <p>
-      In the marketer model the attacker does not target a specific individual but aims at
-       re-identifying a high number of individuals. An attack can therefore only be considered
-        successful if a larger fraction of the records could be re-identified.
-    </p>
-  </div>
-);
 
 const dialogTitlePopulation = 'Population:';
 
@@ -86,7 +65,9 @@ const ReIdentificationRiskTable = (props) => {
           <tbody>
             <tr>
               <td><p><b>Prosecutor model: </b></p></td>
-              <ProsecutorModelHelpText />
+              <td>
+                <ProsecutorModelHelpText />
+              </td>
             </tr>
             <tr>
               <td>Estimated prosecutor risk: </td>
@@ -134,10 +115,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Journalist model: </b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleJournalistModel}
-                  dialogContent={dialogContentJournalistModel}
-                />
+                <JournalistModelHelpText />
               </td>
             </tr>
             <tr>
@@ -179,10 +157,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Marketer model: </b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleMarketerModel}
-                  dialogContent={dialogContentMarketerModel}
-                />
+                <MarketerModelHelpText />
               </td>
             </tr>
             <tr>
