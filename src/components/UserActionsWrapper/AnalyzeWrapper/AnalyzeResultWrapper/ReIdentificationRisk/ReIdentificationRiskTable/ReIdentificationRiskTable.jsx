@@ -3,6 +3,7 @@ import toPercent from '../../../../../../util/ratioToPercent';
 import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
+import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
 import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const dialogTitleMarketerModel = 'Marketer model:';
@@ -51,17 +52,6 @@ const dialogContentLowestRisk = (
         {' '}
       </b>
       displays the percentage of records with the lowest risk.
-    </p>
-  </div>
-);
-
-const dialogTitleSampleUniqueness = 'Sample Uniques:';
-
-const dialogContentSampleUniqueness = (
-  <div>
-    <p>
-      <b>Sample Uniques </b>
-      displays the datasets unique data in percent.
     </p>
   </div>
 );
@@ -244,10 +234,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><b>Sample Uniques: </b></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleSampleUniqueness}
-                  dialogContent={dialogContentSampleUniqueness}
-                />
+                <SampleUniquesHelpText />
               </td>
             </tr>
             <tr>
