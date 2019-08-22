@@ -1,10 +1,10 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
-import handleRequest from '../../../../util/handleRequest';
+import handleFormDataRequest from '../../../../util/handleFormDataRequest';
 
 const AnalyzeButton = (props) => {
   const {
-    setLoadingAnalyze, dataset, attributes, endpoint, setResponse,
+    setLoadingAnalyze, datasetFile, attributes, endpoint, setResponse,
   } = props;
 
   const content = (
@@ -14,7 +14,7 @@ const AnalyzeButton = (props) => {
         onClick={
           () => {
             setLoadingAnalyze(true);
-            handleRequest(setLoadingAnalyze, 'analyze', endpoint, setResponse, dataset, attributes);
+            handleFormDataRequest(setLoadingAnalyze, 'analyze/file', endpoint, setResponse, datasetFile, attributes);
           }
         }
       >

@@ -5,7 +5,7 @@ import AnalyzeResultWrapper from './AnalyzeResultWrapper/AnalyzeResultWrapper';
 
 const AnalyzeWrapper = (props) => {
   const {
-    dataset,
+    datasetFile,
     attributes,
     endpoint,
     loadingAnalyze,
@@ -18,7 +18,7 @@ const AnalyzeWrapper = (props) => {
       <br />
       <AnalyzeButton
         setLoadingAnalyze={setLoadingAnalyze}
-        dataset={dataset}
+        datasetFile={datasetFile}
         attributes={attributes}
         endpoint={endpoint}
         setResponse={setAnalyzeResponse}
@@ -33,7 +33,7 @@ const AnalyzeWrapper = (props) => {
 };
 
 AnalyzeWrapper.propTypes = {
-  dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
+  datasetFile: PropTypes.objectOf().isRequired,
   attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
   endpoint: PropTypes.string.isRequired,
   loadingAnalyze: PropTypes.bool.isRequired,

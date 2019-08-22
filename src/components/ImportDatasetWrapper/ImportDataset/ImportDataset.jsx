@@ -7,7 +7,7 @@ import ImportDatasetHelpText from './ImportDatasetHelpText/ImportDatasetHelpText
 const ImportDataset = (props) => {
   const {
     setLoadingDataset, setSnackbar,
-    setAttributes, setDataset, defaultAttributeType, setFileName, dataset,
+    setAttributes, setDataset, setDatasetFile, defaultAttributeType, setFileName, dataset,
   } = props;
   useEffect(() => {
     DragAndDropFile(setAttributes, setDataset, defaultAttributeType, setLoadingDataset);
@@ -34,8 +34,9 @@ const ImportDataset = (props) => {
                   if (e.target.files[0]) {
                     setFileName(e.target.files[0].name);
                     setLoadingDataset(true);
+                    setDatasetFile(e.target.files[0]);
                     ParseFile(
-                      e.target.files[0],
+                      e.target.files[0].slice(0, 10000),
                       setAttributes,
                       setDataset,
                       defaultAttributeType,

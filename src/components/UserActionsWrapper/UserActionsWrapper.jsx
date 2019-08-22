@@ -26,6 +26,7 @@ const UserActionsWrapper = (props) => {
 
   const {
     dataset,
+    datasetFile,
     attributes,
     endpoint,
     fileName,
@@ -46,7 +47,7 @@ const UserActionsWrapper = (props) => {
   if (tabIndex === 0) {
     userActionView = (
       <AnalyzeWrapper
-        dataset={dataset}
+        datasetFile={datasetFile}
         attributes={attributes}
         endpoint={endpoint}
         loadingAnalyze={loadingAnalyze}
@@ -90,6 +91,7 @@ const UserActionsWrapper = (props) => {
 
 UserActionsWrapper.propTypes = {
   dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
+  datasetFile: PropTypes.objectOf().isRequired,
   attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
   endpoint: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
