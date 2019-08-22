@@ -3,6 +3,22 @@ import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
 } from 'recharts';
 import './__css__/RiskDistributionGraph.css';
+import HelpText from '../../../../../HelpTextWrapper/HelpText';
+
+const dialogTitleDistributionOfRiskTable = 'Distribution Of Risk:';
+
+const dialogContentDistributionOfRiskTable = (
+  <div>
+    <p>
+      In this graph, the distribution of re-identification risk
+       amongst the records of the dataset is displayed.
+      <br />
+      <br />
+       The risk is displayed [from,to) and the percentage of record
+        affected by the risk is displayed in the Y-axis.
+    </p>
+  </div>
+);
 
 const RiskDistributionGraph = (props) => {
   const { RiskDistribution } = props;
@@ -17,6 +33,10 @@ const RiskDistributionGraph = (props) => {
 
   const content = (
     <div className="risk-distribution-graph">
+      <HelpText
+        dialogTitle={dialogTitleDistributionOfRiskTable}
+        dialogContent={dialogContentDistributionOfRiskTable}
+      />
       <BarChart
         width={1000}
         height={500}

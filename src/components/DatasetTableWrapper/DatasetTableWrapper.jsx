@@ -7,6 +7,7 @@ import DatasetTable from './DatasetTable/DatasetTable';
 import ExportAttributeButton from './ExportAttributeTypeButton/ExportAttributeTypeButton';
 import ImportAttributeButton from './ImportAttributeTypeButton/ImportAttributeTypeButton';
 import './__css__/DatasetTableWrapper.css';
+import DatasetTableWrapperHelpText from './DatasetTableWrapperHelpText/DatasetTableWrapperHelpText';
 
 const useStyles = makeStyles({
   paper: {
@@ -34,11 +35,11 @@ const DatasetTableWrapper = (props) => {
       <div className="dataset-table-wrapper wrapper">
         <Paper className={classes.paper} elevation={3}>
           <Alert variant="info">
-          Previewing first 100 of
+            Previewing first 100 of
             {' '}
             {dataset.length}
             {' '}
-          rows in
+            rows in
             {' '}
             {fileName}
           </Alert>
@@ -51,6 +52,7 @@ const DatasetTableWrapper = (props) => {
             attributes={attributes}
             fileName={fileName}
           />
+          <DatasetTableWrapperHelpText />
           <DatasetTable
             setAttributes={setAttributes}
             dataset={dataset}

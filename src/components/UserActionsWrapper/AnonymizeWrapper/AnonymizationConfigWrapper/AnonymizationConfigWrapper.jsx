@@ -5,7 +5,9 @@ import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
 import AnonymizeButton from './AnonymizeButton/AnonymizeButton';
 import PrivacyModelWrapper from './PrivacyModelWrapper/PrivacyModelWrapper';
 import './__css__/AnonymizationConfigWrapper.css';
-import HelpText from '../../../HelpTextWrapper/HelpText';
+import HierarchiesHelpText from './AnonymizationConfigWrapperHelpText/HierarchiesHelpText';
+import PrivacyModelHelpText from './AnonymizationConfigWrapperHelpText/PrivacyModelHelpText';
+import SuppressionLimitHelpText from './AnonymizationConfigWrapperHelpText/SuppressionLimitHelpText';
 
 const AnonymizationConfigWrapper = (props) => {
   const {
@@ -16,10 +18,6 @@ const AnonymizationConfigWrapper = (props) => {
     endpoint,
   } = props;
 
-  const dialogTitle = 'Hierarchies';
-
-  const dialogContent = 'Hierarchies are strategies on how to throw or generalize data.\nImport hierarchies transformation models from CSV file.';
-
   const content = (
     <div className="anonymization-config-wrapper container-fluid">
       <div className="container-fluid">
@@ -27,7 +25,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="hierarchy-import-card col">
             <Card>
               <CardHeader title="Import Hierarchies" />
-              <HelpText dialogTitle={dialogTitle} dialogContent={dialogContent} />
+              <HierarchiesHelpText />
               <ImportHierarchies
                 attributes={attributes}
                 setAttributes={setAttributes}
@@ -37,6 +35,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="privacy-model-manager-card col">
             <Card>
               <CardHeader title="Set Privacy Model(s)" />
+              <PrivacyModelHelpText />
               <PrivacyModelWrapper
                 attributes={attributes}
                 privacyModels={privacyModels}
@@ -47,6 +46,7 @@ const AnonymizationConfigWrapper = (props) => {
           <div className="suppression-limit-card col">
             <Card>
               <CardHeader title="Set Suppression Limit" />
+              <SuppressionLimitHelpText />
               <SuppressionLimit
                 suppressionLimit={suppressionLimit}
                 setSuppressionLimit={setSuppressionLimit}

@@ -3,6 +3,7 @@ import ReactTable from 'react-table';
 import toPercent from '../../../../../../util/ratioToPercent';
 import 'react-table/react-table.css';
 
+
 const AttributeRiskTable = (props) => {
   const { attributeRisk } = props;
   const riskData = attributeRisk.quasiIdentifierRiskList
@@ -33,7 +34,7 @@ const AttributeRiskTable = (props) => {
 
   const content = (
     <div className="attribute-risk-table">
-      <h3>Attribute Risk</h3>
+      <h3>Attribute Risk </h3>
       <ReactTable
         data={riskData}
         columns={columns}
