@@ -5,6 +5,7 @@ import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/Prosecut
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
 import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
 import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
+import LowestRiskHelpText from './ReidentifcationRiskTableHelpText/LowestRiskHelpText';
 import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const dialogTitlePopulation = 'Population:';
@@ -25,23 +26,6 @@ const dialogContentPopulation = (
     </p>
     <br />
     <p>The supported models are PITMAIN and SNB.</p>
-  </div>
-);
-
-const dialogTitleLowestRisk = 'Lowest Risk:';
-
-const dialogContentLowestRisk = (
-  <div>
-    <p>
-      <b>Lowest risk </b>
-      displays the lowest risk in the dataset.
-      <br />
-      <b>
-        Records affected by lowest risk
-        {' '}
-      </b>
-      displays the percentage of records with the lowest risk.
-    </p>
   </div>
 );
 
@@ -194,10 +178,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Lowest risk</b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleLowestRisk}
-                  dialogContent={dialogContentLowestRisk}
-                />
+                <LowestRiskHelpText />
               </td>
             </tr>
 
