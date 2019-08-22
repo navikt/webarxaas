@@ -14,7 +14,7 @@ const AnonymizationConfigWrapper = (props) => {
     attributes, setAttributes,
     privacyModels, setPrivacyModels,
     suppressionLimit, setSuppressionLimit,
-    setLoadingAnonymize, dataset, setResponse,
+    setLoadingAnonymize, datasetFile, setResponse,
     endpoint,
   } = props;
 
@@ -57,7 +57,7 @@ const AnonymizationConfigWrapper = (props) => {
       </div>
       <AnonymizeButton
         setLoadingAnonymize={setLoadingAnonymize}
-        dataset={dataset}
+        datasetFile={datasetFile}
         attributes={attributes}
         privacyModels={privacyModels}
         suppressionLimit={suppressionLimit}

@@ -5,7 +5,7 @@ import './__css__/AnonymizeButton.css';
 
 const AnonymizeButton = (props) => {
   const {
-    setLoadingAnonymize, dataset,
+    setLoadingAnonymize, datasetFile,
     attributes, privacyModels, suppressionLimit,
     endpoint, setResponse,
   } = props;
@@ -14,7 +14,7 @@ const AnonymizeButton = (props) => {
     <div className="anonymize-button small">
       <Knapp onClick={() => {
         setLoadingAnonymize(true);
-        handleRequest(setLoadingAnonymize, 'anonymize', endpoint, setResponse, dataset, attributes, privacyModels, suppressionLimit);
+        handleRequest(setLoadingAnonymize, 'anonymize/file', endpoint, setResponse, datasetFile, attributes, privacyModels, suppressionLimit);
       }}
       >
         Anonymize Dataset

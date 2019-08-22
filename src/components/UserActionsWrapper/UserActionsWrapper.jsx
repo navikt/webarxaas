@@ -59,7 +59,7 @@ const UserActionsWrapper = (props) => {
   } else {
     userActionView = (
       <AnonymizeWrapper
-        dataset={dataset}
+        datasetFile={datasetFile}
         fileName={fileName}
         attributes={attributes}
         endpoint={endpoint}
