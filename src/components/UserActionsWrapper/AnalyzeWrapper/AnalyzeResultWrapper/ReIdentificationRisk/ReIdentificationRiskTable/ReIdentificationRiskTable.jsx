@@ -6,9 +6,7 @@ import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/Journali
 import PopulationHelpText from './ReidentifcationRiskTableHelpText/PopulationHelpText';
 import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
 import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
-import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
 import LowestRiskHelpText from './ReidentifcationRiskTableHelpText/LowestRiskHelpText';
-import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
