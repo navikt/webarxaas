@@ -18,6 +18,7 @@ function App() {
 
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState([]);
+  const [datasetFile, setDatasetFile] = useState({});
   const [attributes, setAttributes] = useState([]);
 
   const [showMoreInfo, setShowMoreInfo] = useState(false);
@@ -32,11 +33,13 @@ function App() {
       <MoreInfoWrapper
         showMoreInfo={showMoreInfo}
       />
+
       <ImportDatasetWrapper
         loadingDataset={loadingDataset}
         setSnackbar={setSnackbar}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
+        setDatasetFile={setDatasetFile}
         setDataset={setDataset}
         dataset={dataset}
         setFileName={setFileName}
@@ -51,6 +54,7 @@ function App() {
       />
       <UserActionsWrapper
         dataset={dataset}
+        datasetFile={datasetFile}
         attributes={attributes}
         setAttributes={setAttributes}
         endpoint={arxaasEndpoint}

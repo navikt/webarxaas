@@ -5,7 +5,7 @@ import AnonymizedDatasetWrapper from './AnonymizedDatasetWrapper/AnonymizedDatas
 
 const AnonymizeWrapper = (props) => {
   const {
-    dataset,
+    datasetFile,
     fileName,
     attributes,
     endpoint,
@@ -29,7 +29,7 @@ const AnonymizeWrapper = (props) => {
         suppressionLimit={suppressionLimit}
         setSuppressionLimit={setSuppressionLimit}
         setLoadingAnonymize={setLoadingAnonymize}
-        dataset={dataset}
+        datasetFile={datasetFile}
         setResponse={setAnonymizeResponse}
         endpoint={endpoint}
       />
@@ -43,7 +43,7 @@ const AnonymizeWrapper = (props) => {
 };
 
 AnonymizeWrapper.propTypes = {
-  dataset: PropTypes.arrayOf(PropTypes.array).isRequired,
+  datasetFile: PropTypes.objectOf(PropTypes.object).isRequired,
   attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
   endpoint: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,

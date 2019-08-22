@@ -1,11 +1,8 @@
-export default function ArxRequest(setLoadingFunction, endpoint, payload, service, setResponse) {
+export default function ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse) {
   fetch(`${endpoint}/api/${service}`, {
     crossDomain: true,
     method: 'post',
-    body: JSON.stringify(payload),
-    headers: {
-      'Content-Type': 'application/json',
-    },
+    body: formData,
   }).then(response => (response.json())).then((data) => {
     setResponse(data);
     setLoadingFunction(false);
