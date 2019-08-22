@@ -3,31 +3,10 @@ import toPercent from '../../../../../../util/ratioToPercent';
 import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
-import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
+import PopulationHelpText from './ReidentifcationRiskTableHelpText/PopulationHelpText';
 import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
+import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
 import LowestRiskHelpText from './ReidentifcationRiskTableHelpText/LowestRiskHelpText';
-import HelpText from '../../../../../HelpTextWrapper/HelpText';
-
-const dialogTitlePopulation = 'Population:';
-
-const dialogContentPopulation = (
-  <div>
-    <p>
-      The
-      {' '}
-      <b>population uniqueness </b>
-      privacy model aims at protecting datasets from re-identification
-       in the marketer model by enforcing thresholds on the proportion of records
-        that are unique within the underlying population. For this purpose, basic
-         information about the population has to be specified. Based on this data,
-          statistical super-population models are used to estimate characteristics
-           of the overall population with probability distributions that are
-            parameterized with sample characteristics.
-    </p>
-    <br />
-    <p>The supported models are PITMAIN and SNB.</p>
-  </div>
-);
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
@@ -155,10 +134,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Population: </b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitlePopulation}
-                  dialogContent={dialogContentPopulation}
-                />
+                <PopulationHelpText />
               </td>
             </tr>
             <tr>
