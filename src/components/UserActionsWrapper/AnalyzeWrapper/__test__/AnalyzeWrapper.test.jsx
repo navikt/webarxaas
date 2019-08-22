@@ -6,7 +6,7 @@ import { shallow } from '../../../../enzyme';
 
 describe('AnalyzeWrapper: Render test', () => {
   let wrapper;
-  let dataset;
+  let datasetFile;
   let attributes;
   let endpoint;
   let loadingAnalyze;
@@ -19,7 +19,7 @@ describe('AnalyzeWrapper: Render test', () => {
   };
 
   beforeAll(() => {
-    dataset = [['Navn', 'Alder'], ['Per', '28'], ['Oda', '28']];
+    datasetFile = { content: [['Navn', 'Alder'], ['Per', '28'], ['Oda', '28']] };
     attributes = [{ attributeTypeModel: 'QUASIIDENTIFYING', field: 'Navn', hierarchy: null },
       { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Alder', hierarchy: null }];
     endpoint = 'analyze';
@@ -75,7 +75,7 @@ describe('AnalyzeWrapper: Render test', () => {
 
     wrapper = shallow(
       <AnalyzeWrapper
-        dataset={dataset}
+        datasetFile={datasetFile}
         attributes={attributes}
         endpoint={endpoint}
         loadingAnalyze={loadingAnalyze}
