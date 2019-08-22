@@ -3,6 +3,7 @@ import toPercent from '../../../../../../util/ratioToPercent';
 import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
+import PopulationHelpText from './ReidentifcationRiskTableHelpText/PopulationHelpText';
 import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const dialogTitleMarketerModel = 'Marketer model:';
@@ -14,27 +15,6 @@ const dialogContentMarketerModel = (
        re-identifying a high number of individuals. An attack can therefore only be considered
         successful if a larger fraction of the records could be re-identified.
     </p>
-  </div>
-);
-
-const dialogTitlePopulation = 'Population:';
-
-const dialogContentPopulation = (
-  <div>
-    <p>
-      The
-      {' '}
-      <b>population uniqueness </b>
-      privacy model aims at protecting datasets from re-identification
-       in the marketer model by enforcing thresholds on the proportion of records
-        that are unique within the underlying population. For this purpose, basic
-         information about the population has to be specified. Based on this data,
-          statistical super-population models are used to estimate characteristics
-           of the overall population with probability distributions that are
-            parameterized with sample characteristics.
-    </p>
-    <br />
-    <p>The supported models are PITMAIN and SNB.</p>
   </div>
 );
 
@@ -195,10 +175,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Population: </b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitlePopulation}
-                  dialogContent={dialogContentPopulation}
-                />
+                <PopulationHelpText />
               </td>
             </tr>
             <tr>
