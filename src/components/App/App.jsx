@@ -7,7 +7,6 @@ import ImportDatasetWrapper from '../ImportDatasetWrapper/ImportDatasetWrapper';
 import UserActionsWrapper from '../UserActionsWrapper/UserActionsWrapper';
 import Footer from '../Footer/Footer';
 import SnackbarWrapper from '../SnackbarWrapper/SnackbarWrapper';
-import handleUpload from '../../util/handleUpload';
 import './__css__/App.css';
 
 function App() {
@@ -19,6 +18,7 @@ function App() {
 
   const [loadingDataset, setLoadingDataset] = useState(false);
   const [dataset, setDataset] = useState([]);
+  const [datasetFile, setDatasetFile] = useState({});
   const [attributes, setAttributes] = useState([]);
 
   const [showMoreInfo, setShowMoreInfo] = useState(false);
@@ -39,6 +39,7 @@ function App() {
         setSnackbar={setSnackbar}
         setLoadingDataset={setLoadingDataset}
         setAttributes={setAttributes}
+        setDatasetFile={setDatasetFile}
         setDataset={setDataset}
         dataset={dataset}
         setFileName={setFileName}
@@ -53,6 +54,7 @@ function App() {
       />
       <UserActionsWrapper
         dataset={dataset}
+        datasetFile={datasetFile}
         attributes={attributes}
         setAttributes={setAttributes}
         endpoint={arxaasEndpoint}
@@ -62,13 +64,6 @@ function App() {
       <SnackbarWrapper
         snackbar={snackbar}
         setSnackbar={setSnackbar}
-      />
-
-      <input
-        type="file"
-        onChange={(e) => {
-          handleUpload(e.target.files[0], attributes);
-        }}
       />
     </div>
   );
