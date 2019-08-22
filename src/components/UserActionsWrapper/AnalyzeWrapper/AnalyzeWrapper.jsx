@@ -33,7 +33,7 @@ const AnalyzeWrapper = (props) => {
 };
 
 AnalyzeWrapper.propTypes = {
-  datasetFile: PropTypes.objectOf().isRequired,
+  datasetFile: PropTypes.objectOf(PropTypes.object).isRequired,
   attributes: PropTypes.arrayOf(PropTypes.object).isRequired,
   endpoint: PropTypes.string.isRequired,
   loadingAnalyze: PropTypes.bool.isRequired,
