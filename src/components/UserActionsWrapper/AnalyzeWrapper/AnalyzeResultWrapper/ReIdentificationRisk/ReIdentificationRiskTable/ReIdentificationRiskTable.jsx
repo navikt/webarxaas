@@ -4,47 +4,8 @@ import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
 import PopulationHelpText from './ReidentifcationRiskTableHelpText/PopulationHelpText';
-import HelpText from '../../../../../HelpTextWrapper/HelpText';
+import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
 
-const dialogTitleMarketerModel = 'Marketer model:';
-
-const dialogContentMarketerModel = (
-  <div>
-    <p>
-      In the marketer model the attacker does not target a specific individual but aims at
-       re-identifying a high number of individuals. An attack can therefore only be considered
-        successful if a larger fraction of the records could be re-identified.
-    </p>
-  </div>
-);
-
-const dialogTitleLowestRisk = 'Lowest Risk:';
-
-const dialogContentLowestRisk = (
-  <div>
-    <p>
-      <b>Lowest risk </b>
-      displays the lowest risk in the dataset.
-      <br />
-      <b>
-        Records affected by lowest risk
-        {' '}
-      </b>
-      displays the percentage of records with the lowest risk.
-    </p>
-  </div>
-);
-
-const dialogTitleSampleUniqueness = 'Sample Uniques:';
-
-const dialogContentSampleUniqueness = (
-  <div>
-    <p>
-      <b>Sample Uniques </b>
-      displays the datasets unique data in percent.
-    </p>
-  </div>
-);
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
@@ -148,10 +109,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Marketer model: </b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleMarketerModel}
-                  dialogContent={dialogContentMarketerModel}
-                />
+                <MarketerModelHelpText />
               </td>
             </tr>
             <tr>
