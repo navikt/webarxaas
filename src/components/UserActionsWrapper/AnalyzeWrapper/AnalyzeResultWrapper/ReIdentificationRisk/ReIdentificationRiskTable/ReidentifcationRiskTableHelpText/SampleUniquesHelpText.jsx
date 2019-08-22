@@ -8,7 +8,7 @@ const SampleUniquesHelpText = () => {
     <div>
       <p>
         <b>Sample Uniques </b>
-        displays the datasets unique data in percent.
+        displays the dataset unique data in percent.
       </p>
     </div>
   );
