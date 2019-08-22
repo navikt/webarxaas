@@ -5,7 +5,10 @@ import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/Prosecut
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
 import PopulationHelpText from './ReidentifcationRiskTableHelpText/PopulationHelpText';
 import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
-
+import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
+import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
+import LowestRiskHelpText from './ReidentifcationRiskTableHelpText/LowestRiskHelpText';
+import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const ReIdentificationRiskTable = (props) => {
   const { reIdentificationRisk } = props;
@@ -153,10 +156,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Lowest risk</b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleLowestRisk}
-                  dialogContent={dialogContentLowestRisk}
-                />
+                <LowestRiskHelpText />
               </td>
             </tr>
 
@@ -179,10 +179,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><b>Sample Uniques: </b></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleSampleUniqueness}
-                  dialogContent={dialogContentSampleUniqueness}
-                />
+                <SampleUniquesHelpText />
               </td>
             </tr>
             <tr>
