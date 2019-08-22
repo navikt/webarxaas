@@ -5,6 +5,7 @@ import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/Prosecut
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
 import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
 import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
+import HelpText from '../../../../../HelpTextWrapper/HelpText';
 
 const dialogTitlePopulation = 'Population:';
 
