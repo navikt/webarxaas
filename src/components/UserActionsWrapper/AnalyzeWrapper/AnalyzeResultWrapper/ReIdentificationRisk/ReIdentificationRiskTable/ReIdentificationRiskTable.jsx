@@ -4,19 +4,7 @@ import './__css__/ReIdentificationRiskTable.css';
 import ProsecutorModelHelpText from './ReidentifcationRiskTableHelpText/ProsecutorModelHelpText';
 import JournalistModelHelpText from './ReidentifcationRiskTableHelpText/JournalistModelHelpText';
 import SampleUniquesHelpText from './ReidentifcationRiskTableHelpText/SampleUniquesHelpText';
-import HelpText from '../../../../../HelpTextWrapper/HelpText';
-
-const dialogTitleMarketerModel = 'Marketer model:';
-
-const dialogContentMarketerModel = (
-  <div>
-    <p>
-      In the marketer model the attacker does not target a specific individual but aims at
-       re-identifying a high number of individuals. An attack can therefore only be considered
-        successful if a larger fraction of the records could be re-identified.
-    </p>
-  </div>
-);
+import MarketerModelHelpText from './ReidentifcationRiskTableHelpText/MarketerModelHelpText';
 
 const dialogTitlePopulation = 'Population:';
 
@@ -158,10 +146,7 @@ const ReIdentificationRiskTable = (props) => {
             <tr>
               <td><p><b>Marketer model: </b></p></td>
               <td>
-                <HelpText
-                  dialogTitle={dialogTitleMarketerModel}
-                  dialogContent={dialogContentMarketerModel}
-                />
+                <MarketerModelHelpText />
               </td>
             </tr>
             <tr>
