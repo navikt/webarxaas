@@ -36,7 +36,7 @@ const ImportDataset = (props) => {
                     setLoadingDataset(true);
                     setDatasetFile(e.target.files[0]);
                     ParseFile(
-                      e.target.files[0].slice(0, 10000),
+                      e.target.files[0],
                       setAttributes,
                       setDataset,
                       defaultAttributeType,
