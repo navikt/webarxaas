@@ -89,7 +89,7 @@ const PrivacyModelManager = (props) => {
     );
   });
   const content = (
-    <div className="privacyModelManager" style={{ padding: '1em' }}>
+    <div className="privacy-model-manager" style={{ padding: '1em' }}>
       {privacyModelForms}
     </div>
   );
