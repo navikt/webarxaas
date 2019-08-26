@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardHeader } from '@material-ui/core';
 import ImportHierarchies from './ImportHierarchies/ImportHierarchies';
 import SuppressionLimit from './SuppressionLimit/SuppressionLimit';
@@ -18,6 +18,8 @@ const AnonymizationConfigWrapper = (props) => {
     endpoint,
   } = props;
 
+  const [hierarchies, setHierarchies] = useState([]);
+
   const content = (
     <div className="anonymization-config-wrapper container-fluid">
       <div className="container-fluid">
@@ -27,6 +29,8 @@ const AnonymizationConfigWrapper = (props) => {
               <CardHeader title="Import Hierarchies" />
               <HierarchiesHelpText />
               <ImportHierarchies
+                hierarchies={hierarchies}
+                setHierarchies={setHierarchies}
                 attributes={attributes}
                 setAttributes={setAttributes}
               />
