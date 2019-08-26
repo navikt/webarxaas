@@ -30,7 +30,7 @@ const ImportHierarchies = (props) => {
   const classes = useStyles();
 
   const {
-    hierarchies, setHierarchies, 
+    hierarchies, setHierarchies,
     attributes, setAttributes,
   } = props;
 
@@ -71,8 +71,9 @@ const ImportHierarchies = (props) => {
                               handleHierarchyUpload(
                                 e.target.files[0], index, attributes, setAttributes,
                               );
-                              handleHierarchyFileUpload(e.target.files[0], index, attributes, hierarchies, setHierarchies);
-                              console.log(hierarchies);
+                              handleHierarchyFileUpload(
+                                e.target.files[0], index, attributes, hierarchies, setHierarchies,
+                              );
                             }
                           }}
                         />

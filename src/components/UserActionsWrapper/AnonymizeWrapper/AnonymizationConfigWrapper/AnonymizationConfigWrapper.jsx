@@ -60,6 +60,7 @@ const AnonymizationConfigWrapper = (props) => {
         </div>
       </div>
       <AnonymizeButton
+        hierarchies={hierarchies}
         setLoadingAnonymize={setLoadingAnonymize}
         datasetFile={datasetFile}
         attributes={attributes}
