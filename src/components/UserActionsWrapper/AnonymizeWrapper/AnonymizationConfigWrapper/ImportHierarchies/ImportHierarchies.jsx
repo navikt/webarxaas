@@ -10,6 +10,7 @@ import Button from '@material-ui/core/Button';
 import Tooltip from '@material-ui/core/Tooltip';
 import Divider from '@material-ui/core/Divider';
 import handleHierarchyUpload from '../../../../../util/handleHierarchyUpload';
+import handleHierarchyFileUpload from '../../../../../util/handleHierarchyFileUpload';
 
 
 const useStyles = makeStyles({
@@ -29,6 +30,7 @@ const ImportHierarchies = (props) => {
   const classes = useStyles();
 
   const {
+    hierarchies, setHierarchies,
     attributes, setAttributes,
   } = props;
 
@@ -68,6 +70,9 @@ const ImportHierarchies = (props) => {
                             if (e.target.files[0]) {
                               handleHierarchyUpload(
                                 e.target.files[0], index, attributes, setAttributes,
+                              );
+                              handleHierarchyFileUpload(
+                                e.target.files[0], index, attributes, hierarchies, setHierarchies,
                               );
                             }
                           }}

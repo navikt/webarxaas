@@ -1,6 +1,6 @@
 import handleHierarchyUpload from '../handleHierarchyUpload';
 
-describe('test for hanlde hierarchy upload', () => {
+describe('test for handle hierarchy upload', () => {
   let file;
   let attributes = [];
   const setAttributes = (newAttributes) => {
