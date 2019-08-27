@@ -13,6 +13,7 @@ const AnalyzeButton = (props) => {
         htmlType="button"
         onClick={
           () => {
+            setResponse({});
             setLoadingAnalyze(true);
             handleRequest(setLoadingAnalyze, 'analyze/file', endpoint, setResponse, datasetFile, attributes);
           }

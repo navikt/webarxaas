@@ -13,6 +13,7 @@ const AnonymizeButton = (props) => {
   const content = (
     <div className="anonymize-button small">
       <Knapp onClick={() => {
+        setResponse({});
         setLoadingAnonymize(true);
         handleRequest(setLoadingAnonymize, 'anonymize/file', endpoint, setResponse, datasetFile, attributes,
           privacyModels, suppressionLimit, hierarchies);
