@@ -1,6 +1,7 @@
 import React from 'react';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
+import { Alert } from 'reactstrap';
 import AnonymizedDatasetTable from './AnonymizedDatasetTable/AnonymizedDatasetTable';
 import DownloadAnonymizedDataset from './DownloadAnonymizedDataset/DownloadAnonymizedDataset';
 import AttributeGeneralizationLevel from './AttributeGeneralizationLevel/AttributeGeneralizationLevel';
@@ -20,8 +21,14 @@ const AnonymizedDatasetWrapper = (props) => {
   if (message) {
     return (
       <div className="result-wrapper">
-        <b>Something went wrong. Error:</b>
-        {message}
+        <Alert color="danger">
+          <b>
+            Something went wrong.
+            <br />
+            Error:
+          </b>
+          {message}
+        </Alert>
       </div>
     );
   }

@@ -76,7 +76,13 @@ describe('AnalyzeResultWrapper: Render test', () => {
 
   it('Render Error test', () => {
     expect(errorWrapper.find('.result-wrapper').length).toEqual(1);
-    expect(errorWrapper.contains(<b>Something went wrong. Error:</b>)).toBeTruthy();
+    expect(errorWrapper.contains(
+      <b>
+      Something went wrong.
+        <br />
+      Error:
+      </b>,
+    )).toBeTruthy();
   });
 
   it('Render test for loading/waiting for response', () => {
