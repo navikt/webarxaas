@@ -35,9 +35,7 @@ const DatasetTableWrapper = (props) => {
       <div className="dataset-table-wrapper wrapper">
         <Paper className={classes.paper} elevation={3}>
           <Alert variant="info">
-            Previewing first 100 of
-            {' '}
-            {dataset.length}
+            Previewing the first 100
             {' '}
             rows in
             {' '}
