@@ -10,7 +10,13 @@ export default function handleRequest(
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes, privacyModels, suppressionLimit);
     formData.append('payload', JSON.stringify(payload));
-    formData.append('hierarchies', hierarchies);
+    if (hierarchies) {
+      hierarchies.forEach((hierarchy) => {
+        formData.append('hierarchies', hierarchy);
+      });
+    } else {
+      formData.append('hierarchies', null);
+    }
     ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
   } else if (datasetFile && attributes) {
     const formData = new FormData();
