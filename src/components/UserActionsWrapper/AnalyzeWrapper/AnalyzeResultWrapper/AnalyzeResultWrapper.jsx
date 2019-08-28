@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col, Alert, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavFrontendSpinner from 'nav-frontend-spinner';
 import DistributionOfRiskTable from './DistributionOfRisk/DistributionOfRiskTable/DistributionOfRiskTable';
@@ -23,8 +23,14 @@ const AnalyzeResultWrapper = (props) => {
   if (message) {
     return (
       <div className="result-wrapper">
-        <b>Something went wrong. Error:</b>
-        {message}
+        <Alert color="danger">
+          <b>
+            Something went wrong.
+            <br />
+            Error:
+          </b>
+          {message}
+        </Alert>
       </div>
     );
   }

@@ -62,7 +62,6 @@ const DatasetTableWrapper = (props) => {
       </div>
     );
   }
-
   return content;
 };
 
