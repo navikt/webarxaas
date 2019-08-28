@@ -1,10 +1,6 @@
 
-export default function handleHierarchyFileUpload(file,
-  index, attributes, hierarchies, setHierarchies) {
+export default function handleHierarchyFileUpload(file, hierarchies, setHierarchies) {
   const newHierarchies = [...hierarchies];
-  newHierarchies.push({
-    attribute: attributes[index].field,
-    hierarchy: file,
-  });
+  newHierarchies.push(file);
   setHierarchies(newHierarchies);
 }
