@@ -6,22 +6,14 @@ describe('test hierarchy upload functionality', () => {
   const setHierarchies = (newHierarchies) => {
     hierarchies = newHierarchies;
   };
-  let attributes = [];
 
   beforeAll(() => {
     file = '29;[29, 30[;*\n30;[30, 40[;*\n31;[30, 40[;*\n32;[30, 40[;*';
-    attributes = [{ field: 'Navn', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
-      { field: 'Alder', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
-      { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
-      { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null }];
   });
 
   it('add hierarchy to Alder', () => {
-    const expected = [{
-      attribute: 'Alder',
-      hierarchy: '29;[29, 30[;*\n30;[30, 40[;*\n31;[30, 40[;*\n32;[30, 40[;*',
-    }];
-    handleHierarchyFileUpload(file, 1, attributes, hierarchies, setHierarchies);
+    const expected = ['29;[29, 30[;*\n30;[30, 40[;*\n31;[30, 40[;*\n32;[30, 40[;*'];
+    handleHierarchyFileUpload(file, hierarchies, setHierarchies);
     expect(hierarchies).toEqual(expected);
   });
 });
