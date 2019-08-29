@@ -11,7 +11,6 @@ describe('test for handle hierarchy upload', () => {
   beforeAll(() => {
     file = '29;[29, 30[;*\n30;[30, 40[;*\n31;[30, 40[;*\n32;[30, 40[;*';
     hierarchies.push(file);
-    console.log(hierarchies);
     attributes = [{ field: 'Navn', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
       { field: 'Alder', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
       { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
