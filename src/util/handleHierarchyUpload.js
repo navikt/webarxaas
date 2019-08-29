@@ -5,7 +5,7 @@ const findDataIndex = (hierarchies, file) => {
       return index;
     }
   }
-  return index;
+  return null;
 };
 
 export default function handleHierarchyUpload(file, index, attributes, setAttributes, hierarchies) {
