@@ -9,7 +9,7 @@ export default function handleRequest(
     const formData = new FormData();
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes, privacyModels, suppressionLimit);
-    formData.append('payload', JSON.stringify(payload));
+    formData.append('payload', new Blob([JSON.stringify(payload)], { type: 'application/json'}));
     if (hierarchies) {
       hierarchies.forEach((hierarchy) => {
         formData.append('hierarchies', hierarchy);
@@ -22,7 +22,7 @@ export default function handleRequest(
     const formData = new FormData();
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes);
-    formData.append('payload', JSON.stringify(payload));
+    formData.append('payload', new Blob([JSON.stringify(payload)], { type: 'application/json'}));
     ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
   }
 }
