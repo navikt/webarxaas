@@ -1,7 +1,6 @@
 const findDataIndex = (hierarchies, file) => {
-  let index;
-  for (index = 0; index < hierarchies.length; index += 1) {
-    if (hierarchies[index] === file) {
+  for (let index = 0; index < hierarchies.length; index += 1) {
+    if (hierarchies[index].name === file.name) {
       return index;
     }
   }
