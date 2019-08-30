@@ -4,7 +4,7 @@ const buildAttributesPayload = attributes => attributes.map(attribute => ({
 }));
 
 export default function BuildPayload(attributes,
-  privacyModels, suppressionLimit) {
+  privacyModels = [], suppressionLimit = null) {
   const jsonModel = {};
   jsonModel.attributes = buildAttributesPayload(attributes);
   jsonModel.privacyModels = privacyModels;
