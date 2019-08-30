@@ -9,12 +9,8 @@ export default function handleAnonymizationRequest(
   formData.append('file', datasetFile);
   const payload = BuildPayload(attributes, privacyModels, suppressionLimit);
   formData.append('payload', JSON.stringify(payload));
-  if (hierarchies) {
-    hierarchies.forEach((hierarchy) => {
-      formData.append('hierarchies', hierarchy);
-    });
-  } else {
-    formData.append('hierarchies', null);
-  }
+  hierarchies.forEach((hierarchy) => {
+    formData.append('hierarchies', hierarchy);
+  });
   ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
 }
