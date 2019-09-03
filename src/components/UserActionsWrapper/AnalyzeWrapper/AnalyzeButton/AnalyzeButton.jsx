@@ -1,6 +1,6 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
-import handleRequest from '../../../../util/handleRequest';
+import handleAnalyzationRequest from '../../../../util/handleAnalyzationRequest';
 
 const AnalyzeButton = (props) => {
   const {
@@ -15,7 +15,7 @@ const AnalyzeButton = (props) => {
           () => {
             setResponse({});
             setLoadingAnalyze(true);
-            handleRequest(setLoadingAnalyze, 'analyze/file', endpoint, setResponse, datasetFile, attributes);
+            handleAnalyzationRequest(setLoadingAnalyze, 'analyze/file', endpoint, setResponse, datasetFile, attributes);
           }
         }
       >

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
-import handleRequest from '../../../../../util/handleRequest';
+import handleAnonymizationRequest from '../../../../../util/handleAnonymizationRequest';
 import './__css__/AnonymizeButton.css';
 
 const AnonymizeButton = (props) => {
@@ -15,7 +15,7 @@ const AnonymizeButton = (props) => {
       <Knapp onClick={() => {
         setResponse({});
         setLoadingAnonymize(true);
-        handleRequest(setLoadingAnonymize, 'anonymize/file', endpoint, setResponse, datasetFile, attributes,
+        handleAnonymizationRequest(setLoadingAnonymize, 'anonymize/file', endpoint, setResponse, datasetFile, attributes,
           privacyModels, suppressionLimit, hierarchies);
       }}
       >
