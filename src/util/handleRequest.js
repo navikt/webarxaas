@@ -9,14 +9,20 @@ export default function handleRequest(
     const formData = new FormData();
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes, privacyModels, suppressionLimit);
-    formData.append('payload', JSON.stringify(payload));
-    formData.append('hierarchies', hierarchies);
+    formData.append('metadata', new Blob([JSON.stringify(payload)], { type: 'application/json' }));
+    if (hierarchies) {
+      hierarchies.forEach((hierarchy) => {
+        formData.append('hierarchies', hierarchy);
+      });
+    } else {
+      formData.append('hierarchies', null);
+    }
     ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
   } else if (datasetFile && attributes) {
     const formData = new FormData();
     formData.append('file', datasetFile);
     const payload = BuildPayload(attributes);
-    formData.append('payload', JSON.stringify(payload));
+    formData.append('metadata', new Blob([JSON.stringify(payload)], { type: 'application/json' }));
     ArxRequest(setLoadingFunction, endpoint, formData, service, setResponse);
   }
 }

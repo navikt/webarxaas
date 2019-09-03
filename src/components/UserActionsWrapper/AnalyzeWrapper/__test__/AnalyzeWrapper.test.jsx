@@ -19,7 +19,7 @@ describe('AnalyzeWrapper: Render test', () => {
   };
 
   beforeAll(() => {
-    datasetFile = { content: [['Navn', 'Alder'], ['Per', '28'], ['Oda', '28']] };
+    datasetFile = { content: { data: [['Navn', 'Alder'], ['Per', '28'], ['Oda', '28']] } };
     attributes = [{ attributeTypeModel: 'QUASIIDENTIFYING', field: 'Navn', hierarchy: null },
       { attributeTypeModel: 'QUASIIDENTIFYING', field: 'Alder', hierarchy: null }];
     endpoint = 'analyze';
