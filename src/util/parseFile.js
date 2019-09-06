@@ -4,6 +4,7 @@ export default function ParseFile(
   file, setAttributes, setDataset, defaultAttributeType,
   setLoadingDataset, setSnackbar,
 ) {
+  const newDataset = [];
   const snackbar = (
     open, variant, message,
   ) => {
@@ -17,12 +18,13 @@ export default function ParseFile(
   if (file) {
     papaparse.parse(file, {
       preview: 100,
-      complete(results) {
-        if (results.data.length > 0) {
-          const headers = results.data[0];
+      step(row) {
+        newDataset.push(row.data);
+        if (newDataset.length > 0) {
+          const headers = newDataset[0];
           const attributeTypeModel = defaultAttributeType;
           setAttributes(headers.map(field => ({ field, attributeTypeModel })));
-          setDataset(results.data);
+          setDataset(newDataset);
           setLoadingDataset(false);
           snackbar(true, 'success', 'Dataset imported successfully.');
         }
