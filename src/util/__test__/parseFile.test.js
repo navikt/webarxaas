@@ -83,4 +83,47 @@ describe('Unit test for parsing csv files', () => {
     );
     expect(snackbar).toEqual(expected);
   });
+
+  it('test rows previewed when loading dataset', () => {
+    const expected = 4;
+
+    ParseFile(
+      testFile, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
+    expect(dataset.length).toEqual(expected);
+  });
+
+  it('test rows previewed when loading dataset with more than a 100 rows', () => {
+    const expected = 101;
+
+    const testFile110Rows = 'Navn;Alder;Innvandrerbakgrunn;Medisinsk forhold\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Eirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\nEirik;47;Togo;Ingen\nElla;30;Surinam;Ingen\nEirik;47;Togo;Ingen\n'
+    + 'Solveig;37;Malta;Ingen';
+    ParseFile(
+      testFile110Rows, setAttributes, setDataset,
+      defaultAttributeType, setLoadingDataset, setSnackbar,
+    );
+    expect(dataset.length).toEqual(expected);
+  });
 });
