@@ -1,6 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import './__css__/MoreInfo.css';
+import QuestionMarkHelpText from './MoreInfoHelpText/QuestionMarkHelpText';
 
 const MoreInfo = (props) => {
   const { showMoreInfo } = props;
@@ -13,6 +14,16 @@ const MoreInfo = (props) => {
         <h1>Information</h1>
 
         <div className="more-info-attribute">
+
+          <tbody>
+            <tr>
+              <tr><p><b>Question mark help text:</b></p></tr>
+              <QuestionMarkHelpText />
+              <p>
+                Click the question mark to display help text.
+              </p>
+            </tr>
+          </tbody>
           <p><b>CSV import file:</b></p>
           <ul>
             <li>
@@ -56,9 +67,9 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-              In the prosecutor model the attacker targets a specific individual,
+                In the prosecutor model the attacker targets a specific individual,
                 <br />
-              and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.
+                and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.
               </p>
             </li>
           </ul>
@@ -68,11 +79,11 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-              This well-known privacy model aims at protecting dataset from re-identification in the prosecutor model.
+                This well-known privacy model aims at protecting dataset from re-identification in the prosecutor model.
                 <br />
-              A dataset is k-anonymous if each record cannot be distinguished from at least k-1 other records regarding the quasi-identifiers.
+                A dataset is k-anonymous if each record cannot be distinguished from at least k-1 other records regarding the quasi-identifiers.
                 <br />
-              Each group of indistinguishable records forms a so-called equivalence class.
+                Each group of indistinguishable records forms a so-called equivalence class.
               </p>
             </li>
           </ul>
@@ -80,9 +91,9 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-              This privacy model can be used to protect data against attribute disclosure by ensuring that each sensitive attribute has at least
+                This privacy model can be used to protect data against attribute disclosure by ensuring that each sensitive attribute has at least
                 <br />
-            ℓ well represented values in each equivalence class.
+                ℓ well represented values in each equivalence class.
               </p>
             </li>
           </ul>
@@ -90,7 +101,7 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-              This privacy model can also be used to protect data from attribute disclosure. It requires that the distributions of values of a
+                This privacy model can also be used to protect data from attribute disclosure. It requires that the distributions of values of a
                 <br />
                 sensitive attribute within each equivalence class must have a distance of not more than t to the distribution of the attribute values in the input dataset.
               </p>
