@@ -13,4 +13,5 @@ const MoreInfoWrapper = (props) => {
   );
   return content;
 };
+
 export default MoreInfoWrapper;
