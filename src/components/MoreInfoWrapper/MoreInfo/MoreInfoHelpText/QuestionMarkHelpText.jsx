@@ -7,7 +7,7 @@ const QuestionMarkHelpText = () => {
   const dialogContentHelpText = (
     <div>
       <p>
-        Clicking the question mark will display help text.
+        Clicking the question mark will display the corresponding help text.
       </p>
     </div>
   );
