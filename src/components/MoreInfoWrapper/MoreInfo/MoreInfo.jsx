@@ -28,7 +28,7 @@ const MoreInfo = (props) => {
           <ul>
             <li>
               <p>
-                To display Æ, Ø, and Å, make sure the imported tabular dataset is saved as a CSV file with UTF-8
+                To display Æ, Ø, and Å, make sure the imported tabular dataset is saved as a CSV file with UTF-8.
               </p>
             </li>
           </ul>
