@@ -28,7 +28,7 @@ const Footer = () => {
             <i className="fab fa-slack" />
           </a>
           &nbsp;
-          <a className="text-a slack" href="https://app.slack.com/client/T5LNAMWNA/CKER48611">
+          <a className="text-a slack" href="https://app.slack.com/client/T5LNAMWNA/CLTFGUP34">
             <b>Slack</b>
           </a>
         </li>
