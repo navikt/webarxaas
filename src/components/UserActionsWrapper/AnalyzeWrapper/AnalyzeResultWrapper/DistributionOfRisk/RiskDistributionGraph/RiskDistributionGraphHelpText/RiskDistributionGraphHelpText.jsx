@@ -11,8 +11,9 @@ const RiskDistributionGraphHelpText = () => {
          amongst the records of the dataset is displayed.
         <br />
         <br />
-        The risk is displayed [from,to) and the percentage of record
-         affected by the risk is displayed in the Y-axis.
+        The X-axis displays the risk [from,to).
+        <br />
+        The Y-axis displays the percentage of record affected by the risk.
       </p>
     </div>
   );

@@ -21,6 +21,12 @@ const AttributeRiskGraphHelpText = () => {
            higher distinction and separation are indicators that the
             quasi-identifiers are more likely to re-identify a record.
       </p>
+      {' '}
+      <p>
+        The X-axis displays the Quasi-identifying attributes.
+        <br />
+        The Y-axis displays Distinction and Separation in percent.
+      </p>
     </div>
   );
   const content = (
