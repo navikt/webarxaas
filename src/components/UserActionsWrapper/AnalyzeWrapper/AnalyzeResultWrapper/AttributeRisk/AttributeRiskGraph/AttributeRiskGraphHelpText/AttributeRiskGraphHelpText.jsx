@@ -24,6 +24,7 @@ const AttributeRiskGraphHelpText = () => {
       {' '}
       <p>
         The X-axis displays the Quasi-identifying attributes.
+        <br />
         The Y-axis displays Distinction and Separation in percent.
       </p>
     </div>

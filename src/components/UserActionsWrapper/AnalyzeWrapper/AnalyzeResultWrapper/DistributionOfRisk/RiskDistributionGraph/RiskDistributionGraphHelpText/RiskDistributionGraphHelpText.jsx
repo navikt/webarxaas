@@ -12,6 +12,7 @@ const RiskDistributionGraphHelpText = () => {
         <br />
         <br />
         The X-axis displays the risk [from,to).
+        <br />
         The Y-axis displays the percentage of record affected by the risk.
       </p>
     </div>
