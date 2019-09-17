@@ -6,11 +6,11 @@ import toPercent from '../../../../util/ratioToPercent';
 
 
 const AnalyzeReportWrapper = (props) => {
-  const { response, fileName, attributes } = props;
+  const { response, file, attributes } = props;
 
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
-  const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
+  const reportFileName = file.name.toString().replace('.csv', '').concat('_report.pdf');
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
@@ -32,6 +32,18 @@ const AnalyzeReportWrapper = (props) => {
   prosecutorRisk.push(['Prosecutor attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
     .Prosecutor_attacker_success_rate)]);
 
+  const journalistRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
+  journalistRisk.push(['Estimated journalist risk', toPercent(response.reIdentificationRisk.measures.estimated_journalist_risk)]);
+  journalistRisk.push(['Highest journalist risk', toPercent(response.reIdentificationRisk.measures.highest_journalist_risk)]);
+  journalistRisk.push(['Records affected by highest journalist risk', toPercent(response.reIdentificationRisk.measures
+    .records_affected_by_highest_journalist_risk)]);
+  journalistRisk.push(['Journalist attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
+    .Journalist_attacker_success_rate)]);
+
+  const marketerRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
+  marketerRisk.push(['Estimated marketer risk', toPercent(response.reIdentificationRisk.measures.estimated_marketer_risk)]);
+  marketerRisk.push(['Marketer attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
+    .Marketer_attacker_success_rate)]);
 
   const reportContent = {
     content: [
@@ -44,7 +56,7 @@ const AnalyzeReportWrapper = (props) => {
       {
         text: [
           { text: 'Analysis Report for: ', bold: true },
-          `${fileName.toString()}`,
+          `${file.name.toString()}`,
         ],
       },
       {
@@ -78,11 +90,35 @@ const AnalyzeReportWrapper = (props) => {
         text: 'Prosecutor Model',
         bold: true,
       },
-      'n the prosecutor model the attacker targets a specific individual, and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.',
+      'In the prosecutor model the attacker targets a specific individual, and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.',
       {
         table: {
           widths: ['*', '*'],
           body: prosecutorRisk,
+        },
+      },
+      '\n',
+      {
+        text: 'Journalist Model',
+        bold: true,
+      },
+      'In the journalist model the attacker is trying to randomly re-identify a individual with no background knowledge on anyone in the dataset.',
+      {
+        table: {
+          widths: ['*', '*'],
+          body: journalistRisk,
+        },
+      },
+      '\n',
+      {
+        text: 'Marketer Model',
+        bold: true,
+      },
+      'In the marketer model the attacker does not target a specific individual but aims at re-identifying a high number of individuals. An attack can therefore only be considered successful if a larger fraction of the records could be re-identified.',
+      {
+        table: {
+          widths: ['*', '*'],
+          body: marketerRisk,
         },
       },
     ],
