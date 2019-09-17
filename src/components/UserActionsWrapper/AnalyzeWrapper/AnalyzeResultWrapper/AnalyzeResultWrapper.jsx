@@ -15,7 +15,7 @@ import AnalyzeReportWrapper from './AnalyzeReportWrapper';
 
 const AnalyzeResultWrapper = (props) => {
   const {
-    loadingAnalyze, response, fileName,
+    loadingAnalyze, response, fileName, attributes,
   } = props;
   const {
     message,
@@ -90,6 +90,7 @@ const AnalyzeResultWrapper = (props) => {
         <AnalyzeReportWrapper
           response={response}
           fileName={fileName}
+          attributes={attributes}
         />
       </div>
     );
