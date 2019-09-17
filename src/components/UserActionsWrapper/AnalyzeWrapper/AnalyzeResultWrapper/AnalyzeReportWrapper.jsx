@@ -2,6 +2,7 @@ import React from 'react';
 import { Knapp } from 'nav-frontend-knapper';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
+import toPercent from '../../../../util/ratioToPercent';
 
 
 const AnalyzeReportWrapper = (props) => {
@@ -17,10 +18,20 @@ const AnalyzeReportWrapper = (props) => {
   const hour = ((now.getHours() < 10 ? '0' : '') + now.getHours());
   const minute = ((now.getMinutes() < 10 ? '0' : '') + now.getMinutes());
 
-  const attributesUsed = [['Column name', 'Attribute Type']];
+  const attributesUsed = [[{ text: 'Column name', bold: true }, { text: 'Attribute Type', bold: true }]];
   attributes.forEach((item) => {
     attributesUsed.push([item.field, item.attributeTypeModel]);
   });
+
+  const prosecutorRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
+  prosecutorRisk.push(['Estimated prosecutor risk', toPercent(response.reIdentificationRisk.measures.estimated_prosecutor_risk)]);
+  prosecutorRisk.push(['Average prosecutor risk', toPercent(response.reIdentificationRisk.measures.average_prosecutor_risk)]);
+  prosecutorRisk.push(['Highest prosecutor risk', toPercent(response.reIdentificationRisk.measures.highest_prosecutor_risk)]);
+  prosecutorRisk.push(['Records affected by highest prosecutor risk', toPercent(response.reIdentificationRisk.measures
+    .records_affected_by_highest_prosecutor_risk)]);
+  prosecutorRisk.push(['Prosecutor attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
+    .Prosecutor_attacker_success_rate)]);
+
 
   const reportContent = {
     content: [
@@ -49,10 +60,7 @@ const AnalyzeReportWrapper = (props) => {
         ],
       },
       '\n',
-      {
-        text: 'Attributes Used',
-        style: 'subheader',
-      },
+      { text: 'Attributes Used', style: 'subheader' },
       'The table shows which attributes was used on each column, when analyzing for re-identification risk.',
       {
         table: {
@@ -60,7 +68,23 @@ const AnalyzeReportWrapper = (props) => {
           body: attributesUsed,
         },
       },
-
+      '\n',
+      {
+        text: 'Analysis Result',
+        style: 'subheader',
+      },
+      '\n',
+      {
+        text: 'Prosecutor Model',
+        bold: true,
+      },
+      'n the prosecutor model the attacker targets a specific individual, and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.',
+      {
+        table: {
+          widths: ['*', '*'],
+          body: prosecutorRisk,
+        },
+      },
     ],
     styles: {
       header: {
@@ -73,8 +97,6 @@ const AnalyzeReportWrapper = (props) => {
       },
     },
   };
-
-  console.log(response);
 
   const content = (
     <div className="download-report-button small" style={{ margin: '5em 0 5em 0' }}>
