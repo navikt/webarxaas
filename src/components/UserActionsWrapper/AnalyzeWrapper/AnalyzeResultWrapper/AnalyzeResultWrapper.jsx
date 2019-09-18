@@ -1,4 +1,5 @@
 import React from 'react';
+// eslint-disable-next-line object-curly-newline
 import { Row, Col, Alert, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import NavFrontendSpinner from 'nav-frontend-spinner';
@@ -10,10 +11,11 @@ import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/Ri
 import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
 import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
 import './__css__/AnalysisWrapper.css';
+import AnalyzeReportWrapper from './AnalyzeReportWrapper';
 
 const AnalyzeResultWrapper = (props) => {
   const {
-    loadingAnalyze, response,
+    loadingAnalyze, response, file, attributes,
   } = props;
   const {
     message,
@@ -85,6 +87,11 @@ const AnalyzeResultWrapper = (props) => {
             </Col>
           </Row>
         </Container>
+        <AnalyzeReportWrapper
+          response={response}
+          file={file}
+          attributes={attributes}
+        />
       </div>
     );
   }

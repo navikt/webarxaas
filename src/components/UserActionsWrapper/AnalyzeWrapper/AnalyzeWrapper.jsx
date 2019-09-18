@@ -26,6 +26,8 @@ const AnalyzeWrapper = (props) => {
       <AnalyzeResultWrapper
         response={analyzeResponse}
         loadingAnalyze={loadingAnalyze}
+        file={datasetFile}
+        attributes={attributes}
       />
       <br />
     </div>
