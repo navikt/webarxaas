@@ -3,7 +3,7 @@ import React from 'react';
 import './__css__/GeneralInformation.css';
 import QuestionMarkHelpText from './GeneralInformationHelpText/QuestionMarkHelpText';
 
-const MoreInfo = () => {
+const GeneralInformation = () => {
   const content = (
     <div className="general-information">
       <h1>General Information</h1>
@@ -112,4 +112,4 @@ const MoreInfo = () => {
   return content;
 };
 
-export default MoreInfo;
+export default GeneralInformation;

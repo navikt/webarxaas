@@ -2,17 +2,17 @@ import React from 'react';
 import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import './__css__/UserManual.css';
-import MoreInfoWrapper from './GeneralInformation/GeneralInformation';
+import GeneralInformation from './GeneralInformation/GeneralInformation';
 
-const UserManual = () => {
+const UserManualPage = () => {
   const content = (
-    <div className="UserManual">
+    <div className="UserManualPage">
       <h1>User Manual</h1>
       <Container>
         <Row>
           <Col sm={12}>
             <Ekspanderbartpanel tittel="General Information" border>
-              <MoreInfoWrapper />
+              <GeneralInformation />
             </Ekspanderbartpanel>
           </Col>
           <Col sm={12}>
@@ -37,4 +37,4 @@ const UserManual = () => {
   );
   return content;
 };
-export default UserManual;
+export default UserManualPage;
