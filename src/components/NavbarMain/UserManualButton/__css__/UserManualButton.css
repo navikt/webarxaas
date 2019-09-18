@@ -1,10 +1,10 @@
 @media (max-width: 765px) {
-  .more-info-button {
+  .user-manual-button {
     margin: auto;
   }
 }
 @media (min-width: 766px) {
-  .more-info-button {
+  .user-manual-button {
     position: absolute;
     right: 2em;
   }

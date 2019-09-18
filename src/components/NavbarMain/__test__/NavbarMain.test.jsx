@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar } from 'react-bootstrap';
-import MoreInfoButton from '../MoreInfoButton/MoreInfoButton';
+import UserManualButton from '../UserManualButton/UserManualButton';
 import NavBarMain from '../NavbarMain';
 import { shallow } from '../../../enzyme';
 
@@ -14,6 +14,6 @@ describe('NavbarMain: Render test', () => {
   it('Render test', () => {
     expect(wrapper.find('.navbar-main').length).toEqual(1);
     expect(wrapper.find(Navbar).length).toEqual(1);
-    expect(wrapper.find(MoreInfoButton).length).toEqual(1);
+    expect(wrapper.find(UserManualButton).length).toEqual(1);
   });
 });
