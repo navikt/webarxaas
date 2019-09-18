@@ -45,13 +45,6 @@ const AnalyzeReportWrapper = (props) => {
   marketerRisk.push(['Marketer attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
     .Marketer_attacker_success_rate)]);
 
-  const populationRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
-  populationRisk.push(['Population uniques', toPercent(response.reIdentificationRisk.measures.population_uniques)]);
-
-  const lowestRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
-  lowestRisk.push(['Lowest risk', toPercent(response.reIdentificationRisk.measures.lowest_risk)]);
-  lowestRisk.push(['Records affected by lowest risk', toPercent(response.reIdentificationRisk.measures.records_affected_by_lowest_risk)]);
-
   const reportContent = {
     content: [
       {
@@ -134,12 +127,13 @@ const AnalyzeReportWrapper = (props) => {
         bold: true,
       },
       'The population uniqueness privacy model aims at protecting dataset from re-identification in the marketer model by enforcing thresholds on the proportion of records that are unique within the underlying population. For this purpose, basic information about the population has to be specified. Based on this data, statistical super-population models are used to estimate characteristics of the overall population with probability distributions that are parameterized with sample characteristics.',
-      '/n',
+      '\n',
       `Population model: ${response.reIdentificationRisk.populationModel}`,
       {
         table: {
           widths: ['*', '*'],
-          body: populationRisk,
+          body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
+            ['Population uniques', toPercent(response.reIdentificationRisk.measures.population_uniques)]],
         },
       },
       '\n',
@@ -152,7 +146,21 @@ const AnalyzeReportWrapper = (props) => {
       {
         table: {
           widths: ['*', '*'],
-          body: lowestRisk,
+          body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
+            ['Lowest risk', toPercent(response.reIdentificationRisk.measures.lowest_risk)],
+            ['Records affected by lowest risk', toPercent(response.reIdentificationRisk.measures.records_affected_by_lowest_risk)]],
+        },
+      },
+      '\n',
+      {
+        text: 'Sample uniques',
+        bold: true,
+      },
+      'displays the unique data in percent, contained in the dataset',
+      {
+        table: {
+          widths: ['*', '*'],
+          body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }], ['Sample uniques', toPercent(response.reIdentificationRisk.measures.sample_uniques)]],
         },
       },
     ],
