@@ -1,15 +1,13 @@
 import React from '../../../node_modules/react';
 import { Navbar } from '../../../node_modules/react-bootstrap';
-import MoreInfoButton from './MoreInfoButton/MoreInfoButton';
+import UserManualButton from './UserManualButton/UserManualButton';
 import './__css__/NavbarMain.css';
 
-const NavbarMain = (props) => {
-  const { setShowMoreInfo } = props;
-
+const NavbarMain = () => {
   const content = (
     <div className="navbar-main">
       <Navbar bg="light" expand="lg" fixed="top">
-        <Navbar.Brand href="#home">
+        <Navbar.Brand href="/">
           <img
             alt="Service Logo"
             src="/img/logo-arxaas.png"
@@ -19,9 +17,7 @@ const NavbarMain = (props) => {
           &nbsp;
           {' Anonymization as a Service'}
         </Navbar.Brand>
-        <MoreInfoButton
-          setShowMoreInfo={setShowMoreInfo}
-        />
+        <UserManualButton />
       </Navbar>
     </div>
   );
