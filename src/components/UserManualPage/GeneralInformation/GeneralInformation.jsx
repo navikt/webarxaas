@@ -5,10 +5,10 @@ import QuestionMarkHelpText from './GeneralInformationHelpText/QuestionMarkHelpT
 
 const MoreInfo = () => {
   const content = (
-    <div className="more-info">
+    <div className="general-information">
       <h1>General Information</h1>
       <br />
-      <div className="more-info-attribute">
+      <div className="general-information-attribute">
         <table>
           <tbody>
             <tr>
