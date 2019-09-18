@@ -30,6 +30,11 @@ const AnalyzeReportWrapper = (props) => {
       toPercent(item.recordsWithMaximalRiskWithinInterval)]);
   });
 
+  const attributeRisk = [[{ text: 'Column', bold: true }, { text: 'Distinction', bold: true }, { text: 'Separation', bold: true }]];
+  response.attributeRisk.quasiIdentifierRiskList.forEach((item) => {
+    attributeRisk.push([item.identifier, toPercent(item.distinction), toPercent(item.separation)]);
+  });
+
   const reportContent = {
     content: [
       {
@@ -169,6 +174,32 @@ const AnalyzeReportWrapper = (props) => {
         table: {
           widths: ['*', '*', '*'],
           body: distributionOfRisk,
+        },
+      },
+      '\n',
+      {
+        text: 'Attribute risk',
+        bold: true,
+      },
+      'Shows the distinction and separation associated with each column in the dataset',
+      '\n',
+      {
+        text: [
+          { text: 'Distinction', bold: true },
+          ' represents the ratio between the unique values for the quasi-identifiers and the total number of records.',
+        ],
+      },
+      '\n',
+      {
+        text: [
+          { text: 'Separation', bold: true },
+          ' represents the ratio between pairs of records with at least one different value for their quasi-identifiers, and the total number of ways that two different records can be paired. In general, a higher distinction and separation are indicators that the quasi-identifiers are more likely to re-identify a record.',
+        ],
+      },
+      {
+        table: {
+          widths: ['*', '*', '*'],
+          body: attributeRisk,
         },
       },
     ],
