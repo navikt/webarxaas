@@ -23,27 +23,12 @@ const AnalyzeReportWrapper = (props) => {
     attributesUsed.push([item.field, item.attributeTypeModel]);
   });
 
-  const prosecutorRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
-  prosecutorRisk.push(['Estimated prosecutor risk', toPercent(response.reIdentificationRisk.measures.estimated_prosecutor_risk)]);
-  prosecutorRisk.push(['Average prosecutor risk', toPercent(response.reIdentificationRisk.measures.average_prosecutor_risk)]);
-  prosecutorRisk.push(['Highest prosecutor risk', toPercent(response.reIdentificationRisk.measures.highest_prosecutor_risk)]);
-  prosecutorRisk.push(['Records affected by highest prosecutor risk', toPercent(response.reIdentificationRisk.measures
-    .records_affected_by_highest_prosecutor_risk)]);
-  prosecutorRisk.push(['Prosecutor attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
-    .Prosecutor_attacker_success_rate)]);
-
-  const journalistRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
-  journalistRisk.push(['Estimated journalist risk', toPercent(response.reIdentificationRisk.measures.estimated_journalist_risk)]);
-  journalistRisk.push(['Highest journalist risk', toPercent(response.reIdentificationRisk.measures.highest_journalist_risk)]);
-  journalistRisk.push(['Records affected by highest journalist risk', toPercent(response.reIdentificationRisk.measures
-    .records_affected_by_highest_journalist_risk)]);
-  journalistRisk.push(['Journalist attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
-    .Journalist_attacker_success_rate)]);
-
-  const marketerRisk = [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }]];
-  marketerRisk.push(['Estimated marketer risk', toPercent(response.reIdentificationRisk.measures.estimated_marketer_risk)]);
-  marketerRisk.push(['Marketer attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates
-    .Marketer_attacker_success_rate)]);
+  const distributionOfRisk = [[{ text: 'Interval', bold: true }, { text: 'Records With Risk', bold: true }, { text: 'Records With Maximal Risk', bold: true }]];
+  response.distributionOfRisk.riskIntervalList.forEach((item) => {
+    distributionOfRisk.push([item.interval,
+      toPercent(item.recordsWithRiskWithinInterval),
+      toPercent(item.recordsWithMaximalRiskWithinInterval)]);
+  });
 
   const reportContent = {
     content: [
@@ -94,7 +79,12 @@ const AnalyzeReportWrapper = (props) => {
       {
         table: {
           widths: ['*', '*'],
-          body: prosecutorRisk,
+          body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
+            ['Estimated prosecutor risk', toPercent(response.reIdentificationRisk.measures.estimated_prosecutor_risk)],
+            ['Average prosecutor risk', toPercent(response.reIdentificationRisk.measures.average_prosecutor_risk)],
+            ['Highest prosecutor risk', toPercent(response.reIdentificationRisk.measures.highest_prosecutor_risk)],
+            ['Records affected by highest prosecutor risk', toPercent(response.reIdentificationRisk.measures.records_affected_by_highest_prosecutor_risk)],
+            ['Prosecutor attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates.Prosecutor_attacker_success_rate)]],
         },
       },
       '\n',
@@ -106,7 +96,11 @@ const AnalyzeReportWrapper = (props) => {
       {
         table: {
           widths: ['*', '*'],
-          body: journalistRisk,
+          body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
+            ['Estimated journalist risk', toPercent(response.reIdentificationRisk.measures.estimated_journalist_risk)],
+            ['Highest journalist risk', toPercent(response.reIdentificationRisk.measures.highest_journalist_risk)],
+            ['Records affected by highest journalist risk', toPercent(response.reIdentificationRisk.measures.records_affected_by_highest_journalist_risk)],
+            ['Journalist attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates.Journalist_attacker_success_rate)]],
         },
       },
       '\n',
@@ -118,7 +112,9 @@ const AnalyzeReportWrapper = (props) => {
       {
         table: {
           widths: ['*', '*'],
-          body: marketerRisk,
+          body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
+            ['Estimated marketer risk', toPercent(response.reIdentificationRisk.measures.estimated_marketer_risk)],
+            ['Marketer attacker success rate', toPercent(response.reIdentificationRisk.attackerSuccessRate.successRates.Marketer_attacker_success_rate)]],
         },
       },
       '\n',
@@ -161,6 +157,18 @@ const AnalyzeReportWrapper = (props) => {
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }], ['Sample uniques', toPercent(response.reIdentificationRisk.measures.sample_uniques)]],
+        },
+      },
+      '\n',
+      {
+        text: 'Distribution of risk',
+        bold: true,
+      },
+      'The distribution of re-identification risk amongst the records of the dataset. The interval shows the percentage of risk [from,to), and the records that are within that risk. The amount of records with maximum risk within the intervel is also displayed.',
+      {
+        table: {
+          widths: ['*', '*', '*'],
+          body: distributionOfRisk,
         },
       },
     ],
