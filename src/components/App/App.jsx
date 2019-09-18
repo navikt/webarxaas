@@ -11,55 +11,57 @@ import UserManual from '../UserManualPage/UserManualPage';
 import './__css__/App.css';
 
 function App() {
-  const [snackbar, setSnackbar] = useState({
-    open: false,
-    variant: '',
-    message: '',
-  });
+  const Home = () => {
+    const [snackbar, setSnackbar] = useState({
+      open: false,
+      variant: '',
+      message: '',
+    });
 
-  const [loadingDataset, setLoadingDataset] = useState(false);
-  const [dataset, setDataset] = useState([]);
-  const [datasetFile, setDatasetFile] = useState({});
-  const [attributes, setAttributes] = useState([]);
-  const [fileName, setFileName] = useState('');
-  const arxaasEndpoint = env('ARXAAS_URL');
+    const [loadingDataset, setLoadingDataset] = useState(false);
+    const [dataset, setDataset] = useState([]);
+    const [datasetFile, setDatasetFile] = useState({});
+    const [attributes, setAttributes] = useState([]);
+    const [fileName, setFileName] = useState('');
+    const arxaasEndpoint = env('ARXAAS_URL');
 
-  const Home = () => (
-    <div>
+    return (
+      <div>
 
-      <ImportDatasetWrapper
-        loadingDataset={loadingDataset}
-        setSnackbar={setSnackbar}
-        setLoadingDataset={setLoadingDataset}
-        setAttributes={setAttributes}
-        setDatasetFile={setDatasetFile}
-        setDataset={setDataset}
-        dataset={dataset}
-        setFileName={setFileName}
-      />
-      <DatasetTableWrapper
-        loadingDataset={loadingDataset}
-        setSnackbar={setSnackbar}
-        setAttributes={setAttributes}
-        attributes={attributes}
-        dataset={dataset}
-        fileName={fileName}
-      />
-      <UserActionsWrapper
-        dataset={dataset}
-        datasetFile={datasetFile}
-        attributes={attributes}
-        setAttributes={setAttributes}
-        endpoint={arxaasEndpoint}
-        fileName={fileName}
-      />
-      <Footer />
-      <SnackbarWrapper
-        snackbar={snackbar}
-        setSnackbar={setSnackbar}
-      />
-    </div>
-  );
+        <ImportDatasetWrapper
+          loadingDataset={loadingDataset}
+          setSnackbar={setSnackbar}
+          setLoadingDataset={setLoadingDataset}
+          setAttributes={setAttributes}
+          setDatasetFile={setDatasetFile}
+          setDataset={setDataset}
+          dataset={dataset}
+          setFileName={setFileName}
+        />
+        <DatasetTableWrapper
+          loadingDataset={loadingDataset}
+          setSnackbar={setSnackbar}
+          setAttributes={setAttributes}
+          attributes={attributes}
+          dataset={dataset}
+          fileName={fileName}
+        />
+        <UserActionsWrapper
+          dataset={dataset}
+          datasetFile={datasetFile}
+          attributes={attributes}
+          setAttributes={setAttributes}
+          endpoint={arxaasEndpoint}
+          fileName={fileName}
+        />
+        <Footer />
+        <SnackbarWrapper
+          snackbar={snackbar}
+          setSnackbar={setSnackbar}
+        />
+      </div>
+    );
+  };
 
   const UserManualPage = () => (
     <UserManual />
