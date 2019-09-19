@@ -10,13 +10,16 @@ import './__css__/AnonymizedDatasetWrapper.css';
 
 const AnonymizedDatasetWrapper = (props) => {
   const {
-    response, loadingAnonymize, fileName,
+    response, loadingAnonymize, fileName, attributes,
   } = props;
   const {
     message,
   } = response;
 
   let content = '';
+
+  const anonymizedFileName = fileName.toString().replace('.csv', '').concat('_anonymized.csv');
+  console.log();
 
   if (message) {
     return (
@@ -52,6 +55,8 @@ const AnonymizedDatasetWrapper = (props) => {
             <AnalyzeResultWrapper
               response={response.riskProfile}
               loadingAnalyze={loadingAnonymize}
+              file={anonymizedFileName}
+              attributes={attributes}
             />
           </Ekspanderbartpanel>
           <Ekspanderbartpanel tittel="Attribute Generalization Level" border>

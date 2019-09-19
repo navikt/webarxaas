@@ -36,7 +36,7 @@ export default function generateAnalysisReport(response, file, attributes) {
       {
         text: [
           { text: 'Analysis Report for: ', bold: true },
-          `${file.name.toString()}`,
+          `${file.toString()}`,
         ],
       },
       {
