@@ -16,7 +16,7 @@ const UserManualPage = () => {
             </Ekspanderbartpanel>
           </Col>
           <Col sm={12}>
-            <Ekspanderbartpanel tittel="Analysis Manual" border>
+            <Ekspanderbartpanel tittel="Analyze Manual" border>
               Test
               <Ekspanderbartpanel tittel="More Information" border>
                 Test
@@ -24,7 +24,7 @@ const UserManualPage = () => {
             </Ekspanderbartpanel>
           </Col>
           <Col sm={12}>
-            <Ekspanderbartpanel tittel="Anonymize Information" border>
+            <Ekspanderbartpanel tittel="Anonymize Manual" border>
 
               <Ekspanderbartpanel tittel="More Information" border>
                 Test
