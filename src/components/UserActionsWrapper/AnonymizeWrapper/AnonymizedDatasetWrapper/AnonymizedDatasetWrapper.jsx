@@ -19,7 +19,6 @@ const AnonymizedDatasetWrapper = (props) => {
   let content = '';
 
   const anonymizedFileName = fileName.toString().replace('.csv', '').concat('_anonymized.csv');
-  console.log();
 
   if (message) {
     return (
