@@ -3,6 +3,7 @@ import { Row, Col, Container } from 'reactstrap';
 import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import './__css__/UserManual.css';
 import GeneralInformation from './GeneralInformation/GeneralInformation';
+import AnalyzeManual from './AnalyzeManual/AnalyzeManual';
 
 const UserManualPage = () => {
   const content = (
@@ -17,7 +18,7 @@ const UserManualPage = () => {
           </Col>
           <Col sm={12}>
             <Ekspanderbartpanel tittel="Analyze Manual" border>
-              Test
+              <AnalyzeManual />
               <Ekspanderbartpanel tittel="More Information" border>
                 Test
               </Ekspanderbartpanel>
