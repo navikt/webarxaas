@@ -1,4 +1,5 @@
 import toPercent from './ratioToPercent';
+import NavLogo from './resources/img/logo-nav.png';
 
 export default function generateAnalysisReport(response, file, attributes) {
   const now = new Date();
@@ -28,9 +29,18 @@ export default function generateAnalysisReport(response, file, attributes) {
   return {
     content: [
       {
-        text: 'Re-Identification Analysis Report',
-        style: 'header',
-        alignment: 'center',
+        alignment: 'justify',
+        columns: [
+          {
+            text: 'Re-Identification Analysis Report',
+            style: 'header',
+            alignment: 'center',
+          },
+          {
+            image: NavLogo,
+            alignment: 'right',
+          },
+        ],
       },
       '\n',
       {
@@ -195,7 +205,7 @@ export default function generateAnalysisReport(response, file, attributes) {
     ],
     styles: {
       header: {
-        fontSize: 18,
+        fontSize: 20,
         bold: true,
       },
       subheader: {
