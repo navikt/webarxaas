@@ -38,6 +38,7 @@ const AnonymizeWrapper = (props) => {
         loadingAnonymize={loadingAnonymize}
         fileName={fileName}
         attributes={attributes}
+        privacyModels={privacyModels}
       />
     </div>
   );
