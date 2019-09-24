@@ -1,7 +1,7 @@
 import toPercent from './ratioToPercent';
 import NavLogo from './resources/img/logo-nav.png';
 
-export default function generateAnalysisReport(response, file, attributes) {
+export default function generateAnalysisReport(response, fileName, attributes) {
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
@@ -46,7 +46,7 @@ export default function generateAnalysisReport(response, file, attributes) {
       {
         text: [
           { text: 'Analysis Report for: ', bold: true },
-          `${file.toString()}`,
+          `${fileName.toString()}`,
         ],
       },
       {

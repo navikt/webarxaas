@@ -4,14 +4,14 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import generateAnalysisReport from '../../../../util/generateAnalysisReport';
 
-const AnalyzeReportWrapper = (props) => {
+const AnonymizeReportWrapper = (props) => {
   const { response, fileName, attributes } = props;
 
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
   let content = '';
 
-  if (response.reIdentificationRisk) {
+  if (response.riskProfile) {
     content = (
       <div className="download-report-button small" style={{ margin: '5em 0 5em 0' }}>
         <Knapp
@@ -19,7 +19,9 @@ const AnalyzeReportWrapper = (props) => {
           onClick={
             () => {
               const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
-              const reportContent = generateAnalysisReport(response, fileName, attributes);
+              const reportContent = generateAnalysisReport(response.riskProfile,
+                fileName,
+                attributes);
               pdfMake.createPdf(reportContent).download(reportFileName);
             }
           }
@@ -32,4 +34,4 @@ const AnalyzeReportWrapper = (props) => {
 
   return content;
 };
-export default AnalyzeReportWrapper;
+export default AnonymizeReportWrapper;

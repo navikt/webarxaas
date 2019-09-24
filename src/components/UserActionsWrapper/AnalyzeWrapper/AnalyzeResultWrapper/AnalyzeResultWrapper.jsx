@@ -11,11 +11,10 @@ import RiskDistributionGraph from './DistributionOfRisk/RiskDistributionGraph/Ri
 import AttributeRiskGraph from './AttributeRisk/AttributeRiskGraph/AttributeRiskGraph';
 import AttributeRiskTable from './AttributeRisk/AttributeRiskTable/AttributeRiskTable';
 import './__css__/AnalysisWrapper.css';
-import AnalyzeReportWrapper from './AnalyzeReportWrapper';
 
 const AnalyzeResultWrapper = (props) => {
   const {
-    loadingAnalyze, response, file, attributes,
+    loadingAnalyze, response,
   } = props;
   const {
     message,
@@ -87,11 +86,6 @@ const AnalyzeResultWrapper = (props) => {
             </Col>
           </Row>
         </Container>
-        <AnalyzeReportWrapper
-          response={response}
-          file={file}
-          attributes={attributes}
-        />
       </div>
     );
   }
