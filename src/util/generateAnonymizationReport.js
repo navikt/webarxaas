@@ -11,7 +11,12 @@ export default function generateAnonymizationReport(response, analysisReportCont
     const { privacyModel } = item;
     let params = JSON.stringify(item.params);
 
-    params = params.replace('{', '').replace('}', '').replace(',', ', ').replace(':', ': ');
+    params = params.replace('{', '')
+      .replace('}', '')
+      .replace(',', '\n')
+      .replace(/:/g, ': ')
+      .replace(/"/g, '')
+      .replace(/_/g, ' ');
 
     privacyModelTable.push([privacyModel, params]);
   });
