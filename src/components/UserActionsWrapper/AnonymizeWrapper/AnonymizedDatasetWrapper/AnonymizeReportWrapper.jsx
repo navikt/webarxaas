@@ -8,6 +8,7 @@ import generateAnonymizationReport from '../../../../util/generateAnonymizationR
 const AnonymizeReportWrapper = (props) => {
   const {
     response, fileName, attributes, privacyModels,
+    suppressionLimit,
   } = props;
 
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
@@ -23,7 +24,7 @@ const AnonymizeReportWrapper = (props) => {
               fileName,
               attributes);
             const reportContent = generateAnonymizationReport(response,
-              analysisReportContent, privacyModels);
+              analysisReportContent, privacyModels, suppressionLimit);
             pdfMake.createPdf(reportContent).download(reportFileName);
           }
         }

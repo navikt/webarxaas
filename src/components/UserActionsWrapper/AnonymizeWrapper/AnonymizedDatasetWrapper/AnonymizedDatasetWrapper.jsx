@@ -12,7 +12,7 @@ import AnonymizeReportWrapper from './AnonymizeReportWrapper';
 const AnonymizedDatasetWrapper = (props) => {
   const {
     response, loadingAnonymize, fileName, attributes,
-    privacyModels,
+    privacyModels, suppressionLimit,
   } = props;
   const {
     message,
@@ -68,6 +68,7 @@ const AnonymizedDatasetWrapper = (props) => {
             fileName={anonymizedFileName}
             attributes={attributes}
             privacyModels={privacyModels}
+            suppressionLimit={suppressionLimit}
           />
         </div>
       </div>

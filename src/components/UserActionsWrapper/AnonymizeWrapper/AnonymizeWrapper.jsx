@@ -39,6 +39,7 @@ const AnonymizeWrapper = (props) => {
         fileName={fileName}
         attributes={attributes}
         privacyModels={privacyModels}
+        suppressionLimit={suppressionLimit}
       />
     </div>
   );

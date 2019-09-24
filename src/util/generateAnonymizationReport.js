@@ -1,5 +1,5 @@
 export default function generateAnonymizationReport(response, analysisReportContent,
-  privacyModels) {
+  privacyModels, suppressionLimit) {
   const newReportContent = analysisReportContent;
   const attributeGeneralization = [[{ text: 'Column name', bold: true }, { text: 'Type', bold: true }, { text: 'Generalization level', bold: true }]];
   response.anonymizeResult.metrics.attributeGeneralization.forEach((item) => {
@@ -31,6 +31,17 @@ export default function generateAnonymizationReport(response, analysisReportCont
         table: {
           widths: ['*', '*'],
           body: privacyModelTable,
+        },
+      },
+      '\n',
+      { text: 'Suppression Limit Used', style: 'subheader' },
+      '\n',
+      'Suppression limit defines the percentage of rows allowed to delete from the dataset. This is done to lower the amount of outliers in the dataset.',
+      {
+        table: {
+          widths: ['*', '*'],
+          body: [['', { text: 'Amount', bold: true }],
+            ['Suppression limit', `${suppressionLimit} %`]],
         },
       },
       '\n',
