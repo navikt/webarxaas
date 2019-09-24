@@ -7,6 +7,7 @@ import DownloadAnonymizedDataset from './DownloadAnonymizedDataset/DownloadAnony
 import AttributeGeneralizationLevel from './AttributeGeneralizationLevel/AttributeGeneralizationLevel';
 import AnalyzeResultWrapper from '../../AnalyzeWrapper/AnalyzeResultWrapper/AnalyzeResultWrapper';
 import './__css__/AnonymizedDatasetWrapper.css';
+import AnonymizeReportWrapper from './AnonymizeReportWrapper';
 
 const AnonymizedDatasetWrapper = (props) => {
   const {
@@ -54,8 +55,6 @@ const AnonymizedDatasetWrapper = (props) => {
             <AnalyzeResultWrapper
               response={response.riskProfile}
               loadingAnalyze={loadingAnonymize}
-              file={anonymizedFileName}
-              attributes={attributes}
             />
           </Ekspanderbartpanel>
           <Ekspanderbartpanel tittel="Attribute Generalization Level" border>
@@ -63,6 +62,11 @@ const AnonymizedDatasetWrapper = (props) => {
               attributeGeneralization={response.anonymizeResult.metrics.attributeGeneralization}
             />
           </Ekspanderbartpanel>
+          <AnonymizeReportWrapper
+            response={response}
+            fileName={anonymizedFileName}
+            attributes={attributes}
+          />
         </div>
       </div>
     );
