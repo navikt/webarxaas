@@ -63,6 +63,37 @@ export default function generateAnalysisReport(response, fileName, attributes) {
       },
       '\n',
       { text: 'Attributes Used', style: 'subheader' },
+      '\n',
+      { text: 'Attribute types:', bold: true },
+      {
+        ul: [
+          {
+            text: [
+              { text: 'Identifying', bold: true },
+              ' attributes are associated with a high risk of re-identification.',
+            ],
+          },
+          {
+            text: [
+              { text: 'Quasi-identifying', bold: true },
+              ' attributes can in combination be used for re-identification attacks.',
+            ],
+          },
+          {
+            text: [
+              { text: 'Sensitive', bold: true },
+              ' attributes encode properties with which individuals are not willing to be linked with. As such, they might be of interest to an attacker and, if disclosed, could cause harm to data subjects.',
+            ],
+          },
+          {
+            text: [
+              { text: 'Insensitive', bold: true },
+              ' attributes are not associated with privacy risks.',
+            ],
+          },
+        ],
+      },
+      '\n',
       'The table shows which attributes was used on each column, when analyzing for re-identification risk.',
       {
         table: {
