@@ -198,7 +198,7 @@ export default function generateAnalysisReport(response, fileName, attributes) {
       '\n',
       {
         text: 'Distribution of risk',
-        bold: true,
+        style: 'subheader',
       },
       'The distribution of re-identification risk amongst the records of the dataset. The interval shows the percentage of risk [from,to), and the records that are within that risk. The amount of records with maximum risk within the intervel is also displayed.',
       {
@@ -210,7 +210,7 @@ export default function generateAnalysisReport(response, fileName, attributes) {
       '\n',
       {
         text: 'Attribute risk',
-        bold: true,
+        style: 'subheader',
       },
       'Shows the distinction and separation associated with each column in the dataset',
       '\n',
