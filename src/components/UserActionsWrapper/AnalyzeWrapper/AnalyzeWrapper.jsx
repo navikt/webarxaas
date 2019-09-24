@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import AnalyzeButton from './AnalyzeButton/AnalyzeButton';
 import AnalyzeResultWrapper from './AnalyzeResultWrapper/AnalyzeResultWrapper';
+import AnalyzeReportWrapper from './AnalyzeResultWrapper/AnalyzeReportWrapper';
 
 const AnalyzeWrapper = (props) => {
   const {
@@ -26,7 +27,10 @@ const AnalyzeWrapper = (props) => {
       <AnalyzeResultWrapper
         response={analyzeResponse}
         loadingAnalyze={loadingAnalyze}
-        file={datasetFile.name}
+      />
+      <AnalyzeReportWrapper
+        response={analyzeResponse}
+        fileName={datasetFile.name}
         attributes={attributes}
       />
       <br />
