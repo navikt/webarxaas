@@ -19,17 +19,11 @@ const UserManualPage = () => {
           <Col sm={12}>
             <Ekspanderbartpanel tittel="Analyze Manual" border>
               <AnalyzeManual />
-              <Ekspanderbartpanel tittel="More Information" border>
-                Test
-              </Ekspanderbartpanel>
             </Ekspanderbartpanel>
           </Col>
           <Col sm={12}>
             <Ekspanderbartpanel tittel="Anonymize Manual" border>
-
-              <Ekspanderbartpanel tittel="More Information" border>
-                Test
-              </Ekspanderbartpanel>
+              
             </Ekspanderbartpanel>
           </Col>
         </Row>
