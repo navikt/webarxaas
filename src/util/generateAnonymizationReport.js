@@ -13,7 +13,7 @@ export default function generateAnonymizationReport(response, analysisReportCont
 
     params = params.replace('{', '')
       .replace('}', '')
-      .replace(',', '\n')
+      .replace(/,/g, '\n')
       .replace(/:/g, ': ')
       .replace(/"/g, '')
       .replace(/_/g, ' ');
