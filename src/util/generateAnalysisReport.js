@@ -1,7 +1,8 @@
 import toPercent from './ratioToPercent';
 import NavLogo from './resources/img/logo-nav.png';
+import exportCharts from './exportCharts';
 
-export default function generateAnalysisReport(response, fileName, attributes) {
+export default async function generateAnalysisReport(response, fileName, attributes) {
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
@@ -25,6 +26,10 @@ export default function generateAnalysisReport(response, fileName, attributes) {
   response.attributeRisk.quasiIdentifierRiskList.forEach((item) => {
     attributeRisk.push([item.identifier, toPercent(item.distinction), toPercent(item.separation)]);
   });
+
+  const riskBarometer = await exportCharts('risk-barometer');
+
+  const riskBarometerTwoBars = await exportCharts('risk-barometer-2-bars');
 
   return {
     content: [
@@ -105,6 +110,18 @@ export default function generateAnalysisReport(response, fileName, attributes) {
       {
         text: 'Analysis Result',
         style: 'subheader',
+      },
+      '\n',
+      {
+        image: riskBarometer,
+        width: 1700,
+        alignment: 'center',
+      },
+      '\n',
+      {
+        image: riskBarometerTwoBars,
+        width: 1700,
+        alignment: 'center',
       },
       '\n',
       {
