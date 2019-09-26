@@ -24,7 +24,9 @@ export default function generateAnonymizationReport(response, analysisReportCont
   const anonymizeReportContent = {
     content: [
       '\n',
-      { text: 'Privacy Model Used', style: 'subheader' },
+      { text: 'Anonymization Metrics', style: 'subheader' },
+      '\n',
+      { text: 'Privacy model used', bold: true },
       '\n',
       'The table shows the privacy model used, when anonymizing the dataset.',
       {
@@ -34,7 +36,7 @@ export default function generateAnonymizationReport(response, analysisReportCont
         },
       },
       '\n',
-      { text: 'Suppression Limit Used', style: 'subheader' },
+      { text: 'Suppression Limit Used', bold: true },
       '\n',
       'Suppression limit defines the percentage of rows allowed to delete from the dataset. This is done to lower the amount of outliers in the dataset.',
       {
@@ -45,7 +47,7 @@ export default function generateAnonymizationReport(response, analysisReportCont
         },
       },
       '\n',
-      { text: 'Attribute Generalization Level', style: 'subheader' },
+      { text: 'Attribute Generalization Level', bold: true },
       '\n',
       'The table shows the generalization level used to fullfil the privacy model criterion.',
       {
@@ -57,8 +59,10 @@ export default function generateAnonymizationReport(response, analysisReportCont
     ],
   };
 
+  let index = 13;
   anonymizeReportContent.content.forEach((item) => {
-    newReportContent.content.push(item);
+    newReportContent.content.splice(index, 0, item);
+    index += 1;
   });
 
   return newReportContent;
