@@ -12,6 +12,7 @@ describe('AnalyzeManual: Render test', () => {
   beforeAll(() => {
     wrapper = shallow(<AnalyzeManual />);
   });
+
   it('Render test', () => {
     expect(wrapper.contains(<h1>Analyze re-identification risk manual</h1>)).toBeTruthy();
     expect(wrapper.contains(<p><b>Analysis Result:</b></p>)).toBeTruthy();
