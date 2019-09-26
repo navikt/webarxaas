@@ -13,7 +13,7 @@ export default async function generateAnalysisReport(response, fileName, attribu
     });
   };
 
-  snackbar(true, 'success', 'Preparing report content, download will begin shortly.');
+  snackbar(true, 'success', 'Preparing document, download will begin shortly.');
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
