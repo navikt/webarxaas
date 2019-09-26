@@ -74,6 +74,7 @@ const UserActionsWrapper = (props) => {
         anonymizeResponse={anonymizeResponse}
         setLoadingAnonymize={setLoadingAnonymize}
         loadingAnonymize={loadingAnonymize}
+        setSnackbar={setSnackbar}
       />
     );
   }

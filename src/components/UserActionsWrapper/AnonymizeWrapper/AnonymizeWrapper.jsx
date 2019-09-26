@@ -18,6 +18,7 @@ const AnonymizeWrapper = (props) => {
     anonymizeResponse,
     setLoadingAnonymize,
     loadingAnonymize,
+    setSnackbar,
   } = props;
   return (
     <div>
@@ -40,6 +41,7 @@ const AnonymizeWrapper = (props) => {
         attributes={attributes}
         privacyModels={privacyModels}
         suppressionLimit={suppressionLimit}
+        setSnackbar={setSnackbar}
       />
     </div>
   );
@@ -59,6 +61,7 @@ AnonymizeWrapper.propTypes = {
   anonymizeResponse: PropTypes.objectOf(PropTypes.object).isRequired,
   setLoadingAnonymize: PropTypes.func.isRequired,
   loadingAnonymize: PropTypes.bool.isRequired,
+  setSnackbar: PropTypes.func.isRequired,
 };
 
 export default AnonymizeWrapper;
