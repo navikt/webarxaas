@@ -20,10 +20,9 @@ const AnonymizeReportWrapper = (props) => {
         onClick={
           () => {
             const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
-            const analysisReportContent = generateAnalysisReport(response.riskProfile,
-              fileName, attributes,
+            generateAnalysisReport(response.riskProfile, fileName, attributes,
               'Re-Identification Anonymization Report', setSnackbar)
-              .then(() => {
+              .then((analysisReportContent) => {
                 const reportContent = generateAnonymizationReport(response,
                   analysisReportContent, privacyModels, suppressionLimit);
                 pdfMake.createPdf(reportContent).download(reportFileName);
