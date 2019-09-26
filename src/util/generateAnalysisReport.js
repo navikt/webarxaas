@@ -26,6 +26,9 @@ export default function generateAnalysisReport(response, fileName, attributes, d
     attributeRisk.push([item.identifier, toPercent(item.distinction), toPercent(item.separation)]);
   });
 
+  const tableMargin = [0, 8, 0, 0];
+  const textMargin = [0, 0, 0, 8];
+
   return {
     content: [
       {
@@ -64,7 +67,7 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       '\n',
       { text: 'Attributes Used', style: 'subheader' },
       '\n',
-      { text: 'Attribute types:', bold: true },
+      { text: 'Attribute types:', bold: true, margin: textMargin },
       {
         ul: [
           {
@@ -96,6 +99,7 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       '\n',
       'The table shows which attributes was used on each column, when analyzing for re-identification risk.',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: attributesUsed,
@@ -110,9 +114,11 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       {
         text: 'Prosecutor Model',
         bold: true,
+        margin: textMargin,
       },
       'In the prosecutor model the attacker targets a specific individual, and it is assumed that the attacker already knows that data about the individual, is contained in the dataset.',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
@@ -127,9 +133,11 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       {
         text: 'Journalist Model',
         bold: true,
+        margin: textMargin,
       },
       'In the journalist model the attacker is trying to randomly re-identify a individual with no background knowledge on anyone in the dataset.',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
@@ -143,9 +151,11 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       {
         text: 'Marketer Model',
         bold: true,
+        margin: textMargin,
       },
       'In the marketer model the attacker does not target a specific individual but aims at re-identifying a high number of individuals. An attack can therefore only be considered successful if a larger fraction of the records could be re-identified.',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
@@ -157,11 +167,13 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       {
         text: 'Population',
         bold: true,
+        margin: textMargin,
       },
       'The population uniqueness privacy model aims at protecting dataset from re-identification in the marketer model by enforcing thresholds on the proportion of records that are unique within the underlying population. For this purpose, basic information about the population has to be specified. Based on this data, statistical super-population models are used to estimate characteristics of the overall population with probability distributions that are parameterized with sample characteristics.',
       '\n',
       `Population model: ${response.reIdentificationRisk.populationModel}`,
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
@@ -172,10 +184,12 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       {
         text: 'Lowest risk',
         bold: true,
+        margin: textMargin,
       },
       'Lowest risk displays the lowest risk in the dataset.',
       'Records affected by lowest risk displays the percentage of records with the lowest risk.',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }],
@@ -187,9 +201,11 @@ export default function generateAnalysisReport(response, fileName, attributes, d
       {
         text: 'Sample uniques',
         bold: true,
+        margin: textMargin,
       },
       'displays the unique data in percent, contained in the dataset',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*'],
           body: [[{ text: 'Risk Type', bold: true }, { text: 'Risk Amount', bold: true }], ['Sample uniques', toPercent(response.reIdentificationRisk.measures.sample_uniques)]],
@@ -200,8 +216,10 @@ export default function generateAnalysisReport(response, fileName, attributes, d
         text: 'Distribution of risk',
         style: 'subheader',
       },
+      '\n',
       'The distribution of re-identification risk amongst the records of the dataset. The interval shows the percentage of risk [from,to), and the records that are within that risk. The amount of records with maximum risk within the intervel is also displayed.',
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*', '*'],
           body: distributionOfRisk,
@@ -212,6 +230,7 @@ export default function generateAnalysisReport(response, fileName, attributes, d
         text: 'Attribute risk',
         style: 'subheader',
       },
+      '\n',
       'Shows the distinction and separation associated with each column in the dataset',
       '\n',
       {
@@ -228,6 +247,7 @@ export default function generateAnalysisReport(response, fileName, attributes, d
         ],
       },
       {
+        margin: tableMargin,
         table: {
           widths: ['*', '*', '*'],
           body: attributeRisk,
