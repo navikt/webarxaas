@@ -29,7 +29,7 @@ const AnonymizeReportWrapper = (props) => {
           }
         }
       >
-        Download Analysis Report as PDF
+        Download Anonymization Report as PDF
       </Knapp>
     </div>
   );
