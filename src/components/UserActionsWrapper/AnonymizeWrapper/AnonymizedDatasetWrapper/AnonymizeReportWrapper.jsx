@@ -22,14 +22,15 @@ const AnonymizeReportWrapper = (props) => {
             const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
             const analysisReportContent = generateAnalysisReport(response.riskProfile,
               fileName,
-              attributes);
+              attributes,
+              'Re-Identification Anonymization Report');
             const reportContent = generateAnonymizationReport(response,
               analysisReportContent, privacyModels, suppressionLimit);
             pdfMake.createPdf(reportContent).download(reportFileName);
           }
         }
       >
-        Download Analysis Report as PDF
+        Download Anonymization Report as PDF
       </Knapp>
     </div>
   );
