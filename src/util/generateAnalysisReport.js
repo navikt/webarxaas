@@ -2,7 +2,18 @@ import toPercent from './ratioToPercent';
 import NavLogo from './resources/img/logo-nav.png';
 import exportCharts from './exportCharts';
 
-export default async function generateAnalysisReport(response, fileName, attributes) {
+export default async function generateAnalysisReport(response, fileName, attributes, setSnackbar) {
+  const snackbar = (
+    open, variant, message,
+  ) => {
+    setSnackbar({
+      open,
+      variant,
+      message,
+    });
+  };
+
+  snackbar(true, 'success', 'Preparing report content, download will begin shortly.');
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
