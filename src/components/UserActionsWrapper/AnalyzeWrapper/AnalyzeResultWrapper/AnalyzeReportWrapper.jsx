@@ -19,8 +19,11 @@ const AnalyzeReportWrapper = (props) => {
           onClick={
             () => {
               const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
-              const reportContent = generateAnalysisReport(response, fileName, attributes);
-              pdfMake.createPdf(reportContent).download(reportFileName);
+              generateAnalysisReport(
+                response, fileName, attributes,
+              ).then((reportContent) => {
+                pdfMake.createPdf(reportContent).download(reportFileName);
+              });
             }
           }
         >
