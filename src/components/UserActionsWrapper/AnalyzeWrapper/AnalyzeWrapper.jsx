@@ -13,6 +13,7 @@ const AnalyzeWrapper = (props) => {
     setLoadingAnalyze,
     setAnalyzeResponse,
     analyzeResponse,
+    setSnackbar,
   } = props;
   return (
     <div>
@@ -32,6 +33,7 @@ const AnalyzeWrapper = (props) => {
         response={analyzeResponse}
         fileName={datasetFile.name}
         attributes={attributes}
+        setSnackbar={setSnackbar}
       />
       <br />
     </div>
@@ -46,6 +48,7 @@ AnalyzeWrapper.propTypes = {
   setLoadingAnalyze: PropTypes.func.isRequired,
   setAnalyzeResponse: PropTypes.func.isRequired,
   analyzeResponse: PropTypes.objectOf(PropTypes.object).isRequired,
+  setSnackbar: PropTypes.func.isRequired,
 };
 
 export default AnalyzeWrapper;

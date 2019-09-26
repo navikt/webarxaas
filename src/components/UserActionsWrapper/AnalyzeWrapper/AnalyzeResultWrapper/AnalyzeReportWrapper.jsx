@@ -5,7 +5,9 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 import generateAnalysisReport from '../../../../util/generateAnalysisReport';
 
 const AnalyzeReportWrapper = (props) => {
-  const { response, fileName, attributes } = props;
+  const {
+    response, fileName, attributes, setSnackbar,
+  } = props;
 
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
@@ -20,7 +22,7 @@ const AnalyzeReportWrapper = (props) => {
             () => {
               const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
               generateAnalysisReport(
-                response, fileName, attributes,
+                response, fileName, attributes, setSnackbar,
               ).then((reportContent) => {
                 pdfMake.createPdf(reportContent).download(reportFileName);
               });

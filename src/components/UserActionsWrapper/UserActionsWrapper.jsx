@@ -31,6 +31,7 @@ const UserActionsWrapper = (props) => {
     endpoint,
     fileName,
     setAttributes,
+    setSnackbar,
   } = props;
   const [datasetCache, setDatasetCache] = useState(dataset);
 
@@ -54,6 +55,7 @@ const UserActionsWrapper = (props) => {
         setLoadingAnalyze={setLoadingAnalyze}
         setAnalyzeResponse={setAnalyzeResponse}
         analyzeResponse={analyzeResponse}
+        setSnackbar={setSnackbar}
       />
     );
   } else {
@@ -96,6 +98,7 @@ UserActionsWrapper.propTypes = {
   endpoint: PropTypes.string.isRequired,
   fileName: PropTypes.string.isRequired,
   setAttributes: PropTypes.func.isRequired,
+  setSnackbar: PropTypes.func.isRequired,
 };
 
 export default UserActionsWrapper;

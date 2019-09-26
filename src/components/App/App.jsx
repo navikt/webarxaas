@@ -53,6 +53,7 @@ function App() {
           setAttributes={setAttributes}
           endpoint={arxaasEndpoint}
           fileName={fileName}
+          setSnackbar={setSnackbar}
         />
         <Footer />
         <SnackbarWrapper
