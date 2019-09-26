@@ -14,6 +14,7 @@ export default async function generateAnalysisReport(response, fileName, attribu
   };
 
   snackbar(true, 'success', 'Preparing document, download will begin shortly.');
+
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
@@ -125,13 +126,13 @@ export default async function generateAnalysisReport(response, fileName, attribu
       '\n',
       {
         image: riskBarometer,
-        width: 1700,
+        width: 1600,
         alignment: 'center',
       },
       '\n',
       {
         image: riskBarometerTwoBars,
-        width: 1700,
+        width: 1600,
         alignment: 'center',
       },
       '\n',
@@ -228,6 +229,7 @@ export default async function generateAnalysisReport(response, fileName, attribu
         text: 'Distribution of risk',
         style: 'subheader',
       },
+      '\n',
       'The distribution of re-identification risk amongst the records of the dataset. The interval shows the percentage of risk [from,to), and the records that are within that risk. The amount of records with maximum risk within the intervel is also displayed.',
       {
         table: {
