@@ -19,7 +19,7 @@ const AnalyzeReportWrapper = (props) => {
           onClick={
             () => {
               const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
-              const reportContent = generateAnalysisReport(response, fileName, attributes);
+              const reportContent = generateAnalysisReport(response, fileName, attributes, 'Re-Identification Analysis Report');
               pdfMake.createPdf(reportContent).download(reportFileName);
             }
           }
