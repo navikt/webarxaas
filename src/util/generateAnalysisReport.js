@@ -1,7 +1,7 @@
 import toPercent from './ratioToPercent';
 import NavLogo from './resources/img/logo-nav.png';
 
-export default function generateAnalysisReport(response, fileName, attributes) {
+export default function generateAnalysisReport(response, fileName, attributes, documentTitle) {
   const now = new Date();
   const date = ((now.getDate() < 10 ? '0' : '') + now.getDate());
   const month = ((now.getMonth() < 10 ? '0' : '') + now.getMonth());
@@ -32,7 +32,7 @@ export default function generateAnalysisReport(response, fileName, attributes) {
         alignment: 'justify',
         columns: [
           {
-            text: 'Re-Identification Analysis Report',
+            text: documentTitle,
             style: 'header',
             alignment: 'center',
           },
