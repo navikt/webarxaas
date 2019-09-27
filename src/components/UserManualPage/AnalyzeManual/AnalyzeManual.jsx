@@ -13,7 +13,7 @@ const AnalyzeManual = () => {
       <ImportManual />
       <div className="analyze-manual-attribute">
         <p><b>Analyze dataset:</b></p>
-        <p>To analyse the dataset, click the ANALYZE RE-IDENTIGICATION RISK button.</p>
+        <p>To analyse the dataset, click the ANALYZE RE-IDENTIFICATION RISK button.</p>
         <p>When the analysis is complete the result will be displayed.</p>
         <div className="analyze-result-img">
           <img src={AnalysisResult} alt="Analysis Result" />
