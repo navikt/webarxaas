@@ -18,7 +18,7 @@ const RiskBarometer2Bars = (props) => {
         layout="vertical"
         data={riskData}
         margin={{
-          top: 20, right: 40, left: 50, bottom: 5,
+          top: 20, right: 40, left: 50, bottom: 15,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" horizontalPoints={[20]} />

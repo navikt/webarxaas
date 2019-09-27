@@ -132,13 +132,13 @@ export default async function generateAnalysisReport(
       '\n',
       {
         image: riskBarometer,
-        width: 1600,
+        width: 1500,
         alignment: 'center',
       },
       '\n',
       {
         image: riskBarometerTwoBars,
-        width: 1600,
+        width: 1500,
         alignment: 'center',
       },
       '\n',
