@@ -13,6 +13,11 @@ const AnonymizeReportWrapper = (props) => {
 
   pdfMake.vfs = pdfFonts.pdfMake.vfs;
 
+  const document = {
+    title: 'Re-Identification Anonymization Report',
+    fileName,
+  };
+
   const content = (
     <div className="download-report-button small" style={{ margin: '5em 0 5em 0' }}>
       <Knapp
@@ -20,8 +25,8 @@ const AnonymizeReportWrapper = (props) => {
         onClick={
           () => {
             const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
-            generateAnalysisReport(response.riskProfile, fileName, attributes,
-              'Re-Identification Anonymization Report', setSnackbar)
+            generateAnalysisReport(response.riskProfile, attributes,
+              document, setSnackbar)
               .then((analysisReportContent) => {
                 const reportContent = generateAnonymizationReport(response,
                   analysisReportContent, privacyModels, suppressionLimit);

@@ -13,6 +13,11 @@ const AnalyzeReportWrapper = (props) => {
 
   let content = '';
 
+  const document = {
+    title: 'Re-Identification Analysis Report',
+    fileName,
+  };
+
   if (response.reIdentificationRisk) {
     content = (
       <div className="download-report-button small" style={{ margin: '5em 0 5em 0' }}>
@@ -22,7 +27,7 @@ const AnalyzeReportWrapper = (props) => {
             () => {
               const reportFileName = fileName.toString().replace('.csv', '').concat('_report.pdf');
               generateAnalysisReport(
-                response, fileName, attributes, 'Re-Identification Analysis Report', setSnackbar,
+                response, attributes, document, setSnackbar,
               ).then((reportContent) => {
                 pdfMake.createPdf(reportContent).download(reportFileName);
               });

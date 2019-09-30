@@ -3,7 +3,7 @@ import NavLogo from './resources/img/logo-nav.png';
 import exportCharts from './exportCharts';
 
 export default async function generateAnalysisReport(
-  response, fileName, attributes, documentTitle, setSnackbar,
+  response, attributes, document, setSnackbar,
 ) {
   const snackbar = (
     open, variant, message,
@@ -54,7 +54,7 @@ export default async function generateAnalysisReport(
         alignment: 'justify',
         columns: [
           {
-            text: documentTitle,
+            text: document.title,
             style: 'header',
             alignment: 'center',
           },
@@ -68,7 +68,7 @@ export default async function generateAnalysisReport(
       {
         text: [
           { text: 'Analysis Report for: ', bold: true },
-          `${fileName.toString()}`,
+          `${document.fileName.toString()}`,
         ],
       },
       {
