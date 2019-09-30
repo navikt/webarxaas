@@ -32,15 +32,15 @@ const AnalyzeManual = () => {
         <br />
         <p><b>Analysis Report:</b></p>
         <p>
-          To download an analysis report as PDF click the
+          To download a analysis report as PDF click the
            DOWNLOAD ANALYSIS REPORT AS PDF button.
         </p>
         <div className="download-PDF-img">
           <img src={DownloadAnalysisReportAsPDF} alt="Download PDF Report" />
         </div>
-        <br />
-        <ResultManual />
       </div>
+      <br />
+      <ResultManual />
     </div>
   );
   return content;
