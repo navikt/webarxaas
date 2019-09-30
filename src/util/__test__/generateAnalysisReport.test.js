@@ -2,9 +2,8 @@ import generateAnalysisReport from '../generateAnalysisReport';
 
 describe('Test for generateAnalysisReport', () => {
   let response;
-  let fileName;
   let attribues;
-  let documentTitle;
+  let document;
 
   beforeAll(() => {
     response = {
@@ -56,21 +55,22 @@ describe('Test for generateAnalysisReport', () => {
       },
     };
 
-    fileName = 'testFileName.pdf';
-
     attribues = [{ field: 'Navn', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
       { field: 'Alder', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
       { field: 'Innvandrerbakgrunn', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null },
       { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null }];
 
-    documentTitle = 'Test Title';
+    document = {
+      fileName: 'testFileName.pdf',
+      title: 'Test Title',
+    };
   });
 
   it('Test for generating analysis report correctly', () => {
-    const analysisReport = generateAnalysisReport(response, fileName, attribues, documentTitle);
+    const analysisReport = generateAnalysisReport(response, attribues, document);
 
     expect(analysisReport.content.length).toEqual(56);
-    expect(analysisReport.content[0].columns[0].text).toEqual(documentTitle);
+    expect(analysisReport.content[0].columns[0].text).toEqual(document.title);
     expect(analysisReport.content[18].table.body[1][0]).toEqual('Estimated prosecutor risk');
     expect(analysisReport.content[18].table.body[1][1]).toEqual('100.00 %');
 
