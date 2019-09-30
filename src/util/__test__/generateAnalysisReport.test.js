@@ -61,7 +61,7 @@ describe('Test for generateAnalysisReport', () => {
       { field: 'Medisinsk forhold', attributeTypeModel: 'QUASIIDENTIFYING', hierarchy: null }];
 
     document = {
-      fileName: 'testFileName.pdf',
+      fileName: 'testFileName.csv',
       title: 'Test Title',
     };
   });
@@ -71,6 +71,8 @@ describe('Test for generateAnalysisReport', () => {
 
     expect(analysisReport.content.length).toEqual(56);
     expect(analysisReport.content[0].columns[0].text).toEqual(document.title);
+    expect(analysisReport.content[2].text[1]).toEqual(document.fileName);
+
     expect(analysisReport.content[18].table.body[1][0]).toEqual('Estimated prosecutor risk');
     expect(analysisReport.content[18].table.body[1][1]).toEqual('100.00 %');
 
