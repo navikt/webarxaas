@@ -31,7 +31,7 @@ const ImportManual = () => {
         <img src={DatasetPreview} alt="Dataset Preview" />
       </div>
       <br />
-      <p>Attributes will default to quasi-identifying</p>
+      <p>Attributes will default to quasi-identifying.</p>
       <p>To change attribute type, click the selector box and choose attribute type.</p>
       <div className="attributes">
         <img src={Attributes} alt="Attributes" />
