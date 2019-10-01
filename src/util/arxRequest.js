@@ -3,7 +3,13 @@ export default function ArxRequest(setLoadingFunction, endpoint, formData, servi
     crossDomain: true,
     method: 'post',
     body: formData,
-  }).then(response => (response.json())).then((data) => {
+  }).then((response) => {
+    try {
+      return response.json();
+    } catch (error) {
+      return error;
+    }
+  }).then((data) => {
     setResponse(data);
     setLoadingFunction(false);
   }).catch((error) => {
