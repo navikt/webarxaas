@@ -4,6 +4,7 @@ import Ekspanderbartpanel from 'nav-frontend-ekspanderbartpanel';
 import './__css__/UserManual.css';
 import GeneralInformation from './GeneralInformation/GeneralInformation';
 import AnalyzeManual from './AnalyzeManual/AnalyzeManual';
+import AnonymizeManual from './AnonymizeManual/AnonymizeManual';
 
 const UserManualPage = () => {
   const content = (
@@ -23,7 +24,7 @@ const UserManualPage = () => {
           </Col>
           <Col sm={12}>
             <Ekspanderbartpanel tittel="Anonymize Manual" border>
-              
+              <AnonymizeManual />
             </Ekspanderbartpanel>
           </Col>
         </Row>

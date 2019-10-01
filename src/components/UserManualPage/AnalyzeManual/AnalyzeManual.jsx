@@ -38,9 +38,9 @@ const AnalyzeManual = () => {
         <div className="download-PDF-img">
           <img src={DownloadAnalysisReportAsPDF} alt="Download PDF Report" />
         </div>
-        <br />
-        <ResultManual />
       </div>
+      <br />
+      <ResultManual />
     </div>
   );
   return content;
