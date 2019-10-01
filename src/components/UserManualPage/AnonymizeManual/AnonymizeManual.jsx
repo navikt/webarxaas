@@ -24,7 +24,7 @@ const AnonymizeManual = () => {
       <br />
       <ImportManual />
       <div className="anonymize-manual-attribute">
-        <p><b>Anonymize dataset:</b></p>
+        <p><b>Anonymize Dataset:</b></p>
         <p>To anonymize a dataset click the ANONYMIZE DATASET tab.</p>
         <div className="anonymize-dataset-tab-img">
           <img src={AnonymizeDatasetTab} alt="Anonymize Dataset Tab" />
