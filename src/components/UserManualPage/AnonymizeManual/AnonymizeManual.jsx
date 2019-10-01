@@ -39,13 +39,13 @@ const AnonymizeManual = () => {
         </div>
         <br />
         <p><b>Import Hierarchies field:</b></p>
+        <p>
+        Hierarchies are strategies that define how the data is generalized.
+        </p>
         <div className="import-hierarchies-img">
           <img src={ImportHierarchies} alt="Import Hierarchies" />
         </div>
         <br />
-        <p>
-        Hierarchies are strategies that define how the data is generalized.
-        </p>
         <br />
         <p>
           To import a hierarchy, click the IMPORT button and choose a
@@ -53,16 +53,16 @@ const AnonymizeManual = () => {
         </p>
         <br />
         <p><b>Set Privacy Model(s):</b></p>
-        <div className="set-privacy-models-img">
-          <img src={SetPrivacyModels} alt="Set Privacy Models" />
-        </div>
         <p>
-        Privacy models are criteria’s on how to defend the dataset against re-identification.
+          Privacy models specify the requirements for anonymizing the dataset.
          By default, K-Anonymity is set to four, and all sensitive attributes have
           L-diversity set to two.
         </p>
+        <div className="set-privacy-models-img">
+          <img src={SetPrivacyModels} alt="Set Privacy Models" />
+        </div>
         <PrivacyModels />
-        <p><b>Change Models And Values:</b></p>
+        <p><b>Change The Models And Values For Privacy Models:</b></p>
         <p>
           To change the default K-Anonymity value,
            click the input field and type or select a new value.
@@ -88,33 +88,34 @@ const AnonymizeManual = () => {
         </div>
         <br />
         <p><b>Suppression Limit:</b></p>
+        <p>
+        Suppression limit defines the percentage of rows allowed to delete from the dataset.
+        This is done to lower the amount of outliers in the dataset.
+        </p>
         <div className="set-suppression-limit-img">
           <img src={SetSuppressionLimit} alt="Set Suppression Limit" />
         </div>
         <br />
         <p>
-        Suppression limit defines the percentage of rows allowed to delete from the dataset.
-        This is done to lower the amount of outliers in the dataset.
-        </p>
-        <p>
         The suppression limit is by default set to zero. To change the suppression limit,
          click the input field and type a new value.
         </p>
         <p><b>Anonymize dataset:</b></p>
+        <p>To anonymize the dataset, click the ANONYMIZE DATASET button.</p>
         <div className="anonymize-dataset-button-img">
           <img src={AnonymizeDatasetButton} alt="Anonymize Dataset Button" />
         </div>
-        <p>To anonymize the dataset, click the ANONYMIZE DATASET button.</p>
         <p>When the anonymization is complete the result will be displayed.</p>
         <br />
         <p><b>Anonymization Result:</b></p>
-        <div className="anonymization-result-preview-img">
-          <img src={AnonymizationResultPreview} alt="Anonymization Result Preview" />
-        </div>
         <p>
         After successfully anonymizing a dataset,
          a preview of the first one hundred rows will be displayed.
         </p>
+        <div className="anonymization-result-preview-img">
+          <img src={AnonymizationResultPreview} alt="Anonymization Result Preview" />
+        </div>
+        <br />
         <p>
         The anonymized dataset can be downloaded as a CSV file
          by clicking the DOWNLOAD DATASET button.
