@@ -1,0 +1,23 @@
+.anonymize-manual img {
+  max-width: 45em;
+  width: 100%;
+  height: 100%;
+}
+.anonymize-manual-attribute {
+  display: inline-block;
+  text-align: left;
+  width: 80%;
+  align-content: center;
+}
+.dropdown-privacy-models-img {
+  width: 25%;
+}
+.anonymize-dataset-button-img {
+  width: 25%;
+}
+.kanonymity-input-field-img {
+  width: 55%;
+}
+.privacy-model-input-fields-img {
+  width: 55%;
+}
