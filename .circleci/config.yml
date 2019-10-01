@@ -92,7 +92,7 @@ jobs:
                      --repository=navikt/webarx-poc
                      --team=$TEAMNAME
                      --resource=arxaas-nais-config/webarx-poc-nais.yaml
-                     --version=$CIRCLE_SHA1
+                     --version=`cat img_tag/docker_img_tag`
                      --vars=arxaas-nais-config/webarx-poc-dev-placeholders.json
 
   deploy-prod:
@@ -113,7 +113,7 @@ jobs:
                      --repository=navikt/webarx-poc
                      --team=$TEAMNAME
                      --resource=arxaas-nais-config/webarx-poc-nais.yaml
-                     --version=$CIRCLE_SHA1
+                     --version=`cat img_tag/docker_img_tag`
                      --vars=arxaas-nais-config/webarx-poc-prod-placeholders.json
 
 workflows:
