@@ -14,7 +14,7 @@ export default function ArxRequest(setLoadingFunction, endpoint, formData, servi
     setLoadingFunction(false);
   }).catch((error) => {
     const errorMessage = error;
-    errorMessage.message = `No service connection, ${error}`;
+    errorMessage.message = `${error}`;
     setResponse(errorMessage);
     setLoadingFunction(false);
   });
