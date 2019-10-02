@@ -69,11 +69,11 @@ describe('Test for generateAnalysisReport', () => {
   it('Test for generating analysis report correctly', () => {
     const analysisReport = generateAnalysisReport(response, attribues, document);
 
-    expect(analysisReport.content.length).toEqual(56);
+    expect(analysisReport.content.length).toEqual(42);
     expect(analysisReport.content[0].columns[0].text).toEqual(document.title);
     expect(analysisReport.content[2].text[1]).toEqual(document.fileName);
 
-    expect(analysisReport.content[18].table.body[1][0]).toEqual('Estimated prosecutor risk');
+    expect(analysisReport.content[18].table.body[1][0]).toEqual('Estimated risk');
     expect(analysisReport.content[18].table.body[1][1]).toEqual('100.00 %');
 
     expect(analysisReport.content[12].table.body[1][0]).toEqual('Navn');
