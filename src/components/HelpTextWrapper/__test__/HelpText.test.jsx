@@ -28,5 +28,7 @@ describe('HelpText: Render Test', () => {
   it('Help test dialogContent and dialogTitle render test', () => {
     expect(wrapper.contains(dialogContent)).toBeTruthy();
     expect(wrapper.contains(dialogTitle)).toBeTruthy();
+    wrapper.find(IconButton).simulate('click');
+    expect(wrapper.contains(<p>Testing dialog content</p>)).toBeTruthy();
   });
 });
