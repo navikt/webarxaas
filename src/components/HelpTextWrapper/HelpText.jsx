@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const HelpText = (props) => {
-  const { dialogTitle, dialogContent } = props;
+  const { dialogTitle, dialogContent, buttonType } = props;
   const [open, setOpen] = React.useState(false);
 
   const handleClickOpen = () => {
@@ -39,12 +39,21 @@ const HelpText = (props) => {
   };
 
   const classes = useStyles();
-
-  return (
-    <div>
+  let buttonContent;
+  if (buttonType) {
+    buttonContent = (
       <IconButton className={classes.button} variant="outlined" color="primary" onClick={handleClickOpen}>
         <HelpOutline />
       </IconButton>
+    );
+  } else {
+    buttonContent = (
+      <Button className={classes.button} variant="outlined" color="secondary" onClick={handleClickOpen}>disclaimer</Button>
+    );
+  }
+  const content = (
+    <div>
+      {buttonContent}
       <Dialog
         open={open}
         onClose={handleClose}
@@ -65,11 +74,13 @@ const HelpText = (props) => {
       </Dialog>
     </div>
   );
+  return content;
 };
 
 HelpText.propTypes = {
   dialogTitle: PropTypes.string.isRequired,
   dialogContent: PropTypes.objectOf(String).isRequired,
+  buttonType: PropTypes.bool.isRequired,
 };
 
 export default HelpText;

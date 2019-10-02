@@ -22,6 +22,7 @@ const RiskDistributionGraphHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleDistributionOfRiskTable}
       dialogContent={dialogContentDistributionOfRiskTable}
+      buttonType
     />
   );
   return content;

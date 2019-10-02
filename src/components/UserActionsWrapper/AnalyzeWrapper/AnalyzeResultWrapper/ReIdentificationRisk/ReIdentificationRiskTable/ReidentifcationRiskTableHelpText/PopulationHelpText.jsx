@@ -27,6 +27,7 @@ const PopulationHelpText = () => {
     <HelpText
       dialogTitle={dialogTitlePopulation}
       dialogContent={dialogContentPopulation}
+      buttonType
     />
   );
   return content;

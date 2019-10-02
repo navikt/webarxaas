@@ -7,12 +7,19 @@ describe('HelpText: Render Test', () => {
   let wrapper;
   let dialogContent;
   let dialogTitle;
+  let buttonType;
 
   beforeAll(() => {
     dialogContent = (<p>Testing dialog content</p>);
     dialogTitle = 'Testing dialog title';
-
-    wrapper = shallow(<HelpText dialogTitle={dialogTitle} dialogContent={dialogContent} />);
+    buttonType = true;
+    wrapper = shallow(
+      <HelpText
+        dialogTitle={dialogTitle}
+        dialogContent={dialogContent}
+        buttonType={buttonType}
+      />,
+    );
   });
 
   it('Help text icon button render test', () => {

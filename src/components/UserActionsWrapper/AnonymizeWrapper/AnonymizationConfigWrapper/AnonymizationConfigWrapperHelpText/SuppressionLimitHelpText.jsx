@@ -15,6 +15,7 @@ const SuppressionLimitHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleSuppressionLimit}
       dialogContent={dialogContentSuppressionLimit}
+      buttonType
     />
   );
   return content;

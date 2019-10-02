@@ -49,6 +49,7 @@ const PrivacyModelHelpText = () => {
     <HelpText
       dialogTitle={dialogTitlePrivacyModel}
       dialogContent={dialogContentPrivacyModel}
+      buttonType
     />
   );
   return content;

@@ -17,6 +17,7 @@ const JournalistModelHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleJournalistModel}
       dialogContent={dialogContentJournalistModel}
+      buttonType
     />
   );
 

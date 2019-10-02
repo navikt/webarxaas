@@ -45,6 +45,7 @@ const DatasetTableWrapperHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleAttributeTypes}
       dialogContent={dialogContentAttributeTypes}
+      buttonType
     />
   );
   return content;

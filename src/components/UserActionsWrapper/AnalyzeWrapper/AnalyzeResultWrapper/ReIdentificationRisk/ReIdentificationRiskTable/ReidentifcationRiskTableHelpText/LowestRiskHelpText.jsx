@@ -24,6 +24,7 @@ const LowestRiskHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleLowestRisk}
       dialogContent={dialogContentLowestRisk}
+      buttonType
     />
   );
   return content;

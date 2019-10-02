@@ -33,6 +33,7 @@ const AttributeRiskGraphHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleDistinctionAndSeparation}
       dialogContent={dialogContentDistinctionAndSeparation}
+      buttonType
     />
   );
   return content;
