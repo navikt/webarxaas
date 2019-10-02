@@ -14,7 +14,7 @@ export default function generateAnalysisReport(response, attributes, document) {
     attributesUsed.push([item.field, item.attributeTypeModel]);
   });
 
-  const distributionOfRisk = [[{ text: 'Interval', bold: true }, { text: 'Records With Risk', bold: true }, { text: 'Records With Maximal Risk', bold: true }]];
+  const distributionOfRisk = [[{ text: 'Risk Interval', bold: true }, { text: 'Records Within Interval', bold: true }, { text: 'Records With Maximal Risk Within Interval', bold: true }]];
   response.distributionOfRisk.riskIntervalList.forEach((item) => {
     distributionOfRisk.push([item.interval,
       toPercent(item.recordsWithRiskWithinInterval),
