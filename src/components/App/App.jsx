@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 import SnackbarWrapper from '../SnackbarWrapper/SnackbarWrapper';
 import UserManual from '../UserManualPage/UserManualPage';
 import './__css__/App.css';
+import DisclaimerHelpText from '../DisclaimerHelpText/DisclaimerHelpText';
 
 function App() {
   const Home = () => {
@@ -27,7 +28,7 @@ function App() {
 
     return (
       <div>
-
+        <DisclaimerHelpText />
         <ImportDatasetWrapper
           loadingDataset={loadingDataset}
           setSnackbar={setSnackbar}
