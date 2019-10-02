@@ -16,6 +16,7 @@ const QuestionMarkHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleHelpText}
       dialogContent={dialogContentHelpText}
+      buttonType
     />
   );
 

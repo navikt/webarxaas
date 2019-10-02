@@ -18,6 +18,7 @@ const ProsecutorModelHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleProsecutorModel}
       dialogContent={dialogContentProsecutorModel}
+      buttonType
     />
   );
   return content;

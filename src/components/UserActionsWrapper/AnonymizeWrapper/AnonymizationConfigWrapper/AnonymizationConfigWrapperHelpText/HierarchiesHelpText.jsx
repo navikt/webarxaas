@@ -16,6 +16,7 @@ const HierarchiesHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleHierarchies}
       dialogContent={dialogContentHierarchies}
+      buttonType
     />
   );
   return content;

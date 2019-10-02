@@ -17,6 +17,7 @@ const ImportDatasetHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleImportDataset}
       dialogContent={dialogContentImportDataset}
+      buttonType
     />
   );
   return content;

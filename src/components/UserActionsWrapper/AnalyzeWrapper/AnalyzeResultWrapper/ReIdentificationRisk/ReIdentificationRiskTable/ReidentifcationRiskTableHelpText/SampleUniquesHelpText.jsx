@@ -17,6 +17,7 @@ const SampleUniquesHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleSampleUniqueness}
       dialogContent={dialogContentSampleUniqueness}
+      buttonType
     />
   );
   return content;

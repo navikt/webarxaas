@@ -18,6 +18,7 @@ const MarketerModelHelpText = () => {
     <HelpText
       dialogTitle={dialogTitleMarketerModel}
       dialogContent={dialogContentMarketerModel}
+      buttonType
     />
   );
   return content;
