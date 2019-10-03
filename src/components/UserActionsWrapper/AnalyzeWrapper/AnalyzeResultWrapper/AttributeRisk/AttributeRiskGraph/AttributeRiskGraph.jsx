@@ -22,14 +22,14 @@ const AttributeRiskGraph = (props) => {
         height={500}
         data={riskData}
         margin={{
-          top: 20, right: 40, left: 50, bottom: 5,
+          top: 20, right: 40, left: 50, bottom: 20,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="category" dataKey="identifier" angle={45} textAnchor="start" interval={0} height={150} />
-        <YAxis type="number" ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} datakey="distinction" />
+        <XAxis label={{ value: 'Quasi-identifying Attributes', angle: 0, position: 'bottom' }} type="category" dataKey="identifier" angle={45} textAnchor="start" interval={0} height={150} />
+        <YAxis label={{ value: '[%]', angle: 0, position: 'left' }} type="number" ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} datakey="distinction" />
         <Tooltip />
-        <Legend />
+        <Legend verticalAlign="top" />
         <Bar dataKey="distinction" name="Distinction" fill="#f54542" />
         <Bar dataKey="separation" name="Separation" fill="#0f54f5" />
       </BarChart>

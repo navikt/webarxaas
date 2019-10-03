@@ -24,14 +24,14 @@ const RiskDistributionGraph = (props) => {
         height={500}
         data={riskData}
         margin={{
-          top: 20, right: 40, left: 50, bottom: 5,
+          top: 20, right: 40, left: 50, bottom: 20,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis type="category" dataKey="name" angle={45} textAnchor="start" interval={0} height={80} reversed />
-        <YAxis type="number" ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} datakey="risk" />
+        <XAxis label={{ value: 'Risk Interval', angle: 0, position: 'bottom' }} type="category" dataKey="name" angle={45} textAnchor="start" interval={0} height={80} reversed />
+        <YAxis label={{ value: '[%]', angle: 0, position: 'left' }} type="number" ticks={[0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]} datakey="risk" />
         <Tooltip />
-        <Legend />
+        <Legend verticalAlign="top" />
         <Bar dataKey="risk" name="Percentage of Records" fill="#ff0000" />
       </BarChart>
     </div>
