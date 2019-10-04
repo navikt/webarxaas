@@ -22,7 +22,7 @@ const AttributeRiskGraph = (props) => {
         height={500}
         data={riskData}
         margin={{
-          top: 20, right: 40, left: 50, bottom: 20,
+          top: 20, right: 40, left: 50, bottom: 40,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
