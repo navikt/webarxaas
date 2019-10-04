@@ -4,6 +4,7 @@ import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import generateAnalysisReport from '../../../../util/generateAnalysisReport';
 import handleJsonExport from '../../../../util/handleJsonExport';
+import prepareJsonExportData from '../../../../util/prepareJsonExportData';
 import './__css__/AnalysisWrapper.css';
 
 const AnalyzeReportWrapper = (props) => {
@@ -40,7 +41,8 @@ const AnalyzeReportWrapper = (props) => {
             htmlType="button"
             onClick={
               () => {
-                handleJsonExport(response, fileName, '_analysis_report.json', 'analysis_report.json');
+                const dataToExport = prepareJsonExportData(response, attributes);
+                handleJsonExport(dataToExport, fileName, '_analysis_report.json', 'analysis_report.json');
               }
             }
           >
