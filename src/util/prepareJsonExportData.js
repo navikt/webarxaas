@@ -41,7 +41,7 @@ export default function prepareJsonExportData(riskProfile, attributes,
   return {
     attributeTypeUsed: newAttributes,
     privacyModelsUsed: privacyModels,
-    suppressionLimitUsed: suppressionLimit,
+    suppressionLimitUsed: suppressionLimit / 100,
     attributeGeneralization,
     riskProfile: newRiskProfile,
   };
