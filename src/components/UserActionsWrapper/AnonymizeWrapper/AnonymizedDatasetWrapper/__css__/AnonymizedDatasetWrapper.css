@@ -1,3 +1,7 @@
 .analysis-wrapper {
   margin-top: 2em;
 }
+.download-report-button {
+  margin: 5em 2em 5em 2em;
+  display: inline-block;
+}
