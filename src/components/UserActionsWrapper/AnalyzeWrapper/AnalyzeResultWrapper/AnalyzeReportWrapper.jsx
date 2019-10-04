@@ -3,6 +3,7 @@ import { Knapp } from 'nav-frontend-knapper';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import generateAnalysisReport from '../../../../util/generateAnalysisReport';
+import handleJsonExport from '../../../../util/handleJsonExport';
 
 const AnalyzeReportWrapper = (props) => {
   const { response, fileName, attributes } = props;
@@ -30,6 +31,16 @@ const AnalyzeReportWrapper = (props) => {
           }
         >
           Download Analysis Report as PDF
+        </Knapp>
+        <Knapp
+          htmlType="button"
+          onClick={
+            () => {
+              handleJsonExport(response, fileName, '_analysis_report.json', 'analysis_report.json');
+            }
+          }
+        >
+          Download Analysis Report as JSON
         </Knapp>
       </div>
     );
