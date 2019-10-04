@@ -5,6 +5,7 @@ import pdfFonts from 'pdfmake/build/vfs_fonts';
 import generateAnalysisReport from '../../../../util/generateAnalysisReport';
 import generateAnonymizationReport from '../../../../util/generateAnonymizationReport';
 import handleJsonExport from '../../../../util/handleJsonExport';
+import prepareJsonExportData from '../../../../util/prepareJsonExportData';
 import './__css__/AnonymizedDatasetWrapper.css';
 
 const AnonymizeReportWrapper = (props) => {
@@ -44,12 +45,9 @@ const AnonymizeReportWrapper = (props) => {
           htmlType="button"
           onClick={
             () => {
-              const objectToExport = {
-                privacyModels,
-                suppressionLimit,
-                attributeGeneralization: response.anonymizeResult.metrics.attributeGeneralization,
-                riskProfile: response.riskProfile,
-              };
+              const objectToExport = prepareJsonExportData(response.riskProfile, attributes,
+                privacyModels, suppressionLimit,
+                response.anonymizeResult.metrics.attributeGeneralization);
               handleJsonExport(objectToExport, fileName, '_report.json', 'anonymization_report.json');
             }
           }
