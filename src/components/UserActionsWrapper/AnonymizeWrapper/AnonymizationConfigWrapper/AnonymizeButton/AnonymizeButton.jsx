@@ -21,7 +21,7 @@ const AnonymizeButton = (props) => {
       <Knapp onClick={() => {
         setResponse({});
         setLoadingAnonymize(true);
-        if (datasetFile.size > 210000000) {
+        if (datasetFile.size > 211000000) {
           setLoadingAnonymize(false);
           setResponse({
             message: 'Dataset file size too large. Due to the limit of browser cache size, the client can only anonymize a dataset that has a size of 210MB.',
