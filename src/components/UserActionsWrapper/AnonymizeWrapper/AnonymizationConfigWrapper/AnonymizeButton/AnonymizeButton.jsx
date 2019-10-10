@@ -14,7 +14,7 @@ const AnonymizeButton = (props) => {
     <div className="anonymize-button small">
       <p>
         <b>
-          Due to the limit of browser cache size,
+          Due to the limit of browser memory size,
           the client can only anonymize a dataset that has a size of 210MB.
         </b>
       </p>
@@ -24,7 +24,7 @@ const AnonymizeButton = (props) => {
         if (datasetFile.size > 211000000) {
           setLoadingAnonymize(false);
           setResponse({
-            message: 'Dataset file size too large. Due to the limit of browser cache size, the client can only anonymize a dataset that has a size of 210MB.',
+            message: 'Dataset file size too large. Due to the limit of browser memory size, the client can only anonymize a dataset that has a size of 210MB.',
           });
         } else {
           handleAnonymizationRequest(setLoadingAnonymize, 'anonymize/file', endpoint, setResponse, datasetFile, attributes,
