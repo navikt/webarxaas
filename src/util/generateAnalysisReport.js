@@ -101,7 +101,7 @@ export default function generateAnalysisReport(response, attributes, document) {
       {
         margin: tableMargin,
         table: {
-          widths: ['*', '*'],
+          widths: [300, '*'],
           body: attributesUsed,
         },
       },
@@ -198,7 +198,7 @@ export default function generateAnalysisReport(response, attributes, document) {
       {
         margin: tableMargin,
         table: {
-          widths: ['*', '*', '*'],
+          widths: [350, 70, 70],
           body: attributeRisk,
         },
       },
