@@ -88,7 +88,7 @@
     "less-plugin-npm-import": "^2.1.0",
     "less-watch-compiler": "^1.11.3",
     "npm-run-all": "^4.0.2",
-    "react-test-renderer": "^16.8.6"
+    "react-test-renderer": "^16.10.2"
   },
   "jest": {
     "collectCoverageFrom": [
