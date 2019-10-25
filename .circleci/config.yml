@@ -64,6 +64,15 @@ jobs:
             - v1-dependencies-
       - run: yarn install
       - run: yarn build
+      - run:
+          name: Generate version tag
+          command: |
+            DATE=$(date +%Y-%m-%d)
+            GIT_HASH=$(git rev-parse --short HEAD)
+            IMAGE_TAG=${DATE}--${GIT_HASH}
+
+            mkdir img_tag
+            echo $IMAGE_TAG > img_tag/docker_img_tag
       - save_cache:
           paths:
             - node_modules
@@ -71,6 +80,10 @@ jobs:
       - persist_to_workspace:
           root: build
           paths: ./*
+      - persist_to_workspace:
+          root: img_tag
+          paths: ./*
+
   deploy-dev:
     docker:
       - image: "navikt/deployment-cli:v0.1.7"
@@ -79,6 +92,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: build
+      - attach_workspace:
+          at: img_tag
       - run:
           name: Checkout NAIS config repository
           command: git clone https://github.com/navikt/arxaas-nais-config.git
@@ -92,7 +107,7 @@ jobs:
                      --repository=navikt/webarx-poc
                      --team=$TEAMNAME
                      --resource=arxaas-nais-config/webarx-poc-nais.yaml
-                     --version=$CIRCLE_SHA1
+                     --version=$(cat img_tag/docker_img_tag)
                      --vars=arxaas-nais-config/webarx-poc-dev-placeholders.json
 
   deploy-prod:
@@ -103,6 +118,8 @@ jobs:
       - checkout
       - attach_workspace:
           at: build
+      - attach_workspace:
+          at: img_tag
       - run:
           name: Checkout NAIS config repository
           command: git clone https://github.com/navikt/arxaas-nais-config.git
@@ -113,7 +130,7 @@ jobs:
                      --repository=navikt/webarx-poc
                      --team=$TEAMNAME
                      --resource=arxaas-nais-config/webarx-poc-nais.yaml
-                     --version=$CIRCLE_SHA1
+                     --version=$(cat img_tag/docker_img_tag)
                      --vars=arxaas-nais-config/webarx-poc-prod-placeholders.json
 
 workflows:
