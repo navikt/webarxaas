@@ -4,7 +4,7 @@
 #
 version: 2.1
 orbs:
-  nais: 'navikt/nais-deployment@1.1.1'
+  nais: 'navikt/nais-deployment@1.5.0'
 jobs:
   build:
     docker:
@@ -100,6 +100,7 @@ jobs:
       # Publish to Dockerhub
       - nais/docker-deploy:
           image: navikt/webarx-poc
+          tag: $(cat img_tag/docker_img_tag)
       - run:
           name: Create github deployment for dev-fss
           command: deployment-cli deploy create
