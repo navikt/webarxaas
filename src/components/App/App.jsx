@@ -12,6 +12,7 @@ import './__css__/App.css';
 import DisclaimerHelpText from '../DisclaimerHelpText/DisclaimerHelpText';
 
 function App() {
+  console.log(env('ARXAAS_URL'));
   const Home = () => {
     const [snackbar, setSnackbar] = useState({
       open: false,
