@@ -37,7 +37,7 @@
     "papaparse": "^5.1.0",
     "pdfmake": "^0.1.62",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
+    "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.14",
     "react-collapse": "^4.0.3",
     "react-dom": "^16.11.0",
