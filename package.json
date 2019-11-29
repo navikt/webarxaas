@@ -38,7 +38,7 @@
     "pdfmake": "^0.1.62",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.14",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-collapse": "^4.0.3",
     "react-dom": "^16.12.0",
     "react-draggable": "^4.1.0",
