@@ -35,7 +35,7 @@
     "nav-frontend-typografi": "^2.0.16",
     "nav-frontend-typografi-style": "^1.0.17",
     "papaparse": "^5.1.0",
-    "pdfmake": "^0.1.62",
+    "pdfmake": "^0.1.63",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.16",
