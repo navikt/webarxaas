@@ -5,7 +5,7 @@
   "dependencies": {
     "@beam-australia/react-env": "^2.1.2",
     "@fortawesome/fontawesome-free": "^5.11.2",
-    "@material-ui/core": "^4.7.2",
+    "@material-ui/core": "^4.8.1",
     "@material-ui/icons": "^4.5.1",
     "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.4.1",
