@@ -1,10 +1,6 @@
-name: Build Test Release CI
+name: Build Test CI
 
 on: [push]
-
-env:
-  DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/webarx-poc
-  PACKAGE_TOKEN: ${{secrets.PACKAGE_TOKEN}}
 
 jobs:
   build:
