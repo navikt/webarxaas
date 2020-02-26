@@ -14,8 +14,8 @@ const AnonymizeButton = (props) => {
     <div className="anonymize-button small">
       <p>
         <b>
-          Due to the limit of browser memory size,
-          the client can only anonymize a dataset that has a size of 210MB.
+          Due to the limit of web browsers,
+          the client migth not be able to anonymize a dataset larger than 210MB.
         </b>
       </p>
       <Knapp onClick={() => {
