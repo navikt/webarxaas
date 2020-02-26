@@ -10,9 +10,9 @@ env:
   PACKAGE_TOKEN: ${{secrets.PACKAGE_TOKEN}}
 
 jobs:
-  build:
+  build-package-distribute:
+    name: Package
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v2
 
@@ -32,4 +32,24 @@ jobs:
 
     - name: Test
       run: npm test
-    
+      
+    - name: Generate tag
+      run: |
+        # Generate docker image tag
+        DATE=$(date +%Y-%m-%d)
+        GIT_HASH=$(git rev-parse --short HEAD)
+        IMAGE_TAG=${DATE}--${GIT_HASH}
+        # write current tag to file
+        echo $IMAGE_TAG > docker_img_tag
+    - name: Upload img_tag
+      uses: actions/upload-artifact@v1
+      with:
+        name: img_tag
+        path: docker_img_tag
+    - name: Build and Publish to Docker Image
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        docker build --tag ${DOCKER_IMAGE}:$(cat docker_img_tag.txt) .
+        docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+        docker push ${DOCKER_IMAGE}:$(cat docker_img_tag)
