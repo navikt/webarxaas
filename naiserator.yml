@@ -1,0 +1,40 @@
+apiVersion: "nais.io/v1alpha1"
+kind: "Application"
+metadata:
+  name: {{application_name}}
+  namespace: default
+  labels:
+    team: dataplattform
+spec:
+  ingresses:
+    - {{ingress}}
+  image: {{image}}
+  port: 8080
+  replicas:
+    min: 1
+    max: 2
+    cpuThresholdPercentage: 70
+  liveness:
+    path: /isAlive
+    timeout: 1
+    initialDelay: 60
+    periodSeconds: 5
+    failureThreshold: 30
+  readiness:
+    path: /isReady
+    timeout: 1
+    initialDelay: 60
+    failureThreshold: 30
+  leaderElection: false
+  istio:
+    enabled: false
+  resources:
+    limits:
+      cpu: 400m
+      memory: 1536Mi
+    requests:
+      cpu: 200m
+      memory: 512Mi
+  env:
+    - name: REACT_APP_ARXAAS_URL
+      value: {{arxaas_url}}
