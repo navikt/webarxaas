@@ -9,11 +9,11 @@ The goal of WebARX is to make analyzing re-identification risk and anonymizing d
 ### Development
 
 ```
-git clone https://github.com/navikt/WebARXaaS.git
+git clone https://github.com/navikt/webarxaas.git
 ```
 
 ```
-cd WebARXaaS
+cd webarxaas
 ```
 
 ```
