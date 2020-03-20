@@ -1,0 +1,52 @@
+name: Bulid, test, package and deply
+
+on:
+  push:
+    branches:
+      - '**'
+    tags-ignore:
+      - '*.*.*'
+
+env:
+  DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/webarx:${{ github.sha }}
+
+jobs:
+  test:
+    name: Build and test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install dependencies
+      run: yarn Install
+    - name: setup code climate test-reporter
+      run: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+        ./cc-test-reporter before-build
+    - name: run test
+      run: |
+        yarn test -- --coverage
+        # upload test report to Code Climate using `after-build`
+        ./cc-test-reporter after-build --exit-code $?
+      env:
+        CI: true
+
+  package:
+    name: Build and package
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: 'refs/heads/master'
+    - name: Install dependencies
+      run: yarn install
+    - name: Build
+    - run: yarn build
+    - name: Build and publish Docker image
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        docker build --tag ${DOCKER_IMAGE}
+        docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
+        docker push ${DOCKER_IMAGE}
