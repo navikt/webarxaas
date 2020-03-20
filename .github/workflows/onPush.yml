@@ -8,7 +8,7 @@ on:
       - '*.*.*'
 
 env:
-  DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/webarxaas:${{ github.sha }}
+  IMAGE: docker.pkg.github.com/${{ github.repository }}/webarxaas:${{ github.sha }}
   CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
 jobs:
@@ -48,9 +48,9 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
-        docker build --tag ${DOCKER_IMAGE} .
+        docker build --tag ${IMAGE} .
         docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
-        docker push ${DOCKER_IMAGE}
+        docker push ${IMAGE}
 
   deploy_dev-fss:
     name: Deploy to dev-fss
