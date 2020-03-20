@@ -1,4 +1,4 @@
-name: Bulid, test, package and deply
+name: Bulid, test, package and deploy
 
 on:
   push:
@@ -9,6 +9,7 @@ on:
 
 env:
   DOCKER_IMAGE: docker.pkg.github.com/${{ github.repository }}/webarx:${{ github.sha }}
+  CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
 
 jobs:
   test:
