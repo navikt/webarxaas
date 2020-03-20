@@ -51,3 +51,22 @@ jobs:
         docker build --tag ${DOCKER_IMAGE} .
         docker login docker.pkg.github.com -u ${GITHUB_REPOSITORY} -p ${GITHUB_TOKEN}
         docker push ${DOCKER_IMAGE}
+
+  deploy_dev-fss:
+    name: Deploy to dev-fss
+    needs: [test, package]
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: refs/heads/master
+    - name: Checkout NAIS config repository
+      run: git clone https://github.com/navikt/arxaas-nais-config.git
+    - name: Deploy to nais
+      uses: nais/deploy/actions/deploy@v1
+      env:
+        APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+        CLUSTER: dev-fss
+        RESOURCE: arxaas-nais-config/webarx-poc-nais.yaml
+        VARS: arxaas-nais-config/webarxaas-dev-placeholders.json
