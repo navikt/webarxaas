@@ -1,5 +1,5 @@
 {
   "application_name": "webarxaas",
-  "ingress": "https://webarxaas.nais.preprod.local",
-  "arxaas_url": "https://anonymiserer.nais.preprod.local"
+  "ingress": "https://webarxaas.dev-fss.nais.io",
+  "arxaas_url": "https://anonymiserer.dev-fss.nais.io"
 }
