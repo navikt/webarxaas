@@ -100,7 +100,7 @@ describe('AnalyzeResultWrapper: Render test', () => {
     expect(wrapper.contains(<h4>Analysis Result</h4>)).toBeTruthy();
     expect(wrapper.find(Container).length).toEqual(1);
     expect(wrapper.find(Row).length).toEqual(1);
-    expect(wrapper.find(Col).length).toEqual(3);
+    expect(wrapper.find(Col).length).toEqual(5);
     expect(wrapper.find(Ekspanderbartpanel).length).toEqual(5);
     expect(wrapper.find(DistributionOfRiskTable).length).toEqual(1);
     expect(wrapper.find(ReIdentificationRiskTable).length).toEqual(1);
