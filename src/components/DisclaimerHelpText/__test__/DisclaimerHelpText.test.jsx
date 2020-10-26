@@ -13,8 +13,8 @@ describe('Test for disclaimer help text component', () => {
   it('Test for component rendering', () => {
     expect(wrapper.contains(
       <p className="disclaimer-text">
-      By using this service you acknowledge
-       that you have read and understand the
+        By using this service you acknowledge
+        that you have read and understand the
       </p>,
     )).toBeTruthy();
 

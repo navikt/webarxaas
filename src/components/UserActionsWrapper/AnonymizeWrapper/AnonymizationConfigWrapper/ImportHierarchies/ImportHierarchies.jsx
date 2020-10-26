@@ -12,7 +12,6 @@ import Divider from '@material-ui/core/Divider';
 import handleHierarchyUpload from '../../../../../util/handleHierarchyUpload';
 import handleHierarchyFileUpload from '../../../../../util/handleHierarchyFileUpload';
 
-
 const useStyles = makeStyles({
   root: {
     width: '100%',
@@ -33,7 +32,6 @@ const ImportHierarchies = (props) => {
     hierarchies, setHierarchies,
     attributes, setAttributes,
   } = props;
-
 
   const content = (
     <div className="hierarchy-import" align="center">
@@ -77,7 +75,7 @@ const ImportHierarchies = (props) => {
                             }
                           }}
                         />
-                      Import
+                        Import
                       </Button>
                     </label>
                   </ListItem>
@@ -86,8 +84,7 @@ const ImportHierarchies = (props) => {
               );
             }
             return null;
-          })
-        }
+          })}
         </List>
       </div>
     </div>

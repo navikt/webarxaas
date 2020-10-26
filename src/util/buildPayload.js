@@ -1,4 +1,4 @@
-const buildAttributesPayload = attributes => attributes.map(attribute => ({
+const buildAttributesPayload = (attributes) => attributes.map((attribute) => ({
   ...attribute,
   hierarchy: attribute.hierarchy ? attribute.hierarchy.data : null,
 }));

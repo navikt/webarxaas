@@ -31,7 +31,7 @@ describe('AttributeTypeSelector: Render test', () => {
       { field: 'Series_title_4', attributeTypeModel: 'QUASIIDENTIFYING' },
       { field: 'Series_title_5', attributeTypeModel: 'QUASIIDENTIFYING' },
     ];
-    mockDefaultTypes = mockAttributes.map(attr => attr.attributeTypeModel);
+    mockDefaultTypes = mockAttributes.map((attr) => attr.attributeTypeModel);
     wrapper = shallow(<AttributeTypeSelector defaultTypes={mockDefaultTypes} types={types} />);
   });
 

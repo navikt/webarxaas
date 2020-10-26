@@ -8,7 +8,7 @@ import AttributeRiskGraphHelpText from './AttributeRiskGraphHelpText/AttributeRi
 const AttributeRiskGraph = (props) => {
   const { attributeRisk } = props;
   const riskData = attributeRisk.quasiIdentifierRiskList
-    .map(obj => ({
+    .map((obj) => ({
       identifier: obj.identifier,
       distinction: (parseFloat(obj.distinction) * 100).toFixed(2),
       separation: (parseFloat(obj.separation) * 100).toFixed(2),

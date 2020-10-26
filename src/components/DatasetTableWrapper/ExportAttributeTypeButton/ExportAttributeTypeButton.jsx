@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import SaveIcon from '@material-ui/icons/Save';
 import handleAttributeExport from '../../../util/handleAttributeExport';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
@@ -20,7 +20,7 @@ const ExportAttribute = (props) => {
 
   const content = (
     <Button variant="contained" className={classes.button} onClick={() => handleAttributeExport(attributes, fileName)}>
-    Export Attribute Types as JSON
+      Export Attribute Types as JSON
       <SaveIcon className={classes.rightIcon} />
     </Button>
   );

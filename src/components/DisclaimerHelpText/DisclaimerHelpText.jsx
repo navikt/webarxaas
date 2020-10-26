@@ -16,20 +16,20 @@ const DisclaimerHelpText = () => {
       </p>
       <ul>
         <li>
-            The default parameters for the privacy models provided by the applications do not
-            guarantee that the dataset is sufficiently anonymised.
+          The default parameters for the privacy models provided by the applications do not
+          guarantee that the dataset is sufficiently anonymised.
         </li>
         <li>
-            The user is advised that all privacy models have limitations and may not cover
-            all possible present or future risk scenarios.
+          The user is advised that all privacy models have limitations and may not cover
+          all possible present or future risk scenarios.
         </li>
         <li>
-            No data or informasjon is stored after anonymization and analyzation is
-            completed, except for logs for operational purposes. The logs contain ip requests
-            origin, size of the request and privacy models used.
+          No data or informasjon is stored after anonymization and analyzation is
+          completed, except for logs for operational purposes. The logs contain ip requests
+          origin, size of the request and privacy models used.
         </li>
         <li>
-            The user is responsible for determining the acceptable risk level.
+          The user is responsible for determining the acceptable risk level.
         </li>
       </ul>
     </div>
@@ -39,7 +39,7 @@ const DisclaimerHelpText = () => {
     <div className="disclaimer-wrapper">
       <p className="disclaimer-text">
         By using this service you acknowledge
-         that you have read and understand the
+        that you have read and understand the
       </p>
       <span className="disclaimer-text disclaimer-button">
         <HelpText

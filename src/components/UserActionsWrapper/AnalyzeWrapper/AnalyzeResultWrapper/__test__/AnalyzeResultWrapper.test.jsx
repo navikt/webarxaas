@@ -78,9 +78,9 @@ describe('AnalyzeResultWrapper: Render test', () => {
     expect(errorWrapper.find('.result-wrapper').length).toEqual(1);
     expect(errorWrapper.contains(
       <b>
-      Something went wrong.
+        Something went wrong.
         <br />
-      Error:
+        Error:
       </b>,
     )).toBeTruthy();
   });

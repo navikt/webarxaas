@@ -21,7 +21,7 @@ const PrivacyModelForm = (props) => {
       params[secondaryParamLabel] = e.target.value;
     }
     const index = privacyModels
-      .findIndex(privModel => privModel.params.column_name === fieldName || (privModel.params.k && primaryParamLabel === 'k'));
+      .findIndex((privModel) => privModel.params.column_name === fieldName || (privModel.params.k && primaryParamLabel === 'k'));
 
     privacyModels[index] = {
       privacyModel: privacyModelType,
@@ -66,7 +66,7 @@ const PrivacyModelForm = (props) => {
     if (lcModelsList.includes(e.target.value)) defaultParams = lcParamsDefault;
     if (tModelsList.includes(e.target.value)) defaultParams = tParamsDefault;
 
-    const index = (privacyModels.findIndex(privModel => privModel.params.column_name === fieldName || (privModel.params.k && primaryParamLabel === 'k')));
+    const index = (privacyModels.findIndex((privModel) => privModel.params.column_name === fieldName || (privModel.params.k && primaryParamLabel === 'k')));
 
     privacyModels[index] = {
       privacyModel: e.target.value,
@@ -88,9 +88,9 @@ const PrivacyModelForm = (props) => {
       { model: 'TCLOSENESS_EQUAL_DISTANCE', label: 'T-Closeness Equal Distance' },
     ];
     let privModels;
-    if (quasiPrivModels.findIndex(e => (e.model === privacyModelType)) !== -1) {
+    if (quasiPrivModels.findIndex((e) => (e.model === privacyModelType)) !== -1) {
       privModels = quasiPrivModels;
-    } else if (sensitivePrivModels.findIndex(e => (e.model === privacyModelType)) !== -1) {
+    } else if (sensitivePrivModels.findIndex((e) => (e.model === privacyModelType)) !== -1) {
       privModels = sensitivePrivModels;
     }
     return privModels.map((privModel, index) => (

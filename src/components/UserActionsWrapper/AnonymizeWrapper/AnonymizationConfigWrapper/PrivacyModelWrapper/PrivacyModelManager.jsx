@@ -3,7 +3,6 @@ import PrivacyModelForm from './PrivacyModelForm';
 import handlePrivacyAdd from '../../../../../util/handlePrivacyAdd';
 import handlePrivacyRemove from '../../../../../util/handlePrivacyRemove';
 
-
 const PrivacyModelManager = (props) => {
   const { sensitiveAttributes, privacyModels, setPrivacyModels } = props;
 
@@ -15,7 +14,7 @@ const PrivacyModelManager = (props) => {
   const loadPrivacyModels = () => {
     sensitiveAttributes.forEach((attribute) => {
       const foundExsistingPrivModel = privacyModels
-        .findIndex(item => item.params.column_name === attribute.field);
+        .findIndex((item) => item.params.column_name === attribute.field);
 
       // If there is not already a exsisting privacy model for this attribute, it will add a new one
       if (foundExsistingPrivModel === -1) {
@@ -34,7 +33,7 @@ const PrivacyModelManager = (props) => {
 
     // If there not already exsists a quasi privmodel already, a new one will be added
     const foundKModel = privacyModels
-      .findIndex(item => item.privacyModel === defaultQuasiPrivModel);
+      .findIndex((item) => item.privacyModel === defaultQuasiPrivModel);
     if (foundKModel === -1) {
       handlePrivacyAdd(
         {
@@ -51,7 +50,7 @@ const PrivacyModelManager = (props) => {
     privacyModels.forEach((privacyModel, privacyModelIndex) => {
       if (!privacyModel.params.k) {
         const foundWithSensitiveAttribute = sensitiveAttributes
-          .findIndex(attribute => privacyModel.params.column_name === attribute.field);
+          .findIndex((attribute) => privacyModel.params.column_name === attribute.field);
         if (foundWithSensitiveAttribute === -1) {
           handlePrivacyRemove(privacyModelIndex, privacyModels, setPrivacyModels);
         }

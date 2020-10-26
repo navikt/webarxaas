@@ -6,7 +6,7 @@ const PrivacyModelWrapper = (props) => {
     attributes, privacyModels, setPrivacyModels,
   } = props;
 
-  const sensitiveAttributes = attributes.filter(attributeInList => attributeInList.attributeTypeModel === 'SENSITIVE');
+  const sensitiveAttributes = attributes.filter((attributeInList) => attributeInList.attributeTypeModel === 'SENSITIVE');
 
   const content = (
     <PrivacyModelManager

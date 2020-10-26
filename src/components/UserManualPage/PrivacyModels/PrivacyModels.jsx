@@ -10,10 +10,10 @@ const PrivacyModels = () => {
         <li>
           <p>
             This well-known privacy model aims at protecting dataset from
-             re-identification in the prosecutor model.
+            re-identification in the prosecutor model.
             <br />
             A dataset is k-anonymous if each record cannot be distinguished from at
-             least k-1 other records regarding the quasi-identifiers.
+            least k-1 other records regarding the quasi-identifiers.
             <br />
             Each group of indistinguishable records forms a so-called equivalence class.
           </p>
@@ -24,7 +24,7 @@ const PrivacyModels = () => {
         <li>
           <p>
             This privacy model can be used to protect data against attribute disclosure
-             by ensuring that each sensitive attribute has at least
+            by ensuring that each sensitive attribute has at least
             <br />
             ℓ well represented values in each equivalence class.
           </p>
@@ -35,10 +35,10 @@ const PrivacyModels = () => {
         <li>
           <p>
             This privacy model can also be used to protect data from attribute disclosure.
-             It requires that the distributions of values of a
+            It requires that the distributions of values of a
             <br />
             sensitive attribute within each equivalence class must have a distance of not
-             more than t to the distribution of the attribute values in the input dataset.
+            more than t to the distribution of the attribute values in the input dataset.
           </p>
         </li>
       </ul>

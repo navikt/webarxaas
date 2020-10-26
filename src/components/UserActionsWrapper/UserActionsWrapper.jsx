@@ -14,7 +14,6 @@ const useStyles = makeStyles({
   },
 });
 
-
 const UserActionsWrapper = (props) => {
   const [loadingAnalyze, setLoadingAnalyze] = useState(false);
   const [loadingAnonymize, setLoadingAnonymize] = useState(false);

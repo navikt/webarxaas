@@ -47,7 +47,8 @@ const AnalyzeResultWrapper = (props) => {
         <h4>Analysis Result</h4>
         <RiskBarometer risk={
           (parseFloat(response.reIdentificationRisk.measures.average_prosecutor_risk) * 100)
-            .toFixed(2)}
+            .toFixed(2)
+          }
         />
         <RiskBarometer2Bars
           highestRisk={(parseFloat(response.reIdentificationRisk.measures

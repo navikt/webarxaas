@@ -9,7 +9,6 @@ import AttributeTypesDescription from '../../AttributeTypesDescription/Attribute
 describe('ImportManual: Render test', () => {
   let wrapper;
 
-
   beforeAll(() => {
     wrapper = shallow(<ImportManual />);
   });

@@ -11,7 +11,7 @@ const ImportManual = () => {
     <div className="import-manual">
       <p>
         Info: Clicking the question mark in the web application
-         will display the corresponding help text.
+        will display the corresponding help text.
       </p>
       <p><b>Import data set:</b></p>
       <div className="import-dataset-img">
@@ -22,7 +22,7 @@ const ImportManual = () => {
       <br />
       <p>
         Info: To display Æ, Ø, and Å, make sure the imported
-         tabular dataset is saved as a CSV file with UTF-8.
+        tabular dataset is saved as a CSV file with UTF-8.
       </p>
       <br />
       <p><b>Attributes:</b></p>
@@ -49,13 +49,13 @@ const ImportManual = () => {
         <li>
           <p>
             Click IMPORT ATTRIBUTE TYPES FROM JSON to import saved attribute
-             configuration from JSON file.
+            configuration from JSON file.
           </p>
         </li>
         <li>
           <p>
             Click EXPORT ATTRIBUTE TYPES AS JSON to export attribute
-             configuration as JSON file.
+            configuration as JSON file.
           </p>
           <br />
         </li>

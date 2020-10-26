@@ -8,9 +8,9 @@ const MarketerModelHelpText = () => {
     <div>
       <p>
         In the marketer model the attacker does not target a specific individual but aims at
-         re-identifying a high number of individuals. An attack can therefore only be considered
-          successful if a larger fraction of the records could be re-identified.
-    </p>
+        re-identifying a high number of individuals. An attack can therefore only be considered
+        successful if a larger fraction of the records could be re-identified.
+      </p>
     </div>
   );
 

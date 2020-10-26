@@ -1,4 +1,3 @@
-
 function verifyAttributes(
   jsonImportArray, jsonStateArray, setSnackbar,
 ) {

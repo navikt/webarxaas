@@ -5,7 +5,7 @@ import 'react-table/react-table.css';
 
 const AnonymizedDatasetTable = (props) => {
   const { anonymizeResult } = props;
-  const columns = Object.keys(anonymizeResult.data[0]).map(key => ({
+  const columns = Object.keys(anonymizeResult.data[0]).map((key) => ({
     Header: anonymizeResult.data[0][key],
     accessor: key,
   }));

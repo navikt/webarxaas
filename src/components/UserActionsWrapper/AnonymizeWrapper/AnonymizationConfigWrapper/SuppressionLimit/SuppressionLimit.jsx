@@ -5,7 +5,6 @@ import InputAdornment from '@material-ui/core/InputAdornment';
 import Chip from '@material-ui/core/Chip';
 import updateSuppressionLimit from '../../../../../util/updateSuppressionLimit';
 
-
 const useStyles = makeStyles({
   textField: {
     width: 200,
@@ -15,7 +14,6 @@ const useStyles = makeStyles({
     margin: '2em 0em 2em 0',
   },
 });
-
 
 const SuppressionLimit = (props) => {
   const classes = useStyles();
@@ -29,7 +27,7 @@ const SuppressionLimit = (props) => {
         label="Set Suppression Limit"
         type="number"
         defaultValue={0}
-        onChange={event => updateSuppressionLimit(event.target.value, setSuppressionLimit)}
+        onChange={(event) => updateSuppressionLimit(event.target.value, setSuppressionLimit)}
         InputProps={{
           inputProps: { min: 0, max: 100 },
           endAdornment: <InputAdornment position="end">%</InputAdornment>,

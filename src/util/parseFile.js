@@ -21,7 +21,7 @@ export default function ParseFile(
         if (results.data.length > 0) {
           const headers = results.data[0];
           const attributeTypeModel = defaultAttributeType;
-          setAttributes(headers.map(field => ({ field, attributeTypeModel })));
+          setAttributes(headers.map((field) => ({ field, attributeTypeModel })));
           setDataset(results.data);
           setLoadingDataset(false);
           snackbar(true, 'success', 'Dataset imported successfully.');

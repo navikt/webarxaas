@@ -8,7 +8,7 @@ const RiskDistributionGraphHelpText = () => {
     <div>
       <p>
         In this graph, the distribution of re-identification risk
-         amongst the records of the dataset is displayed.
+        amongst the records of the dataset is displayed.
         <br />
         <br />
         The X-axis displays the risk [from,to).

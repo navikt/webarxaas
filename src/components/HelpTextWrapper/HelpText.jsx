@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button';
@@ -11,13 +12,13 @@ import IconButton from '@material-ui/core/IconButton';
 import { HelpOutline } from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
-const PaperComponent = props => (
+const PaperComponent = (props) => (
   <Draggable cancel={'[class*="MuiDialogContent-root"]'}>
     <Paper {...props} />
   </Draggable>
 );
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },

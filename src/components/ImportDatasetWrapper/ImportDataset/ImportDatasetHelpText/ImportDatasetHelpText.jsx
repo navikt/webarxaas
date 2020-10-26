@@ -10,7 +10,7 @@ const ImportDatasetHelpText = () => {
       <br />
       <br />
       To display Æ, Ø, and Å, make sure the imported tabular
-       dataset is saved as a CSV file with UTF-8
+      dataset is saved as a CSV file with UTF-8
     </p>
   );
   const content = (

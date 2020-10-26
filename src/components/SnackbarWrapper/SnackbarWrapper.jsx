@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
@@ -19,7 +20,7 @@ const variantIcon = {
   info: InfoIcon,
 };
 
-const useStyles1 = makeStyles(theme => ({
+const useStyles1 = makeStyles((theme) => ({
   success: {
     backgroundColor: green[600],
   },

@@ -3,7 +3,7 @@ import React from 'react';
 import { shallow } from '../../../../../../../enzyme';
 
 import ReIdentificationRiskTable from '../ReIdentificationRiskTable';
-import reIdentificationRiskResponse from './reIdentificationRiskResponse';
+import reIdentificationRiskResponse from './reIdentificationRiskResponse.json';
 
 describe('reidentificationrisk table tests', () => {
   it('every risk value renders', () => {

@@ -25,10 +25,10 @@ const DatasetTableWrapperHelpText = () => {
           attributes encode properties with which individuals are not willing to be linked with.
           <br />
           As such, they might be of interest to an attacker and,
-           if disclosed, could cause harm to data subjects.
+          if disclosed, could cause harm to data subjects.
           <br />
           They will be kept unmodified but may be subject to further constraints,
-           such as t-closeness or l-diversity.
+          such as t-closeness or l-diversity.
           <br />
           Typical examples are diagnoses.
         </li>

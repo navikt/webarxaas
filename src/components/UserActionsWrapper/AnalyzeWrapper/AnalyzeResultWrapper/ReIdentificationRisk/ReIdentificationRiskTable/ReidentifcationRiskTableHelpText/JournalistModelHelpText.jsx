@@ -8,7 +8,7 @@ const JournalistModelHelpText = () => {
     <div>
       <p>
         In the journalist model the attacker is trying to randomly re-identify a individual
-         with no background knowledge on anyone in the dataset.
+        with no background knowledge on anyone in the dataset.
       </p>
     </div>
   );

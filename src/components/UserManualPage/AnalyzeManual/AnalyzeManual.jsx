@@ -21,19 +21,19 @@ const AnalyzeManual = () => {
         <br />
         <p><b>Analysis Result:</b></p>
         <p>
-        The Average Prosecutor risk, Highest Prosecutor risk and Records
-         Affected by Highest Prosecutor Risk is displayed with graph by default.
+          The Average Prosecutor risk, Highest Prosecutor risk and Records
+          Affected by Highest Prosecutor Risk is displayed with graph by default.
         </p>
         <p>
-        In the prosecutor model the attacker targets a specific individual,
-         and it is assumed that the attacker already knows that data about the individual,
+          In the prosecutor model the attacker targets a specific individual,
+          and it is assumed that the attacker already knows that data about the individual,
           is contained in the dataset.
         </p>
         <br />
         <p><b>Analysis Report:</b></p>
         <p>
           To download an analysis report as PDF click the
-           DOWNLOAD ANALYSIS REPORT AS PDF button.
+          DOWNLOAD ANALYSIS REPORT AS PDF button.
         </p>
         <div className="download-PDF-img">
           <img src={DownloadAnalysisReportAsPDF} alt="Download PDF Report" />

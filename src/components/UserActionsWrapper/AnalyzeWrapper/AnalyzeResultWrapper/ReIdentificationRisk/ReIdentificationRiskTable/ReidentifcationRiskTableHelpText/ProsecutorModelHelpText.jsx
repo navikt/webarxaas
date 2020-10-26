@@ -10,7 +10,7 @@ const ProsecutorModelHelpText = () => {
         In the prosecutor model the attacker targets a specific individual,
         <br />
         and it is assumed that the attacker already knows that data about the individual,
-         is contained in the dataset.
+        is contained in the dataset.
       </p>
     </div>
   );

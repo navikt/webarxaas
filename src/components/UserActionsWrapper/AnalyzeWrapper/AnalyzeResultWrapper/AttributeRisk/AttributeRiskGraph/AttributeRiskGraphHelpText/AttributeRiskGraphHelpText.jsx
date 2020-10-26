@@ -16,10 +16,10 @@ const AttributeRiskGraphHelpText = () => {
         <b>Separation</b>
         {' '}
         represents the ratio between pairs of records with at least one
-         different value for their quasi-identifiers, and the total number
-          of ways that two different records can be paired. In general, a
-           higher distinction and separation are indicators that the
-            quasi-identifiers are more likely to re-identify a record.
+        different value for their quasi-identifiers, and the total number
+        of ways that two different records can be paired. In general, a
+        higher distinction and separation are indicators that the
+        quasi-identifiers are more likely to re-identify a record.
       </p>
       {' '}
       <p>

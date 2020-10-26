@@ -28,3 +28,4 @@ yarn-error.log*
 #css
 index.css
 package-lock.json
+yarn.lock

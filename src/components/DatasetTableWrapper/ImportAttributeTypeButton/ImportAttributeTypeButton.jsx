@@ -5,7 +5,7 @@ import Button from '@material-ui/core/Button';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import handleAttributeImport from '../../../util/handleAttributeImport';
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
   },
@@ -26,13 +26,13 @@ const ImportAttribute = (props) => {
   const content = (
     <label htmlFor="import-attribute-types-button">
       <Button variant="contained" component="span" className={classes.button}>
-          Import Attribute Types From JSON
+        Import Attribute Types From JSON
         <input
           className={classes.input}
           id="import-attribute-types-button"
           multiple
           type="file"
-          onChange={e => handleAttributeImport(e.target, attributes, setSnackbar, setAttributes)}
+          onChange={(e) => handleAttributeImport(e.target, attributes, setSnackbar, setAttributes)}
         />
         <CloudUploadIcon className={classes.rightIcon} />
       </Button>

@@ -6,10 +6,11 @@ import AttributeTypeSelector from './AttributeTypeSelector/AttributeTypeSelector
 import './__css__/DatasetTable.css';
 
 const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
-  const [defaultTypes, setDefaultTypes] = useState(attributes.map(attr => attr.attributeTypeModel));
+  // eslint-disable-next-line max-len
+  const [defaultTypes, setDefaultTypes] = useState(attributes.map((attr) => attr.attributeTypeModel));
 
   useEffect(() => {
-    setDefaultTypes(attributes.map(attr => attr.attributeTypeModel));
+    setDefaultTypes(attributes.map((attr) => attr.attributeTypeModel));
   }, [attributes]);
 
   const types = [
@@ -21,7 +22,7 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
   let content = ('');
 
   if (dataset.length > 1) {
-    const columns = Object.keys(dataset[0]).map(index => ({
+    const columns = Object.keys(dataset[0]).map((index) => ({
       Header:
         // eslint-disable-next-line react/jsx-indent
         <div className="dataset-table-column">
@@ -40,7 +41,6 @@ const DatasetTable = React.memo(({ dataset, attributes, setAttributes }) => {
     }));
 
     const data = dataset.slice(1, 101);
-
 
     content = (
       <div className="dataset-table">
