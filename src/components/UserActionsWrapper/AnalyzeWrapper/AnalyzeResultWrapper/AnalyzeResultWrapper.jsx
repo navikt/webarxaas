@@ -69,19 +69,23 @@ const AnalyzeResultWrapper = (props) => {
                 <RiskDistributionGraph RiskDistribution={response.distributionOfRisk
                   .riskIntervalList}
                 />
-                <Ekspanderbartpanel tittel="More Information" border>
-                  <DistributionOfRiskTable riskIntervalList={response.distributionOfRisk
-                    .riskIntervalList}
-                  />
-                </Ekspanderbartpanel>
+              </Ekspanderbartpanel>
+            </Col>
+            <Col sm={12}>
+              <Ekspanderbartpanel tittel="Distribution Of Risk table format" border>
+                <DistributionOfRiskTable riskIntervalList={response.distributionOfRisk
+                  .riskIntervalList}
+                />
               </Ekspanderbartpanel>
             </Col>
             <Col sm={12}>
               <Ekspanderbartpanel tittel="Attribute Risk" border>
                 <AttributeRiskGraph attributeRisk={response.attributeRisk} />
-                <Ekspanderbartpanel tittel="More Information" border>
-                  <AttributeRiskTable attributeRisk={response.attributeRisk} />
-                </Ekspanderbartpanel>
+              </Ekspanderbartpanel>
+            </Col>
+            <Col sm={12}>
+              <Ekspanderbartpanel tittel="Attribute Risk table format" border>
+                <AttributeRiskTable attributeRisk={response.attributeRisk} />
               </Ekspanderbartpanel>
             </Col>
           </Row>
