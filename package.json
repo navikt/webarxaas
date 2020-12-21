@@ -84,7 +84,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
-    "less": "^3.11.1",
+    "less": "^4.0.0",
     "less-plugin-npm-import": "^2.1.0",
     "less-watch-compiler": "^1.14.6",
     "npm-run-all": "^4.0.2",
