@@ -61,10 +61,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: refs/heads/master
-    - name: Deploy to nais
-      uses: nais/deploy/actions/deploy@v1
-      env:
-        APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
-        CLUSTER: dev-fss
-        RESOURCE: naiserator.yml
-        VARS: config-dev-fss.json
+#    - name: Deploy to nais
+#      uses: nais/deploy/actions/deploy@v1
+#      env:
+#        APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
+#        CLUSTER: dev-fss
+#        RESOURCE: naiserator.yml
+#        VARS: config-dev-fss.json
