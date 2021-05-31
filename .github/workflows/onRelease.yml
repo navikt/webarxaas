@@ -14,7 +14,8 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: refs/heads/master
-#    - name: Deploy to nais
+    - name: Deploy to nais
+      run: echo "deploy is turned off"
 #      uses: nais/deploy/actions/deploy@v1
 #      env:
 #        APIKEY: ${{ secrets.NAIS_DEPLOY_APIKEY }}
