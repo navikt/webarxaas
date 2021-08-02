@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@beam-australia/react-env": "^2.1.2",
+    "@beam-australia/react-env": "^3.0.8",
     "@fortawesome/fontawesome-free": "^5.12.1",
     "@material-ui/core": "^4.9.4",
     "@material-ui/icons": "^4.5.1",
